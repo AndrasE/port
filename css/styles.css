@@ -35,7 +35,7 @@ ul {
     background-color: var(--bg-black-900);
     min-height: 100vh;
     display: block;
-   
+
     left: 270px;
     top: 0;
     right: 0;
@@ -45,7 +45,7 @@ ul {
 }
 
 .hidden {
-display: none !important;
+    display: none !important;
 }
 
 .main-content {
@@ -62,10 +62,11 @@ display: none !important;
     width: 100%;
     margin: auto;
 }
+
 .section .container {
     padding-top: 60px;
     padding-bottom: 70px;
-} 
+}
 
 .section-title {
     flex: 0 0 100%;
@@ -127,7 +128,7 @@ display: none !important;
 }
 
 .shadow-dark {
-box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
 
 .aside {
@@ -259,9 +260,9 @@ box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 
 /* home */
 .home {
- min-height: 100vh;
- display: flex;
- color: var(--text-black-900)
+    min-height: 100vh;
+    display: flex;
+    color: var(--text-black-900)
 }
 
 .home .home-info {
@@ -278,7 +279,7 @@ h3.hello span {
     font-family: 'Clicker Script', cursive;
     font-size: 30px;
     font-weight: 700;
-    color: var(--skin-color) ;
+    color: var(--skin-color);
 }
 
 h3.my-profession {
@@ -296,14 +297,14 @@ h3.my-profession {
     color: var(--text-black-700);
 }
 
-.home .home-img{
+.home .home-img {
     flex: 0 0 40%;
     max-width: 40%;
     text-align: center;
     position: relative;
 }
 
-.home .home-img::before{
+.home .home-img::before {
     content: "";
     position: absolute;
     height: 80px;
@@ -314,7 +315,7 @@ h3.my-profession {
     top: -40px;
 }
 
-.home .home-img::after{
+.home .home-img::after {
     content: "";
     position: absolute;
     height: 80px;
@@ -368,7 +369,7 @@ h3.my-profession {
 
 .about .about-content .personal-info .info-item {
     flex: 0 0 50%;
-    max-width:  50%;
+    max-width: 50%;
 }
 
 .about .about-content .personal-info .info-item p {
@@ -524,6 +525,7 @@ h3.my-profession {
     text-align: justify;
     color: var(--text-black-700);
 }
+
 .service .container {
     padding-bottom: 40px;
 }
@@ -543,7 +545,7 @@ h3.my-profession {
     transition: all 03s ease;
 }
 
-.service .service-item .service-item-inner:hover{
+.service .service-item .service-item-inner:hover {
     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
 
@@ -568,9 +570,9 @@ h3.my-profession {
     background: var(--skin-color);
 }
 
-.service .service-item .service-item-inner:hover .icon .fa{
-font-size: 25px;
-color: #ffffff;
+.service .service-item .service-item-inner:hover .icon .fa {
+    font-size: 25px;
+    color: #ffffff;
 }
 
 .service .service-item .service-item-inner h4 {
@@ -618,5 +620,92 @@ color: #ffffff;
 .portfolio .portfolio-item-inner .portfolio-img img {
     width: 100%;
     display: block;
-    cursor: pointer;
+}
+
+.contact-title {
+    color: var(--skin-color);
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.contact-sub-title {
+    color: var(--text-black-900);
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 60px;
+}
+
+.contact .contact-info-item {
+    flex: 0 0 25%;
+    max-width: 25%;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.contact .contact-info-item .icon {
+    display: inline-block;
+}
+
+.contact .contact-info-item .icon .fa {
+    font-size: 25px;
+    color: var(--skin-color);
+}
+
+.contact .contact-info-item h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-black-900);
+    text-transform: capitalize;
+    margin: 15px 0 5px;
+}
+
+.contact .contact-info-item p {
+    font-size: 16px;
+    line-height: 25px;
+    color: var(--text-black-700);
+}
+
+.contact .contact-form {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.contact .contact-form .col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.contact .contact-form .col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.contact .contact-form .form-item {
+    margin-bottom: 30px;
+}
+
+.contact .contact-form .form-item .form-control {
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    background: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    padding: 10px 25px;
+    font-size: 16px;
+    color: var(--text-black-700);
+    transition: all 0.3s ease;
+}
+
+.contact .contact-form .form-item .form-control:focus {
+    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+}
+
+.contact .contact-form .form-item textarea.form-control {
+    height: 140px;
+}
+
+.contact .contact-form .btn {
+    height: 50px;
+    padding: 0 50px;
 }
