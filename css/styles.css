@@ -8,12 +8,24 @@
     --text-black-700: #504e70;
 }
 
+::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+::-webkit-scrollbar-track {
+    background: #393939;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #151515;
+}
+
 body.dark {
-        --bg-black-900: #151515;
-        --bg-black-100: #222222;
-        --bg-black-50: #393939;
-        --text-black-900: #ffffff;
-        --text-black-700: #e9e9e9;
+    --bg-black-900: #151515;
+    --bg-black-100: #222222;
+    --bg-black-50: #393939;
+    --text-black-900: #ffffff;
+    --text-black-700: #e9e9e9;
 }
 
 body {
@@ -67,13 +79,12 @@ ul {
 }
 
 @keyframes slideSection {
-    0% 
-    {
-    transform: translateX(100%);
+    0% {
+        transform: translateX(100%);
     }
-    100%
-    {
-    transform: translateX(0%);
+
+    100% {
+        transform: translateX(0%);
     }
 }
 
@@ -242,6 +253,7 @@ ul {
     display: inline-block;
     position: relative;
 }
+
 .aside .nav-toggler.open span {
     background-color: transparent;
 }
@@ -755,9 +767,14 @@ h3.my-profession {
 
 @media (max-width: 1199px) {
 
+    .section .container {
+        padding-top: 70px;
+    }
+
     .aside {
         left: -270px;
     }
+
     .aside.open {
         left: 0;
     }
@@ -786,7 +803,7 @@ h3.my-profession {
     }
 }
 
-@media (max-width: 991px) { 
+@media (max-width: 991px) {
 
     .home .home-info {
         flex: 0 0 100%;
@@ -797,8 +814,8 @@ h3.my-profession {
         display: none;
     }
 
-    .service .service-item, 
-    .portfolio .portfolio-item, 
+    .service .service-item,
+    .portfolio .portfolio-item,
     .contact .contact-info-item {
         flex: 0 0 50%;
         max-width: 50%;
@@ -811,7 +828,7 @@ h3.my-profession {
     .about .about-content .skills,
     .about .about-content .education,
     .about .about-content .experiance,
-    .service .service-item, 
+    .service .service-item,
     .portfolio .portfolio-item,
     .contact .contact-info-item,
     .contact .contact-form .col-6 {
