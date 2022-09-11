@@ -1,6 +1,6 @@
 /* ------===== tying animation =====------- */
 var typed = new Typed(".typing", {
-    strings: ["Web Designer", "Web Developer", "And More"],
+    strings: ["Web developer", "Web designer", "And  much more.."],
     typeSpeed: 100,
     backSpeed: 60,
     loop: true
