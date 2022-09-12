@@ -6,6 +6,7 @@
     --bg-black-50: #393939;
     --text-black-900: #ffffff;
     --text-black-700: #e9e9e9;
+    --additional-white: #ffffff
 }
 
 ::-webkit-scrollbar {
@@ -26,6 +27,7 @@ body.light {
     --bg-black-50: #e8dfec;
     --text-black-900: #302e4d;
     --text-black-700: #504e70;
+    --additional-white: #151515;
 }
 
 body {
@@ -95,6 +97,11 @@ ul {
 .padd-15 {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.padd-20 {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .container {
@@ -629,10 +636,6 @@ h3.my-profession {
     transition: all 01s ease;
 }
 
-.coding .coding-item .coding-item-inner:hover {
-    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
-}
-
 .coding .coding-item .coding-item-inner .icon {
     height: 60px;
     width: 60px;
@@ -685,17 +688,23 @@ h3.my-profession {
 }
 
 .project .project-item {
-    flex: 0 0 33.33%;
-    max-width: 33.33%;
+    flex: 0 0 50%;
+    max-width: 50%;
     margin-bottom: 30px;
 }
 
 .project .project-item-inner {
-    border: 6px solid rgb(56, 56, 56);
+    border: 1px solid var(--bg-black-50);;
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
     transition: all 01s ease;
+}
+
+.project .project-item-inner:hover {
+    transition: all 0.3s ease;
+    scale: 1.04;
+    border: 1px solid var(--additional-white);
 }
 
 .project .project-item-inner .project-img img {
@@ -703,6 +712,11 @@ h3.my-profession {
     display: block;
 }
 
+
+
+/* .coding .coding-item .coding-item-inner:hover {
+    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+} */
 
 /* contact */
 
@@ -751,7 +765,7 @@ h3.my-profession {
 }
 
 .contact .contact-info-item .contact-info-item-inner:hover {
-    border: 1px solid #ffffff;
+    border: 1px solid var(--additional-white);
 }
 
 .contact .contact-info-item .contact-info-item-inner:hover .icon {
