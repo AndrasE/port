@@ -171,6 +171,9 @@ ul {
     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
 
+
+/* aside */
+
 .aside {
     width: 270px;
     background: var(--bg-black-100);
@@ -314,7 +317,9 @@ ul {
     margin-right: 15px;
 }
 
+
 /* home */
+
 .home {
     min-height: 100vh;
     display: flex;
@@ -388,7 +393,8 @@ h3.my-profession {
     border-radius: 5px;
 }
 
-/* About */
+
+/* about */
 
 .about .about-content {
     flex: 0 0 100%;
@@ -528,6 +534,7 @@ h3.my-profession {
     border-radius: 10px;
     width: 100%;
     position: relative;
+    transition: all 01s ease;
 }
 
 .about .about-content .timeline .timeline-item {
@@ -586,56 +593,73 @@ h3.my-profession {
     color: var(--text-black-700);
 }
 
-.service .container {
+
+/* coding */
+
+.coding .container {
     padding-bottom: 40px;
 }
 
-.service .service-item {
+.coding .coding-text h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: var(--text-black-900);
+}
+
+.coding .coding-text p {
+    font-size: 16px;
+    line-height: 25px;
+    padding-bottom: 45px;
+    color: var(--text-black-700);
+}
+
+.coding .coding-item {
     margin-bottom: 30px;
     flex: 0 0 33.33%;
     max-width: 33.33%;
 }
 
-.service .service-item .service-item-inner {
+.coding .coding-item .coding-item-inner {
     background-color: var(--bg-black-100);
     border: 1px solid var(--bg-black-50);
     border-radius: 10px;
     padding: 30px 15px;
     text-align: center;
-    transition: all 03s ease;
+    transition: all 01s ease;
 }
 
-.service .service-item .service-item-inner:hover {
+.coding .coding-item .coding-item-inner:hover {
     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
 
-.service .service-item .service-item-inner .icon {
+.coding .coding-item .coding-item-inner .icon {
     height: 60px;
     width: 60px;
     border-radius: 50%;
     display: block;
-    margin: 0 auto 30px;
+    margin: 0 auto 5px;
     text-align: center;
     transition: all 0.3s ease;
 }
 
-.service .service-item .service-item-inner .icon .fa-brands {
+.coding .coding-item .coding-item-inner .icon .fa-brands {
     font-size: 40px;
     line-height: 60px;
     color: var(--skin-color);
     transition: all 0.3s ease;
 }
 
-.service .service-item .service-item-inner:hover .icon {
+/* .coding .coding-item .coding-item-inner:hover .icon {
     background: var(--skin-color);
-}
+} */
 
-.service .service-item .service-item-inner:hover .icon .fa-brands {
+/* .coding .coding-item .coding-item-inner:hover .icon .fa-brands {
     font-size: 25px;
     color: #ffffff;
-}
+} */
 
-.service .service-item .service-item-inner h4 {
+.coding .coding-item .coding-item-inner h4 {
     font-size: 18px;
     margin-bottom: 15px;
     color: var(--text-black-900);
@@ -643,44 +667,53 @@ h3.my-profession {
     text-transform: capitalize;
 }
 
-.service .service-item .service-item-inner p {
+.coding .coding-item .coding-item-inner p {
     font-size: 16px;
     color: var(--text-black-700);
     line-height: 25px;
+    text-align: justify;
 }
 
-.portfolio .container {
+
+/* project */
+
+.project .container {
     padding-bottom: 40x;
 }
 
-.portfolio .portfolio-heading {
+.project .project-heading {
     flex: 0 0 100%;
     max-width: 100%;
     margin-bottom: 40px;
 }
 
-.portfolio .portfolio-heading h2 {
+.project .project-heading h2 {
     color: var(--text-black-900);
     font-weight: 500;
+    transition: all 01s ease;
 }
 
-.portfolio .portfolio-item {
+.project .project-item {
     flex: 0 0 33.33%;
     max-width: 33.33%;
     margin-bottom: 30px;
 }
 
-.portfolio .portfolio-item-inner {
+.project .project-item-inner {
     border: 6px solid var(--bg-black-100);
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
+    transition: all 01s ease;
 }
 
-.portfolio .portfolio-item-inner .portfolio-img img {
+.project .project-item-inner .project-img img {
     width: 100%;
     display: block;
 }
+
+
+/* contact */
 
 .contact-title {
     color: var(--skin-color);
@@ -770,6 +803,9 @@ h3.my-profession {
     padding: 0 50px;
 }
 
+
+/* @ media queries @ */
+
 @media (max-width: 1199px) {
 
     .section .container {
@@ -819,8 +855,8 @@ h3.my-profession {
         display: none;
     }
 
-    .service .service-item,
-    .portfolio .portfolio-item,
+    .coding .coding-item,
+    .project .project-item,
     .contact .contact-info-item {
         flex: 0 0 50%;
         max-width: 50%;
@@ -833,8 +869,8 @@ h3.my-profession {
     .about .about-content .skills,
     .about .about-content .education,
     .about .about-content .experiance,
-    .service .service-item,
-    .portfolio .portfolio-item,
+    .coding .coding-item,
+    .project .project-item,
     .contact .contact-info-item,
     .contact .contact-form .col-6 {
         flex: 0 0 100%;
