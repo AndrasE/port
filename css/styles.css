@@ -650,15 +650,6 @@ h3.my-profession {
     transition: all 0.3s ease;
 }
 
-/* .coding .coding-item .coding-item-inner:hover .icon {
-    background: var(--skin-color);
-} */
-
-/* .coding .coding-item .coding-item-inner:hover .icon .fa-brands {
-    font-size: 25px;
-    color: #ffffff;
-} */
-
 .coding .coding-item .coding-item-inner h4 {
     font-size: 18px;
     margin-bottom: 15px;
@@ -700,7 +691,7 @@ h3.my-profession {
 }
 
 .project .project-item-inner {
-    border: 6px solid var(--bg-black-100);
+    border: 6px solid rgb(56, 56, 56);
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
@@ -737,13 +728,52 @@ h3.my-profession {
 }
 
 .contact .contact-info-item .icon {
-    display: inline-block;
+    height: 45px;
+    width: 45px;
+    border-radius: 40%;
+    display: block;
+    margin: 0 auto 5px;
+    text-align: center;
+    padding-top: 10px;
 }
 
 .contact .contact-info-item .icon .fa {
     font-size: 25px;
     color: var(--skin-color);
 }
+
+.contact .contact-info-item .contact-info-item-inner {
+    border: 1px solid var(--bg-black-50);
+    border-radius: 10px;
+    padding: 30px 5px;
+    text-align: center;
+    transition: all 01s ease;
+}
+
+.contact .contact-info-item .contact-info-item-inner:hover {
+    border: 1px solid #ffffff;
+}
+
+.contact .contact-info-item .contact-info-item-inner:hover .icon {
+    padding-top: 12px;
+    background-color: var(--skin-color);
+    transition: all 0.3s ease;
+}
+
+.contact .contact-info-item .contact-info-item-inner:hover .icon .fa {
+    color: #ffffff;
+    transition: all 0.3s ease;
+    font-size: 20px;
+}
+
+/* .coding .coding-item .coding-item-inner:hover .icon {
+    background: var(--skin-color);
+} */
+
+/* .coding .coding-item .coding-item-inner:hover .icon .fa-brands {
+    font-size: 25px;
+    color: #ffffff;
+} */
 
 .contact .contact-info-item h4 {
     font-size: 18px;
