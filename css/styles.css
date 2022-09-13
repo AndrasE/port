@@ -428,6 +428,7 @@ h3.my-profession {
     font-size: 16px;
     line-height: 25px;
     color: var(--text-black-700);
+    text-align: justify;
 }
 
 .about .about-content .personal-info {
@@ -618,6 +619,7 @@ h3.my-profession {
     font-size: 16px;
     line-height: 25px;
     padding-bottom: 45px;
+    text-align: justify;
     color: var(--text-black-700);
 }
 
@@ -916,8 +918,17 @@ h3.my-profession {
     .coding .coding-item,
     .project .project-item,
     .contact .contact-info-item,
+    .contact .contact-info-item .coding-item-inner,
     .contact .contact-form .col-6 {
         flex: 0 0 100%;
         max-width: 100%;
     }
+
+@media (max-width: 600px) {
+    .section.open {
+        left: 0;
+    }
+}
+
+    
 }
