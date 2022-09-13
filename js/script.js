@@ -25,7 +25,7 @@ for (let i = 0; i < totalNavList; i++) {
         for (let j = 0; j < totalNavList; j++) {
 
             if (navList[j].querySelector("a").classList.contains("active")) {
-                
+
                 addBackSection(j)
                 // allSection[j].classList.add("back-section");
             }
@@ -34,15 +34,14 @@ for (let i = 0; i < totalNavList; i++) {
         this.classList.add("active")
         showSection(this)
 
-        if(window.innerWidth < 1200) {
+        if (window.innerWidth < 1200) {
             asideSectionTogglerBtn();
         }
-
     })
 }
 
 function removeBackSection() {
-    for (let i=0; i<totalSection; i++) {
+    for (let i = 0; i < totalSection; i++) {
         allSection[i].classList.remove("back-section");
     }
 }
@@ -60,7 +59,7 @@ function showSection(element) {
 }
 
 function updateNav(element) {
-    for (let i = 0; i < totalNavList; i++) { 
+    for (let i = 0; i < totalNavList; i++) {
         navList[i].querySelector("a").classList.remove("active");
         const target = element.getAttribute("href").split("#")[1];
         if (target === navList[i].querySelector("a").getAttribute("href").split("#")[1]) {
@@ -70,8 +69,8 @@ function updateNav(element) {
 
 }
 
-
-document.querySelector(".hire-me").addEventListener("click", function() {
+/* ------===== hire-me btn redirect not using nav event listeners above =====------- */
+document.querySelector(".hire-me").addEventListener("click", function () {
     const sectionIndex = this.getAttribute("data-section-index");
     console.log(sectionIndex);
     showSection(this);
@@ -81,16 +80,33 @@ document.querySelector(".hire-me").addEventListener("click", function() {
 })
 
 const navTogglerBtn = document.querySelector(".nav-toggler"),
-        aside = document.querySelector(".aside");
-        navTogglerBtn.addEventListener("click", () => {
-            asideSectionTogglerBtn();
-        })
+    aside = document.querySelector(".aside");
+navTogglerBtn.addEventListener("click", () => {
+    asideSectionTogglerBtn();
+})
 
-        function asideSectionTogglerBtn() {
-            aside.classList.toggle("open");
-            navTogglerBtn.classList.toggle("open");
-            
-            for (let i=0; i<totalSection; i++) {
-                allSection[i].classList.toggle("open");
-            }
-        }
+function asideSectionTogglerBtn() {
+    aside.classList.toggle("open");
+    navTogglerBtn.classList.toggle("open");
+
+    for (let i = 0; i < totalSection; i++) {
+        allSection[i].classList.toggle("open");
+    }
+}
+
+/* ------===== project navigation =====------- */
+const projectNav = document.querySelector(".project-nav"),
+    projectList = projectNav.querySelectorAll(".project-img"),
+    totalProjectList = projectList.length;
+
+for (let i = 0; i < totalProjectList; i++) {
+    const a = projectList[i].querySelector("a");
+    a.addEventListener("click", function () {
+        const sectionIndex = this.getAttribute("data-section-index");
+        console.log(sectionIndex);
+        showSection(this);
+        removeBackSection();
+        addBackSection(sectionIndex);
+    })
+}
+
