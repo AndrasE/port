@@ -18,14 +18,15 @@ for (let i = 0; i < totalNavList; i++) {
     a.addEventListener("click", function () {
 
         removeBackSection()
-        for (let i = 0; i < totalSection; i++) {
-            allSection[i].classList.remove("back-section")
-        }
+        // for (let i = 0; i < totalSection; i++) {
+        //     allSection[i].classList.remove("back-section")
+        // }
 
         for (let j = 0; j < totalNavList; j++) {
+            setActiveProjectBack();
 
             if (navList[j].querySelector("a").classList.contains("active")) {
-
+                
                 addBackSection(j)
                 // allSection[j].classList.add("back-section");
             }
@@ -94,7 +95,10 @@ function asideSectionTogglerBtn() {
     }
 }
 
-/* ------===== project navigation =====------- */
+/* ------===== project navigation from Nav/project  =====------- */
+/* ------===== clicking project img redirect project page =====------- */
+/* ------===== project collection in backsection (data-secton-index=3) =====------- */
+
 const projectNav = document.querySelector(".project-nav"),
     projectList = projectNav.querySelectorAll(".project-img"),
     totalProjectList = projectList.length;
@@ -103,10 +107,28 @@ for (let i = 0; i < totalProjectList; i++) {
     const a = projectList[i].querySelector("a");
     a.addEventListener("click", function () {
         const sectionIndex = this.getAttribute("data-section-index");
-        console.log(sectionIndex);
         showSection(this);
         removeBackSection();
         addBackSection(sectionIndex);
+        console.log(sectionIndex);
     })
+}
+
+/* ------===== get ID of project-section =====------- */
+function setActiveProjectBack() {
+    const project = document.querySelector(".project")
+    const projectActive = document.querySelector("section.active")
+
+    if (project.classList.contains("back-section")) {
+        console.log("back");
+
+        if (projectActive.classList.contains("port-examples")) {
+
+      const projectActiveIndex  = projectActive.getAttribute("data-section-index")
+      console.log(projectActiveIndex);
+      removeBackSection();
+      addBackSection(projectActiveIndex);
+        }
+    } 
 }
 
