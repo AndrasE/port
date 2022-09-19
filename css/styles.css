@@ -626,6 +626,7 @@ h3.my-profession {
     margin-bottom: 30px;
     flex: 0 0 33.33%;
     max-width: 33.33%;
+   
 }
 
 .coding .coding-item .coding-item-inner {
@@ -635,6 +636,7 @@ h3.my-profession {
     padding: 30px 15px;
     text-align: center;
     transition: all 01s ease;
+   
 }
 
 .coding .coding-item .coding-item-inner .icon {
