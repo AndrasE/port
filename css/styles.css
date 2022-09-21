@@ -330,7 +330,8 @@ ul {
 .home {
     min-height: 100vh;
     display: flex;
-    color: var(--text-black-900)
+    color: var(--text-black-900);
+    
 }
 
 .home .home-info {
@@ -364,6 +365,7 @@ h3.my-profession {
     font-size: 20px;
     text-align: justify;
     color: var(--text-black-700);
+   
 }
 
 .home .home-img {
@@ -402,6 +404,10 @@ h3.my-profession {
 
 
 /* about */
+.about {
+    transition: all 0.2s ease;
+}
+
 
 .about .about-content {
     flex: 0 0 100%;
@@ -411,6 +417,7 @@ h3.my-profession {
 .about .about-content .about-text {
     flex: 0 0 100%;
     max-width: 100%;
+    
 }
 
 .about .about-content .about-text h3 {
@@ -418,6 +425,7 @@ h3.my-profession {
     margin-bottom: 15px;
     font-weight: 700;
     color: var(--text-black-900);
+    transition: all 1s ease;
 }
 
 .about .about-content .about-text h3 span {
@@ -429,6 +437,7 @@ h3.my-profession {
     line-height: 25px;
     color: var(--text-black-700);
     text-align: justify;
+    transition: all 1s ease;
 }
 
 .about .about-content .personal-info {
@@ -541,7 +550,7 @@ h3.my-profession {
     border-radius: 10px;
     width: 100%;
     position: relative;
-    transition: all 01s ease;
+    transition: all 0.7s ease;
 }
 
 .about .about-content .timeline .timeline-item {
@@ -603,6 +612,10 @@ h3.my-profession {
 
 /* coding */
 
+.coding {
+    transition: all 0.2s ease;
+}
+
 .coding .container {
     padding-bottom: 40px;
 }
@@ -626,7 +639,7 @@ h3.my-profession {
     margin-bottom: 30px;
     flex: 0 0 33.33%;
     max-width: 33.33%;
-   
+
 }
 
 .coding .coding-item .coding-item-inner {
@@ -635,8 +648,7 @@ h3.my-profession {
     border-radius: 10px;
     padding: 30px 15px;
     text-align: center;
-    transition: all 01s ease;
-   
+    transition: all 0.7s ease;
 }
 
 .coding .coding-item .coding-item-inner .icon {
@@ -646,7 +658,6 @@ h3.my-profession {
     display: block;
     margin: 0 auto 5px;
     text-align: center;
-    transition: all 0.3s ease;
 }
 
 .coding .coding-item .coding-item-inner .icon .fa-brands {
@@ -671,8 +682,17 @@ h3.my-profession {
     text-align: justify;
 }
 
+.coding .coding-item .coding-item-inner:hover {
+    transition: all 0.3s ease;
+    scale: 1.02;
+    border: 1px solid var(--additional-white);
+}
 
 /* project */
+
+.project {
+    transition: all 0.7s ease;
+}
 
 .project .container {
     padding-bottom: 40x;
@@ -697,7 +717,8 @@ h3.my-profession {
 }
 
 .project .project-item-inner {
-    border: 1px solid var(--bg-black-50);;
+    border: 1px solid var(--bg-black-50);
+    ;
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
@@ -706,7 +727,7 @@ h3.my-profession {
 
 .project .project-item-inner:hover {
     transition: all 0.3s ease;
-    scale: 1.04;
+    scale: 1.02;
     border: 1px solid var(--additional-white);
 }
 
@@ -722,6 +743,10 @@ h3.my-profession {
 } */
 
 /* contact */
+
+.contact {
+    transition: all 0.7s ease;
+}
 
 .contact-title {
     color: var(--skin-color);
@@ -950,8 +975,7 @@ h3.my-profession {
         max-width: 50%;
     }
 
-    .port-examples .port-examples-item
-   {
+    .port-examples .port-examples-item {
         flex: 0 0 80%;
         max-width: 80%;
     }
@@ -971,17 +995,14 @@ h3.my-profession {
         max-width: 100%;
     }
 
-    .port-examples .port-examples-item
-    {
-         flex: 0 0 100%;
-         max-width: 100%;
-     }
- }
-    
+    .port-examples .port-examples-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
 @media (max-width: 600px) {
     .section.open {
         left: 0;
     }
 }
-
-
