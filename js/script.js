@@ -26,7 +26,7 @@ for (let i = 0; i < totalNavList; i++) {
             setActiveProjectBack();
 
             if (navList[j].querySelector("a").classList.contains("active")) {
-                
+
                 addBackSection(j)
                 // allSection[j].classList.add("back-section");
             }
@@ -124,11 +124,39 @@ function setActiveProjectBack() {
 
         if (projectActive.classList.contains("port-examples")) {
 
-      const projectActiveIndex  = projectActive.getAttribute("data-section-index")
-      console.log(projectActiveIndex);
-      removeBackSection();
-      addBackSection(projectActiveIndex);
+            const projectActiveIndex = projectActive.getAttribute("data-section-index")
+            console.log(projectActiveIndex);
+            removeBackSection();
+            addBackSection(projectActiveIndex);
         }
-    } 
+    }
 }
+
+/* ------===== all not require sections remain hidden until DOM loaded =====------- */
+/* ------===== reducing slow load time artifacts, once loaded remove class hidden =====------- */
+
+addEventListener('DOMContentLoaded', (event) => {
+
+    const hiddenSectionList = document.querySelectorAll("section.hidden")
+    const totalHiddenSection = hiddenSectionList.length
+
+    console.log("DOM Content Loaded with " + totalHiddenSection + " hidden sections (to reduce overlaying artifacts onload)")
+
+    setTimeout(removeHiddenClasses, 600)
+
+    function removeHiddenClasses() {
+        for (let i = 0; i < totalHiddenSection; i++) {
+            hiddenSectionList[i].classList.remove("hidden");
+        }
+        console.log("Hidden classes removed after inital animation (0.6s)");
+    }
+})
+
+
+/* ------===== performance check in console =====------- */
+window.addEventListener('load', (event) => {
+    const loadTime = (Date.now() - window.performance.timing.navigationStart)/1000;
+    console.log('All assets are loaded in ' + (loadTime) + "s");
+});
+
 

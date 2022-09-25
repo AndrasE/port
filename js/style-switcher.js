@@ -35,7 +35,7 @@ dayNight.addEventListener("click", () => {
 })
 
 
-window.addEventListener("load", () => {
+window.addEventListener('DOMContentLoaded', () => {
     if(document.body.classList.contains("dark")) {
         dayNight.querySelector("i").classList.add("fa-moon") 
     } else {
