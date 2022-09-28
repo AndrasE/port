@@ -160,3 +160,18 @@ window.addEventListener('load', (event) => {
 });
 
 
+
+
+function iframe() {
+document.querySelector(".port-examples-item-inner").innerHTML = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU> </iframe>"
+}
+
+function iframeImg() {
+document.querySelector(".port-examples-item-inner").innerHTML = " <img src=images/loading.gif alt=profile-pic>"
+   
+}
+
+document.getElementById("asd").addEventListener("click", () => {
+    iframeImg()
+    setTimeout(iframe, 600)
+})
