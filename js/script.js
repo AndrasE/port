@@ -179,7 +179,7 @@ document.getElementById("port-example-img-1").addEventListener("click", () => {
 
 /* ------===== port-example-iframe-2 =====------- */
 function iframe2() {
-    document.getElementById("port-example-iframe-2").innerHTML = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
+    document.getElementById("port-example-iframe-2").innerHTML = "<iframe class=youtube, src=https://www.youtube.com/embed/7CruXGDHbgg alt=crud-project> </iframe>"
     }
     
     function iframeImg2() {
@@ -193,7 +193,7 @@ function iframe2() {
 
 /* ------===== port-example-iframe-3 =====------- */
 function iframe3() {
-    document.getElementById("port-example-iframe-3").innerHTML = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
+    document.getElementById("port-example-iframe-3").innerHTML = "<iframe class=youtube, src=https://www.youtube.com/embed/bKgZfTPVJHQ alt=crud-project> </iframe>"
     }
     
     function iframeImg3() {
