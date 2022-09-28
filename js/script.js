@@ -161,16 +161,47 @@ window.addEventListener('load', (event) => {
 
 
 
+/* ------===== lazy load youtube iframe =====------- */
 
-function iframe() {
-document.querySelector(".port-examples-item-inner").innerHTML = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
+/* ------===== port-example-iframe-1 =====------- */
+function iframe1() {
+document.getElementById("port-example-iframe-1").innerHTML = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
 }
 
-function iframeImg() {
-document.querySelector(".port-examples-item-inner").innerHTML = " <img src=images/loading.gif alt=loading-gif>"
+function iframeImg1() {
+document.getElementById("port-example-iframe-1").innerHTML = " <img src=images/loading.gif alt=loading-gif>"
 }
 
-document.getElementById("asd").addEventListener("click", () => {
-    iframeImg()
-    setTimeout(iframe, 600)
-})
+document.getElementById("port-example-img-1").addEventListener("click", () => {
+    iframeImg1()
+    setTimeout(iframe1, 600)
+});
+
+/* ------===== port-example-iframe-2 =====------- */
+function iframe2() {
+    document.getElementById("port-example-iframe-2").innerHTML = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
+    }
+    
+    function iframeImg2() {
+    document.getElementById("port-example-iframe-2").innerHTML = " <img src=images/loading.gif alt=loading-gif>"
+    }
+    
+    document.getElementById("port-example-img-2").addEventListener("click", () => {
+        iframeImg2()
+        setTimeout(iframe2, 600)
+    });
+
+/* ------===== port-example-iframe-3 =====------- */
+function iframe3() {
+    document.getElementById("port-example-iframe-3").innerHTML = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
+    }
+    
+    function iframeImg3() {
+    document.getElementById("port-example-iframe-3").innerHTML = " <img src=images/loading.gif alt=loading-gif>"
+    }
+    
+    document.getElementById("port-example-img-3").addEventListener("click", () => {
+        iframeImg3()
+        setTimeout(iframe3, 600)
+    });
+
