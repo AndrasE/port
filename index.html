@@ -591,11 +591,25 @@
                     <h4 class="contact-sub-title padd-15">IM VERY RESPONSIVE</h4>
                     <!------===== contact form start =====------->
                     <div class="row">
-                        <form action="https://formsubmit.co/rohadtsajt@email.com" method="POST">
-                            <input type="text" name="name" required>
-                            <input type="email" name="email" required>
-                            <button type="submit">Send</button>
-                       </form>
+                        <div class="container">
+                            <h1>FormSubmit Demo</h1>
+                            <form target="_blank" action="https://formsubmit.co/rohadtsajt@gmail.com" method="POST">
+                              <div class="form-group">
+                                <div class="form-row">
+                                  <div class="col">
+                                    <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                                  </div>
+                                  <div class="col">
+                                    <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
+                              </div>
+                              <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
+                            </form>
+                          </div>
                         <!-- <form id="contactform" action="https://formsubmit.io/send/put your email here" method="POST">
                             <input name="name" type="text" id="name">
                             <input name="email" type="email" id="email">
