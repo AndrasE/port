@@ -602,10 +602,6 @@ h3.my-profession {
 
 /* coding */
 
-.coding .container {
-    padding-bottom: 40px;
-}
-
 .coding .coding-text h3 {
     font-size: 24px;
     margin-bottom: 15px;
@@ -841,7 +837,6 @@ h3.my-profession {
 
 
 /* port */
-
 
 .port-examples .port-examples-text h3 {
     font-size: 24px;
