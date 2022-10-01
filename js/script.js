@@ -1,4 +1,4 @@
-/* ------===== tying animation =====------- */
+/* ------===== tying animation typed.js =====------- */
 var typed = new Typed(".typing", {
     strings: ["Web developer", "Web designer", "And more.."],
     typeSpeed: 100,
@@ -6,27 +6,63 @@ var typed = new Typed(".typing", {
     loop: true
 })
 
-/* ------===== style switcher light/dark & colors start =====------- */
+/* ------===== style switcher  & aside toggle =====------- */
 
-/* ------===== toggle style switcher =====------- */
-const styleSwitcherToggler = document.querySelector(".style-toggler");
-styleSwitcherToggler.addEventListener("click", () => {
-    document.querySelector(".style-switcher").classList.toggle("open")
-})
-
-/* ------===== hide open style switcher on scroll =====------- */
 function openStyleSwitcher () {
-        document.querySelector(".style-switcher").classList.add("open")
+    document.querySelector(".style-switcher").classList.add("open")
 }
 
-
 function closeStyleSwitcher () {
-    if (document.querySelector(".style-switcher").classList.contains("open")) {
-        document.querySelector(".style-switcher").classList.remove("open")
+if (document.querySelector(".style-switcher").classList.contains("open")) {
+    document.querySelector(".style-switcher").classList.remove("open")
+}
+}
+
+function openAside() {
+    aside.classList.add("open");
+        navTogglerBtn.classList.add("open");
+
+        for (let i = 0; i < totalSection; i++) {
+            allSection[i].classList.add("open");
+        }
+}
+
+function closeAside() {
+    if (document.querySelector)
+    aside.classList.remove("open");
+    navTogglerBtn.classList.remove("open");
+    
+    for (let i = 0; i < totalSection; i++) {
+        allSection[i].classList.remove("open");
     }
 }
 
-/* ------===== theme colors =====------- */
+/* ------===== toggle style switcher if aside open => close =====------- */
+const styleSwitcherToggler = document.querySelector(".style-toggler");
+styleSwitcherToggler.addEventListener("click", () => {
+    closeAside()
+    document.querySelector(".style-switcher").classList.toggle("open")
+})
+
+/* ------===== toggle aside if style switcher open => close =====------- */
+const navTogglerBtn = document.querySelector(".nav-toggler"),
+aside = document.querySelector(".aside");
+navTogglerBtn.addEventListener("click", () => {
+closeStyleSwitcher();
+asideSectionTogglerBtn();
+})
+
+function asideSectionTogglerBtn() {
+aside.classList.toggle("open");
+navTogglerBtn.classList.toggle("open");
+
+for (let i = 0; i < totalSection; i++) {
+    allSection[i].classList.toggle("open");
+}
+}
+
+
+/* ------===== theme colors alternating =====------- */
 const alternateStyles = document.querySelectorAll(".alternate-style");
 
 function setActiveStyle(color) {
@@ -39,7 +75,7 @@ function setActiveStyle(color) {
     })
 }
 
-/* ------===== theme light/dark mode =====------- */
+/* ------===== theme light/dark mode toggle =====------- */
 const dayNight = document.querySelector(".day-night");
 
 dayNight.addEventListener("click", () => {
@@ -48,7 +84,7 @@ dayNight.addEventListener("click", () => {
     document.body.classList.toggle("light")
 })
 
-
+/* ------===== sun/moon icon toggle =====------- */
 window.addEventListener('DOMContentLoaded', () => {
     if(document.body.classList.contains("dark")) {
         dayNight.querySelector("i").classList.add("fa-moon") 
@@ -56,54 +92,36 @@ window.addEventListener('DOMContentLoaded', () => {
         dayNight.querySelector("i").classList.add("fa-sun") 
     }
     })
+   
 
-/* ------===== style switcher light/dark & colors end =====------- */
-
-
-
-/* ------===== hammer.js (swipe) =====------- */
+/* ------===== hammer.js (swipes) =====------- */
 var myElement = document.querySelector('section');
 var hammer = new Hammer(myElement);
  
-function openAside() {
-    aside.classList.add("open");
-        navTogglerBtn.classList.add("open");
-
-        for (let i = 0; i < totalSection; i++) {
-            allSection[i].classList.add("open");
-        }
-}
-
-function closeAside() {
-    aside.classList.remove("open");
-    navTogglerBtn.classList.remove("open");
-    
-    for (let i = 0; i < totalSection; i++) {
-        allSection[i].classList.remove("open");
-    }
-}
-
 hammer.on('swiperight', function() {
-    closeStyleSwitcher();
-    openAside();
+    if (document.querySelector(".style-switcher").classList.contains("open")) {
+        document.querySelector(".style-switcher").classList.remove("open")
+    } else { openAside()
+    }
   });
 
   hammer.on('swipeleft', function(e) {
-    closeAside();
-    openStyleSwitcher();
-    
+     if (aside.classList.contains("open")) {
+        aside.classList.remove("open")
+        navTogglerBtn.classList.remove("open");
+       
+
+    for (let i = 0; i < totalSection; i++) {
+        allSection[i].classList.toggle("open");
+    }
+    } else { openStyleSwitcher();
+    }
   });
 
   hammer.on('tap', function(e) {
     closeAside();
     closeStyleSwitcher();
   });
-// const mainContainerClick = document.querySelector(".main-container");
-// mainContainerClick.addEventListener("click", () => {
-//     if (document.querySelector(".style-switcher").classList.contains("open")) {
-//         document.querySelector(".style-switcher").classList.remove("open")
-//     }
-// });
 
 
 /* ------===== aside nav bar / show-hide sections =====------- */
@@ -180,20 +198,7 @@ document.querySelector(".hire-me").addEventListener("click", function () {
     addBackSection(sectionIndex);
 })
 
-const navTogglerBtn = document.querySelector(".nav-toggler"),
-    aside = document.querySelector(".aside");
-navTogglerBtn.addEventListener("click", () => {
-    asideSectionTogglerBtn();
-})
 
-function asideSectionTogglerBtn() {
-    aside.classList.toggle("open");
-    navTogglerBtn.classList.toggle("open");
-
-    for (let i = 0; i < totalSection; i++) {
-        allSection[i].classList.toggle("open");
-    }
-}
 
 /* ------===== project navigation from Nav/project  =====------- */
 /* ------===== clicking project img redirect project page =====------- */
