@@ -6,18 +6,104 @@ var typed = new Typed(".typing", {
     loop: true
 })
 
+/* ------===== style switcher light/dark & colors start =====------- */
+
+/* ------===== toggle style switcher =====------- */
+const styleSwitcherToggler = document.querySelector(".style-toggler");
+styleSwitcherToggler.addEventListener("click", () => {
+    document.querySelector(".style-switcher").classList.toggle("open")
+})
+
+/* ------===== hide open style switcher on scroll =====------- */
+function openStyleSwitcher () {
+        document.querySelector(".style-switcher").classList.add("open")
+}
+
+
+function closeStyleSwitcher () {
+    if (document.querySelector(".style-switcher").classList.contains("open")) {
+        document.querySelector(".style-switcher").classList.remove("open")
+    }
+}
+
+/* ------===== theme colors =====------- */
+const alternateStyles = document.querySelectorAll(".alternate-style");
+
+function setActiveStyle(color) {
+    alternateStyles.forEach((style) => {
+        if (color === style.getAttribute("title")) {
+            style.removeAttribute("disabled");
+        } else {
+            style.setAttribute("disabled", "true");
+        }
+    })
+}
+
+/* ------===== theme light/dark mode =====------- */
+const dayNight = document.querySelector(".day-night");
+
+dayNight.addEventListener("click", () => {
+    dayNight.querySelector("i").classList.toggle("fa-sun");
+    dayNight.querySelector("i").classList.toggle("fa-moon");
+    document.body.classList.toggle("light")
+})
+
+
+window.addEventListener('DOMContentLoaded', () => {
+    if(document.body.classList.contains("dark")) {
+        dayNight.querySelector("i").classList.add("fa-moon") 
+    } else {
+        dayNight.querySelector("i").classList.add("fa-sun") 
+    }
+    })
+
+/* ------===== style switcher light/dark & colors end =====------- */
+
+
+
 /* ------===== hammer.js (swipe) =====------- */
 var myElement = document.querySelector('section');
 var hammer = new Hammer(myElement);
+ 
+function openAside() {
+    aside.classList.add("open");
+        navTogglerBtn.classList.add("open");
+
+        for (let i = 0; i < totalSection; i++) {
+            allSection[i].classList.add("open");
+        }
+}
+
+function closeAside() {
+    aside.classList.remove("open");
+    navTogglerBtn.classList.remove("open");
+    
+    for (let i = 0; i < totalSection; i++) {
+        allSection[i].classList.remove("open");
+    }
+}
 
 hammer.on('swiperight', function() {
-    asideSectionTogglerBtn();
+    closeStyleSwitcher();
+    openAside();
   });
 
   hammer.on('swipeleft', function(e) {
-    asideSectionTogglerBtn();
-
+    closeAside();
+    openStyleSwitcher();
+    
   });
+
+  hammer.on('tap', function(e) {
+    closeAside();
+    closeStyleSwitcher();
+  });
+// const mainContainerClick = document.querySelector(".main-container");
+// mainContainerClick.addEventListener("click", () => {
+//     if (document.querySelector(".style-switcher").classList.contains("open")) {
+//         document.querySelector(".style-switcher").classList.remove("open")
+//     }
+// });
 
 
 /* ------===== aside nav bar / show-hide sections =====------- */
