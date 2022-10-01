@@ -97,14 +97,17 @@ window.addEventListener('DOMContentLoaded', () => {
    
 
 /* ------===== hammer.js (swipes) =====------- */
-var myElement = document.querySelector('section');
+var myElement = document.body;
 var hammer = new Hammer(myElement);
  
 hammer.on('swiperight', function() {
     if (document.querySelector(".style-switcher").classList.contains("open")) {
         document.querySelector(".style-switcher").classList.remove("open")
-    } else { openAside()
-    }
+    } else {
+        if (window.innerWidth < 1199) {
+        openAside()
+        console.log("adsaskfmlsdjvsjlkvldks");
+    }}
   });
 
   hammer.on('swipeleft', function(e) {
