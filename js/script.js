@@ -6,6 +6,20 @@ var typed = new Typed(".typing", {
     loop: true
 })
 
+/* ------===== hammer.js (swipe) =====------- */
+var myElement = document.querySelector('html');
+var hammer = new Hammer(myElement);
+
+hammer.on('swiperight', function() {
+    asideSectionTogglerBtn();
+  });
+
+  hammer.on('swipeleft', function(e) {
+    asideSectionTogglerBtn();
+
+  });
+
+
 /* ------===== aside nav bar / show-hide sections =====------- */
 const nav = document.querySelector(".nav"),
     navList = nav.querySelectorAll("li"),
