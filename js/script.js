@@ -78,6 +78,8 @@ function setActiveStyle(color) {
 /* ------===== theme light/dark mode toggle =====------- */
 const dayNight = document.querySelector(".day-night");
 
+
+
 dayNight.addEventListener("click", () => {
     dayNight.querySelector("i").classList.toggle("fa-sun");
     dayNight.querySelector("i").classList.toggle("fa-moon");
@@ -123,6 +125,11 @@ hammer.on('swiperight', function() {
     closeStyleSwitcher();
   });
 
+  hammer.on('doubletap', function(e) {
+    dayNight.querySelector("i").classList.toggle("fa-sun");
+    dayNight.querySelector("i").classList.toggle("fa-moon");
+    document.body.classList.toggle("light")
+  });
 
 /* ------===== aside nav bar / show-hide sections =====------- */
 const nav = document.querySelector(".nav"),
