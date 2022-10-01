@@ -7,7 +7,7 @@ var typed = new Typed(".typing", {
 })
 
 /* ------===== hammer.js (swipe) =====------- */
-var myElement = document.querySelector('.main-container');
+var myElement = document.querySelector('html');
 var hammer = new Hammer(myElement);
 
 hammer.on('swiperight', function() {
