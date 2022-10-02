@@ -177,7 +177,9 @@ document.querySelector(".hire-me").addEventListener("click", function () {
     const sectionIndex = this.getAttribute("data-section-index");
     console.log(sectionIndex);
 
-    if ( window.innerWidth < 1200) {
+    if (window.innerWidth < 1199 && aside.classList.contains("open"))  {
+        aside.classList.remove("open")
+        navTogglerBtn.classList.remove("open");
     showSection(this);
     updateNav(this);
     removeBackSection();
@@ -189,6 +191,8 @@ document.querySelector(".hire-me").addEventListener("click", function () {
     updateNav(this);
     removeBackSection();
     addBackSection(sectionIndex);
+    document.querySelector("section.active").classList.remove("open")           
+
      }
 })
 
