@@ -67,7 +67,7 @@ navTogglerBtn.addEventListener("click", () => {
 
 
 /* ------===== hammer.js (swipes) =====------- */
-var myElement = document.querySelector("section");
+var myElement = document.getElementById('hammer');
 var hammer = new Hammer(myElement);
 
 hammer.on('swiperight', function () {
