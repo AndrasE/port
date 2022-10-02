@@ -55,8 +55,6 @@ const navTogglerBtn = document.querySelector(".nav-toggler"),
     aside = document.querySelector(".aside");
 
 navTogglerBtn.addEventListener("click", () => {
-   
-   
 
     if (window.innerWidth < 1199 && document.querySelector(".style-switcher").classList.contains("open")) {
         const activeSection = document.querySelector("section.active")
@@ -79,10 +77,11 @@ navTogglerBtn.addEventListener("click", () => {
 var myElement = document.querySelector("section.active");
 var hammer = new Hammer(myElement);
 
-function addActiveSectionClass () {
+function addActiveSectionClass() {
     const activeSection = document.querySelector("section.active")
-    activeSection.classList.toggle("open"); 
+    activeSection.classList.toggle("open");
 }
+
 
 hammer.on('swiperight', function () {
     if (document.querySelector(".style-switcher").classList.contains("open")) {
@@ -90,7 +89,7 @@ hammer.on('swiperight', function () {
     } else if (window.innerWidth < 1199) {
         aside.classList.add("open");
         navTogglerBtn.classList.add("open");
-        addActiveSectionClass();        
+        addActiveSectionClass();
     }
 });
 
@@ -98,7 +97,7 @@ hammer.on('swipeleft', function () {
     if (aside.classList.contains("open")) {
         aside.classList.remove("open")
         navTogglerBtn.classList.remove("open");
-        addActiveSectionClass();   
+        addActiveSectionClass();
     } else {
         document.querySelector(".style-switcher").classList.add("open")
     }
@@ -203,7 +202,7 @@ for (let i = 0; i < totalProjectList; i++) {
         showSection(this);
         removeBackSection();
         addBackSection(sectionIndex);
-        console.log(sectionIndex);
+        // console.log(sectionIndex);
     })
 }
 
