@@ -6,62 +6,6 @@ var typed = new Typed(".typing", {
     loop: true
 })
 
-/* ------===== style switcher  & aside toggle =====------- */
-
-function openStyleSwitcher () {
-    document.querySelector(".style-switcher").classList.add("open")
-}
-
-function closeStyleSwitcher () {
-if (document.querySelector(".style-switcher").classList.contains("open")) {
-    document.querySelector(".style-switcher").classList.remove("open")
-}
-}
-
-function openAside() {
-    aside.classList.add("open");
-        navTogglerBtn.classList.add("open");
-
-        for (let i = 0; i < totalSection; i++) {
-            allSection[i].classList.add("open");
-        }
-}
-
-function closeAside() {
-    if (document.querySelector)
-    aside.classList.remove("open");
-    navTogglerBtn.classList.remove("open");
-    
-    for (let i = 0; i < totalSection; i++) {
-        allSection[i].classList.remove("open");
-    }
-}
-
-/* ------===== toggle style switcher if aside open => close =====------- */
-const styleSwitcherToggler = document.querySelector(".style-toggler");
-styleSwitcherToggler.addEventListener("click", () => {
-    closeAside()
-    document.querySelector(".style-switcher").classList.toggle("open")
-})
-
-/* ------===== toggle aside if style switcher open => close =====------- */
-const navTogglerBtn = document.querySelector(".nav-toggler"),
-aside = document.querySelector(".aside");
-navTogglerBtn.addEventListener("click", () => {
-closeStyleSwitcher();
-asideSectionTogglerBtn();
-})
-
-function asideSectionTogglerBtn() {
-aside.classList.toggle("open");
-navTogglerBtn.classList.toggle("open");
-
-for (let i = 0; i < totalSection; i++) {
-    allSection[i].classList.toggle("open");
-}
-}
-
-
 /* ------===== theme colors alternating =====------- */
 const alternateStyles = document.querySelectorAll(".alternate-style");
 
@@ -78,61 +22,77 @@ function setActiveStyle(color) {
 /* ------===== theme light/dark mode toggle =====------- */
 const dayNight = document.querySelector(".day-night");
 
-
-
 dayNight.addEventListener("click", () => {
     dayNight.querySelector("i").classList.toggle("fa-sun");
     dayNight.querySelector("i").classList.toggle("fa-moon");
     document.body.classList.toggle("light")
 })
 
-/* ------===== sun/moon icon toggle =====------- */
+/* ------===== sun/moon icon toggle on DOM-load =====------- */
 window.addEventListener('DOMContentLoaded', () => {
-    if(document.body.classList.contains("dark")) {
-        dayNight.querySelector("i").classList.add("fa-moon") 
+    if (document.body.classList.contains("dark")) {
+        dayNight.querySelector("i").classList.add("fa-moon")
     } else {
-        dayNight.querySelector("i").classList.add("fa-sun") 
+        dayNight.querySelector("i").classList.add("fa-sun")
     }
-    })
-   
+})
+
+/* ------=====  style switcher toggle =====------- */
+const styleSwitcherToggler = document.querySelector(".style-toggler");
+
+styleSwitcherToggler.addEventListener("click", () => {
+    if (window.innerWidth < 1199 && aside.classList.contains("open")) {
+        aside.classList.remove("open");
+        navTogglerBtn.classList.remove("open");
+        document.querySelector(".style-switcher").classList.toggle("open")
+    } else {
+        document.querySelector(".style-switcher").classList.toggle("open")
+    }
+})
+
+/* ------===== toggle aside if style switcher open => close =====------- */
+const navTogglerBtn = document.querySelector(".nav-toggler"),
+    aside = document.querySelector(".aside");
+
+navTogglerBtn.addEventListener("click", () => {
+    if (window.innerWidth < 1199 && document.querySelector(".style-switcher").classList.contains("open")) {
+        aside.classList.toggle("open");
+        navTogglerBtn.classList.toggle("open");
+        document.querySelector(".style-switcher").classList.toggle("open")
+    } else {
+        aside.classList.toggle("open");
+        navTogglerBtn.classList.toggle("open");
+    }
+})
+
 
 /* ------===== hammer.js (swipes) =====------- */
-var myElement = document.body;
+var myElement = document.querySelector("section");
 var hammer = new Hammer(myElement);
- 
-hammer.on('swiperight', function() {
+
+hammer.on('swiperight', function () {
     if (document.querySelector(".style-switcher").classList.contains("open")) {
         document.querySelector(".style-switcher").classList.remove("open")
-    } else {
-        if (window.innerWidth < 1199) {
-        openAside()
-        console.log("adsaskfmlsdjvsjlkvldks");
-    }}
-  });
+    } else if (window.innerWidth < 1199) {
+        aside.classList.add("open");
+        navTogglerBtn.classList.add("open");
+    }
+});
 
-  hammer.on('swipeleft', function(e) {
-     if (aside.classList.contains("open")) {
+hammer.on('swipeleft', function () {
+    if (aside.classList.contains("open")) {
         aside.classList.remove("open")
         navTogglerBtn.classList.remove("open");
-       
-
-    for (let i = 0; i < totalSection; i++) {
-        allSection[i].classList.toggle("open");
+    } else {
+        document.querySelector(".style-switcher").classList.add("open")
     }
-    } else { openStyleSwitcher();
-    }
-  });
+});
 
-  hammer.on('tap', function(e) {
-    closeAside();
-    closeStyleSwitcher();
-  });
-
-  hammer.on('doubletap', function(e) {
+hammer.on('doubletap', function (e) {
     dayNight.querySelector("i").classList.toggle("fa-sun");
     dayNight.querySelector("i").classList.toggle("fa-moon");
     document.body.classList.toggle("light")
-  });
+});
 
 /* ------===== aside nav bar / show-hide sections =====------- */
 const nav = document.querySelector(".nav"),
@@ -164,7 +124,8 @@ for (let i = 0; i < totalNavList; i++) {
         showSection(this)
 
         if (window.innerWidth < 1200) {
-            asideSectionTogglerBtn();
+            aside.classList.toggle("open");
+            navTogglerBtn.classList.toggle("open");
         }
     })
 }
@@ -198,6 +159,7 @@ function updateNav(element) {
 
 }
 
+
 /* ------===== hire-me btn redirect not using nav event listeners above =====------- */
 document.querySelector(".hire-me").addEventListener("click", function () {
     const sectionIndex = this.getAttribute("data-section-index");
@@ -207,7 +169,6 @@ document.querySelector(".hire-me").addEventListener("click", function () {
     removeBackSection();
     addBackSection(sectionIndex);
 })
-
 
 
 /* ------===== project navigation from Nav/project  =====------- */
@@ -247,6 +208,7 @@ function setActiveProjectBack() {
     }
 }
 
+
 /* ------===== all not require sections remain hidden until DOM loaded =====------- */
 /* ------===== reducing slow load time artifacts, once loaded remove class hidden =====------- */
 
@@ -270,21 +232,20 @@ addEventListener('DOMContentLoaded', (event) => {
 
 /* ------===== performance check in console =====------- */
 window.addEventListener('load', (event) => {
-    const loadTime = (Date.now() - window.performance.timing.navigationStart)/1000;
+    const loadTime = (Date.now() - window.performance.timing.navigationStart) / 1000;
     console.log('All assets are loaded in ' + (loadTime) + "s");
 });
-
 
 
 /* ------===== lazy load youtube iframe =====------- */
 
 /* ------===== port-example-iframe-1 =====------- */
 function iframe1() {
-document.getElementById("port-example-iframe-1").innerHTML = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
+    document.getElementById("port-example-iframe-1").innerHTML = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
 }
 
 function iframeImg1() {
-document.getElementById("port-example-iframe-1").innerHTML = " <img src=images/loading.gif alt=loading-gif>"
+    document.getElementById("port-example-iframe-1").innerHTML = " <img src=images/loading.gif alt=loading-gif>"
 }
 
 document.getElementById("port-example-img-1").addEventListener("click", () => {
@@ -295,28 +256,28 @@ document.getElementById("port-example-img-1").addEventListener("click", () => {
 /* ------===== port-example-iframe-2 =====------- */
 function iframe2() {
     document.getElementById("port-example-iframe-2").innerHTML = "<iframe class=youtube, src=https://www.youtube.com/embed/7CruXGDHbgg alt=crud-project> </iframe>"
-    }
-    
-    function iframeImg2() {
+}
+
+function iframeImg2() {
     document.getElementById("port-example-iframe-2").innerHTML = " <img src=images/loading.gif alt=loading-gif>"
-    }
-    
-    document.getElementById("port-example-img-2").addEventListener("click", () => {
-        iframeImg2()
-        setTimeout(iframe2, 600)
-    });
+}
+
+document.getElementById("port-example-img-2").addEventListener("click", () => {
+    iframeImg2()
+    setTimeout(iframe2, 600)
+});
 
 /* ------===== port-example-iframe-3 =====------- */
 function iframe3() {
     document.getElementById("port-example-iframe-3").innerHTML = "<iframe class=youtube, src=https://www.youtube.com/embed/bKgZfTPVJHQ alt=crud-project> </iframe>"
-    }
-    
-    function iframeImg3() {
+}
+
+function iframeImg3() {
     document.getElementById("port-example-iframe-3").innerHTML = " <img src=images/loading.gif alt=loading-gif>"
-    }
-    
-    document.getElementById("port-example-img-3").addEventListener("click", () => {
-        iframeImg3()
-        setTimeout(iframe3, 600)
-    });
+}
+
+document.getElementById("port-example-img-3").addEventListener("click", () => {
+    iframeImg3()
+    setTimeout(iframe3, 600)
+});
 
