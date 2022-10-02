@@ -67,7 +67,8 @@ navTogglerBtn.addEventListener("click", () => {
 
 
 /* ------===== hammer.js (swipes) =====------- */
-var myElement = document.querySelector("section");
+
+var myElement = document.querySelector("section.active");
 var hammer = new Hammer(myElement);
 
 hammer.on('swiperight', function () {
@@ -121,6 +122,7 @@ for (let i = 0; i < totalNavList; i++) {
             navList[j].querySelector("a").classList.remove("active");
         }
         this.classList.add("active")
+        const nah = document.querySelector("section.active");
         showSection(this)
 
         if (window.innerWidth < 1200) {
