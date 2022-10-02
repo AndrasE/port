@@ -45,6 +45,7 @@ styleSwitcherToggler.addEventListener("click", () => {
         aside.classList.remove("open");
         navTogglerBtn.classList.remove("open");
         document.querySelector(".style-switcher").classList.toggle("open")
+        document.querySelector("section.active").classList.toggle("open")
     } else {
         document.querySelector(".style-switcher").classList.toggle("open")
     }
@@ -55,16 +56,14 @@ const navTogglerBtn = document.querySelector(".nav-toggler"),
     aside = document.querySelector(".aside");
 
 navTogglerBtn.addEventListener("click", () => {
+    const activeSection = document.querySelector("section.active")
 
     if (window.innerWidth < 1199 && document.querySelector(".style-switcher").classList.contains("open")) {
-        const activeSection = document.querySelector("section.active")
-
         aside.classList.toggle("open");
         navTogglerBtn.classList.toggle("open");
-        activeSection.classList.toggle("open")
-        document.querySelector(".style-switcher").classList.toggle("open")
+        activeSection.classList.toggle("open");
+        document.querySelector(".style-switcher").classList.remove("open")
     } else {
-        const activeSection = document.querySelector("section.active")
         aside.classList.toggle("open");
         activeSection.classList.toggle("open");
         navTogglerBtn.classList.toggle("open");
@@ -81,8 +80,6 @@ function addActiveSectionClass() {
     const activeSection = document.querySelector("section.active")
     activeSection.classList.toggle("open");
 }
-
-
 hammer.on('swiperight', function () {
     if (document.querySelector(".style-switcher").classList.contains("open")) {
         document.querySelector(".style-switcher").classList.remove("open")
@@ -136,12 +133,12 @@ for (let i = 0; i < totalNavList; i++) {
             navList[j].querySelector("a").classList.remove("active");
         }
         this.classList.add("active")
-        const nah = document.querySelector("section.active");
         showSection(this)
 
         if (window.innerWidth < 1200) {
-            aside.classList.toggle("open");
-            navTogglerBtn.classList.toggle("open");
+            aside.classList.remove("open");
+            navTogglerBtn.classList.remove("open");
+            document.querySelector("section.active").classList.remove("open")
         }
     })
 }
@@ -172,7 +169,6 @@ function updateNav(element) {
             navList[i].querySelector("a").classList.add("active");
         }
     }
-
 }
 
 
@@ -180,10 +176,20 @@ function updateNav(element) {
 document.querySelector(".hire-me").addEventListener("click", function () {
     const sectionIndex = this.getAttribute("data-section-index");
     console.log(sectionIndex);
+
+    if ( window.innerWidth < 1200) {
     showSection(this);
     updateNav(this);
     removeBackSection();
     addBackSection(sectionIndex);
+    document.querySelector("section.active").classList.remove("open")           
+
+     } else {
+    showSection(this);
+    updateNav(this);
+    removeBackSection();
+    addBackSection(sectionIndex);
+     }
 })
 
 
@@ -199,10 +205,21 @@ for (let i = 0; i < totalProjectList; i++) {
     const a = projectList[i].querySelector("a");
     a.addEventListener("click", function () {
         const sectionIndex = this.getAttribute("data-section-index");
+
+        if ( window.innerWidth < 1200) {
+            // document.getElementById(project).classList.add("hidden")
+            showSection(this);
+            removeBackSection();
+            addBackSection(sectionIndex);
+        aside.classList.remove("open");
+        navTogglerBtn.classList.remove("open");
+        document.querySelector("section.active").classList.remove("open")           
+        } else {
         showSection(this);
         removeBackSection();
         addBackSection(sectionIndex);
         // console.log(sectionIndex);
+           }
     })
 }
 
