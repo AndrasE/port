@@ -55,12 +55,20 @@ const navTogglerBtn = document.querySelector(".nav-toggler"),
     aside = document.querySelector(".aside");
 
 navTogglerBtn.addEventListener("click", () => {
+   
+   
+
     if (window.innerWidth < 1199 && document.querySelector(".style-switcher").classList.contains("open")) {
+        const activeSection = document.querySelector("section.active")
+
         aside.classList.toggle("open");
         navTogglerBtn.classList.toggle("open");
+        activeSection.classList.toggle("open")
         document.querySelector(".style-switcher").classList.toggle("open")
     } else {
+        const activeSection = document.querySelector("section.active")
         aside.classList.toggle("open");
+        activeSection.classList.toggle("open");
         navTogglerBtn.classList.toggle("open");
     }
 })
@@ -71,12 +79,18 @@ navTogglerBtn.addEventListener("click", () => {
 var myElement = document.querySelector("section.active");
 var hammer = new Hammer(myElement);
 
+function addActiveSectionClass () {
+    const activeSection = document.querySelector("section.active")
+    activeSection.classList.toggle("open"); 
+}
+
 hammer.on('swiperight', function () {
     if (document.querySelector(".style-switcher").classList.contains("open")) {
         document.querySelector(".style-switcher").classList.remove("open")
     } else if (window.innerWidth < 1199) {
         aside.classList.add("open");
         navTogglerBtn.classList.add("open");
+        addActiveSectionClass();        
     }
 });
 
@@ -84,6 +98,7 @@ hammer.on('swipeleft', function () {
     if (aside.classList.contains("open")) {
         aside.classList.remove("open")
         navTogglerBtn.classList.remove("open");
+        addActiveSectionClass();   
     } else {
         document.querySelector(".style-switcher").classList.add("open")
     }
