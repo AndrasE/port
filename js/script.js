@@ -37,6 +37,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 })
 
+
 /* ------=====  style switcher toggle =====------- */
 const styleSwitcherToggler = document.querySelector(".style-toggler");
 
@@ -64,7 +65,7 @@ navTogglerBtn.addEventListener("click", () => {
         navTogglerBtn.classList.toggle("open");
         activeSection.classList.toggle("open");
         document.querySelector(".style-switcher").classList.remove("open");
-        // if 600<small screen<1200 & project section is set as back-section  => remove it from back //
+        // if 600<small screen<1999 & project section is set as back-section  => remove it from back //
         // setting active section && aside closes the project section would be visiable in the back //
         //  on animation removing to have backsection will prevent it  //
     } else if (window.innerWidth < 1199 && document.querySelector("section.project").classList.contains("back-section")) {
@@ -93,7 +94,9 @@ function addActiveSectionClass() {
 hammer.on('swiperight', function () {
     if (document.querySelector(".style-switcher").classList.contains("open")) {
         document.querySelector(".style-switcher").classList.remove("open")
-    } else if (window.innerWidth < 1199) {
+    } else if (window.innerWidth < 1199 && aside.classList.contains("open")) {
+        
+    } else {
         aside.classList.add("open");
         navTogglerBtn.classList.add("open");
         addActiveSectionClass();
@@ -145,7 +148,7 @@ for (let i = 0; i < totalNavList; i++) {
         this.classList.add("active")
         showSection(this)
 
-        if (window.innerWidth < 1200) {
+        if (window.innerWidth < 1999) {
             aside.classList.remove("open");
             navTogglerBtn.classList.remove("open");
             document.querySelector("section.active").classList.remove("open")
@@ -229,7 +232,7 @@ for (let i = 0; i < totalProjectList; i++) {
 
         if (document.querySelector(".style-switcher").classList.contains("open")) {
             document.querySelector(".style-switcher").classList.remove("open");
-        } if (window.innerWidth < 1200) {
+        } if (window.innerWidth < 1999) {
             showSection(this);
             removeBackSection();
             addBackSection(sectionIndex);
@@ -263,8 +266,7 @@ function setActiveProjectBack() {
 }
 
 
-/* ------===== all not require sections remain hidden until DOM loaded =====------- */
-/* ------===== reducing slow load time artifacts, once loaded remove class hidden =====------- */
+/* ------===== onload/load =====------- */
 
 addEventListener('DOMContentLoaded', (event) => {
     DOMContentLoaded = event.timeStamp/1000;
