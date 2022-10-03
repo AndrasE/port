@@ -190,10 +190,11 @@ function updateNav(element) {
 /* ------===== hire-me btn redirect not using nav event listeners above =====------- */
 document.querySelector(".hire-me").addEventListener("click", function () {
     const sectionIndex = this.getAttribute("data-section-index");
-    // console.log(sectionIndex);
+    console.log(sectionIndex);
 
     if (document.querySelector(".style-switcher").classList.contains("open")) {
         document.querySelector(".style-switcher").classList.remove("open");
+
     } if (window.innerWidth < 1199 && aside.classList.contains("open")) {
         aside.classList.remove("open")
         navTogglerBtn.classList.remove("open");
