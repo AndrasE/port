@@ -58,11 +58,20 @@ const navTogglerBtn = document.querySelector(".nav-toggler"),
 navTogglerBtn.addEventListener("click", () => {
     const activeSection = document.querySelector("section.active")
 
+    // if small screen & style switcher open => close style switcher & open aside //
     if (window.innerWidth < 1199 && document.querySelector(".style-switcher").classList.contains("open")) {
         aside.classList.toggle("open");
         navTogglerBtn.classList.toggle("open");
         activeSection.classList.toggle("open");
-        document.querySelector(".style-switcher").classList.remove("open")
+        document.querySelector(".style-switcher").classList.remove("open");
+        // if 600<small screen<1200 & project section is set as back-section  => remove it from back //
+        // setting active section && aside closes the project section would be visiable in the back //
+        //  on animation removing to have backsection will prevent it  //
+    } else if (window.innerWidth < 1199 && document.querySelector("section.project").classList.contains("back-section")) {
+        document.querySelector("section.project").classList.remove("back-section")
+        aside.classList.toggle("open");
+        activeSection.classList.toggle("open");
+        navTogglerBtn.classList.toggle("open");
     } else {
         aside.classList.toggle("open");
         activeSection.classList.toggle("open");
@@ -149,11 +158,10 @@ function removeBackSection() {
 }
 
 function addBackSection(num) {
-        console.log(num);
-    
+    console.log(num);
+
     allSection[num].classList.add("back-section")
 }
-
 
 function showSection(element) {
     for (let i = 0; i < totalSection; i++) {
@@ -181,7 +189,6 @@ document.querySelector(".hire-me").addEventListener("click", function () {
 
     if (document.querySelector(".style-switcher").classList.contains("open")) {
         document.querySelector(".style-switcher").classList.remove("open");
-
     } if (window.innerWidth < 1199 && aside.classList.contains("open")) {
         aside.classList.remove("open")
         navTogglerBtn.classList.remove("open");
@@ -190,14 +197,12 @@ document.querySelector(".hire-me").addEventListener("click", function () {
         removeBackSection();
         addBackSection(sectionIndex);
         document.querySelector("section.active").classList.remove("open")
-
     } else {
         showSection(this);
         updateNav(this);
         removeBackSection();
         addBackSection(sectionIndex);
         document.querySelector("section.active").classList.remove("open")
-
     }
 })
 
@@ -210,15 +215,15 @@ const projectNav = document.querySelector(".project-nav"),
     projectList = projectNav.querySelectorAll(".project-img"),
     totalProjectList = projectList.length;
 
-function hideProject () {
-document.getElementById("project").className.add("open"); 
-}  
+function hideProject() {
+    document.getElementById("project").className.add("open");
+}
 
 for (let i = 0; i < totalProjectList; i++) {
     const a = projectList[i].querySelector("a");
     a.addEventListener("click", function () {
-        
-    const sectionIndex = this.getAttribute("data-section-index");
+
+        const sectionIndex = this.getAttribute("data-section-index");
 
         if (document.querySelector(".style-switcher").classList.contains("open")) {
             document.querySelector(".style-switcher").classList.remove("open");
