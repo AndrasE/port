@@ -72,7 +72,6 @@ navTogglerBtn.addEventListener("click", () => {
 
 
 /* ------===== hammer.js (swipes) =====------- */
-
 var myElement = document.querySelector("section.active");
 var hammer = new Hammer(myElement);
 
@@ -150,8 +149,11 @@ function removeBackSection() {
 }
 
 function addBackSection(num) {
+        console.log(num);
+    
     allSection[num].classList.add("back-section")
 }
+
 
 function showSection(element) {
     for (let i = 0; i < totalSection; i++) {
@@ -175,7 +177,7 @@ function updateNav(element) {
 /* ------===== hire-me btn redirect not using nav event listeners above =====------- */
 document.querySelector(".hire-me").addEventListener("click", function () {
     const sectionIndex = this.getAttribute("data-section-index");
-    console.log(sectionIndex);
+    // console.log(sectionIndex);
 
     if (document.querySelector(".style-switcher").classList.contains("open")) {
         document.querySelector(".style-switcher").classList.remove("open");
@@ -208,17 +210,23 @@ const projectNav = document.querySelector(".project-nav"),
     projectList = projectNav.querySelectorAll(".project-img"),
     totalProjectList = projectList.length;
 
+function hideProject () {
+document.getElementById("project").className.add("open"); 
+}  
+
 for (let i = 0; i < totalProjectList; i++) {
     const a = projectList[i].querySelector("a");
     a.addEventListener("click", function () {
-        const sectionIndex = this.getAttribute("data-section-index");
+        
+    const sectionIndex = this.getAttribute("data-section-index");
+
         if (document.querySelector(".style-switcher").classList.contains("open")) {
             document.querySelector(".style-switcher").classList.remove("open");
         } if (window.innerWidth < 1200) {
-            // document.getElementById(project).classList.add("hidden")
             showSection(this);
             removeBackSection();
             addBackSection(sectionIndex);
+            // console.log(sectionIndex);
             aside.classList.remove("open");
             navTogglerBtn.classList.remove("open");
             document.querySelector("section.active").classList.remove("open")
@@ -226,21 +234,19 @@ for (let i = 0; i < totalProjectList; i++) {
             showSection(this);
             removeBackSection();
             addBackSection(sectionIndex);
-            // console.log(sectionIndex);
         }
     })
 }
 
-/* ------===== get ID of project-section =====------- */
+/* ------===== get project-example`s data-section-index and send it back =====------- */
 function setActiveProjectBack() {
     const project = document.querySelector(".project")
     const projectActive = document.querySelector("section.active")
 
     if (project.classList.contains("back-section")) {
-        console.log("back");
+        // console.log("back");
 
         if (projectActive.classList.contains("port-examples")) {
-
             const projectActiveIndex = projectActive.getAttribute("data-section-index")
             console.log(projectActiveIndex);
             removeBackSection();
