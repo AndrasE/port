@@ -81,9 +81,11 @@ navTogglerBtn.addEventListener("click", () => {
 
 
 /* ------===== hammer.js (swipes) =====------- */
-var myElement = document.querySelector("section.active");
-var hammer = new Hammer(myElement);
-
+const hammer = new Hammer(
+    document.getElementById('gesture-element'),
+    { inputClass: Hammer.TouchMouseInput } // Does the trick
+  );
+  
 function addActiveSectionClass() {
     const activeSection = document.querySelector("section.active")
     activeSection.classList.toggle("open");
