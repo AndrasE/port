@@ -118,7 +118,7 @@ hammer.on('doubletap', function (e) {
 const nav = document.querySelector(".nav"),
     navList = nav.querySelectorAll("li"),
     totalNavList = navList.length,
-    allSection = document.querySelectorAll(".section"),
+    allSection = document.querySelectorAll("section:not(section.back-section)"),
     totalSection = allSection.length;
 
 for (let i = 0; i < totalNavList; i++) {
@@ -158,7 +158,7 @@ function removeBackSection() {
 }
 
 function addBackSection(num) {
-    console.log(num);
+    // console.log(num);
 
     allSection[num].classList.add("back-section")
 }
@@ -253,7 +253,7 @@ function setActiveProjectBack() {
 
         if (projectActive.classList.contains("port-examples")) {
             const projectActiveIndex = projectActive.getAttribute("data-section-index")
-            console.log(projectActiveIndex);
+            // console.log(projectActiveIndex);
             removeBackSection();
             addBackSection(projectActiveIndex);
         }
@@ -265,27 +265,19 @@ function setActiveProjectBack() {
 /* ------===== reducing slow load time artifacts, once loaded remove class hidden =====------- */
 
 addEventListener('DOMContentLoaded', (event) => {
-
-    const hiddenSectionList = document.querySelectorAll("section.hidden")
-    const totalHiddenSection = hiddenSectionList.length
-
-    console.log("DOM Content Loaded with " + totalHiddenSection + " hidden sections (to reduce overlaying artifacts onload)")
-
-    setTimeout(removeHiddenClasses, 600)
-
-    function removeHiddenClasses() {
-        for (let i = 0; i < totalHiddenSection; i++) {
-            hiddenSectionList[i].classList.remove("hidden");
-        }
-        console.log("Hidden classes removed after inital animation (0.6s)");
-    }
+    DOMContentLoaded = event.timeStamp/1000;
+    DOMContentLoadedStr = String(DOMContentLoaded).slice(0,5);
+ 
+    
+    console.log("DOM Content Loaded in " +DOMContentLoadedStr+ "s "+ "(HTML)");
 })
 
 
 /* ------===== performance check in console =====------- */
 window.addEventListener('load', (event) => {
     const loadTime = (Date.now() - window.performance.timing.navigationStart) / 1000;
-    console.log('All assets are loaded in ' + (loadTime) + "s");
+    console.log('All assets are loaded in ' + (loadTime) + "s " + "(CSS, JS)");
+    // console.log(document.querySelectorAll("section:not(section.back-section)")); //
 });
 
 
@@ -297,7 +289,7 @@ function iframe1() {
 }
 
 function iframeImg1() {
-    document.getElementById("port-example-iframe-1").innerHTML = " <img src=images/loading.gif alt=loading-gif>"
+    document.getElementById("port-example-iframe-1").innerHTML = "<img src=images/loading.gif alt=loading-gif>"
 }
 
 document.getElementById("port-example-img-1").addEventListener("click", () => {
