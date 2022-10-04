@@ -68,7 +68,7 @@ navTogglerBtn.addEventListener("click", () => {
         // if 600<small screen<1999 & project section |or| about section is set as back-section  => remove it from back //
         // setting active section && aside closes the project section would be visiable in the back //
         //  on animation removing to have blank backsection will prevent it  //
-    } else if (window.innerWidth < 1199 && (document.querySelector("section.project").classList.contains("back-section") || document.querySelector("section.about").classList.contains("back-section"))) {
+    } else if (window.innerWidth < 1199 && document.querySelector("section.project").classList.contains("back-section") || document.querySelector("section.about").classList.contains("back-section")) {
         document.querySelector("section.project").classList.remove("back-section")
         document.querySelector("section.about").classList.remove("back-section")
         aside.classList.toggle("open");
@@ -102,6 +102,8 @@ hammer.on('swiperight', function () {
         aside.classList.add("open");
         navTogglerBtn.classList.add("open");
         addActiveSectionClass();
+    } else if (window.innerWidth < 1199 && aside.classList.contains("open")) {
+        // already opened once //
     } else {
         aside.classList.add("open");
         navTogglerBtn.classList.add("open");
