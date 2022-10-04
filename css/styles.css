@@ -972,14 +972,15 @@ h3.my-profession {
     }
 }
 
-/* @media (max-width: 600px) {
+@media (max-width: 600px) {
     .section.open {
         left: 0;
     }
-} */
+}
 
-@media ((max-width: 600px) and (orientation: landscape)) {
+
+@media (orientation: landscape) {
     .section.open {
-        left: 99;
+        left: 222;
     }
 }
