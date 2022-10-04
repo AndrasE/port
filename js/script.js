@@ -238,26 +238,7 @@ for (let i = 0; i < totalProjectList; i++) {
         const sectionIndex = this.getAttribute("data-section-index");
         const sectionId = this.getAttribute("href");
         sectionIdNumber = sectionId.slice(5,6)
-        console.log(sectionIdNumber);
-
-       
-
-
-    //     document.getElementById("port-example-iframe-1").innerHTML = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
-    // }
-    
-    // function iframeImg1() {
-    //     document.getElementById("port-example-iframe-1").innerHTML = "<img src=images/loading.gif alt=loading-gif>"
-    // }
-    
-    // document.getElementById("port-example-img-1").addEventListener("click", () => {
-    //     iframeImg1()
-    //     setTimeout(iframe1, 600)
-    // });
-        
-
-
-
+      
         if (document.querySelector(".style-switcher").classList.contains("open")) {
             document.querySelector(".style-switcher").classList.remove("open");
 
@@ -305,16 +286,20 @@ addEventListener('DOMContentLoaded', (event) => {
 
 /* ------===== start & stop lazy load youtube iframe =====------- */
 function setLazy() { 
-    const iFrame1 = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
-    const iFrame2 = "<iframe class=youtube, src=https://www.youtube.com/embed/7CruXGDHbgg alt=crud-project> </iframe>"
-    const iFrame3 = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
+     iFrame1 = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
+     iFrame2 = "<iframe class=youtube, src=https://www.youtube.com/embed/7CruXGDHbgg alt=crud-project> </iframe>"
+     iFrame3 = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
 
     document.getElementById("port-example-iframe-"+ sectionIdNumber).innerHTML = "<img src=images/loading.gif alt=loading-gif>"
     
     function startLazy () {
-
-    document.getElementById("port-example-iframe-"+ sectionIdNumber).innerHTML = iFrame2
-    console.log(sectionIdNumber);
+        if (sectionIdNumber === "1")  {
+    document.getElementById("port-example-iframe-"+ sectionIdNumber).innerHTML = iFrame1
+        } else if (sectionIdNumber === "2")  {
+            document.getElementById("port-example-iframe-"+ sectionIdNumber).innerHTML = iFrame2
+        } else {
+            document.getElementById("port-example-iframe-"+ sectionIdNumber).innerHTML = iFrame3
+        }
     }
 
     setTimeout(startLazy, 700)   
