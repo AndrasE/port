@@ -988,8 +988,14 @@ h3.my-profession {
     .aside .logo {
             top: 7%;
     }
+    .aside .logo a {
+        padding: 10px 10px 10px 18px ;
+        font-size: 30px;
+        letter-spacing: 5px;
+        position: relative;
+    }
     .aside .nav {
-        margin-top: 40%;
+        margin-top: 45%;
     }
     .aside .nav li a {
         font-size: 16px;
