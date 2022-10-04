@@ -68,8 +68,9 @@ navTogglerBtn.addEventListener("click", () => {
         // if 600<small screen<1999 & project section is set as back-section  => remove it from back //
         // setting active section && aside closes the project section would be visiable in the back //
         //  on animation removing to have backsection will prevent it  //
-    } else if (window.innerWidth < 1199 && document.querySelector("section.project").classList.contains("back-section")) {
+    } else if (window.innerWidth < 1199 && document.querySelector("section.project").classList.contains("back-section") || document.querySelector("section.about").classList.contains("back-section")) {
         document.querySelector("section.project").classList.remove("back-section")
+        document.querySelector("section.about").classList.remove("back-section")
         aside.classList.toggle("open");
         activeSection.classList.toggle("open");
         navTogglerBtn.classList.toggle("open");
@@ -136,6 +137,7 @@ for (let i = 0; i < totalNavList; i++) {
         // }
 
         for (let j = 0; j < totalNavList; j++) {
+            
             setActiveProjectBack();
 
             if (navList[j].querySelector("a").classList.contains("active")) {
@@ -216,7 +218,6 @@ document.querySelector(".hire-me").addEventListener("click", function () {
 /* ------===== project navigation from Nav/project  =====------- */
 /* ------===== clicking project img redirect project page =====------- */
 /* ------===== project collection in backsection (data-secton-index=3) =====------- */
-
 const projectNav = document.querySelector(".project-nav"),
     projectList = projectNav.querySelectorAll(".project-img"),
     totalProjectList = projectList.length;
@@ -266,21 +267,19 @@ function setActiveProjectBack() {
     }
 }
 
-
 /* ------===== onload/load =====------- */
-
 addEventListener('DOMContentLoaded', (event) => {
     DOMContentLoaded = event.timeStamp/1000;
     DOMContentLoadedStr = String(DOMContentLoaded).slice(0,5);
  
-    
     console.log("DOM Content Loaded in " +DOMContentLoadedStr+ "s "+ "(HTML)");
 })
 
 
 /* ------===== performance check in console =====------- */
 window.addEventListener('load', (event) => {
-    const loadTime = (Date.now() - window.performance.timing.navigationStart) / 1000;
+    loadTime = (Date.now() - window.performance.timing.navigationStart) / 1000;
+
     console.log('All assets are loaded in ' + (loadTime) + "s " + "(CSS, JS)");
     // console.log(document.querySelectorAll("section:not(section.back-section)")); //
 });
