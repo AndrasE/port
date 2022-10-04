@@ -896,32 +896,25 @@ h3.my-profession {
     .section .container {
         padding-top: 70px;
     }
-
     .aside {
         left: -270px;
     }
-
     .aside.open {
         left: 0;
     }
-
     .aside .nav-toggler.open {
         left: 300px;
     }
-
     .aside .nav-toggler {
         display: flex;
         left: 30px;
     }
-
     .section {
         left: 0;
     }
-
     .section.open {
         left: 270px;
     }
-
     .about .about-content .personal-info .info-item p span {
         display: block;
         margin-left: 0;
@@ -934,18 +927,15 @@ h3.my-profession {
         flex: 0 0 100%;
         max-width: 100%;
     }
-
     .home .home-img {
         display: none;
     }
-
     .coding .coding-item,
     .project .project-item,
     .contact .contact-info-item {
         flex: 0 0 50%;
         max-width: 50%;
     }
-
     .port-examples .port-examples-item {
         flex: 0 0 80%;
         max-width: 80%;
@@ -965,7 +955,6 @@ h3.my-profession {
         flex: 0 0 100%;
         max-width: 100%;
     }
-
     .port-examples .port-examples-item {
         flex: 0 0 100%;
         max-width: 100%;
@@ -982,7 +971,6 @@ h3.my-profession {
     .aside .nav-toggler.open {
         left: 240px;
     }
-
     .aside .logo a {
         font-size: 25px;
     }
@@ -994,5 +982,19 @@ h3.my-profession {
     }
     .aside .nav li {
         margin-bottom: 35px;
+    }
+}
+@media screen and (max-height: 500px) and (orientation:landscape) {
+    .aside .logo {
+            top: 20px;
+    }
+    .aside .nav {
+        margin-top: 100px;
+    }
+    .aside .nav li a {
+        font-size: 16px;
+    }
+    .aside .nav li {
+        margin-bottom: 15px;
     }
 }
