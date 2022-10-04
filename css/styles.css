@@ -978,7 +978,7 @@ h3.my-profession {
     }
 }
 
-@media (max-width: and (orientation: landscape) {
+@media ((max-width: 600px) and (orientation: landscape)) {
     .section.open {
         left: 99;
     }
