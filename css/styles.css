@@ -989,5 +989,10 @@ h3.my-profession {
     .aside .logo a span {
         font-size: 35px;
     }
-
+    .aside .nav li a {
+        font-size: 18px;
+    }
+    .aside .nav li {
+        margin-bottom: 35px;
+    }
 }
