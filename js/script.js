@@ -65,9 +65,9 @@ navTogglerBtn.addEventListener("click", () => {
         navTogglerBtn.classList.toggle("open");
         activeSection.classList.toggle("open");
         document.querySelector(".style-switcher").classList.remove("open");
-        // if 600<small screen<1999 & project section is set as back-section  => remove it from back //
+        // if 600<small screen<1999 & project section |or| about section is set as back-section  => remove it from back //
         // setting active section && aside closes the project section would be visiable in the back //
-        //  on animation removing to have backsection will prevent it  //
+        //  on animation removing to have blank backsection will prevent it  //
     } else if (window.innerWidth < 1199 && document.querySelector("section.project").classList.contains("back-section") || document.querySelector("section.about").classList.contains("back-section")) {
         document.querySelector("section.project").classList.remove("back-section")
         document.querySelector("section.about").classList.remove("back-section")
@@ -92,11 +92,16 @@ function addActiveSectionClass() {
     const activeSection = document.querySelector("section.active")
     activeSection.classList.toggle("open");
 }
+
 hammer.on('swiperight', function () {
     if (document.querySelector(".style-switcher").classList.contains("open")) {
         document.querySelector(".style-switcher").classList.remove("open")
-    } else if (window.innerWidth < 1199 && aside.classList.contains("open")) {
-        
+    } else if (window.innerWidth < 1199 && document.querySelector("section.project").classList.contains("back-section") || document.querySelector("section.about").classList.contains("back-section")) {
+        document.querySelector("section.project").classList.remove("back-section")
+        document.querySelector("section.about").classList.remove("back-section")
+        aside.classList.add("open");
+        navTogglerBtn.classList.add("open");
+        addActiveSectionClass();
     } else {
         aside.classList.add("open");
         navTogglerBtn.classList.add("open");
