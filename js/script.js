@@ -58,7 +58,7 @@ const navTogglerBtn = document.querySelector(".nav-toggler"),
 
 navTogglerBtn.addEventListener("click", () => {
     const activeSection = document.querySelector("section.active")
-
+    
     // if small screen & style switcher open => close style switcher & open aside //
     if (window.innerWidth < 1200 && document.querySelector(".style-switcher").classList.contains("open")) {
         aside.classList.toggle("open");
@@ -137,7 +137,9 @@ const nav = document.querySelector(".nav"),
 for (let i = 0; i < totalNavList; i++) {
     const a = navList[i].querySelector("a");
     a.addEventListener("click", function () {
-
+        
+        stopIframe()
+        
         removeBackSection()
         // for (let i = 0; i < totalSection; i++) {
         //     allSection[i].classList.remove("back-section")
@@ -146,7 +148,7 @@ for (let i = 0; i < totalNavList; i++) {
         for (let j = 0; j < totalNavList; j++) {
             
             setActiveProjectBack();
-
+           
             if (navList[j].querySelector("a").classList.contains("active")) {
 
                 addBackSection(j)
@@ -229,18 +231,36 @@ const projectNav = document.querySelector(".project-nav"),
     projectList = projectNav.querySelectorAll(".project-img"),
     totalProjectList = projectList.length;
 
-function hideProject() {
-    document.getElementById("project").className.add("open");
-}
-
 for (let i = 0; i < totalProjectList; i++) {
     const a = projectList[i].querySelector("a");
     a.addEventListener("click", function () {
 
         const sectionIndex = this.getAttribute("data-section-index");
+        const sectionId = this.getAttribute("href");
+        sectionIdNumber = sectionId.slice(5,6)
+        console.log(sectionIdNumber);
+
+       
+
+
+    //     document.getElementById("port-example-iframe-1").innerHTML = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
+    // }
+    
+    // function iframeImg1() {
+    //     document.getElementById("port-example-iframe-1").innerHTML = "<img src=images/loading.gif alt=loading-gif>"
+    // }
+    
+    // document.getElementById("port-example-img-1").addEventListener("click", () => {
+    //     iframeImg1()
+    //     setTimeout(iframe1, 600)
+    // });
+        
+
+
 
         if (document.querySelector(".style-switcher").classList.contains("open")) {
             document.querySelector(".style-switcher").classList.remove("open");
+
         } if (window.innerWidth < 1999) {
             showSection(this);
             removeBackSection();
@@ -252,8 +272,9 @@ for (let i = 0; i < totalProjectList; i++) {
         } else {
             showSection(this);
             removeBackSection();
-            addBackSection(sectionIndex);
+            addBackSection(sectionIndex); 
         }
+        setLazy()
     })
 }
 
@@ -282,6 +303,89 @@ addEventListener('DOMContentLoaded', (event) => {
     console.log("DOM Content Loaded in " +DOMContentLoadedStr+ "s "+ "(HTML)");
 })
 
+/* ------===== start & stop lazy load youtube iframe =====------- */
+function setLazy() { 
+    const iFrame1 = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
+    const iFrame2 = "<iframe class=youtube, src=https://www.youtube.com/embed/7CruXGDHbgg alt=crud-project> </iframe>"
+    const iFrame3 = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
+
+    document.getElementById("port-example-iframe-"+ sectionIdNumber).innerHTML = "<img src=images/loading.gif alt=loading-gif>"
+    
+    function startLazy () {
+
+    document.getElementById("port-example-iframe-"+ sectionIdNumber).innerHTML = iFrame2
+    console.log(sectionIdNumber);
+    }
+
+    setTimeout(startLazy, 700)   
+}
+
+function stopIframe () {
+   if (document.querySelector(".port-examples.active")) {
+    activeIframe = document.querySelector(".port-examples.active").id
+    activeIframeNumber = activeIframe.slice(4,5);
+     function stop () {
+        document.getElementById("port-example-iframe-"+activeIframeNumber).innerHTML = "<img src=images/loading.gif alt=loading-gif>"
+   }
+    setTimeout(stop, 700)
+}}
+
+// /* ------===== port-example-iframe-1 =====------- */
+// function iframe1() {
+//     document.getElementById("port-example-iframe-1").innerHTML = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
+// }
+
+// function iframeImg1() {
+//     document.getElementById("port-example-iframe-1").innerHTML = "<img src=images/loading.gif alt=loading-gif>"
+// }
+
+// document.getElementById("port-example-img-1").addEventListener("click", () => {
+//     iframeImg1()
+//     setTimeout(iframe1, 600)
+// });
+
+// const nav = document.querySelector(".nav"),
+//     navList = nav.querySelectorAll("li"),
+//     totalNavList = navList.length,
+//     allSection = document.querySelectorAll("section:not(section.back-section)"),
+//     totalSection = allSection.length;
+
+// for (let i = 0; i < totalNavList; i++) {
+//     const a = navList[i].querySelector("a");
+//     a.addEventListener("click", function () {
+
+
+
+
+
+// /* ------===== port-example-iframe-2 =====------- */
+// function iframe2() {
+//     document.getElementById("port-example-iframe-2").innerHTML = "<iframe class=youtube, src=https://www.youtube.com/embed/7CruXGDHbgg alt=crud-project> </iframe>"
+// }
+
+// function iframeImg2() {
+//     document.getElementById("port-example-iframe-2").innerHTML = " <img src=images/loading.gif alt=loading-gif>"
+// }
+
+// document.getElementById("port-example-img-2").addEventListener("click", () => {
+//     iframeImg2()
+//     setTimeout(iframe2, 600)
+// });
+
+// /* ------===== port-example-iframe-3 =====------- */
+// function iframe3() {
+//     document.getElementById("port-example-iframe-3").innerHTML = "<iframe class=youtube, src=https://www.youtube.com/embed/7CruXGDHbgg alt=crud-project> </iframe>"
+// }
+
+// function iframeImg3() {
+//     document.getElementById("port-example-iframe-3").innerHTML = " <img src=images/loading.gif alt=loading-gif>"
+// }
+
+// document.getElementById("port-example-img-3").addEventListener("click", () => {
+//     iframeImg3()
+//     setTimeout(iframe3, 600)
+// });
+
 
 /* ------===== performance check in console =====------- */
 window.addEventListener('load', (event) => {
@@ -290,49 +394,3 @@ window.addEventListener('load', (event) => {
     console.log('All assets are loaded in ' + (loadTime) + "s " + "(CSS, JS)");
     // console.log(document.querySelectorAll("section:not(section.back-section)")); //
 });
-
-
-/* ------===== lazy load youtube iframe =====------- */
-
-/* ------===== port-example-iframe-1 =====------- */
-function iframe1() {
-    document.getElementById("port-example-iframe-1").innerHTML = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
-}
-
-function iframeImg1() {
-    document.getElementById("port-example-iframe-1").innerHTML = "<img src=images/loading.gif alt=loading-gif>"
-}
-
-document.getElementById("port-example-img-1").addEventListener("click", () => {
-    iframeImg1()
-    setTimeout(iframe1, 600)
-});
-
-/* ------===== port-example-iframe-2 =====------- */
-function iframe2() {
-    document.getElementById("port-example-iframe-2").innerHTML = "<iframe class=youtube, src=https://www.youtube.com/embed/7CruXGDHbgg alt=crud-project> </iframe>"
-}
-
-function iframeImg2() {
-    document.getElementById("port-example-iframe-2").innerHTML = " <img src=images/loading.gif alt=loading-gif>"
-}
-
-document.getElementById("port-example-img-2").addEventListener("click", () => {
-    iframeImg2()
-    setTimeout(iframe2, 600)
-});
-
-/* ------===== port-example-iframe-3 =====------- */
-function iframe3() {
-    document.getElementById("port-example-iframe-3").innerHTML = "<iframe class=youtube, src=https://www.youtube.com/embed/bKgZfTPVJHQ alt=crud-project> </iframe>"
-}
-
-function iframeImg3() {
-    document.getElementById("port-example-iframe-3").innerHTML = " <img src=images/loading.gif alt=loading-gif>"
-}
-
-document.getElementById("port-example-img-3").addEventListener("click", () => {
-    iframeImg3()
-    setTimeout(iframe3, 600)
-});
-
