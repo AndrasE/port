@@ -42,7 +42,7 @@ window.addEventListener('DOMContentLoaded', () => {
 const styleSwitcherToggler = document.querySelector(".style-toggler");
 
 styleSwitcherToggler.addEventListener("click", () => {
-    if (window.innerWidth < 1199 && aside.classList.contains("open")) {
+    if (window.innerWidth < 1200 && aside.classList.contains("open")) {
         aside.classList.remove("open");
         navTogglerBtn.classList.remove("open");
         document.querySelector(".style-switcher").classList.toggle("open")
@@ -60,7 +60,7 @@ navTogglerBtn.addEventListener("click", () => {
     const activeSection = document.querySelector("section.active")
 
     // if small screen & style switcher open => close style switcher & open aside //
-    if (window.innerWidth < 1199 && document.querySelector(".style-switcher").classList.contains("open")) {
+    if (window.innerWidth < 1200 && document.querySelector(".style-switcher").classList.contains("open")) {
         aside.classList.toggle("open");
         navTogglerBtn.classList.toggle("open");
         activeSection.classList.toggle("open");
@@ -68,7 +68,7 @@ navTogglerBtn.addEventListener("click", () => {
         // if 600<small screen<1999 & project section |or| about section is set as back-section  => remove it from back //
         // setting active section && aside closes the project section would be visiable in the back //
         //  on animation removing to have blank backsection will prevent it  //
-    } else if (window.innerWidth < 1199 && document.querySelector("section.project").classList.contains("back-section") || document.querySelector("section.about").classList.contains("back-section")) {
+    } else if (window.innerWidth < 1200 && document.querySelector("section.project").classList.contains("back-section") || document.querySelector("section.about").classList.contains("back-section")) {
         document.querySelector("section.project").classList.remove("back-section")
         document.querySelector("section.about").classList.remove("back-section")
         aside.classList.toggle("open");
@@ -96,13 +96,13 @@ function addActiveSectionClass() {
 hammer.on('swiperight', function () {
     if (document.querySelector(".style-switcher").classList.contains("open")) {
         document.querySelector(".style-switcher").classList.remove("open")
-    } else if (window.innerWidth < 1199 && (document.querySelector("section.project").classList.contains("back-section") || document.querySelector("section.about").classList.contains("back-section"))) {
+    } else if (window.innerWidth < 1200 && (document.querySelector("section.project").classList.contains("back-section") || document.querySelector("section.about").classList.contains("back-section"))) {
         document.querySelector("section.project").classList.remove("back-section")
         document.querySelector("section.about").classList.remove("back-section")
         aside.classList.add("open");
         navTogglerBtn.classList.add("open");
         addActiveSectionClass();
-    } else if (window.innerWidth < 1199 && aside.classList.contains("open")) {
+    } else if (window.innerWidth < 1200 && aside.classList.contains("open")) {
         // already opened once //
     } else {
         aside.classList.add("open");
@@ -204,7 +204,7 @@ document.querySelector(".hire-me").addEventListener("click", function () {
     if (document.querySelector(".style-switcher").classList.contains("open")) {
         document.querySelector(".style-switcher").classList.remove("open");
 
-    } if (window.innerWidth < 1199 && aside.classList.contains("open")) {
+    } if (window.innerWidth < 1200 && aside.classList.contains("open")) {
         aside.classList.remove("open")
         navTogglerBtn.classList.remove("open");
         showSection(this);
