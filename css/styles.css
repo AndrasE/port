@@ -215,7 +215,7 @@ ul {
 
 .aside .logo:hover {
     transition: all 0.2s ease-in-out;
-    scale: 1.03;
+    scale: 1.02;
 }
 
 .aside .logo a span {
