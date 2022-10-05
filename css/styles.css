@@ -196,6 +196,7 @@ ul {
 }
 
 .aside .logo {
+    transition: all 0.2s ease-in-out;
     position: absolute;
     top: 50px;
     font-size: 30px;
@@ -203,6 +204,7 @@ ul {
 }
 
 .aside .logo a {
+    transition: all 0.2s ease-in-out;
     color: var(--text-black-900);
     font-weight: 700;
     padding: 15px 20px;
@@ -211,12 +213,18 @@ ul {
     position: relative;
 }
 
+.aside .logo:hover {
+    transition: all 0.2s ease-in-out;
+    scale: 1.03;
+}
+
 .aside .logo a span {
     font-family: "Clicker Script", cursive;
     font-size: 40px;
 }
 
 .aside .logo a::before {
+    transition: all 0.2s ease-in-out;
     content: "";
     position: absolute;
     width: 20px;
@@ -228,14 +236,31 @@ ul {
 }
 
 .aside .logo a::after {
+    transition: all 0.2s ease-in-out;
     content: "";
     position: absolute;
     width: 20px;
     height: 20px;
     border-top: 5px solid var(--skin-color);
     border-right: 5px solid var(--skin-color);
-    top: 0;
-    right: 0;
+    top: 7px;
+    right: 3px;
+}
+
+.aside .logo a:hover::before {
+    transition: all 0.2s ease-in-out;
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+}
+
+.aside .logo a:hover::after {
+    transition: all 0.2s ease-in-out;
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
 }
 
 .aside .nav-toggler {
