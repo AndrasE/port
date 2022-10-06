@@ -10,6 +10,10 @@
     border-radius: 5px;
     transition: all 0.3s ease;
     transform: translateX(100%);
+    animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.5s;
 }
 
 .style-switcher.open {

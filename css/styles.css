@@ -88,6 +88,15 @@ ul {
     }
 }
 
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
 .hidden {
     display: none !important;
 }
@@ -200,7 +209,11 @@ ul {
     position: absolute;
     top: 50px;
     font-size: 30px;
-    text-transform: capitalize;
+    opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.4s;
 }
 
 .aside .logo a {
@@ -213,9 +226,9 @@ ul {
     position: relative;
 }
 
-.aside .logo:hover {
-    transition: all 0.2s ease-in-out;
-    scale: 1.02;
+.aside .logo:active {
+    transition: all 0.01s ease-in-out;
+    scale: 1.05;
 }
 
 .aside .logo a span {
@@ -233,6 +246,10 @@ ul {
     border-left: 5px solid var(--skin-color);
     bottom: 0;
     left: 0;
+    animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.8s;
 }
 
 .aside .logo a::after {
@@ -245,18 +262,22 @@ ul {
     border-right: 5px solid var(--skin-color);
     top: 7px;
     right: 3px;
+    animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.8s;
 }
 
-.aside .logo a:hover::before {
-    transition: all 0.2s ease-in-out;
+.aside .logo a:active::before {
+    transition: all 0.01s ease-in-out;
     content: "";
     position: absolute;
     width: 15px;
     height: 15px;
 }
 
-.aside .logo a:hover::after {
-    transition: all 0.2s ease-in-out;
+.aside .logo a:active::after {
+    transition: all 0.01s ease-in-out;
     content: "";
     position: absolute;
     width: 15px;
@@ -1014,7 +1035,7 @@ h3.my-profession {
             top: 7%;
     }
     .aside .logo a {
-        padding: 10px 10px 10px 18px ;
+        padding: 15px 15px 10px 18px ;
         font-size: 30px;
         letter-spacing: 5px;
         position: relative;
