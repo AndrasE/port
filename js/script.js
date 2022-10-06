@@ -37,7 +37,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 })
 
-
 /* ------=====  style switcher toggle =====------- */
 const styleSwitcherToggler = document.querySelector(".style-toggler");
 
@@ -80,7 +79,6 @@ navTogglerBtn.addEventListener("click", () => {
         navTogglerBtn.classList.toggle("open");
     }
 })
-
 
 /* ------===== hammer.js (swipes) =====------- */
 const hammer = new Hammer(
@@ -197,7 +195,6 @@ function updateNav(element) {
     }
 }
 
-
 /* ------===== hire-me btn redirect not using nav event listeners above =====------- */
 document.querySelector(".hire-me").addEventListener("click", function () {
     const sectionIndex = this.getAttribute("data-section-index");
@@ -222,7 +219,6 @@ document.querySelector(".hire-me").addEventListener("click", function () {
         document.querySelector("section.active").classList.remove("open")
     }
 })
-
 
 /* ------===== project navigation from Nav/project  =====------- */
 /* ------===== clicking project img redirect project page =====------- */
@@ -276,12 +272,10 @@ function setActiveProjectBack() {
     }
 }
 
-/* ------===== onload/load =====------- */
-addEventListener('DOMContentLoaded', (event) => {
-    DOMContentLoaded = event.timeStamp/1000;
-    DOMContentLoadedStr = String(DOMContentLoaded).slice(0,5);
- 
-    console.log("DOM Content Loaded in " +DOMContentLoadedStr+ "s "+ "(HTML)");
+/* ------===== logo as btn redirect section =====------- */
+document.querySelector(".logo").addEventListener("click", () => {
+    const activeSection = document.querySelector("section.active")
+    activeSection.classList.remove("active")
 })
 
 /* ------===== start & stop lazy load youtube iframe =====------- */
@@ -315,67 +309,16 @@ function stopIframe () {
     setTimeout(stop, 700)
 }}
 
-// /* ------===== port-example-iframe-1 =====------- */
-// function iframe1() {
-//     document.getElementById("port-example-iframe-1").innerHTML = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
-// }
-
-// function iframeImg1() {
-//     document.getElementById("port-example-iframe-1").innerHTML = "<img src=images/loading.gif alt=loading-gif>"
-// }
-
-// document.getElementById("port-example-img-1").addEventListener("click", () => {
-//     iframeImg1()
-//     setTimeout(iframe1, 600)
-// });
-
-// const nav = document.querySelector(".nav"),
-//     navList = nav.querySelectorAll("li"),
-//     totalNavList = navList.length,
-//     allSection = document.querySelectorAll("section:not(section.back-section)"),
-//     totalSection = allSection.length;
-
-// for (let i = 0; i < totalNavList; i++) {
-//     const a = navList[i].querySelector("a");
-//     a.addEventListener("click", function () {
-
-
-
-
-
-// /* ------===== port-example-iframe-2 =====------- */
-// function iframe2() {
-//     document.getElementById("port-example-iframe-2").innerHTML = "<iframe class=youtube, src=https://www.youtube.com/embed/7CruXGDHbgg alt=crud-project> </iframe>"
-// }
-
-// function iframeImg2() {
-//     document.getElementById("port-example-iframe-2").innerHTML = " <img src=images/loading.gif alt=loading-gif>"
-// }
-
-// document.getElementById("port-example-img-2").addEventListener("click", () => {
-//     iframeImg2()
-//     setTimeout(iframe2, 600)
-// });
-
-// /* ------===== port-example-iframe-3 =====------- */
-// function iframe3() {
-//     document.getElementById("port-example-iframe-3").innerHTML = "<iframe class=youtube, src=https://www.youtube.com/embed/7CruXGDHbgg alt=crud-project> </iframe>"
-// }
-
-// function iframeImg3() {
-//     document.getElementById("port-example-iframe-3").innerHTML = " <img src=images/loading.gif alt=loading-gif>"
-// }
-
-// document.getElementById("port-example-img-3").addEventListener("click", () => {
-//     iframeImg3()
-//     setTimeout(iframe3, 600)
-// });
-
-
 /* ------===== performance check in console =====------- */
+addEventListener('DOMContentLoaded', (event) => {
+    DOMContentLoaded = event.timeStamp/1000;
+    DOMContentLoadedStr = String(DOMContentLoaded).slice(0,5);
+ 
+    console.log("DOM Content Loaded in " +DOMContentLoadedStr+ "s "+ "(HTML)");
+})
+
 window.addEventListener('load', (event) => {
     loadTime = (Date.now() - window.performance.timing.navigationStart) / 1000;
 
     console.log('All assets are loaded in ' + (loadTime) + "s " + "(CSS, JS)");
-    // console.log(document.querySelectorAll("section:not(section.back-section)")); //
 });
