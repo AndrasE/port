@@ -38,16 +38,38 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 /* ------=====  style switcher color toggle =====------- */
-// const colorBox = document.querySelector(".colors");
-// const colors = colorBox.querySelectorAll("span");
-// const colorList = colors.length;
+const colorBox = document.querySelector(".colors");
+const colors = colorBox.querySelectorAll("span");
+const colorList = colors.length;
 
-// for (let i = 0; i < colorList; i++) {
-//     const s = colorBox[i].querySelector("span");
-//     s.addEventListener("click", function () {
-//         alert("clicker")
+for (let x = 0; x < colorList; x++) {
+    const spn = colors[x]
+    spn.addEventListener("click", () => {
+
+        spn.classList.add("active-color")
+        console.log("asdcasdasdasda");
+        for (let y = 0; y < colorList; y++) {
+
+            const spnActive = colors[y]
+            
+            if (colors[y].classList.contains("active-color")) {
+                colors[y].classList.remove("active-color")
+            } else {
+                colors[y].classList.add("active-color")
+            }
+           
+        }
+    })
+}
+
+// if (navList[j].querySelector("a").classList.contains("active")) {
+
+//     addBackSection(j)
+//     // allSection[j].classList.add("back-section");
 // }
-// )}
+// navList[j].querySelector("a").classList.remove("active");
+// }
+
 
 /* ------=====  style switcher toggle =====------- */
 const styleSwitcherToggler = document.querySelector(".style-toggler");
@@ -69,7 +91,7 @@ const navTogglerBtn = document.querySelector(".nav-toggler"),
 
 navTogglerBtn.addEventListener("click", () => {
     const activeSection = document.querySelector("section.active")
-    
+
     // if small screen & style switcher open => close style switcher & open aside //
     if (window.innerWidth < 1200 && document.querySelector(".style-switcher").classList.contains("open")) {
         aside.classList.toggle("open");
@@ -95,8 +117,8 @@ navTogglerBtn.addEventListener("click", () => {
 /* ------===== hammer.js (swipes) =====------- */
 const hammer = new Hammer(
     document.getElementById('gesture-element'),
-    { inputClass: Hammer.TouchMouseInput } 
-  );
+    { inputClass: Hammer.TouchMouseInput }
+);
 
 function addActiveSectionClass() {
     const activeSection = document.querySelector("section.active")
@@ -148,7 +170,7 @@ const nav = document.querySelector(".nav"),
 for (let i = 0; i < totalNavList; i++) {
     const a = navList[i].querySelector("a");
     a.addEventListener("click", function () {
-        
+
         stopIframe()
         removeBackSection()
 
@@ -157,9 +179,9 @@ for (let i = 0; i < totalNavList; i++) {
         // }
 
         for (let j = 0; j < totalNavList; j++) {
-            
+
             setActiveProjectBack();
-           
+
             if (navList[j].querySelector("a").classList.contains("active")) {
 
                 addBackSection(j)
@@ -247,8 +269,8 @@ for (let i = 0; i < totalProjectList; i++) {
 
         const sectionIndex = this.getAttribute("data-section-index");
         const sectionId = this.getAttribute("href");
-        sectionIdNumber = sectionId.slice(5,6)
-      
+        sectionIdNumber = sectionId.slice(5, 6)
+
         if (document.querySelector(".style-switcher").classList.contains("open")) {
             document.querySelector(".style-switcher").classList.remove("open");
 
@@ -263,7 +285,7 @@ for (let i = 0; i < totalProjectList; i++) {
         } else {
             showSection(this);
             removeBackSection();
-            addBackSection(sectionIndex); 
+            addBackSection(sectionIndex);
         }
         setLazy()
     })
@@ -293,42 +315,43 @@ document.querySelector(".logo").addEventListener("click", () => {
 })
 
 /* ------===== start & stop lazy load youtube iframe =====------- */
-function setLazy() { 
-     iFrame1 = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
-     iFrame2 = "<iframe class=youtube, src=https://www.youtube.com/embed/7CruXGDHbgg alt=crud-project> </iframe>"
-     iFrame3 = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
+function setLazy() {
+    iFrame1 = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
+    iFrame2 = "<iframe class=youtube, src=https://www.youtube.com/embed/7CruXGDHbgg alt=crud-project> </iframe>"
+    iFrame3 = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
 
-    document.getElementById("port-example-iframe-"+ sectionIdNumber).innerHTML = "<img src=images/loading.gif alt=loading-gif>"
-    
-    function startLazy () {
-        if (sectionIdNumber === "1")  {
-    document.getElementById("port-example-iframe-"+ sectionIdNumber).innerHTML = iFrame1
-        } else if (sectionIdNumber === "2")  {
-            document.getElementById("port-example-iframe-"+ sectionIdNumber).innerHTML = iFrame2
+    document.getElementById("port-example-iframe-" + sectionIdNumber).innerHTML = "<img src=images/loading.gif alt=loading-gif>"
+
+    function startLazy() {
+        if (sectionIdNumber === "1") {
+            document.getElementById("port-example-iframe-" + sectionIdNumber).innerHTML = iFrame1
+        } else if (sectionIdNumber === "2") {
+            document.getElementById("port-example-iframe-" + sectionIdNumber).innerHTML = iFrame2
         } else {
-            document.getElementById("port-example-iframe-"+ sectionIdNumber).innerHTML = iFrame3
+            document.getElementById("port-example-iframe-" + sectionIdNumber).innerHTML = iFrame3
         }
     }
 
-    setTimeout(startLazy, 700)   
+    setTimeout(startLazy, 700)
 }
 
-function stopIframe () {
-   if (document.querySelector(".port-examples.active")) {
-    activeIframe = document.querySelector(".port-examples.active").id
-    activeIframeNumber = activeIframe.slice(4,5);
-     function stop () {
-        document.getElementById("port-example-iframe-"+activeIframeNumber).innerHTML = "<img src=images/loading.gif alt=loading-gif>"
-   }
-    setTimeout(stop, 700)
-}}
+function stopIframe() {
+    if (document.querySelector(".port-examples.active")) {
+        activeIframe = document.querySelector(".port-examples.active").id
+        activeIframeNumber = activeIframe.slice(4, 5);
+        function stop() {
+            document.getElementById("port-example-iframe-" + activeIframeNumber).innerHTML = "<img src=images/loading.gif alt=loading-gif>"
+        }
+        setTimeout(stop, 700)
+    }
+}
 
 /* ------===== performance check in console =====------- */
 addEventListener('DOMContentLoaded', (event) => {
-    DOMContentLoaded = event.timeStamp/1000;
-    DOMContentLoadedStr = String(DOMContentLoaded).slice(0,5);
- 
-    console.log("DOM Content Loaded in " +DOMContentLoadedStr+ "s "+ "(HTML)");
+    DOMContentLoaded = event.timeStamp / 1000;
+    DOMContentLoadedStr = String(DOMContentLoaded).slice(0, 5);
+
+    console.log("DOM Content Loaded in " + DOMContentLoadedStr + "s " + "(HTML)");
 })
 
 window.addEventListener('load', (event) => {
