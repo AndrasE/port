@@ -37,6 +37,18 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 })
 
+/* ------=====  style switcher color toggle =====------- */
+// const colorBox = document.querySelector(".colors");
+// const colors = colorBox.querySelectorAll("span");
+// const colorList = colors.length;
+
+// for (let i = 0; i < colorList; i++) {
+//     const s = colorBox[i].querySelector("span");
+//     s.addEventListener("click", function () {
+//         alert("clicker")
+// }
+// )}
+
 /* ------=====  style switcher toggle =====------- */
 const styleSwitcherToggler = document.querySelector(".style-toggler");
 
@@ -119,6 +131,7 @@ hammer.on('swipeleft', function () {
     }
 });
 
+
 hammer.on('doubletap', function (e) {
     dayNight.querySelector("i").classList.toggle("fa-sun");
     dayNight.querySelector("i").classList.toggle("fa-moon");
@@ -137,8 +150,8 @@ for (let i = 0; i < totalNavList; i++) {
     a.addEventListener("click", function () {
         
         stopIframe()
-        
         removeBackSection()
+
         // for (let i = 0; i < totalSection; i++) {
         //     allSection[i].classList.remove("back-section")
         // }
@@ -184,6 +197,7 @@ function showSection(element) {
     const target = element.getAttribute("href").split("#")[1];
     document.querySelector("#" + target).classList.add("active")
 }
+
 
 function updateNav(element) {
     for (let i = 0; i < totalNavList; i++) {

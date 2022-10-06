@@ -67,6 +67,13 @@
     height: 30px;
     width: 30px;
     border-radius: 50%;
+    opacity: 70%
+}
+
+.active-color {
+    transition: all 0.3s ease;
+    border: 1px solid var(--text-black-900);
+    opacity: 100% !important
 }
 
 .style-switcher .color-1 {
