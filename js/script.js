@@ -46,19 +46,16 @@ for (let x = 0; x < colorList; x++) {
     const spn = colors[x]
     spn.addEventListener("click", () => {
 
-        spn.classList.add("active-color")
-        console.log("asdcasdasdasda");
         for (let y = 0; y < colorList; y++) {
 
             const spnActive = colors[y]
             
             if (colors[y].classList.contains("active-color")) {
                 colors[y].classList.remove("active-color")
-            } else {
-                colors[y].classList.add("active-color")
-            }
-           
+            } 
         }
+        
+        spn.classList.add("active-color")
     })
 }
 
