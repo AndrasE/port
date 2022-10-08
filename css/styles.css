@@ -213,7 +213,7 @@ ul {
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
-	animation-duration: 0.4s;
+	animation-duration: 0.6s;
 }
 
 .aside .logo a {
@@ -249,7 +249,7 @@ ul {
     animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
-	animation-duration: 0.8s;
+	animation-duration: 0.9s;
 }
 
 .aside .logo a::after {
@@ -265,7 +265,7 @@ ul {
     animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
-	animation-duration: 0.8s;
+	animation-duration: 0.9s;
 }
 
 .aside .logo a:active::before {
@@ -302,7 +302,7 @@ ul {
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
-	animation-duration: 0.4s;
+	animation-duration: 0.9s;
 }
 
 .aside .nav-toggler span {
@@ -370,7 +370,7 @@ ul {
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
-	animation-duration: 0.4s;
+	animation-duration: 0.5s;
 }
 
 .nav-li-a-animation-2 {
@@ -378,7 +378,7 @@ ul {
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
-	animation-duration: 0.5s;
+	animation-duration: 0.7s;
 }
 
 .nav-li-a-animation-3 {
@@ -386,21 +386,21 @@ ul {
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
-	animation-duration: 0.6s;
+	animation-duration: 0.9s;
 }
 .nav-li-a-animation-4 {
     opacity: 1;
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
-	animation-duration: 0.7s;
+	animation-duration: 0.11s;
 }
 .nav-li-a-animation-5 {
     opacity: 1;
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
-	animation-duration: 0.8s;
+	animation-duration: 0.13s;
 }
 
 .aside .nav li a.active {
@@ -977,6 +977,23 @@ h3.my-profession {
     transition: all 0.3s ease;
     border: 1px solid var(--additional-white);
 }
+
+/* andras */
+.andras .andras-text h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: var(--text-black-900);
+}
+
+.andras .andras-text p {
+    font-size: 16px;
+    line-height: 25px;
+    padding-bottom: 45px;
+    text-align: justify;
+    color: var(--text-black-700);
+}
+
 
 /* @ media queries @ */
 

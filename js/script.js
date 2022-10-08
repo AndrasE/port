@@ -59,15 +59,6 @@ for (let x = 0; x < colorList; x++) {
     })
 }
 
-// if (navList[j].querySelector("a").classList.contains("active")) {
-
-//     addBackSection(j)
-//     // allSection[j].classList.add("back-section");
-// }
-// navList[j].querySelector("a").classList.remove("active");
-// }
-
-
 /* ------=====  style switcher toggle =====------- */
 const styleSwitcherToggler = document.querySelector(".style-toggler");
 
@@ -167,7 +158,7 @@ const nav = document.querySelector(".nav"),
 for (let i = 0; i < totalNavList; i++) {
     const a = navList[i].querySelector("a");
     a.addEventListener("click", function () {
-
+        setAndrasBack() 
         stopIframe()
         removeBackSection()
 
@@ -178,6 +169,7 @@ for (let i = 0; i < totalNavList; i++) {
         for (let j = 0; j < totalNavList; j++) {
 
             setActiveProjectBack();
+           
 
             if (navList[j].querySelector("a").classList.contains("active")) {
 
@@ -186,6 +178,7 @@ for (let i = 0; i < totalNavList; i++) {
             }
             navList[j].querySelector("a").classList.remove("active");
         }
+        
         this.classList.add("active")
         showSection(this)
 
@@ -306,10 +299,53 @@ function setActiveProjectBack() {
 }
 
 /* ------===== logo as btn redirect section =====------- */
-document.querySelector(".logo").addEventListener("click", () => {
-    const activeSection = document.querySelector("section.active")
-    activeSection.classList.remove("active")
+// document.querySelector(".logo").addEventListener("click", () => {
+//     const activeSection = document.querySelector("section.active")
+//     activeSection.classList.add("back-section")
+//     activeSection.classList.remove("active")
+//     console.log(activeSection);
+
+//     document.querySelector("section.andras").classList.add("active")
+// })
+
+// function setAndrasBack () {
+//     if (document.querySelector("section.active").classList.contains("andras")) {
+//         document.querySelector("section.andras").classList.remove("active")
+//         document.querySelector("section.andras").classList.add("back-section")
+//     }
+// } 
+
+document.querySelector(".andras").addEventListener("click", function () {
+    const sectionIndex = this.getAttribute("data-section-index");
+    console.log(sectionIndex);
+
+    if (document.querySelector(".style-switcher").classList.contains("open")) {
+        document.querySelector(".style-switcher").classList.remove("open");
+
+    } if (window.innerWidth < 1200 && aside.classList.contains("open")) {
+        aside.classList.remove("open")
+        navTogglerBtn.classList.remove("open");
+        showSection(this);
+        updateNav(this);
+        removeBackSection();
+        addBackSection(sectionIndex);
+        document.querySelector("section.active").classList.remove("open")
+    } else {
+        showSection(this);
+        updateNav(this);
+        removeBackSection();
+        addBackSection(sectionIndex);
+        document.querySelector("section.active").classList.remove("open")
+    }
 })
+
+function setAndrasBack() {
+    const andras = document.querySelector("section.andras")
+    if (andras.classList.contains("active")) {
+        andras.classList.add("back-section")
+        andras.classList.remove("active")
+    }
+}
 
 /* ------===== start & stop lazy load youtube iframe =====------- */
 function setLazy() {
