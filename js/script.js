@@ -183,7 +183,7 @@ for (let i = 0; i < totalNavList; i++) {
             const anotherBack = document.querySelector("section.back-section")
            andras.classList.add("back-section")
         }
-        
+
         for (let j = 0; j < totalNavList; j++) {
 
             setActiveProjectBack();
@@ -191,18 +191,14 @@ for (let i = 0; i < totalNavList; i++) {
             document.querySelector("a.andras").classList.remove("underline")
             }
             if (navList[j].querySelector("a").classList.contains("active")) {
-                
                 addBackSection(j)
-                
                 // allSection[j].classList.add("back-section");
             }
             navList[j].querySelector("a").classList.remove("active");
         }
-        
     
         this.classList.add("active")
         showSection(this)
-
 
         if (window.innerWidth < 1999) {
             aside.classList.remove("open");
@@ -212,6 +208,35 @@ for (let i = 0; i < totalNavList; i++) {
     })
 }
 
+/* ------===== show-hide andras section =====------- */
+document.querySelector(".andras").addEventListener("click", function () {
+    const activeSection = document.querySelector("section.active")
+    const andrasSection = document.querySelector("section.andras")
+    const activeNav = document.querySelector("a.active")
+    removeBackSection()
+
+   document.querySelector("a.andras").classList.add("underline")
+
+    if (document.querySelector(".style-switcher").classList.contains("open")) {
+        document.querySelector(".style-switcher").classList.remove("open");
+
+    } if (window.innerWidth < 1200 && aside.classList.contains("open")) {
+        aside.classList.remove("open")
+        navTogglerBtn.classList.remove("open");
+        activeSection.classList.add("back-section")
+        activeSection.classList.remove("active")
+        andrasSection.classList.add("active")
+        document.querySelector("section.active").classList.remove("open")
+        activeNav.classList.remove("active")
+    } else {
+        activeSection.classList.add("back-section")
+        activeSection.classList.remove("active")
+        andrasSection.classList.add("active")
+        document.querySelector("section.active").classList.remove("open")
+      activeNav.classList.remove("active")
+    }
+})
+
 function removeBackSection() {
     for (let i = 0; i < totalSection; i++) {
         allSection[i].classList.remove("back-section");
@@ -219,12 +244,7 @@ function removeBackSection() {
 }
 
 function addBackSection(num) {
-    // console.log(num);
-    // if (document.querySelector("section.andras").classList.contains("back-section")){
-    //     console.log("da");
-    // } else {  }
     allSection[num].classList.add("back-section")
-  
 }
 
 function showSection(element) {
@@ -322,36 +342,6 @@ function setActiveProjectBack() {
         }
     }
 }
-
-document.querySelector(".andras").addEventListener("click", function () {
-    const activeSection = document.querySelector("section.active")
-    const andrasSection = document.querySelector("section.andras")
-    const activeNav = document.querySelector("a.active")
-    removeBackSection()
-
-   document.querySelector("a.andras").classList.add("underline")
-
-    if (document.querySelector(".style-switcher").classList.contains("open")) {
-        document.querySelector(".style-switcher").classList.remove("open");
-
-    } if (window.innerWidth < 1200 && aside.classList.contains("open")) {
-        aside.classList.remove("open")
-        navTogglerBtn.classList.remove("open");
-        activeSection.classList.add("back-section")
-        activeSection.classList.remove("active")
-        andrasSection.classList.add("active")
-        document.querySelector("section.active").classList.remove("open")
-        activeNav.classList.remove("active")
-    } else {
-        activeSection.classList.add("back-section")
-        activeSection.classList.remove("active")
-        andrasSection.classList.add("active")
-        document.querySelector("section.active").classList.remove("open")
-      activeNav.classList.remove("active")
-    }
-})
-
-
 
 /* ------===== start & stop lazy load youtube iframe =====------- */
 function setLazy() {
