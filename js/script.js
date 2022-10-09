@@ -208,11 +208,10 @@ for (let i = 0; i < totalNavList; i++) {
     })
 }
 
-/* ------===== show-hide andras section =====------- */
+/* ------===== show-hide sections =====------- */
 document.querySelector(".andras").addEventListener("click", function () {
     const activeSection = document.querySelector("section.active")
     const andrasSection = document.querySelector("section.andras")
-    const activeNav = document.querySelector("a.active")
     removeBackSection()
 
    document.querySelector("a.andras").classList.add("underline")
@@ -227,13 +226,17 @@ document.querySelector(".andras").addEventListener("click", function () {
         activeSection.classList.remove("active")
         andrasSection.classList.add("active")
         document.querySelector("section.active").classList.remove("open")
-        activeNav.classList.remove("active")
+        if (document.querySelectorAll("a.active").length != 0) {
+            document.querySelector("a.active").classList.remove("active")
+        }
     } else {
         activeSection.classList.add("back-section")
         activeSection.classList.remove("active")
         andrasSection.classList.add("active")
         document.querySelector("section.active").classList.remove("open")
-      activeNav.classList.remove("active")
+        if (document.querySelectorAll("a.active").length != 0) {
+            document.querySelector("a.active").classList.remove("active")
+        }
     }
 })
 
