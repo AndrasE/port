@@ -124,6 +124,8 @@ hammer.on('swiperight', function () {
         addActiveSectionClass();
     } else if (window.innerWidth < 1200 && aside.classList.contains("open")) {
         // already opened once //
+        aside.classList.add("open");
+        navTogglerBtn.classList.add("open");
     } else {
         aside.classList.add("open");
         navTogglerBtn.classList.add("open");
@@ -208,7 +210,7 @@ for (let i = 0; i < totalNavList; i++) {
     })
 }
 
-/* ------===== show-hide sections =====------- */
+/* ------===== show-hide andras section =====------- */
 document.querySelector(".andras").addEventListener("click", function () {
     const activeSection = document.querySelector("section.active")
     const andrasSection = document.querySelector("section.andras")
