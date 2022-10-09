@@ -228,6 +228,7 @@ ul {
 
 .underline {
     text-decoration: underline 3px;
+    text-decoration-color: var(--skin-color);
 }
 
 .aside .logo:active {

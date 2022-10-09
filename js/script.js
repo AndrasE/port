@@ -182,18 +182,8 @@ for (let i = 0; i < totalNavList; i++) {
             blankSectionBack.classList.remove("back-section")
             const anotherBack = document.querySelector("section.back-section")
            andras.classList.add("back-section")
-        } else {
-
-
-
-      
-            
-    
-       
-        // for (let i = 0; i < totalSection; i++) {
-        //     allSection[i].classList.remove("back-section")
-        // }
-    }
+        }
+        
         for (let j = 0; j < totalNavList; j++) {
 
             setActiveProjectBack();
