@@ -148,39 +148,68 @@ hammer.on('doubletap', function (e) {
     document.body.classList.toggle("light")
 });
 
+
+// function setAndrasBack() {
+//     const andras = document.querySelector("section.andras")
+//     if (!andras.classList.contains("active")) {
+//         console.log("not");
+//         const activeSection = document.querySelector("section.active")
+        
+//         activeSection.classList.add("back-section")
+//         andras.classList.remove("active")
+//     }
+// }
+
+
 /* ------===== aside nav bar / show-hide sections =====------- */
 const nav = document.querySelector(".nav"),
     navList = nav.querySelectorAll("li"),
     totalNavList = navList.length,
     allSection = document.querySelectorAll("section:not(section.back-section)"),
     totalSection = allSection.length;
+    const blankSectionBack = document.querySelector("section.blank.back-section")
 
 for (let i = 0; i < totalNavList; i++) {
     const a = navList[i].querySelector("a");
     a.addEventListener("click", function () {
-        setAndrasBack() 
         stopIframe()
         removeBackSection()
 
+        blankSectionBack.classList.remove("back-section")
+
+        const andras = document.querySelector("section.andras")
+        if (andras.classList.contains("active")) {
+            blankSectionBack.classList.remove("back-section")
+            const anotherBack = document.querySelector("section.back-section")
+           andras.classList.add("back-section")
+        } else {
+
+
+
+
+       
         // for (let i = 0; i < totalSection; i++) {
         //     allSection[i].classList.remove("back-section")
         // }
-
+    }
         for (let j = 0; j < totalNavList; j++) {
 
             setActiveProjectBack();
-           
+
 
             if (navList[j].querySelector("a").classList.contains("active")) {
-
+                
                 addBackSection(j)
+                
                 // allSection[j].classList.add("back-section");
             }
             navList[j].querySelector("a").classList.remove("active");
         }
         
+    
         this.classList.add("active")
         showSection(this)
+
 
         if (window.innerWidth < 1999) {
             aside.classList.remove("open");
@@ -198,8 +227,11 @@ function removeBackSection() {
 
 function addBackSection(num) {
     // console.log(num);
-
+    // if (document.querySelector("section.andras").classList.contains("back-section")){
+    //     console.log("da");
+    // } else {  }
     allSection[num].classList.add("back-section")
+  
 }
 
 function showSection(element) {
@@ -298,26 +330,13 @@ function setActiveProjectBack() {
     }
 }
 
-/* ------===== logo as btn redirect section =====------- */
-// document.querySelector(".logo").addEventListener("click", () => {
-//     const activeSection = document.querySelector("section.active")
-//     activeSection.classList.add("back-section")
-//     activeSection.classList.remove("active")
-//     console.log(activeSection);
-
-//     document.querySelector("section.andras").classList.add("active")
-// })
-
-// function setAndrasBack () {
-//     if (document.querySelector("section.active").classList.contains("andras")) {
-//         document.querySelector("section.andras").classList.remove("active")
-//         document.querySelector("section.andras").classList.add("back-section")
-//     }
-// } 
-
 document.querySelector(".andras").addEventListener("click", function () {
-    const sectionIndex = this.getAttribute("data-section-index");
-    console.log(sectionIndex);
+    const activeSection = document.querySelector("section.active")
+    const andrasSection = document.querySelector("section.andras")
+    const activeNav = document.querySelector("a.active")
+    removeBackSection()
+
+   document.querySelector("a.andras").classList.add("underline")
 
     if (document.querySelector(".style-switcher").classList.contains("open")) {
         document.querySelector(".style-switcher").classList.remove("open");
@@ -325,27 +344,21 @@ document.querySelector(".andras").addEventListener("click", function () {
     } if (window.innerWidth < 1200 && aside.classList.contains("open")) {
         aside.classList.remove("open")
         navTogglerBtn.classList.remove("open");
-        showSection(this);
-        updateNav(this);
-        removeBackSection();
-        addBackSection(sectionIndex);
+        activeSection.classList.add("back-section")
+        activeSection.classList.remove("active")
+        andrasSection.classList.add("active")
         document.querySelector("section.active").classList.remove("open")
+        activeNav.classList.remove("active")
     } else {
-        showSection(this);
-        updateNav(this);
-        removeBackSection();
-        addBackSection(sectionIndex);
+        activeSection.classList.add("back-section")
+        activeSection.classList.remove("active")
+        andrasSection.classList.add("active")
         document.querySelector("section.active").classList.remove("open")
+      activeNav.classList.remove("active")
     }
 })
 
-function setAndrasBack() {
-    const andras = document.querySelector("section.andras")
-    if (andras.classList.contains("active")) {
-        andras.classList.add("back-section")
-        andras.classList.remove("active")
-    }
-}
+
 
 /* ------===== start & stop lazy load youtube iframe =====------- */
 function setLazy() {

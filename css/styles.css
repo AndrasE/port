@@ -226,6 +226,10 @@ ul {
     position: relative;
 }
 
+.underline {
+    text-decoration: underline 3px;
+}
+
 .aside .logo:active {
     transition: all 0.01s ease-in-out;
     scale: 1.05;
