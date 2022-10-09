@@ -124,8 +124,7 @@ hammer.on('swiperight', function () {
         addActiveSectionClass();
     } else if (window.innerWidth < 1200 && aside.classList.contains("open")) {
         // already opened once //
-        aside.classList.add("open");
-        navTogglerBtn.classList.add("open");
+        
     } else {
         aside.classList.add("open");
         navTogglerBtn.classList.add("open");
