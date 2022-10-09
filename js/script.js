@@ -186,7 +186,9 @@ for (let i = 0; i < totalNavList; i++) {
 
 
 
-
+      
+            
+    
        
         // for (let i = 0; i < totalSection; i++) {
         //     allSection[i].classList.remove("back-section")
@@ -195,8 +197,9 @@ for (let i = 0; i < totalNavList; i++) {
         for (let j = 0; j < totalNavList; j++) {
 
             setActiveProjectBack();
-
-
+            if (document.querySelector("a.andras").classList.contains("underline")){
+            document.querySelector("a.andras").classList.remove("underline")
+            }
             if (navList[j].querySelector("a").classList.contains("active")) {
                 
                 addBackSection(j)
