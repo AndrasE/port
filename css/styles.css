@@ -51,6 +51,12 @@ ul {
     list-style: none;
 }
 
+br {
+    display: block; 
+    content: "";
+    margin-top: 25px; 
+}
+
 .section {
     background-color: var(--bg-black-900);
     min-height: 100vh;
@@ -1026,10 +1032,17 @@ h3.my-profession {
     color: var(--text-black-900);
 }
 
+.portfolio-project .portfolio-project-text h4 {
+    font-size: 16px;
+    line-height: 25px;
+    padding-bottom: 10px;
+    color: var(--text-black-700);
+}
+
 .portfolio-project .portfolio-project-text p {
     font-size: 16px;
     line-height: 25px;
-    padding-bottom: 45px;
+    padding-bottom: 35px;
     text-align: justify;
     color: var(--text-black-700);
 }
