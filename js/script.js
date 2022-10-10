@@ -149,19 +149,6 @@ hammer.on('doubletap', function (e) {
     document.body.classList.toggle("light")
 });
 
-
-// function setAndrasBack() {
-//     const andras = document.querySelector("section.andras")
-//     if (!andras.classList.contains("active")) {
-//         console.log("not");
-//         const activeSection = document.querySelector("section.active")
-        
-//         activeSection.classList.add("back-section")
-//         andras.classList.remove("active")
-//     }
-// }
-
-
 /* ------===== aside nav bar / show-hide sections =====------- */
 const nav = document.querySelector(".nav"),
     navList = nav.querySelectorAll("li"),
@@ -173,21 +160,25 @@ const nav = document.querySelector(".nav"),
 for (let i = 0; i < totalNavList; i++) {
     const a = navList[i].querySelector("a");
     a.addEventListener("click", function () {
+
         stopIframe()
         removeBackSection()
-
         blankSectionBack.classList.remove("back-section")
 
         const andras = document.querySelector("section.andras")
         if (andras.classList.contains("active")) {
             blankSectionBack.classList.remove("back-section")
-            const anotherBack = document.querySelector("section.back-section")
            andras.classList.add("back-section")
         }
+
+        if (document.querySelector(".style-switcher").classList.contains("open")) {
+            document.querySelector(".style-switcher").classList.remove("open") }
 
         for (let j = 0; j < totalNavList; j++) {
 
             setActiveProjectBack();
+            portfolioCheck ()
+
             if (document.querySelector("a.andras").classList.contains("underline")){
             document.querySelector("a.andras").classList.remove("underline")
             }
@@ -258,7 +249,6 @@ function showSection(element) {
     const target = element.getAttribute("href").split("#")[1];
     document.querySelector("#" + target).classList.add("active")
 }
-
 
 function updateNav(element) {
     for (let i = 0; i < totalNavList; i++) {
@@ -337,7 +327,6 @@ function setActiveProjectBack() {
 
     if (project.classList.contains("back-section")) {
         // console.log("back");
-
         if (projectActive.classList.contains("port-examples")) {
             const projectActiveIndex = projectActive.getAttribute("data-section-index")
             // console.log(projectActiveIndex);
@@ -346,6 +335,24 @@ function setActiveProjectBack() {
         }
     }
 }
+/* ------===== port-examples-link redirect to section =====------- */
+
+document.querySelector(".port-examples-link").addEventListener("click", () => {
+   const activeSection = document.querySelector("section.active")
+   activeSection.classList.add("back-section")
+   activeSection.classList.remove("active")
+   document.querySelector("section.portfolio-project").classList.add("active")
+})
+
+function portfolioCheck () {
+    const activeSection = document.querySelector("section.active")
+
+    if (activeSection.classList.contains("portfolio-project")) {
+        activeSection.classList.add("back-section")
+
+}
+}
+
 
 /* ------===== start & stop lazy load youtube iframe =====------- */
 function setLazy() {

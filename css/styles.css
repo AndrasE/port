@@ -948,6 +948,16 @@ h3.my-profession {
     color: var(--text-black-700);
 }
 
+.port-examples .port-examples-text a {
+    color: var(--text-black-700);
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.port-examples .port-examples-text a:hover {
+    text-decoration: none
+}
+
 /* port yt */
 .port-examples .port-examples-item {
     margin: auto;
@@ -999,6 +1009,21 @@ h3.my-profession {
     color: var(--text-black-700);
 }
 
+/* portfolio-project */
+.portfolio-project .portfolio-project-text h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: var(--text-black-900);
+}
+
+.portfolio-project .portfolio-project-text p {
+    font-size: 16px;
+    line-height: 25px;
+    padding-bottom: 45px;
+    text-align: justify;
+    color: var(--text-black-700);
+}
 
 /* @ media queries @ */
 
