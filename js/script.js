@@ -125,11 +125,11 @@ hammer.on('swiperight', function () {
     } else if (window.innerWidth < 1200 && aside.classList.contains("open")) {
         // already opened once //
         
-    } else {
+    } else if (window.innerWidth < 1200 ) {
         aside.classList.add("open");
         navTogglerBtn.classList.add("open");
         addActiveSectionClass();
-    }
+    } else {}
 });
 
 hammer.on('swipeleft', function () {
