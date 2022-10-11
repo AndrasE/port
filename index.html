@@ -893,8 +893,19 @@
                                 segments of the html but they are really not. They all exist the same time, in front
                                 of you but most of them gets hidden away. As the new section slides in, the previous
                                 one stay in the back. Each slides will have qualities such "hidden","back-section",
-                                "active". As I finished the inital project, i realized as the DOM (document object model)
-                                
+                                "active". As I finished the inital project, I realized there is an issue while Lazy-loading
+                                the page. The last "slide" will be visable for a second and kind of ruining the inital animation.
+                                Easy fix would be to add and empty black section to as the last one. As the DOM (document object 
+                                model) gets loaded it will be the last slide, therefore looks like a fix for the issue. The
+                                problem with this solution is that as the DOM growing bigger and start running the page not
+                                locally, it will require more time for the DOM to load in, so the wierd trace of the second 
+                                flasing up sections will come back. Okay next solution to the problem was to set all not
+                                needed sections to be hidden until the DOM loaded. That worked again for a while, but every 
+                                now and than it issue came back with a flash. I realised I could do better. As the DOM
+                                gets read rather than leave a blank section as the last slide i should make it the first 
+                                and add it as "back-section" right away. Like this HTML and right after the CSS starts loading
+                                it will eliminate the issue as by the time it finishes the whole DOM to get loaded the 
+                                back-section is already set and rest of the page would not be visiable. 
                             </p>
                         </div>
                     </div>
