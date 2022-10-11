@@ -897,54 +897,126 @@
                             </p>
                             <h4>Sections</h4>
                             <p>As you can see on the site there are slides coming right to left for each
-                            link you click on. These are sections, although it looks that they all different
-                            components of the page but they are really not! Just imagine a standard webpage as
-                            a roll of paper. As you scroll down you go through different segments of the same paper.
-                            Now imagine this roll to be cut up for a given dimensions(sections) and start piling up
-                            these "card/sections" on top of each other. They all exist the same time, in front
-                            of you but most of them gets hidden away by the first card. As the new section slides
-                            in, the previous one stayed in the back. Each slides will have qualities such "hidden",
-                            "back-section", "active" as and when required. As I finished the initial project, I realized there is an
-                            issue while loading the page. The last slide that loads will be visible for a second and
-                            kind of ruining the inital animation. Easy fix would be to add and empty black section (no characthers pictures or
-                            anything else) as the last card. When the DOM (document object model) gets loaded it will be the last
-                            card on top. Home section is "active" so will slide over it. Looks pretty neat.
-                            The problem with this solution is that as the DOM grows bigger and starts running the
-                            project NOT only locally, it will require more time for the DOM to load in, so the weird
-                            trace of the second flashing up will come back. Even though we are quick, but to pile the cards
-                            on top of each other as fast to noone will be able to notice anything is more fast than
-                            we the speed possibly can do. Not to mention that these pack of cards getting bulkier! Okay the next
-                            solution to the problem was to set all not needed sections to be hidden until the DOM loaded.
-                            That worked again for a while, but every now and then, it seems the issue came back with
-                            a flash. The reason being is that the DOM loads first (line by line) and styling is after. You
-                            start putting the cards on top of each other, but you haven`t yet learnt the trick to hide what you do. Its
-                            becouse DOM is partially built by the time the CSS (which contians this trick) is loaded.. I realised I
-                            could do better. Rather than leave a blank section as the last slide I should make it the first
-                            and add it as "back-section" right away. Like this, when the HTML and right after the
-                            CSS starts loading it will eliminate the issue. By the time it finishes the load the whole
-                            DOM (put the cards down) the back-section is already set (trick learnt) and the rest of the page would not be
-                            visible. Trickery! Altough it works this small/medium sized webpage, it wouldn`t be recomended to use this
-                            approach to anything significant. Either need to have the webpage component based (React) or an
-                            intersection observer needs to be set up. But I come back to this later on.
+                                link you click on. These are sections, although it looks that they all different
+                                components of the page but they are really not! Just imagine a standard webpage as
+                                a roll of paper. As you scroll down you go through different segments of the same paper.
+                                Now imagine this roll to be cut up for a given dimensions(sections) and start piling up
+                                these "card/sections" on top of each other. They all exist the same time, in front
+                                of you but most of them gets hidden away by the first card. As the new section slides
+                                in, the previous one stayed in the back. Each slides will have qualities such "hidden",
+                                "back-section", "active" as and when required. As I finished the initial project, I
+                                realized there is an
+                                issue while loading the page. The last slide that loads will be visible for a second and
+                                kind of ruining the inital animation. Easy fix would be to add and empty black section
+                                (no characthers pictures or
+                                anything else) as the last card. When the DOM (document object model) gets loaded it
+                                will be the last
+                                card on top. Home section is "active" so will slide over it. Looks pretty neat.
+                                The problem with this solution is that as the DOM grows bigger and starts running the
+                                project NOT only locally, it will require more time for the DOM to load in, so the weird
+                                trace of the second flashing up will come back. Even though we are quick, but to pile
+                                the cards
+                                on top of each other as fast to noone will be able to notice anything is more fast than
+                                we the speed possibly can do. Not to mention that these pack of cards getting bulkier!
+                                Okay the next
+                                solution to the problem was to set all not needed sections to be hidden until the DOM
+                                loaded.
+                                That worked again for a while, but every now and then, it seems the issue came back with
+                                a flash. The reason being is that the DOM loads first (line by line) and styling is
+                                after. You
+                                start putting the cards on top of each other, but you haven`t yet learnt the trick to
+                                hide what you do. Its
+                                becouse DOM is partially built by the time the CSS (which contians this trick) is
+                                loaded.. I realised I
+                                could do better. Rather than leave a blank section as the last slide I should make it
+                                the first
+                                and add it as "back-section" right away. Like this, when the HTML and right after the
+                                CSS starts loading it will eliminate the issue. By the time it finishes the load the
+                                whole
+                                DOM (put the cards down) the back-section is already set (trick learnt) and the rest of
+                                the page would not be
+                                visible. Trickery! Altough it works this small/medium sized webpage, it wouldn`t be
+                                recomended to use this
+                                approach to anything significant. Either need to have the webpage component based
+                                (React) or an
+                                intersection observer needs to be set up. But I come back to this later on.
                             </p>
                             <h4>Jpeg vs. Webp</h4>
                             <p>Out of interest, I wanted to see how else I can make the page load faster. I have around
-                            5-6 pictures added to the project. By checking out in the network tab in dev mode I saw that each(Jpeg) takes
-                            around 600-700ms to load. Webp images have around 15-30% less data than Jpeg as it compresses more. But I also
-                            read on Stackoverflow that they are harder to decode, so the gain is not as significant. This answer was about 4 years ago,
-                            so I wasn't sure if it still stands. I had to make my own testrun for it, just wanted to know. My original Jpegs weren`t
-                            anything big to start with, but making them as a Webp the size got reduced even further. I compared the page load time
-                            using Jpeg vs Webp. What I found is that it means a small improvement in my case. I talk around 0.0x seconds worth of
-                            improvement. Although I didn't gain anything much, it's clear to see I would have bigger resolution, larger images it would
-                            make a difference. I just thought I share my findings after I invested in researching and test the topic.
+                                5-6 pictures added to the project. By checking out in the network tab in dev mode I saw
+                                that each(Jpeg) takes
+                                around 600-700ms to load. Webp images have around 15-30% less data than Jpeg as it
+                                compresses more. But I also
+                                read on Stackoverflow that they are harder to decode, so the gain is not as significant.
+                                This answer was about 4 years ago,
+                                so I wasn't sure if it still stands. I had to make my own testrun for it, just wanted to
+                                know. My original Jpegs weren`t
+                                anything big to start with, but making them as a Webp the size got reduced even further.
+                                I compared the page load time
+                                using Jpeg vs Webp. What I found is that it means a small improvement in my case. I talk
+                                around 0.0x seconds worth of
+                                improvement. Although I didn't gain anything much, it's clear to see I would have bigger
+                                resolution, larger images it would
+                                make a difference. I just thought I share my findings after I invested in researching
+                                and test the topic.
                             </p>
-                            <h4>Component-tree</h4>
+                            <h4>Component-tree / think before you do!</h4>
                             <p>
                                 I mentioned above the DOM and how these "cards" get loaded on top of each other. Maybe
-                                it looks like there are only 5-6 cards are in this pack, but I have much more. This is why the 
-                                problem started to arose. Here is the component tree if you would like
-                                to see. <a href="https://www.dropbox.com/s/ub0h8s53yms7wsh/comp-tree.png?dl=0"
-                                    target="_blank" rel="noopener noreferrer">Component tree</a>
+                                it looks like there are only 5-6
+                                cards in this pack, but I have much more for show. This is why the problem started to
+                                arise. Here is the component tree if you
+                                would like to see. <a
+                                    href="https://www.dictionary.com/e/wp-content/uploads/2018/03/rickrolling-300x300.jpg"
+                                    target="_blank" rel="noopener noreferrer">Component tree</a> You can see we have
+                                well over 10 cards. Each of them gets sets to be "active" or "back-section"
+                                or in some cases to be temporarily "hidden". It wouldn't be a problem at all if I leave
+                                the project simple as it
+                                started. But I didn't find it enough, I wanted it to have multiple layers to it. It
+                                means you can click on the logo which is not
+                                part of the navigation section but still brings up a section. Same with the
+                                project-section, there are examples and even
+                                inside the examples are more links to further slides. Is this a problem? Not really, but
+                                what we need to understand is
+                                that each click calls an event-listener. It means you click on something and will
+                                execute a function. The navigation panel is
+                                relatively straight forward. If someone clicks on a link on the navigation panel, set
+                                the current card as a background section and
+                                the new card as active. Simple and works as a wonder. Now imagine that you are not part
+                                of this "chosen navigation panelgroup" or
+                                you may just be part of one of the sections. Now the original functions wouldn't know
+                                what should be the back-section
+                                and which is the active. I need to further specify it. If this and this gets clicked do
+                                this and that. But if you are
+                                already there and something else gets clicked if this and that true/false do this or
+                                that. What I`m trying to say with
+                                all this salad? It means that I had to cover a whole list of scenarios to make this
+                                happen. I have 5 navigation links
+                                (the easy part), about 4 project examples with 4 more sections to link to them and
+                                around 2-3 buttons to do similar
+                                whichever part of the page. Now getting a bit more complicated you think? Yes and no!
+                                Now imagine that each of your
+                                clicks not just slides in a new section, but also highlights on the side section of the
+                                page what the current content is. Wait
+                                a minute! How about each click closes the theme-toggle section of the right of the page
+                                when any of this gets clicked? Let's do
+                                that as well, totally! How about making the web page more responsive, when it's on
+                                mobile let the navigation side overflow the content, but
+                                when it's around tablet size, let the navigation side push the content on the right, it
+                                looks cool afterall. You know what I
+                                want the page to be responsive to slides. Yess!! We all want that! And here we are now a
+                                whole lot of arrays of different
+                                outcomes. We have if statements within if statements and functions in functions.
+                                <a href="https://www.dropbox.com/s/4p3yazozwp0g5o4/andras-example.png?dl=0"
+                                    target="_blank" rel="noopener noreferrer">Here is and example.</a>
+                             Now we have to cover a lot. What shows on the navigation panel, what will happen on small/medium/large screens, 
+                             what happens if the style toggle is already open, what happens when we slide the navigation panel to be open (all screen sizes), 
+                             but we close it with the button and could continue for longer. What to learn from this? One thing for certain, 
+                             plan what you do! If I have had set up the page differently as I started with, knowing that I want so much more to it, 
+                             I could have prepared it from the beginning. By no means I`m not happy with the result, I am! It does look and feel nice 
+                             and all grounds are covered! But if I have know what I know now, I could streamline some of the functions and make it more simple 
+                             to understand. It`s a learning curve and a valuable lesson for me. I want to return to this project and rewrite the JS for it. I'm certain 
+                             I`ll be able to reduce the code by 30%. If I do, I`ll add it here: ____TBA____
                             </p>
                         </div>
                     </div>
