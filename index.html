@@ -920,10 +920,10 @@
                                 on top of each other, but you haven`t yet learnt the trick to hide to do it. Its becouse DOM is
                                 partially built by the time the CSS (which contians this trick) is loaded.. I realised I could do better. 
                                 Rather than leave a blank section as the last slide I should make it the first
-                                and add it as "back-section" right away. Like this when the HTML and right after the CSS
-                                starts loading it will eliminate the issue as by the time it finishes the whole DOM to get loaded the
+                                and add it as "back-section" right away. Like this, when the HTML and right after the CSS
+                                starts loading it will eliminate the issue. By the time it finishes the load the whole DOM (put the cards down)
                                 the back-section is already set (trick learnt) and the rest of the page would not be visible. Trickery! 
-                                Altough it works this small/medium sized webpage, it would`nt be recomended to use this approach
+                                Altough it works this small/medium sized webpage, it wouldn`t be recomended to use this approach
                                 to anything significant. Either need to have the webpage component based (React) or an intersection
                                 observer needs to be set up. But I come back to this later on. 
                             </p>
