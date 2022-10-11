@@ -748,18 +748,25 @@
                         <div class="port-examples-text padd-15">
                             <h3> Crud, auth and fire </h3>
                             <p>I wanted to create a simple CRUD (create, read, update, delete) React App with
-                            a backend. I thought try something new and ended up using Firebase for this.
-                            Once I archieved my goal, I wanted to experiment a little bit further and added
-                            authentication to the project, so only registered users can interact with the database.
-                            I used firabse for authentication and also a context-provider & protected routes. If a
-                            visitor arrive on the landing-site an object gets created with guest user set to be true. 
-                            Unless the authentication has taken place it`s remains true and don`t let user go any further 
-                            gets redirected to login/register. On firebase end it`s also set that only registered user can 
-                            manipulate the database. You can read about this project a lot more in details by going to 
-                            crud and click on the logo and read more. I wanted to keep this project as simple as possible. 
-                            If i would have more time to spend on it I would have add sessions(cookies) to it and also include 
-                            that each user only able to interact with notes that is created by them and not a the whole db. 
-                            For now, Im happy with the result, it required me to learn a lot.
+                                a backend. I thought try something new and ended up using Firebase for this.
+                                Once I archieved my goal, I wanted to experiment a little bit further and added
+                                authentication to the project, so only registered users can interact with the database.
+                                I used firabse for authentication and also a context-provider & protected routes. If a
+                                visitor arrive on the landing-site an object gets created with guest user set to be
+                                true.
+                                Unless the authentication has taken place it`s remains true and don`t let user go any
+                                further
+                                gets redirected to login/register. On firebase end it`s also set that only registered
+                                user can
+                                manipulate the database. You can read about this project a lot more in details by going
+                                to
+                                crud and click on the logo and read more. I wanted to keep this project as simple as
+                                possible.
+                                If i would have more time to spend on it I would have add sessions(cookies) to it and
+                                also include
+                                that each user only able to interact with notes that is created by them and not a the
+                                whole db.
+                                For now, Im happy with the result, it required me to learn a lot.
                             </p>
                         </div>
                     </div>
@@ -794,7 +801,8 @@
                                 or browiser get exited. You can aslo read more in details at the about/read more section
                                 of the page. Looking back now Im fairly happy with the results, altough I think this
                                 project would be more suitable to using React; too many redirects for my liking.
-                                Regarless Im proud of it. I shared it in the study group and had a number of secrets have been
+                                Regarless Im proud of it. I shared it in the study group and had a number of secrets
+                                have been
                                 posted.
                             </p>
                         </div>
@@ -829,12 +837,12 @@
                                 I was searching for different animated web-designs which are not over the top but still
                                 offer me something to learn from. I found pretty a long but very fascinating tutorial on
                                 YouTube(<a href="https://youtu.be/zJE-ze4TfXc">this</a>).
-                                As I wanted to learn more in depth how to use divs and classes more efficiently it came 
+                                As I wanted to learn more in depth how to use divs and classes more efficiently it came
                                 across as a perfect barebone project to learn from. After I gained knowledge by writing
-                                the code, I thought it`s time to make it more mine and add some extra features to it. 
+                                the code, I thought it`s time to make it more mine and add some extra features to it.
                                 And the real story just starts here. Altough doesn`t look very different, it is indeed
                                 a lot more thought out. If you would like go down the rabbit-whole of of "I haven`t
-                                thought of that!" and learn how it works and whats been changed and why please 
+                                thought of that!" and learn how it works and whats been changed and why please
                                 <a class="port-examples-link" href="#portfolio-project">click here</a>.
                             </p>
                         </div>
@@ -884,29 +892,40 @@
                         <div class="portfolio-project-text padd-15">
                             <h3>Lazyload, swipe and much more</h3>
                             <p>I absulutely loved the design of this guy. Its clean and fresh
-                                and looks dynamic. I really thought by finishing the code following 
-                                the tutorial will pretty much wrap up this project, but I was wrong. Very wrong. 
+                                and looks dynamic. I really thought by finishing the code following
+                                the tutorial will pretty much wrap up this project, but I was wrong. Very wrong.
                             </p>
-                                <h4>Sections</h4>
-                                <p>As you can see on this side there are slides coming left to right for each
-                                link you click on. These are sections, altough it looks that they all different
-                                segments of the html but they are really not. They all exist the same time, in front
-                                of you but most of them gets hidden away. As the new section slides in, the previous
-                                one stay in the back. Each slides will have qualities such "hidden","back-section",
-                                "active". As I finished the inital project, I realized there is an issue while Lazy-loading
-                                the page. The last "slide" will be visable for a second and kind of ruining the inital animation.
-                                Easy fix would be to add and empty black section to as the last one. As the DOM (document object 
-                                model) gets loaded it will be the last slide, therefore looks like a fix for the issue. The
-                                problem with this solution is that as the DOM growing bigger and start running the page not
-                                locally, it will require more time for the DOM to load in, so the wierd trace of the second 
-                                flasing up sections will come back. Okay next solution to the problem was to set all not
-                                needed sections to be hidden until the DOM loaded. That worked again for a while, but every 
-                                now and than it issue came back with a flash. I realised I could do better. As the DOM
-                                gets read rather than leave a blank section as the last slide i should make it the first 
-                                and add it as "back-section" right away. Like this HTML and right after the CSS starts loading
-                                it will eliminate the issue as by the time it finishes the whole DOM to get loaded the 
-                                back-section is already set and rest of the page would not be visiable. 
+                            <h4>Sections</h4>
+                            <p>As you can see on the site there are slides coming right to left for each
+                                link you click on. These are sections, although it looks that they all different
+                                components of the page but they are really not! Just imagine a standard webpage as
+                                a roll of paper. As you scroll down you go through different segments of the same paper.
+                                Now imagine this paper to be cut up for a given dimensions(sections) and start piling up
+                                these "card/sections" on top of each other. They all exist the same time, in front
+                                of you but most of them gets hidden away by the first card. As the new section slides
+                                in, the previous one stayed in the back. Each slides will have qualities such "hidden","back-section",
+                                "active" as and when required. As I finished the initial project, I realized there is an
+                                issue while loading the page. The last slide that loads will be visible for a second and kind of ruining the inital
+                                animation. Easy fix would be to add and empty black section to as the last one and as the DOM
+                                (document object model) gets loaded it will be the last slide, therefore looks like a fix for the issue.
+                                Home section is "active" and the last section is blank (no characthers pictures or anything else), 
+                                so basically you putting the active section on top of the blank section.  
+                                The problem with this solution is that as the DOM grows bigger and starts running the
+                                page not locally, it will require more time for the DOM to load in, so the weird trace of the
+                                second flashing up sections will come back. Even though we are quick, but to pile the cards
+                                on top of each other as fast to noone will be able to see anything, is more fast than we can
+                                possibly do, not to mention that these pack of cards getting bulkier. Okay next solution to 
+                                the problem was to set all not needed sections to be hidden until the DOM loaded. 
+                                That worked again for a while, but every now and then, it seems the issue came back with a flash. 
+                                I realised I could do better. Rather than leave a blank section as the last slide I should make it the first
+                                and add it as "back-section" right away in case. Like this HTML and right after the CSS
+                                starts loading it will eliminate the issue as by the time it finishes the whole DOM to get loaded the
+                                the back-section is already set and the rest of the page would not be visible. Trickery! 
+                                Altough it works this small/medium sized webpage, it would`nt be recomended to use this approach
+                                to anything significant. Either need to have the webpage component based (React) or an intersection
+                                observer needs to be set up. But I come back to this later on. 
                             </p>
+                            <h4>Jpeg vs. Webp</h4>
                         </div>
                     </div>
 
