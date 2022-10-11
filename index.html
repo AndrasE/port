@@ -910,17 +910,17 @@
                                 as the last card. When the DOM (document object model) gets loaded it will be the last card. Home section is 
                                 "active" and the last section is blank, so basically you putting the active section on top of the blank section.  
                                 The problem with this solution is that as the DOM grows bigger and starts running the
-                                project not locally, it will require more time for the DOM to load in, so the weird trace of the
+                                project NOT locally, it will require more time for the DOM to load in, so the weird trace of the
                                 second flashing up will come back. Even though we are quick, but to pile the cards
-                                on top of each other as fast to noone will be able to see anything, is more fast than we can
-                                possibly do, not to mention that these pack of cards getting bulkier. Okay next solution to 
+                                on top of each other as fast to noone will be able to notice anything, is more fast than we can
+                                possibly do. Not to mention that these pack of cards getting bulkier! Okay next solution to 
                                 the problem was to set all not needed sections to be hidden until the DOM loaded. 
                                 That worked again for a while, but every now and then, it seems the issue came back with a flash. 
-                                The reason being is that the DOM loads first and styling is after. You start putting the cards one 
-                                on top of each other, but to you haven`t yet learnt the trick to hide to do it. Its becouse DOM is
+                                The reason being is that the DOM loads first and styling is after. You start putting the cards 
+                                on top of each other, but you haven`t yet learnt the trick to hide to do it. Its becouse DOM is
                                 partially built by the time the CSS (which contians this trick) is loaded.. I realised I could do better. 
                                 Rather than leave a blank section as the last slide I should make it the first
-                                and add it as "back-section" right away in case. Like this HTML and right after the CSS
+                                and add it as "back-section" right away. Like this when the HTML and right after the CSS
                                 starts loading it will eliminate the issue as by the time it finishes the whole DOM to get loaded the
                                 the back-section is already set (trick learnt) and the rest of the page would not be visible. Trickery! 
                                 Altough it works this small/medium sized webpage, it would`nt be recomended to use this approach
