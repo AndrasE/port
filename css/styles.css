@@ -1041,6 +1041,16 @@ h3.my-profession {
     color: var(--text-black-700);
 }
 
+.portfolio-project .portfolio-project-text a {
+    color: var(--text-black-700);
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.portfolio-project .portfolio-project-text a:hover {
+    text-decoration: none
+}
+
 /* @ media queries @ */
 
 @media (max-width: 1199px) {
