@@ -1147,7 +1147,7 @@ h3.my-profession {
 @media (max-width: 600px) {
     p {
         hyphens: auto;
-        word-spacing: 1em;
+        white-space: -2px;
     }
 
     .section .container {
