@@ -1149,7 +1149,7 @@ h3.my-profession {
         hyphens: auto;
         -ms-hyphens: auto;
         -webkit-hyphens: auto;
-        white-space: -2px;
+        word-spacing: -3px;
     }
 
     .section .container {
