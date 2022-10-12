@@ -1041,6 +1041,20 @@ h3.my-profession {
     color: var(--text-black-700);
 }
 
+.portfolio-project .portfolio-project-text p.example-code {
+    font-size: 16px;
+    line-height: 25px;
+    margin: auto;
+    max-width: 600px;
+    text-align: justify;
+    word-break: break-all;
+    color: var(--text-black-700);
+    background-color: var(--bg-black-100);
+    padding: 15px;
+    border: 1px solid var(--bg-black-50);
+    border-radius: 10px;
+}
+
 .portfolio-project .portfolio-project-text a {
     color: var(--text-black-700);
     text-decoration: underline;
