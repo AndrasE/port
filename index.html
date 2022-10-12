@@ -1082,13 +1082,29 @@
                                 I liked the idea, but if you try it out, you can see that somehow is not really elegant. Many times the 
                                 YouTube autoplay won`t even work, so you basically need to click twice for the video to start. I also
                                 didn`t like that a custume icon has to be used on top of the pictures.. Anyhow, here is my take on the 
-                                subject: Before I dive into this, we need to know what is <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe"
+                                subject: Before I dive into this, we need to know what is <a href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp"
                                 target="_blank" rel="noopener noreferrer">Iframe-2</a>. Iframe is (it`s in is name) a frame which let you
                                 embed an other HTML page into the current one. It has its on propeties like style, history and document. 
                                 It`s not interact with the parent HTML. So what the guys were doing on that two example is that they put
                                 a image into the iframe with some icon on top as a play button using srcdoc propety. This let you pretty
                                 much put and whole page as inline element withing the iframe. Anyways lets not go to deep. There is a picture
-                                once it gets clicked will start to play the YouTube video as long autoplay works.. 
+                                once it gets clicked will start to play the YouTube video as long autoplay works.. As I mentioned, I didnt like
+                                that it looks different and you need to double click a lot of times, but my main concern was that i would have
+                                to put a lot of lenghty inner styling in my HTML and I really like the clean look of the code as it was. 
+                                I started to develop and idea to move everything to the JS to later to be injected into the iframe when needed. 
+                                But I still didn`t like that there is a lots of HTML and CSS in my JS. And playing around hit me the simpliest
+                                idea. There is something called <a href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp"
+                                target="_blank" rel="noopener noreferrer">innerHTML</a>. This can be set I done it before. What I done is that
+                                i prepped an empty div which will be injected using this innerHTML. What happens the page loads, we have empty
+                                divs. But when you click on the whatever project it will call a function which will set the innerHTML to the 
+                                iframe we need. It works as magic, but as YouTube not messing around and right away start to bombard you with 
+                                the video and ad so on, messed up my animation. What i done I wrote an other function with a loading gif image. 
+                                When you click on the project, its setting that image, but after 0.5s its resetting the iframe again, not to 
+                                the actiual video. No double click or wierd icons and my code remained clean! One thing to know that after you
+                                click away I also had to write a function as you may not on that section now, but youtube would just continue
+                                playing and steal your bandwidth. So when you click away, the iframe will be set back to the gif I just metioned.
+                                Pretty nice solution, I`m proud of it as its my child! 
+
                             </p>
                         </div>
                     </div>
