@@ -11,9 +11,9 @@
     transition: all 0.3s ease;
     transform: translateX(100%);
     animation-name: fadeInOpacity;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.5s;
 }
 
 .style-switcher.open {
@@ -39,6 +39,7 @@
 .style-switcher .s-icon i {
     line-height: 40px;
 }
+
 .style-switcher .style-toggler {
     top: 0;
 }
@@ -77,18 +78,30 @@
     opacity: 100% !important
 }
 
+
+@media (max-width: 600px) {
+    .style-switcher .s-icon {
+        margin-right: 15px;
+    }
+}
+
+
 .style-switcher .color-1 {
     background-color: #fa5b0f;
 }
+
 .style-switcher .color-2 {
     background-color: #ec1839;
 }
+
 .style-switcher .color-3 {
     background-color: #37b182;
 }
+
 .style-switcher .color-4 {
     background-color: #1854b4;
 }
+
 .style-switcher .color-5 {
     background-color: #f021b2;
 }

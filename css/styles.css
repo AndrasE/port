@@ -1123,6 +1123,9 @@ h3.my-profession {
 }
 
 @media (max-width: 600px) {
+    .section .container {
+        padding-top: 50px;
+    }
     .section {
         padding: 0 15px;
     }
@@ -1137,7 +1140,7 @@ h3.my-profession {
         left: 15px;
     }
     .aside .nav-toggler.open {
-        left: 220px;
+        left: 230px;
     }
     .aside .logo a {
         font-size: 25px;
@@ -1161,6 +1164,15 @@ h3.my-profession {
         font-size: 30px;
         letter-spacing: 5px;
         position: relative;
+    }
+    .section.open {
+        left: 245px;
+    }
+    .aside {
+        width: 240px;
+    }
+    .aside .nav-toggler.open {
+        left: 270px;
     }
     .aside .nav {
         margin-top: 45%;
