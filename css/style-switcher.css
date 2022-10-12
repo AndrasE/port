@@ -78,7 +78,6 @@
     opacity: 100% !important
 }
 
-
 @media (max-width: 600px) {
     .style-switcher .s-icon {
         margin-right: 15px;
@@ -87,7 +86,6 @@
         transform: translateX(-15px);
     }
 }
-
 
 .style-switcher .color-1 {
     background-color: #fa5b0f;
