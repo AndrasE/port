@@ -1069,7 +1069,7 @@ h3.my-profession {
     }
     .aside .nav-toggler {
         display: flex;
-        left: 25px;
+        left: 30px;
     }
     .section {
         left: 0;
@@ -1107,6 +1107,9 @@ h3.my-profession {
 @media (max-width: 767px) {
     .section {
         padding: 0 15px;
+    }
+    .aside .nav-toggler {
+        left: 10px;
     }
     .about .about-content .personal-info,
     .about .about-content .skills,
