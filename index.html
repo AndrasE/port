@@ -1038,73 +1038,61 @@
                                 ____TBA____
                             </p>
                             <h4>Hammer.js (Swipe) </h4>
-                            <p style="padding-bottom:15px"> I used Hammer.js before in my Secrets project, so using it
-                                this time around was pretty
-                                much straight forward. The only issue I had is that altough it work as it should on
-                                desktop,
-                                but anytime I tried to use it in responsively (mobile/tablet) it didn`t fire the
-                                required
-                                function. Was a bit annoying to find the solution, but eventually I did. It was in the
-                                deeper
-                                realm of codes, but seems like I needed to overwrite something for it`s normal
-                                behaviour. I
-                                live the code here as it was a bit tricky to find, might offer a solution for someone
-                                come
-                                across similar.
+                            <p style="padding-bottom:15px"> I used Hammer.js before in my Secrets project, so using it this time 
+                                around was pretty much straight forward. The only issue I had is that although it worked as it should on 
+                                desktop, but anytime I tried to use it responsively (mobile/tablet) it didn`t fire the required function. 
+                                Was a bit annoying to find the solution, but eventually I did. It was in the deeper realm of codes, but seems 
+                                like I needed to overwrite something for it`s normal behaviour. I live the code here as it was a bit tricky to find,
+                                 might offer a solution for someone who comes across similar issues.
                             </p>
                             <p class="example-code">
                                 const hammer = new Hammer(document.getElementById('gesture-element'), {inputClass:
                                 Hammer.TouchMouseInput});
                             </p>
                             <h4>Lazy-loading</h4>
-                            <p>Welcome to the realm of Lazy-loading! If you are unfamiliar with the term: 
-                                "Lazy-loading is the practice of delaying load or initialization of resources 
-                                or objects until they're actually needed to improve performance and save system resources."
-                                Just imagine you scrolling through facebook/instagram, imagine that at the inital start of the
-                                app it would need to load in all the content for you. would be quite a janke ride! Furthermore
-                                you might just opened the site for a second or two, but its taking over all of your bandwidth and
-                                load all the content even if you won`t need them later on. This is this solution exists! Many sites use
-                                a intersection observer. Its basically pass the massege to the app what section of the site the
-                                user currently "consuming". You can tell it "if the viewport less than 500px away", start load in the images,
-                                videos etc. If you never reach that far on the site, it shall never load. A win-win-win solution. 
-                                The reason I dive into this subject becouse as I meantioned above I wanted to keep this project light-weight
-                                as possible. As soon as I embeded a few YouTube videos, it went cra-cra in the network tab. YouTube/Google
-                                started to bombar the site with their scripts, figuring out what ad to load and of course load the videos in. 
-                                Remember, all sections are existing the same time in this project. You might not looking at the section where
-                                the video got embeded, but its still will load up. I could use an intersection observer for this, but I 
-                                didn`t want to add an external libary for this, especally if my only concern was the embeded videos. I went
-                                to find different solutions for this but I ended up creating my own one. <br> 
-                                Solutions:  
-                                <a href="https://youtu.be/khdT1e7jEIE"
-                                target="_blank" rel="noopener noreferrer">Example-1</a>
-                                <a href="https://css-tricks.com/lazy-load-embedded-youtube-videos/"
-                                target="_blank" rel="noopener noreferrer">Example-2</a> <br>
-                                I liked the idea, but if you try it out, you can see that somehow is not really elegant. Many times the 
-                                YouTube autoplay won`t even work, so you basically need to click twice for the video to start. I also
-                                didn`t like that a custume icon has to be used on top of the pictures.. Anyhow, here is my take on the 
-                                subject: Before I dive into this, we need to know what is <a href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp"
-                                target="_blank" rel="noopener noreferrer">Iframe-2</a>. Iframe is (it`s in is name) a frame which let you
-                                embed an other HTML page into the current one. It has its on propeties like style, history and document. 
-                                It`s not interact with the parent HTML. So what the guys were doing on that two example is that they put
-                                a image into the iframe with some icon on top as a play button using srcdoc propety. This let you pretty
-                                much put and whole page as inline element withing the iframe. Anyways lets not go to deep. There is a picture
-                                once it gets clicked will start to play the YouTube video as long autoplay works.. As I mentioned, I didnt like
-                                that it looks different and you need to double click a lot of times, but my main concern was that i would have
-                                to put a lot of lenghty inner styling in my HTML and I really like the clean look of the code as it was. 
-                                I started to develop and idea to move everything to the JS to later to be injected into the iframe when needed. 
-                                But I still didn`t like that there is a lots of HTML and CSS in my JS. And playing around hit me the simpliest
-                                idea. There is something called <a href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp"
-                                target="_blank" rel="noopener noreferrer">innerHTML</a>. This can be set I done it before. What I done is that
-                                i prepped an empty div which will be injected using this innerHTML. What happens the page loads, we have empty
-                                divs. But when you click on the whatever project it will call a function which will set the innerHTML to the 
-                                iframe we need. It works as magic, but as YouTube not messing around and right away start to bombard you with 
-                                the video and ad so on, messed up my animation. What i done I wrote an other function with a loading gif image. 
-                                When you click on the project, its setting that image, but after 0.5s its resetting the iframe again, not to 
-                                the actiual video. No double click or wierd icons and my code remained clean! One thing to know that after you
-                                click away I also had to write a function as you may not on that section now, but youtube would just continue
-                                playing and steal your bandwidth. So when you click away, the iframe will be set back to the gif I just metioned.
-                                Pretty nice solution, I`m proud of it as its my child! 
-
+                            <p>Welcome to the realm of Lazy-loading! If you are unfamiliar with the term: "Lazy-loading is 
+                                the practice of delaying load or initialization of resources or objects until they're actually
+                                 needed to improve performance and save system resources." Just imagine you scrolling through 
+                                 facebook/instagram, imagine that at the initial start of the app it would need to load in all 
+                                 the content for you. would be quite a janke ride! Furthermore you might just open the site for 
+                                 a second or two, but it's taking over all of your bandwidth and loading all the content even if 
+                                 you won`t need them later on. This solution exists! Many sites use an intersection observer. It's 
+                                 basically passing the message to the app what section of the site the user is currently "consuming".
+                                  You can tell it "if the viewport is less than 500px away", start loading in the images, videos etc. 
+                                  If you never reach that far on the site, it shall never load. A win-win-win solution. The reason I 
+                                  dive into this subject is because as I mentioned above I wanted to keep this project light-weight as 
+                                  possible. As soon as I embed a few YouTube videos, it went cra-cra in the network tab. YouTube/Google 
+                                  started to bombar the site with their scripts, figuring out what Ads to load and of course load the 
+                                  videos in. Remember, all sections are existing at the same time in this project. You might not look 
+                                  at the section where the video got embedded, but it will still load up. I could use an intersection observer 
+                                  for this, but I didn't want to add an external library for this, especially if my only concern was the 
+                                  embedded videos. I went to find different solutions for this but I ended up creating my own one. 
+                                  <br> Solutions: <a href="https://youtu.be/khdT1e7jEIE" target="_blank" rel="noopener noreferrer">Example-1</a> 
+                                  <a href="https://css-tricks.com/lazy-load-embedded-youtube-videos/" target="_blank" rel="noopener noreferrer">Example-2</a> 
+                                  <br> I liked the idea, but if you try it out, you can see that somehow is not really elegant. 
+                                  Many times the YouTube autoplay won't even work, so you basically need to click twice for the video to start. 
+                                  I also didn't like that a custom icon has to be used on top of the pictures.. Anyhow, here is my take on the subject:
+                                   Before I dive into this, we need to know what is 
+                                   <a href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp" target="_blank" rel="noopener noreferrer">Iframe</a>. 
+                                   Iframe is (it is in its name) a frame which lets you embed another HTML page into the current one. It has its own 
+                                   properties like style, history and document. It`s not interact with the parent HTML. So what the guys were doing 
+                                   on that two example is that they put a image into the iframe with some icon on top as a play button using srcdoc property. 
+                                   This lets you pretty much put the whole page as an inline element within the iframe. Anyways, let's not go too deep. 
+                                   There is a picture once it gets clicked will start to play the YouTube video as long autoplay works.. As I mentioned, 
+                                   I didn't like that it looks different and you need to double click a lot of times, but my main concern was that I 
+                                   would have to put a lot of lengthy inner styling in my HTML and I really like the clean look of the code as it was. 
+                                   I started to develop an idea to move everything to the JS to later be injected into the iframe when needed. But I 
+                                   still didn't like that there is a lot of HTML and CSS in my JS. And playing around hit me the simplest idea. 
+                                   There is something called <a href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp" target="_blank" rel="noopener noreferrer">innerHTML</a>.
+                                    This can be set. I've done it before! What I did is that I prepped an empty div which will be injected using this innerHTML.
+                                     What happens when the page loads, we have empty divs(containers if you like). But when you click on the whatever project 
+                                     it will call a function which will set the innerHTML to the iframe we need. It works as magic, but as YouTube is not 
+                                     messing around and right away starts to bombard you with the video and Ads so on, messed up my animation. What I 
+                                     did was I wrote another function with a loading gif image. When you click on the project, it's setting that image,
+                                      but after 0.5s it's resetting the iframe again, not to the actual video. No double click or wierd icons and my code 
+                                      remained clean! One thing to know that after you click away I also had to write a function as you may not on that 
+                                      section now, but youtube would just continue playing and steal your bandwidth. So when you click away, the iframe 
+                                      will be set back to the gif I just mentioned. Pretty nice solution, I`m proud of it, it's my child!
                             </p>
                         </div>
                     </div>
