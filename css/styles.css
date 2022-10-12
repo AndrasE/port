@@ -1105,13 +1105,6 @@ h3.my-profession {
 }
 
 @media (max-width: 767px) {
-    .section {
-        padding: 0 15px;
-    }
-    .aside .nav-toggler {
-        top : 15px;
-        left: 10px;
-    }
     .about .about-content .personal-info,
     .about .about-content .skills,
     .about .about-content .education,
@@ -1130,6 +1123,9 @@ h3.my-profession {
 }
 
 @media (max-width: 600px) {
+    .section {
+        padding: 0 15px;
+    }
     .section.open {
         left: 0;
     }
@@ -1137,7 +1133,7 @@ h3.my-profession {
         width: 210px;
     }
     .aside .nav-toggler.open {
-        left: 240px;
+        left: 220px;
     }
     .aside .logo a {
         font-size: 25px;
