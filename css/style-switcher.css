@@ -83,6 +83,9 @@
     .style-switcher .s-icon {
         margin-right: 15px;
     }
+    .style-switcher.open {
+        transform: translateX(-15px);
+    }
 }
 
 
