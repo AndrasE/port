@@ -1073,7 +1073,22 @@
                                 Remember, all sections are existing the same time in this project. You might not looking at the section where
                                 the video got embeded, but its still will load up. I could use an intersection observer for this, but I 
                                 didn`t want to add an external libary for this, especally if my only concern was the embeded videos. I went
-                                to find different solution for this and I ended up creating my own one. 
+                                to find different solutions for this but I ended up creating my own one. <br> 
+                                Solutions:  
+                                <a href="https://youtu.be/khdT1e7jEIE"
+                                target="_blank" rel="noopener noreferrer">Example-1</a>
+                                <a href="https://css-tricks.com/lazy-load-embedded-youtube-videos/"
+                                target="_blank" rel="noopener noreferrer">Example-2</a> <br>
+                                I liked the idea, but if you try it out, you can see that somehow is not really elegant. Many times the 
+                                YouTube autoplay won`t even work, so you basically need to click twice for the video to start. I also
+                                didn`t like that a custume icon has to be used on top of the pictures.. Anyhow, here is my take on the 
+                                subject: Before I dive into this, we need to know what is <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe"
+                                target="_blank" rel="noopener noreferrer">Iframe-2</a>. Iframe is (it`s in is name) a frame which let you
+                                embed an other HTML page into the current one. It has its on propeties like style, history and document. 
+                                It`s not interact with the parent HTML. So what the guys were doing on that two example is that they put
+                                a image into the iframe with some icon on top as a play button using srcdoc propety. This let you pretty
+                                much put and whole page as inline element withing the iframe. Anyways lets not go to deep. There is a picture
+                                once it gets clicked will start to play the YouTube video as long autoplay works.. 
                             </p>
                         </div>
                     </div>
