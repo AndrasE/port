@@ -1145,6 +1145,10 @@ h3.my-profession {
 }
 
 @media (max-width: 600px) {
+    p {
+        hyphens: auto;
+    }
+    
     .section .container {
         padding-top: 60px;
     }
