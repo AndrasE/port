@@ -1053,6 +1053,7 @@ h3.my-profession {
     padding: 15px;
     border: 1px solid var(--bg-black-50);
     border-radius: 10px;
+    margin-bottom: 30px;
 }
 
 .portfolio-project .portfolio-project-text a {
