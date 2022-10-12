@@ -1105,7 +1105,9 @@ h3.my-profession {
 }
 
 @media (max-width: 767px) {
-
+    .section {
+        padding: 0 15px;
+    }
     .about .about-content .personal-info,
     .about .about-content .skills,
     .about .about-content .education,
