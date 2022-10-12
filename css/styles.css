@@ -1109,6 +1109,7 @@ h3.my-profession {
         padding: 0 15px;
     }
     .aside .nav-toggler {
+        top : 15px;
         left: 10px;
     }
     .about .about-content .personal-info,
