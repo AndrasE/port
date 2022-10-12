@@ -1132,6 +1132,10 @@ h3.my-profession {
     .aside {
         width: 210px;
     }
+    .aside .nav-toggler {
+        top: 20px;
+        left: 15px;
+    }
     .aside .nav-toggler.open {
         left: 220px;
     }
