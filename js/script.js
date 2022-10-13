@@ -341,11 +341,11 @@ function setActiveProjectBack() {
 
 document.querySelector(".portfolio-project-link").addEventListener("click", () => {
     const activeSection = document.querySelector("section.active")
+    //  document.querySelector("a.nav-li-a-animation-4").classList.add("active")
+    // console.log(document.querySelector("a.nav-li-a-animation-4"));
     activeSection.classList.add("back-section")
-    activeSection.classList.remove("active")
     document.querySelector("section.portfolio-project").classList.add("active")
-    document.querySelector("nav-li-a-animation-4").classList.add("active")
-
+  
      if (document.querySelector(".style-switcher").classList.contains("open")) {
         document.querySelector(".style-switcher").classList.remove("open");
 
@@ -356,17 +356,11 @@ document.querySelector(".portfolio-project-link").addEventListener("click", () =
         activeSection.classList.remove("active")
         document.querySelector("section.portfolio-project").classList.add("active")
         document.querySelector("section.active").classList.remove("open")
-        if (document.querySelectorAll("a.active").length != 0) {
-            document.querySelector("a.active").classList.remove("active")
-        }
     } else {
         activeSection.classList.add("back-section")
         activeSection.classList.remove("active")
         document.querySelector("section.portfolio-project").classList.add("active")
         document.querySelector("section.active").classList.remove("open")
-        if (document.querySelectorAll("a.active").length != 0) {
-            document.querySelector("a.active").classList.remove("active")
-        }
     }
 
     function stopIframe () {
