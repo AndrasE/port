@@ -49,12 +49,12 @@ for (let x = 0; x < colorList; x++) {
         for (let y = 0; y < colorList; y++) {
 
             const spnActive = colors[y]
-            
+
             if (colors[y].classList.contains("active-color")) {
                 colors[y].classList.remove("active-color")
-            } 
+            }
         }
-        
+
         spn.classList.add("active-color")
     })
 }
@@ -124,12 +124,12 @@ hammer.on('swiperight', function () {
         addActiveSectionClass();
     } else if (window.innerWidth < 1200 && aside.classList.contains("open")) {
         // already opened once //
-        
-    } else if (window.innerWidth < 1200 ) {
+
+    } else if (window.innerWidth < 1200) {
         aside.classList.add("open");
         navTogglerBtn.classList.add("open");
         addActiveSectionClass();
-    } else {}
+    } else { }
 });
 
 hammer.on('swipeleft', function () {
@@ -155,7 +155,7 @@ const nav = document.querySelector(".nav"),
     totalNavList = navList.length,
     allSection = document.querySelectorAll("section:not(section.back-section)"),
     totalSection = allSection.length;
-    const blankSectionBack = document.querySelector("section.blank.back-section")
+const blankSectionBack = document.querySelector("section.blank.back-section")
 
 for (let i = 0; i < totalNavList; i++) {
     const a = navList[i].querySelector("a");
@@ -168,19 +168,20 @@ for (let i = 0; i < totalNavList; i++) {
         const andras = document.querySelector("section.andras")
         if (andras.classList.contains("active")) {
             blankSectionBack.classList.remove("back-section")
-           andras.classList.add("back-section")
+            andras.classList.add("back-section")
         }
 
         if (document.querySelector(".style-switcher").classList.contains("open")) {
-            document.querySelector(".style-switcher").classList.remove("open") }
+            document.querySelector(".style-switcher").classList.remove("open")
+        }
 
         for (let j = 0; j < totalNavList; j++) {
 
             setActiveProjectBack();
-            portfolioCheck ()
+            portfolioCheck()
 
-            if (document.querySelector("a.andras").classList.contains("underline")){
-            document.querySelector("a.andras").classList.remove("underline")
+            if (document.querySelector("a.andras").classList.contains("underline")) {
+                document.querySelector("a.andras").classList.remove("underline")
             }
             if (navList[j].querySelector("a").classList.contains("active")) {
                 addBackSection(j)
@@ -188,7 +189,7 @@ for (let i = 0; i < totalNavList; i++) {
             }
             navList[j].querySelector("a").classList.remove("active");
         }
-    
+
         this.classList.add("active")
         showSection(this)
 
@@ -206,7 +207,7 @@ document.querySelector(".andras").addEventListener("click", function () {
     const andrasSection = document.querySelector("section.andras")
     removeBackSection()
 
-   document.querySelector("a.andras").classList.add("underline")
+    document.querySelector("a.andras").classList.add("underline")
 
     if (document.querySelector(".style-switcher").classList.contains("open")) {
         document.querySelector(".style-switcher").classList.remove("open");
@@ -338,19 +339,19 @@ function setActiveProjectBack() {
 /* ------===== portfolio-project-linkk redirect to section =====------- */
 
 document.querySelector(".portfolio-project-link").addEventListener("click", () => {
-   const activeSection = document.querySelector("section.active")
-   activeSection.classList.add("back-section")
-   activeSection.classList.remove("active")
-   document.querySelector("section.portfolio-project").classList.add("active")
+    const activeSection = document.querySelector("section.active")
+    activeSection.classList.add("back-section")
+    activeSection.classList.remove("active")
+    document.querySelector("section.portfolio-project").classList.add("active")
 })
 
-function portfolioCheck () {
+function portfolioCheck() {
     const activeSection = document.querySelector("section.active")
 
     if (activeSection.classList.contains("portfolio-project")) {
         activeSection.classList.add("back-section")
 
-}
+    }
 }
 
 
