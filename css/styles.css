@@ -51,6 +51,12 @@ ul {
     list-style: none;
 }
 
+br {
+    content: " ";
+    display: block;
+    margin: 8px 0;
+ }
+
 .section {
     background-color: var(--bg-black-900);
     min-height: 100vh;

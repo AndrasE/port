@@ -335,9 +335,9 @@ function setActiveProjectBack() {
         }
     }
 }
-/* ------===== port-examples-link redirect to section =====------- */
+/* ------===== portfolio-project-linkk redirect to section =====------- */
 
-document.querySelector(".port-examples-link").addEventListener("click", () => {
+document.querySelector(".portfolio-project-link").addEventListener("click", () => {
    const activeSection = document.querySelector("section.active")
    activeSection.classList.add("back-section")
    activeSection.classList.remove("active")
