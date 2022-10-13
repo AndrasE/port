@@ -1068,8 +1068,8 @@ h3.my-profession {
     font-size: 16px;
     line-height: 25px;
     margin: auto;
-    max-width: 600px;
-    text-align: justify;
+    max-width: max-content;
+    text-align: center;
     word-break: break-all;
     color: var(--text-black-700);
     background-color: var(--bg-black-100);
@@ -1077,6 +1077,7 @@ h3.my-profession {
     border: 1px solid var(--bg-black-50);
     border-radius: 10px;
     margin-bottom: 30px;
+    white-space: 2px;
 }
 
 .portfolio-project .portfolio-project-text a {
