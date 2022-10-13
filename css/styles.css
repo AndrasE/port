@@ -980,7 +980,7 @@ h3.my-profession {
     width: 100%;
     display: flex;
 }
-.button-container a.portfolio-project-link {
+.button-container a {
     margin: auto;
 }
 
