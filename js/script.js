@@ -164,7 +164,7 @@ for (let i = 0; i < totalNavList; i++) {
         stopIframe()
         removeBackSection()
         blankSectionBack.classList.remove("back-section")
-
+   
         const andras = document.querySelector("section.andras")
         if (andras.classList.contains("active")) {
             blankSectionBack.classList.remove("back-section")
@@ -179,6 +179,7 @@ for (let i = 0; i < totalNavList; i++) {
 
             setActiveProjectBack();
             portfolioCheck()
+            
 
             if (document.querySelector("a.andras").classList.contains("underline")) {
                 document.querySelector("a.andras").classList.remove("underline")
@@ -206,7 +207,7 @@ document.querySelector(".andras").addEventListener("click", function () {
     const activeSection = document.querySelector("section.active")
     const andrasSection = document.querySelector("section.andras")
     removeBackSection()
-
+    stopIframe()
     document.querySelector("a.andras").classList.add("underline")
 
     if (document.querySelector(".style-switcher").classList.contains("open")) {
@@ -336,21 +337,50 @@ function setActiveProjectBack() {
         }
     }
 }
-/* ------===== portfolio-project-linkk redirect to section =====------- */
+/* ------===== portfolio-project-link redirect to section =====------- */
 
 document.querySelector(".portfolio-project-link").addEventListener("click", () => {
     const activeSection = document.querySelector("section.active")
     activeSection.classList.add("back-section")
     activeSection.classList.remove("active")
     document.querySelector("section.portfolio-project").classList.add("active")
+    document.querySelector("nav-li-a-animation-4").classList.add("active")
+
+     if (document.querySelector(".style-switcher").classList.contains("open")) {
+        document.querySelector(".style-switcher").classList.remove("open");
+
+    } if (window.innerWidth < 1200 && aside.classList.contains("open")) {
+        aside.classList.remove("open")
+        navTogglerBtn.classList.remove("open");
+        activeSection.classList.add("back-section")
+        activeSection.classList.remove("active")
+        document.querySelector("section.portfolio-project").classList.add("active")
+        document.querySelector("section.active").classList.remove("open")
+        if (document.querySelectorAll("a.active").length != 0) {
+            document.querySelector("a.active").classList.remove("active")
+        }
+    } else {
+        activeSection.classList.add("back-section")
+        activeSection.classList.remove("active")
+        document.querySelector("section.portfolio-project").classList.add("active")
+        document.querySelector("section.active").classList.remove("open")
+        if (document.querySelectorAll("a.active").length != 0) {
+            document.querySelector("a.active").classList.remove("active")
+        }
+    }
+
+    function stopIframe () {
+        document.getElementById("port-example-iframe-1").innerHTML = "<img src=images/loading.gif alt=loading-gif>"
+    }
+    setTimeout(stopIframe, 700)
 })
 
 function portfolioCheck() {
     const activeSection = document.querySelector("section.active")
 
     if (activeSection.classList.contains("portfolio-project")) {
+        
         activeSection.classList.add("back-section")
-
     }
 }
 
@@ -372,7 +402,6 @@ function setLazy() {
             document.getElementById("port-example-iframe-" + sectionIdNumber).innerHTML = iFrame3
         }
     }
-
     setTimeout(startLazy, 700)
 }
 
@@ -391,12 +420,10 @@ function stopIframe() {
 addEventListener('DOMContentLoaded', (event) => {
     DOMContentLoaded = event.timeStamp / 1000;
     DOMContentLoadedStr = String(DOMContentLoaded).slice(0, 5);
-
     console.log("DOM Content Loaded in " + DOMContentLoadedStr + "s " + "(HTML)");
 })
 
 window.addEventListener('load', (event) => {
     loadTime = (Date.now() - window.performance.timing.navigationStart) / 1000;
-
     console.log('All assets are loaded in ' + (loadTime) + "s " + "(CSS, JS)");
 });
