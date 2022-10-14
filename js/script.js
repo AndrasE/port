@@ -54,56 +54,38 @@ for (let x = 0; x < colorList; x++) {
                 colors[y].classList.remove("active-color")
             }
         }
+
         spn.classList.add("active-color")
     })
 }
-
-/* ------===== open / close classes add and remove functions for aside btn activeSection =====------- */
-const aside = document.querySelector(".aside");
-const navTogglerBtn = document.querySelector(".nav-toggler");
-const styleSwitcher = document.querySelector(".style-switcher");
-const activeSection = document.querySelector("section.active");
-
-function asideNavAndBtnToggle() {
-    aside.classList.toggle("open");
-    navTogglerBtn.classList.toggle("open");
-}
-function asideNavAndBtnOpen() {
-    aside.classList.add("open");
-    navTogglerBtn.classList.add("open");
-}
-function asideNavAndBtnClose() {
-    aside.classList.remove("open");
-    navTogglerBtn.classList.remove("open");
-}
-function styleSwitcherCloseIfOpen() {
-    if (styleSwitcher.classList.contains("open")) {
-        styleSwitcher.classList.remove("open")
-}}
 
 /* ------=====  style switcher toggle =====------- */
 const styleSwitcherToggler = document.querySelector(".style-toggler");
 
 styleSwitcherToggler.addEventListener("click", () => {
     if (window.innerWidth < 1200 && aside.classList.contains("open")) {
-        aside.classList.toggle("open");
-        navTogglerBtn.classList.toggle("open");
-        styleSwitcher.classList.toggle("open")
+        aside.classList.remove("open");
+        navTogglerBtn.classList.remove("open");
+        document.querySelector(".style-switcher").classList.toggle("open")
         document.querySelector("section.active").classList.toggle("open")
     } else {
-        styleSwitcher.classList.toggle("open")
+        document.querySelector(".style-switcher").classList.toggle("open")
     }
 })
 
+/* ------===== toggle aside if style switcher open => close =====------- */
+const navTogglerBtn = document.querySelector(".nav-toggler"),
+    aside = document.querySelector(".aside");
 
 navTogglerBtn.addEventListener("click", () => {
-    styleSwitcherCloseIfOpen()
+    const activeSection = document.querySelector("section.active")
 
-
-    if (window.innerWidth < 1200) {
-        asideNavAndBtnToggle()
+    // if small screen & style switcher open => close style switcher & open aside //
+    if (window.innerWidth < 1200 && document.querySelector(".style-switcher").classList.contains("open")) {
+        aside.classList.toggle("open");
+        navTogglerBtn.classList.toggle("open");
         activeSection.classList.toggle("open");
-       
+        document.querySelector(".style-switcher").classList.remove("open");
         // if 600<small screen<1999 & project section |or| about section is set as back-section  => remove it from back //
         // setting active section && aside closes the project section would be visiable in the back //
         //  on animation removing to have blank backsection will prevent it  //
@@ -111,17 +93,17 @@ navTogglerBtn.addEventListener("click", () => {
         && document.querySelector("section.project").classList.contains("back-section") 
         || document.querySelector("section.about").classList.contains("back-section") 
         || document.querySelector("section.port-examples").classList.contains("back-section")) {
-        asideNavAndBtnToggle()
+            
         document.querySelector("section.project").classList.remove("back-section")
         document.querySelector("section.about").classList.remove("back-section")
         document.querySelector("section.port-examples").classList.remove("back-section")
-        
+        aside.classList.toggle("open");
         activeSection.classList.toggle("open");
-        
+        navTogglerBtn.classList.toggle("open");
     } else {
-        asideNavAndBtnToggle()
+        aside.classList.toggle("open");
         activeSection.classList.toggle("open");
-        
+        navTogglerBtn.classList.toggle("open");
     }
 })
 
@@ -131,50 +113,47 @@ const hammer = new Hammer(
     { inputClass: Hammer.TouchMouseInput }
 );
 
-/* ------===== add open to active section < 1200 innerWidght (opens with aside) =====------- */
-function addOpenToActiveSectionClass() {
+function addActiveSectionClass() {
     const activeSection = document.querySelector("section.active")
-    activeSection.classList.add("open");
+    activeSection.classList.toggle("open");
 }
-
-function removeOpenFromActiveSectionClass() {
-    const activeSection = document.querySelector("section.active")
-    activeSection.classList.remove("open");
-}
-
-/* ------===== style swither close if open =====------- */
-
 
 hammer.on('swiperight', function () {
-    styleSwitcherCloseIfOpen()
-    asideNavAndBtnOpen()
     
-    if (window.innerWidth < 1200 
+    if (document.querySelector(".style-switcher").classList.contains("open")) {
+        document.querySelector(".style-switcher").classList.remove("open")
+    } else if (window.innerWidth < 1200 
     && document.querySelector("section.project").classList.contains("back-section") 
     || document.querySelector("section.about").classList.contains("back-section") 
     || document.querySelector("section.port-examples").classList.contains("back-section")) {
         document.querySelector("section.project").classList.remove("back-section")
         document.querySelector("section.about").classList.remove("back-section")
         document.querySelector("section.port-examples").classList.remove("back-section")
-        addOpenToActiveSectionClass()
+        aside.classList.add("open");
+        navTogglerBtn.classList.add("open");
+        addActiveSectionClass();
+    } else if (window.innerWidth < 1200 && aside.classList.contains("open")) {
+        // already opened once //
 
     } else if (window.innerWidth < 1200) {
-        addOpenToActiveSectionClass()
-    }
+        aside.classList.add("open");
+        navTogglerBtn.classList.add("open");
+        addActiveSectionClass();
+    } else { }
 });
 
 hammer.on('swipeleft', function () {
-
     if (aside.classList.contains("open")) {
-        asideNavAndBtnClose();
-        removeOpenFromActiveSectionClass();
+        aside.classList.remove("open")
+        navTogglerBtn.classList.remove("open");
+        addActiveSectionClass();
     } else {
-        styleSwitcher.classList.add("open")
+        document.querySelector(".style-switcher").classList.add("open")
     }
 });
 
 
-hammer.on('doubletap', function () {
+hammer.on('doubletap', function (e) {
     dayNight.querySelector("i").classList.toggle("fa-sun");
     dayNight.querySelector("i").classList.toggle("fa-moon");
     document.body.classList.toggle("light")
@@ -189,9 +168,9 @@ const nav = document.querySelector(".nav"),
 const blankSectionBack = document.querySelector("section.blank.back-section")
 
 for (let i = 0; i < totalNavList; i++) {
-    const a = navList[i].querySelector("a")
+    const a = navList[i].querySelector("a");
     a.addEventListener("click", function () {
-        styleSwitcherCloseIfOpen()
+
         stopIframe()
         removeBackSection()
         blankSectionBack.classList.remove("back-section")
@@ -200,6 +179,10 @@ for (let i = 0; i < totalNavList; i++) {
         if (andras.classList.contains("active")) {
             blankSectionBack.classList.remove("back-section")
             andras.classList.add("back-section")
+        }
+
+        if (document.querySelector(".style-switcher").classList.contains("open")) {
+            document.querySelector(".style-switcher").classList.remove("open")
         }
 
         for (let j = 0; j < totalNavList; j++) {
@@ -235,11 +218,13 @@ document.querySelector(".andras").addEventListener("click", function () {
     const andrasSection = document.querySelector("section.andras")
     removeBackSection()
     stopIframe()
-    styleSwitcherCloseIfOpen()
+   
     document.querySelector("a.andras").classList.add("underline")
 
+    if (document.querySelector(".style-switcher").classList.contains("open")) {
+        document.querySelector(".style-switcher").classList.remove("open");
 
-     if (window.innerWidth < 1200 && aside.classList.contains("open")) {
+    } if (window.innerWidth < 1200 && aside.classList.contains("open")) {
         aside.classList.remove("open")
         navTogglerBtn.classList.remove("open");
         activeSection.classList.add("back-section")
@@ -293,9 +278,10 @@ document.querySelector(".hire-me").addEventListener("click", function () {
     const sectionIndex = this.getAttribute("data-section-index");
     console.log(sectionIndex);
 
-    styleSwitcherCloseIfOpen()
+    if (document.querySelector(".style-switcher").classList.contains("open")) {
+        document.querySelector(".style-switcher").classList.remove("open");
 
-     if (window.innerWidth < 1200 && aside.classList.contains("open")) {
+    } if (window.innerWidth < 1200 && aside.classList.contains("open")) {
         aside.classList.remove("open")
         navTogglerBtn.classList.remove("open");
         showSection(this);
@@ -327,9 +313,10 @@ for (let i = 0; i < totalProjectList; i++) {
         const sectionId = this.getAttribute("href");
         sectionIdNumber = sectionId.slice(5, 6)
 
-        styleSwitcherCloseIfOpen()
+        if (document.querySelector(".style-switcher").classList.contains("open")) {
+            document.querySelector(".style-switcher").classList.remove("open");
 
-        if (window.innerWidth < 1999) {
+        } if (window.innerWidth < 1999) {
             showSection(this);
             removeBackSection();
             addBackSection(sectionIndex);
@@ -370,9 +357,10 @@ document.querySelector(".portfolio-project-link").addEventListener("click", () =
     activeSection.classList.add("back-section")
     document.querySelector("section.portfolio-project").classList.add("active")
   
-    styleSwitcherCloseIfOpen()
+     if (document.querySelector(".style-switcher").classList.contains("open")) {
+        document.querySelector(".style-switcher").classList.remove("open");
 
- if (window.innerWidth < 1200 && aside.classList.contains("open")) {
+    } if (window.innerWidth < 1200 && aside.classList.contains("open")) {
         aside.classList.remove("open")
         navTogglerBtn.classList.remove("open");
         activeSection.classList.add("back-section")
