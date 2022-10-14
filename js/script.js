@@ -89,9 +89,14 @@ navTogglerBtn.addEventListener("click", () => {
         // if 600<small screen<1999 & project section |or| about section is set as back-section  => remove it from back //
         // setting active section && aside closes the project section would be visiable in the back //
         //  on animation removing to have blank backsection will prevent it  //
-    } else if (window.innerWidth < 1200 && document.querySelector("section.project").classList.contains("back-section") || document.querySelector("section.about").classList.contains("back-section")) {
+    } else if (window.innerWidth < 1200 
+        && document.querySelector("section.project").classList.contains("back-section") 
+        || document.querySelector("section.about").classList.contains("back-section") 
+        || document.querySelector("section.port-examples").classList.contains("back-section")) {
+            
         document.querySelector("section.project").classList.remove("back-section")
         document.querySelector("section.about").classList.remove("back-section")
+        document.querySelector("section.port-examples").classList.remove("back-section")
         aside.classList.toggle("open");
         activeSection.classList.toggle("open");
         navTogglerBtn.classList.toggle("open");
@@ -114,11 +119,16 @@ function addActiveSectionClass() {
 }
 
 hammer.on('swiperight', function () {
+    
     if (document.querySelector(".style-switcher").classList.contains("open")) {
         document.querySelector(".style-switcher").classList.remove("open")
-    } else if (window.innerWidth < 1200 && (document.querySelector("section.project").classList.contains("back-section") || document.querySelector("section.about").classList.contains("back-section"))) {
+    } else if (window.innerWidth < 1200 
+    && document.querySelector("section.project").classList.contains("back-section") 
+    || document.querySelector("section.about").classList.contains("back-section") 
+    || document.querySelector("section.port-examples").classList.contains("back-section")) {
         document.querySelector("section.project").classList.remove("back-section")
         document.querySelector("section.about").classList.remove("back-section")
+        document.querySelector("section.port-examples").classList.remove("back-section")
         aside.classList.add("open");
         navTogglerBtn.classList.add("open");
         addActiveSectionClass();
@@ -208,6 +218,7 @@ document.querySelector(".andras").addEventListener("click", function () {
     const andrasSection = document.querySelector("section.andras")
     removeBackSection()
     stopIframe()
+   
     document.querySelector("a.andras").classList.add("underline")
 
     if (document.querySelector(".style-switcher").classList.contains("open")) {
@@ -370,12 +381,22 @@ document.querySelector(".portfolio-project-link").addEventListener("click", () =
 })
 
 function portfolioCheck() {
+
     const activeSection = document.querySelector("section.active")
+    if (document.querySelector("section.portfolio-project").classList.contains("active")) {
+
+    if (window.innerWidth < 1200 && aside.classList.contains("open")) {
+        document.querySelector("section.project").classList.remove("hidden")
+        document.querySelector("section.blank").classList.add("back-section")
+    }
+
 
     if (activeSection.classList.contains("portfolio-project")) {
         
         activeSection.classList.add("back-section")
     }
+
+}
 }
 
 
