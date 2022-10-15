@@ -140,6 +140,7 @@ navTogglerBtn.addEventListener("click", () => {
         || document.querySelector("section.about").classList.contains("back-section")
         || document.querySelector("section.port-examples").classList.contains("back-section")) {
         document.querySelector("section.project").classList.remove("back-section")
+        document.querySelector("section.project").classList.add("open")
         document.querySelector("section.about").classList.remove("back-section")
         document.querySelector("section.port-examples").classList.remove("back-section")
     }
@@ -158,6 +159,7 @@ hammer.on('swiperight', function () {
         || document.querySelector("section.about").classList.contains("back-section")
         || document.querySelector("section.port-examples").classList.contains("back-section")) {
         document.querySelector("section.project").classList.remove("back-section")
+        document.querySelector("section.project").classList.add("open")
         document.querySelector("section.about").classList.remove("back-section")
         document.querySelector("section.port-examples").classList.remove("back-section")
         asideBtnOpen1200()
@@ -344,6 +346,7 @@ document.querySelector(".portfolio-project-link").addEventListener("click", () =
     asideBtnClose1200()
     activeSection.classList.add("back-section")
     activeSectionClose1200()
+    
 })
 
 function portfolioCheck() {
@@ -351,7 +354,6 @@ function portfolioCheck() {
 
     if (document.querySelector("section.portfolio-project").classList.contains("active")) {
         if (window.innerWidth < 1200 && aside.classList.contains("open")) {
-            document.querySelector("section.project").classList.remove("hidden")
             document.querySelector("section.blank").classList.add("back-section")
         }
         if (activeSection.classList.contains("portfolio-project")) {
