@@ -154,7 +154,7 @@ const hammer = new Hammer(
 hammer.on('swiperight', function () {
     if (styleSwitcher.classList.contains("open")) {
         styleSwitcher.classList.remove("open")
-    } else if (document.querySelector("section.project").classList.contains("back-section")
+    } else if (window.innerWidth < 1200 && document.querySelector("section.project").classList.contains("back-section")
         || document.querySelector("section.about").classList.contains("back-section")
         || document.querySelector("section.port-examples").classList.contains("back-section")) {
         document.querySelector("section.project").classList.remove("back-section")
@@ -162,7 +162,7 @@ hammer.on('swiperight', function () {
         document.querySelector("section.port-examples").classList.remove("back-section")
         asideBtnOpen1200()
         activeSectionOpen1200()
-    } else if (window.innerWidth < 1200) {
+    } else {
         asideBtnOpen1200()
         activeSectionOpen1200()
     }
@@ -203,6 +203,7 @@ for (let i = 0; i < totalNavList; i++) {
         if (document.querySelector("a.andras").classList.contains("underline")) {
             document.querySelector("a.andras").classList.remove("underline")
         }
+
         const andras = document.querySelector("section.andras")
         if (andras.classList.contains("active")) {
             blankSectionBack.classList.remove("back-section")
@@ -335,11 +336,11 @@ function setActiveProjectBack() {
 /* ------===== portfolio-project-link redirect to section =====------- */
 document.querySelector(".portfolio-project-link").addEventListener("click", () => {
     const activeSection = document.querySelector("section.active")
+    stopIframe()
+    styleSwitcherCloseIfOpen()
     activeSection.classList.add("back-section")
     activeSection.classList.remove("active")
     document.querySelector("section.portfolio-project").classList.add("active")
-    styleSwitcherCloseIfOpen()
-    stopIframe()
     asideBtnClose1200()
     activeSection.classList.add("back-section")
     activeSectionClose1200()
