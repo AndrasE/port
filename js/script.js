@@ -125,9 +125,7 @@ styleSwitcher.addEventListener("click", () => {
     }
 })
 
-/* ------===== toggle aside if style switcher open => close =====------- */
-
-
+/* ------===== toggle aside =====------- */
 navTogglerBtn.addEventListener("click", () => {
     styleSwitcherCloseIfOpen()
     asideNavAndBtnToggle()
@@ -205,7 +203,6 @@ for (let i = 0; i < totalNavList; i++) {
         if (document.querySelector("a.andras").classList.contains("underline")) {
             document.querySelector("a.andras").classList.remove("underline")
         }
-
         const andras = document.querySelector("section.andras")
         if (andras.classList.contains("active")) {
             blankSectionBack.classList.remove("back-section")
@@ -221,7 +218,7 @@ for (let i = 0; i < totalNavList; i++) {
             }
             navList[j].querySelector("a").classList.remove("active");
         }
-
+        console.log(this);
         this.classList.add("active")
         showSection(this)
         asideBtnClose1200()
