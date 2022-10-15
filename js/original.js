@@ -47,89 +47,63 @@ for (let x = 0; x < colorList; x++) {
     spn.addEventListener("click", () => {
 
         for (let y = 0; y < colorList; y++) {
+
+            const spnActive = colors[y]
+
             if (colors[y].classList.contains("active-color")) {
                 colors[y].classList.remove("active-color")
             }
         }
+
         spn.classList.add("active-color")
     })
 }
-/* ------===== open/close classes add/remove for aside btn activeSection functions =====------- */
-const aside = document.querySelector(".aside");
-const navTogglerBtn = document.querySelector(".nav-toggler");
-const styleSwitcher = document.querySelector(".style-switcher");
-const activeSection = document.querySelector("section.active");
 
-function styleSwitcherCloseIfOpen() {
-    if (styleSwitcher.classList.contains("open")) {
-        styleSwitcher.classList.remove("open")
-    }
-}
-function asideNavAndBtnToggle() {
-    aside.classList.toggle("open");
-    navTogglerBtn.classList.toggle("open");
-}
-/* ------=====  aside btn section < 1200 =====------- */
-function asideBtnOpen1200() {
-    if (window.innerWidth < 1200) {
-    aside.classList.add("open");
-    navTogglerBtn.classList.add("open");
-}}
-function asideBtnClose1200() {
-    if (window.innerWidth < 1200) {
-    aside.classList.remove("open");
-    navTogglerBtn.classList.remove("open");
- }}
- function addOpenClass1200() {
-    const activeSection = document.querySelector("section.active")
-    if (window.innerWidth < 1200) {
-    activeSection.classList.add("open");
-}}
-function removeOpenClass1200() {
-    const activeSection = document.querySelector("section.active")
-    if (window.innerWidth < 1200) {
-    activeSection.classList.remove("open");
-}}
-function activeSectionOpen1200() {
-    const activeSection = document.querySelector("section.active")
-    if (window.innerWidth < 1200) {
-    activeSection.classList.add("open")}
-}
-function activeSectionToggle1200() {
-    const activeSection = document.querySelector("section.active")
-    if (window.innerWidth < 1200) {
-    activeSection.classList.toggle("open")}
-}
 /* ------=====  style switcher toggle =====------- */
-styleSwitcher.addEventListener("click", () => {
-    
+const styleSwitcherToggler = document.querySelector(".style-toggler");
+
+styleSwitcherToggler.addEventListener("click", () => {
     if (window.innerWidth < 1200 && aside.classList.contains("open")) {
         aside.classList.remove("open");
         navTogglerBtn.classList.remove("open");
-        styleSwitcher.classList.toggle("open")
+        document.querySelector(".style-switcher").classList.toggle("open")
         document.querySelector("section.active").classList.toggle("open")
     } else {
-        styleSwitcher.classList.toggle("open")
+        document.querySelector(".style-switcher").classList.toggle("open")
     }
 })
 
 /* ------===== toggle aside if style switcher open => close =====------- */
-
+const navTogglerBtn = document.querySelector(".nav-toggler"),
+    aside = document.querySelector(".aside");
 
 navTogglerBtn.addEventListener("click", () => {
-    styleSwitcherCloseIfOpen()
-    asideNavAndBtnToggle()
-    activeSectionToggle1200()
+    const activeSection = document.querySelector("section.active")
+
+    // if small screen & style switcher open => close style switcher & open aside //
+    if (window.innerWidth < 1200 && document.querySelector(".style-switcher").classList.contains("open")) {
+        aside.classList.toggle("open");
+        navTogglerBtn.classList.toggle("open");
+        activeSection.classList.toggle("open");
+        document.querySelector(".style-switcher").classList.remove("open");
         // if 600<small screen<1999 & project section |or| about section is set as back-section  => remove it from back //
         // setting active section && aside closes the project section would be visiable in the back //
         //  on animation removing to have blank backsection will prevent it  //
-   if (window.innerWidth < 1200 
+    } else if (window.innerWidth < 1200 
         && document.querySelector("section.project").classList.contains("back-section") 
         || document.querySelector("section.about").classList.contains("back-section") 
         || document.querySelector("section.port-examples").classList.contains("back-section")) {
+            
         document.querySelector("section.project").classList.remove("back-section")
         document.querySelector("section.about").classList.remove("back-section")
         document.querySelector("section.port-examples").classList.remove("back-section")
+        aside.classList.toggle("open");
+        activeSection.classList.toggle("open");
+        navTogglerBtn.classList.toggle("open");
+    } else {
+        aside.classList.toggle("open");
+        activeSection.classList.toggle("open");
+        navTogglerBtn.classList.toggle("open");
     }
 })
 
@@ -143,33 +117,43 @@ function addActiveSectionClass() {
     const activeSection = document.querySelector("section.active")
     activeSection.classList.toggle("open");
 }
+
 hammer.on('swiperight', function () {
-    if (styleSwitcher.classList.contains("open")) {
-        styleSwitcher.classList.remove("open")
-    } else if ( document.querySelector("section.project").classList.contains("back-section") 
+    
+    if (document.querySelector(".style-switcher").classList.contains("open")) {
+        document.querySelector(".style-switcher").classList.remove("open")
+    } else if (window.innerWidth < 1200 
+    && document.querySelector("section.project").classList.contains("back-section") 
     || document.querySelector("section.about").classList.contains("back-section") 
     || document.querySelector("section.port-examples").classList.contains("back-section")) {
         document.querySelector("section.project").classList.remove("back-section")
         document.querySelector("section.about").classList.remove("back-section")
         document.querySelector("section.port-examples").classList.remove("back-section")
-        asideBtnOpen1200()
-        activeSectionOpen1200()
+        aside.classList.add("open");
+        navTogglerBtn.classList.add("open");
+        addActiveSectionClass();
+    } else if (window.innerWidth < 1200 && aside.classList.contains("open")) {
+        // already opened once //
+
     } else if (window.innerWidth < 1200) {
-        asideBtnOpen1200()
-        activeSectionOpen1200()
-    }
+        aside.classList.add("open");
+        navTogglerBtn.classList.add("open");
+        addActiveSectionClass();
+    } else { }
 });
 
-hammer.on('swipeleft', function() {
+hammer.on('swipeleft', function () {
     if (aside.classList.contains("open")) {
-        asideBtnClose1200()
-        activeSectionToggle1200()
+        aside.classList.remove("open")
+        navTogglerBtn.classList.remove("open");
+        addActiveSectionClass();
     } else {
-        styleSwitcher.classList.add("open")
+        document.querySelector(".style-switcher").classList.add("open")
     }
 });
 
-hammer.on('doubletap', function() {
+
+hammer.on('doubletap', function (e) {
     dayNight.querySelector("i").classList.toggle("fa-sun");
     dayNight.querySelector("i").classList.toggle("fa-moon");
     document.body.classList.toggle("light")
@@ -189,13 +173,16 @@ for (let i = 0; i < totalNavList; i++) {
 
         stopIframe()
         removeBackSection()
-        styleSwitcherCloseIfOpen()
         blankSectionBack.classList.remove("back-section")
    
         const andras = document.querySelector("section.andras")
         if (andras.classList.contains("active")) {
             blankSectionBack.classList.remove("back-section")
             andras.classList.add("back-section")
+        }
+
+        if (document.querySelector(".style-switcher").classList.contains("open")) {
+            document.querySelector(".style-switcher").classList.remove("open")
         }
 
         for (let j = 0; j < totalNavList; j++) {
@@ -231,11 +218,13 @@ document.querySelector(".andras").addEventListener("click", function () {
     const andrasSection = document.querySelector("section.andras")
     removeBackSection()
     stopIframe()
-    styleSwitcherCloseIfOpen()
-
+   
     document.querySelector("a.andras").classList.add("underline")
 
-   if (window.innerWidth < 1200 && aside.classList.contains("open")) {
+    if (document.querySelector(".style-switcher").classList.contains("open")) {
+        document.querySelector(".style-switcher").classList.remove("open");
+
+    } if (window.innerWidth < 1200 && aside.classList.contains("open")) {
         aside.classList.remove("open")
         navTogglerBtn.classList.remove("open");
         activeSection.classList.add("back-section")
@@ -288,9 +277,11 @@ function updateNav(element) {
 document.querySelector(".hire-me").addEventListener("click", function () {
     const sectionIndex = this.getAttribute("data-section-index");
     console.log(sectionIndex);
-    styleSwitcherCloseIfOpen()
 
-    if (window.innerWidth < 1200 && aside.classList.contains("open")) {
+    if (document.querySelector(".style-switcher").classList.contains("open")) {
+        document.querySelector(".style-switcher").classList.remove("open");
+
+    } if (window.innerWidth < 1200 && aside.classList.contains("open")) {
         aside.classList.remove("open")
         navTogglerBtn.classList.remove("open");
         showSection(this);
@@ -317,12 +308,15 @@ const projectNav = document.querySelector(".project-nav"),
 for (let i = 0; i < totalProjectList; i++) {
     const a = projectList[i].querySelector("a");
     a.addEventListener("click", function () {
-        styleSwitcherCloseIfOpen()
+
         const sectionIndex = this.getAttribute("data-section-index");
         const sectionId = this.getAttribute("href");
         sectionIdNumber = sectionId.slice(5, 6)
 
-     if (window.innerWidth < 1999) {
+        if (document.querySelector(".style-switcher").classList.contains("open")) {
+            document.querySelector(".style-switcher").classList.remove("open");
+
+        } if (window.innerWidth < 1999) {
             showSection(this);
             removeBackSection();
             addBackSection(sectionIndex);
@@ -363,9 +357,10 @@ document.querySelector(".portfolio-project-link").addEventListener("click", () =
     activeSection.classList.add("back-section")
     document.querySelector("section.portfolio-project").classList.add("active")
   
-    styleSwitcherCloseIfOpen()
+     if (document.querySelector(".style-switcher").classList.contains("open")) {
+        document.querySelector(".style-switcher").classList.remove("open");
 
-    if (window.innerWidth < 1200 && aside.classList.contains("open")) {
+    } if (window.innerWidth < 1200 && aside.classList.contains("open")) {
         aside.classList.remove("open")
         navTogglerBtn.classList.remove("open");
         activeSection.classList.add("back-section")
@@ -379,7 +374,10 @@ document.querySelector(".portfolio-project-link").addEventListener("click", () =
         document.querySelector("section.active").classList.remove("open")
     }
 
-    stopIframe()
+    function stopIframe () {
+        document.getElementById("port-example-iframe-1").innerHTML = "<img src=images/loading.gif alt=loading-gif>"
+    }
+    setTimeout(stopIframe, 700)
 })
 
 function portfolioCheck() {
