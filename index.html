@@ -7,12 +7,10 @@
 
     <title>Andras</title>
     <!------===== icon =====------->
-
     <link rel="icon" href="images/icon.ico">
     <!------===== styles =====------->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/skins/color-1.css">
-
     <!------===== fonts =====------->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style"
@@ -20,7 +18,6 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
     <!------===== styles switcher =====------->
     <link rel="stylesheet" href="css/skins/color-1.css" class="alternate-style" title="color-1" disabled>
     <link rel="stylesheet" href="css/skins/color-2.css" class="alternate-style" title="color-2" disabled>
@@ -28,7 +25,6 @@
     <link rel="stylesheet" href="css/skins/color-4.css" class="alternate-style" title="color-4" disabled>
     <link rel="stylesheet" href="css/skins/color-5.css" class="alternate-style" title="color-5" disabled>
     <link rel="stylesheet" href="css/style-switcher.css">
-
     <!------===== hammmer.js (swipe) =====------->
     <script src="https://hammerjs.github.io/dist/hammer.js"></script>
 </head>
@@ -963,20 +959,20 @@
                     <div class="row">
                         <div class="portfolio-project-text padd-15">
                             <h3>Lazyload, swipe and much more</h3>
-                            <p>I absulutely loved the design of this guy. Its clean and fresh
+                            <p>I absulutely loved the design. Its clean and fresh
                                 and looks dynamic. I really thought by finishing the code following
-                                the tutorial will pretty much wrap up this project, but I was wrong. Very wrong.
+                                the tutorial will pretty much wrap up this project, but I was wrong. Very wrong!
                             </p>
                             <h4>Sections</h4>
                             <p>As you can see on the site there are slides coming right to left for each
                                 link you click on. These are sections, although it looks that they all different
-                                components of the page but they are really not! Just imagine a standard webpage as
+                                components of the page but they are really not! <br> Just imagine a standard webpage as
                                 a roll of paper. As you scroll down you go through different segments of the same paper.
                                 Now imagine this roll to be cut up for a given dimensions(sections) and start piling up
                                 these "card/sections" on top of each other. They all exist the same time, in front
                                 of you but most of them gets hidden away by the first card. As the new section slides
-                                in, the previous one stayed in the back. Each slides will have qualities such "hidden",
-                                "back-section", "active" as and when required. As I finished the initial project, I
+                                in, the previous one stayes in the back. Each slides will have qualities such "hidden",
+                                "back-section", "active" as and when required. <br> When I finished the initial project, I
                                 realized there is an
                                 issue while loading the page. The last slide that loads will be visible for a second and
                                 kind of ruining the inital animation. Easy fix would be to add and empty black section
@@ -988,19 +984,19 @@
                                 project NOT only locally, it will require more time for the DOM to load in, so the weird
                                 trace of the second flashing up will come back. Even though we are quick, but to pile
                                 the cards
-                                on top of each other as fast to noone will be able to notice anything is more fast than
+                                on top of each other as fast that noone will be able to notice anything is more fast than
                                 we the speed possibly can do. Not to mention that these pack of cards getting bulkier!
-                                Okay the next
+                                <br>Okay the next
                                 solution to the problem was to set all not needed sections to be hidden until the DOM
                                 loaded.
                                 That worked again for a while, but every now and then, it seems the issue came back with
                                 a flash. The reason being is that the DOM loads first (line by line) and styling is
                                 after. You
                                 start putting the cards on top of each other, but you haven`t yet learnt the trick to
-                                hide what you do. Its
+                                hide what you are doing. Its
                                 becouse DOM is partially built by the time the CSS (which contians this trick) is
                                 loaded.. I realised I
-                                could do better. Rather than leave a blank section as the last slide I should make it
+                                could do better.<br> Rather than leave a blank section as the last slide I should make it
                                 the first
                                 and add it as "back-section" right away. Like this, when the HTML and right after the
                                 CSS starts loading it will eliminate the issue. By the time it finishes the load the
@@ -1022,13 +1018,13 @@
                                 read on Stackoverflow that they are harder to decode, so the gain is not as significant.
                                 This answer was about 4 years ago,
                                 so I wasn't sure if it still stands. I had to make my own testrun for it, just wanted to
-                                know. My original Jpegs weren`t
+                                know. <br> My original Jpegs weren`t
                                 anything big to start with, but making them as a Webp the size got reduced even further.
                                 I compared the page load time
                                 using Jpeg vs Webp. What I found is that it means a small improvement in my case. I talk
                                 around 0.0x seconds worth of
-                                improvement. Although I didn't gain anything much, it's clear to see I would have bigger
-                                resolution, larger images it would
+                                improvement. Although I didn't gain anything much, it's clear to see I would have more and bigger
+                                resolution (larger) images it would
                                 make a difference. I just thought I share my findings after I invested in researching
                                 and test the topic.
                             </p>
@@ -1048,7 +1044,7 @@
                                 means you can click on the logo which is not
                                 part of the navigation section but still brings up a section. Same with the
                                 project-section, there are examples and even
-                                inside the examples are more links to further slides. Is this a problem? Not really, but
+                                inside the examples are more links to further slides. <br>Is this a problem? Not really, but
                                 what we need to understand is
                                 that each click calls an event-listener. It means you click on something and will
                                 execute a function. The navigation panel is
@@ -1066,7 +1062,7 @@
                                 happen. I have 5 navigation links
                                 (the easy part), about 4 project examples with 4 more sections to link to them and
                                 around 2-3 buttons to do similar
-                                whichever part of the page. Now getting a bit more complicated you think? Yes and no!
+                                whichever part of the page. Now getting a bit more complicated you think? Yes and no!<br>
                                 Now imagine that each of your
                                 clicks not just slides in a new section, but also highlights on the side section of the
                                 page what the current content is. Wait
@@ -1076,7 +1072,7 @@
                                 mobile let the navigation side overflow the content, but
                                 when it's around tablet size, let the navigation side push the content on the right, it
                                 looks cool afterall! You know what I
-                                want the page to be responsive to swipes! Yess!! We all want that! And here we are now a
+                                want the page to be responsive to swipes! Yess!! We all want that! <br>And here we are now a
                                 whole lot of arrays of different
                                 outcomes. We have if statements within if statements and functions in functions.
                                 <a href="https://www.dropbox.com/s/4p3yazozwp0g5o4/andras-example.png?dl=0"
@@ -1085,7 +1081,7 @@
                                 small/medium/large screens,
                                 what happens if the style toggle is already open, what happens when we swipe the
                                 navigation panel to be open (all screen sizes),
-                                but we close it with the button and swipe back. What to learn from this? One thing for
+                                but we close it with the button and swipe back.<br> What to learn from this? One thing for
                                 certain,
                                 plan what you do! If I have had set up the page differently as I started with, knowing
                                 that I want so much more from it,
@@ -1104,7 +1100,7 @@
                                 around was pretty much straight forward. The only issue I had is that although it worked
                                 as it should on
                                 desktop, but anytime I tried to use it responsively (mobile/tablet) it didn`t fire the
-                                required function.
+                                required functions.
                                 Was a bit annoying to find the solution, but eventually I did. It was in the deeper
                                 realm of codes, but seems
                                 like I needed to overwrite something for it`s normal behaviour. I live the code here as
@@ -1120,36 +1116,34 @@
                                 is
                                 the practice of delaying load or initialization of resources or objects until they're
                                 actually
-                                needed to improve performance and save system resources." Just imagine you scrolling
+                                needed to improve performance and save system resources." <br>Just imagine you scrolling
                                 through
                                 facebook/instagram, imagine that at the initial start of the app it would need to load
                                 in all
-                                the content for you. would be quite a janke ride! Furthermore you might just open the
+                                the content for you. Would be quite a janke ride! Furthermore you might just open the
                                 site for
                                 a second or two, but it's taking over all of your bandwidth and loading all the content
                                 even if
-                                you won`t need them later on. This solution exists! Many sites use an intersection
+                                you won`t need them later on. <br>A solution exists! Many sites use an intersection
                                 observer. It's
                                 basically passing the message to the app what section of the site the user is currently
                                 "consuming".
-                                You can tell it "if the viewport is less than 500px away", start loading in the images,
+                                You can tell it "if the viewport is less than 500pixels away", start loading in the images,
                                 videos etc.
-                                If you never reach that far on the site, it shall never load. A win-win-win solution.
+                                If you never reach that far on the site, it shall never load. A win-win-win solution.<br>
                                 The reason I
                                 dive into this subject is because as I mentioned above I wanted to keep this project
                                 light-weight as
                                 possible. As soon as I embed a few YouTube videos, it went cra-cra in the network tab.
                                 YouTube/Google
-                                started to bombar the site with their scripts, figuring out what Ads to load and of
+                                started to bombard the site with their scripts, figuring out what Ads to load and of
                                 course load the
                                 videos in. Remember, all sections are existing at the same time in this project. You
                                 might not look
-                                at the section where the video got embedded, but it will still load up. I could use an
-                                intersection observer
-                                for this, but I didn't want to add an external library for this, especially if my only
-                                concern was the
-                                embedded videos. I went to find different solutions for this but I ended up creating my
-                                own one.
+                                at the section where the video got embedded, but it will still load up. <br> I could use an
+                                intersection observer, but I didn't want to add an external library for this, especially if my only
+                                concern was the embedded videos. I went to find different solutions for this but I ended up creating my
+                                own one. Here is the work of others:
 
                                 <p class="example-code">
                                     Solutions: &nbsp <a href="https://youtu.be/khdT1e7jEIE" target="_blank"
@@ -1163,7 +1157,7 @@
                                 Many times the YouTube autoplay won't even work, so you basically need to click twice
                                 for the video to start.
                                 I also didn't like that a custom icon has to be used on top of the pictures.. Anyhow,
-                                here is my take on the subject:
+                                here is my take on the subject:<br>
                                 Before I dive into this, we need to know what is
                                 <a href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp" target="_blank"
                                     rel="noopener noreferrer">Iframe</a>.
@@ -1172,11 +1166,11 @@
                                 properties like style, history and document. It`s not interact with the parent HTML. So
                                 what the guys were doing
                                 on that two example is that they put a image into the iframe with some icon on top as a
-                                play button using srcdoc property.
+                                play button using srcdoc property.<br>
                                 This lets you pretty much put the whole page as an inline element within the iframe.
                                 Anyways, let's not go too deep.
                                 There is a picture once it gets clicked will start to play the YouTube video as long
-                                autoplay works.. As I mentioned,
+                                autoplay works..<br> As I mentioned,
                                 I didn't like that it looks different and you need to double click a lot of times, but
                                 my main concern was that I
                                 would have to put a lot of lengthy inner styling in my HTML and I really like the clean
@@ -1185,7 +1179,7 @@
                                 iframe when needed. But I
                                 still didn't like that there is a lot of HTML and CSS in my JS. And playing around hit
                                 me the simplest idea.
-                                There is something called <a
+                                <br>There is something called <a
                                     href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp" target="_blank"
                                     rel="noopener noreferrer">innerHTML</a>.
                                 This can be set. I've done it before! What I did is that I prepped an empty div which
@@ -1198,11 +1192,11 @@
                                 up my animation. What I
                                 did was I wrote another function with a loading gif image. When you click on the
                                 project, it's setting that image,
-                                but after 0.5s it's resetting the iframe again, not to the actual video. No double click
+                                but after 0.5s it's resetting the iframe again, now to the actual video. No double click
                                 or wierd icons and my code
-                                remained clean! One thing to know that after you click away I also had to write a
+                                remained clean! <br>One thing to know that after you click away I also had to write a
                                 function as you may not on that
-                                section now, but youtube would just continue playing and steal your bandwidth. So when
+                                section now, but youtube would just continue playing in the backgroubd and steal your bandwidth. So when
                                 you click away, the iframe
                                 will be set back to the gif I just mentioned. Pretty nice solution, I`m proud of it,
                                 it's my child!
