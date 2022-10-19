@@ -376,7 +376,7 @@ br {
     padding: 5px, 15px;
 }
 
-.nav-li-a-animation-1 {
+.nav-fade-in-1 {
     opacity: 1;
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
@@ -384,7 +384,7 @@ br {
 	animation-duration: 0.5s;
 }
 
-.nav-li-a-animation-2 {
+.nav-fade-in-2 {
     opacity: 1;
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
@@ -392,21 +392,21 @@ br {
 	animation-duration: 0.7s;
 }
 
-.nav-li-a-animation-3 {
+.nav-fade-in-3 {
     opacity: 1;
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
 	animation-duration: 0.9s;
 }
-.nav-li-a-animation-4 {
+.nav-fade-in-4 {
     opacity: 1;
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
 	animation-duration: 1.1s;
 }
-.nav-li-a-animation-5 {
+.nav-fade-in-5 {
     opacity: 1;
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
@@ -778,37 +778,37 @@ h3.my-profession {
 }
 
 
-/* project */
+/* projects */
 
-.project .container {
+.projects .container {
     padding-bottom: 40x;
 }
 
-.project .project-heading {
+.projects .projects-heading {
     flex: 0 0 100%;
     max-width: 100%;
     margin-bottom: 10px;
 }
 
-.project .project-heading h2 {
+.projects .projects-heading h2 {
     color: var(--text-black-900);
     font-weight: 500;
 }
 
-.project .project-heading h3 {
+.projects .projects-heading h3 {
     font-size: 24px;
     margin-bottom: 15px;
     font-weight: 700;
     color: var(--text-black-900);
 }
 
-.project .project-item {
+.projects .projects-item {
     flex: 0 0 50%;
     max-width: 50%;
     margin-bottom: 30px;
 }
 
-.project .project-item-inner {
+.projects .projects-item-inner {
     border: 1px solid var(--bg-black-50);
     border-radius: 10px;
     overflow: hidden;
@@ -816,21 +816,16 @@ h3.my-profession {
     transition: all 0.7s ease;
 }
 
-.project .project-item-inner:hover {
+.projects .projects-item-inner:hover {
     transition: all 0.25s ease;
     scale: 1.02;
     border: 1px solid var(--additional-white);
 }
 
-.project .project-item-inner .project-img img {
+.projects .projects-item-inner .projects-img img {
     width: 100%;
     display: block;
 }
-
-/* .coding .coding-item .coding-item-inner:hover {
-    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
-} */
-
 
 /* contact */
 
@@ -955,14 +950,14 @@ h3.my-profession {
 
 /* port */
 
-.port-examples .port-examples-text h3 {
+.portfolio-example .portfolio-example-text h3 {
     font-size: 24px;
     margin-bottom: 15px;
     font-weight: 700;
     color: var(--text-black-900);
 }
 
-.port-examples .port-examples-text p {
+.portfolio-example .portfolio-example-text p {
     font-size: 16px;
     line-height: 25px;
     padding-bottom: 30px;
@@ -970,13 +965,13 @@ h3.my-profession {
     color: var(--text-black-700);
 }
 
-.port-examples .port-examples-text a {
+.portfolio-example .portfolio-example-text a {
     color: var(--text-black-700);
     text-decoration: underline;
     font-weight: 500;
 }
 
-.port-examples .port-examples-text a:hover {
+.portfolio-example .portfolio-example-text a:hover {
     text-decoration: none
 }
 .button-container {
@@ -991,14 +986,14 @@ h3.my-profession {
 }
 
 /* port yt */
-.port-examples .port-examples-item {
+.portfolio-example .portfolio-example-item {
     margin: auto;
     flex: 0 0 66.66%;
     max-width: 66.66;
     margin-bottom: 30px;
 }
 
-.port-examples .port-examples-item-inner {
+.portfolio-example .portfolio-example-item-inner {
     border: 1px solid var(--bg-black-50);
     position: relative;
     padding-bottom: 56.25%;
@@ -1007,7 +1002,7 @@ h3.my-profession {
     max-width: 100%;
 }
 
-.port-examples .port-examples-item-inner iframe {
+.portfolio-example .portfolio-example-item-inner iframe {
     position: absolute;
     border: 0;
     top: 0;
@@ -1016,11 +1011,11 @@ h3.my-profession {
     height: 100%;
 }
 
-.port-examples .port-examples-item-inner img {
+.portfolio-example .portfolio-example-item-inner img {
     width: 100%;
 }
 
-.port-examples .port-examples-item-inner:hover {
+.portfolio-example .portfolio-example-item-inner:hover {
     transition: all 0.3s ease;
     border: 1px solid var(--additional-white);
 }
@@ -1137,7 +1132,7 @@ h3.my-profession {
         flex: 0 0 50%;
         max-width: 50%;
     }
-    .port-examples .port-examples-item {
+    .portfolio-example .portfolio-example-item {
         flex: 0 0 80%;
         max-width: 80%;
     }
@@ -1155,7 +1150,7 @@ h3.my-profession {
         flex: 0 0 100%;
         max-width: 100%;
     }
-    .port-examples .port-examples-item {
+    .portfolio-example .portfolio-example-item {
         flex: 0 0 100%;
         max-width: 100%;
     }

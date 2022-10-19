@@ -6,6 +6,23 @@ var typed = new Typed(".typing", {
     loop: true
 })
 
+/* ------===== theme light/dark mode toggle btn =====------- */
+const dayNight = document.querySelector(".day-night");
+dayNight.addEventListener("click", () => {
+    dayNight.querySelector("i").classList.toggle("fa-sun");
+    dayNight.querySelector("i").classList.toggle("fa-moon");
+    document.body.classList.toggle("light")
+})
+
+/* ------===== theme light/dark toggle on DOM-load =====------- */
+window.addEventListener('DOMContentLoaded', () => {
+    if (document.body.classList.contains("dark")) {
+        dayNight.querySelector("i").classList.add("fa-moon")
+    } else {
+        dayNight.querySelector("i").classList.add("fa-sun")
+    }
+})
+
 /* ------===== theme colors alternating =====------- */
 const alternateStyles = document.querySelectorAll(".alternate-style");
 
@@ -18,24 +35,6 @@ function setActiveStyle(color) {
         }
     })
 }
-
-/* ------===== theme light/dark mode toggle =====------- */
-const dayNight = document.querySelector(".day-night");
-
-dayNight.addEventListener("click", () => {
-    dayNight.querySelector("i").classList.toggle("fa-sun");
-    dayNight.querySelector("i").classList.toggle("fa-moon");
-    document.body.classList.toggle("light")
-})
-
-/* ------===== sun/moon icon toggle on DOM-load =====------- */
-window.addEventListener('DOMContentLoaded', () => {
-    if (document.body.classList.contains("dark")) {
-        dayNight.querySelector("i").classList.add("fa-moon")
-    } else {
-        dayNight.querySelector("i").classList.add("fa-sun")
-    }
-})
 
 /* ------=====  style switcher color toggle =====------- */
 const colorBox = document.querySelector(".colors");
@@ -54,11 +53,12 @@ for (let x = 0; x < colorList; x++) {
         spn.classList.add("active-color")
     })
 }
-/* ------===== open/close classes add/remove for aside btn activeSection functions =====------- */
+
+/* ---===== functions for add||remove open||active class for aside, btn, activeSection && <1200 =====--- */
 const aside = document.querySelector(".aside");
 const navTogglerBtn = document.querySelector(".nav-toggler");
 const styleSwitcher = document.querySelector(".style-switcher");
-const activeSection = document.querySelector("section.active");
+const activeSection = document.querySelector("section.active")
 
 function styleSwitcherCloseIfOpen() {
     if (styleSwitcher.classList.contains("open")) {
@@ -70,6 +70,12 @@ function asideNavAndBtnToggle() {
     navTogglerBtn.classList.toggle("open");
 }
 /* ------=====  aside btn section < 1200 =====------- */
+function asideNavAndBtnToggle() {
+    if (window.innerWidth < 1200) {
+        aside.classList.add("open");
+        navTogglerBtn.classList.add("open");
+    }
+}
 function asideBtnOpen1200() {
     if (window.innerWidth < 1200) {
         aside.classList.add("open");
@@ -94,54 +100,31 @@ function removeOpenClass1200() {
         activeSection.classList.remove("open");
     }
 }
-function activeSectionOpen1200() {
-    const activeSection = document.querySelector("section.active")
-    if (window.innerWidth < 1200) {
-        activeSection.classList.add("open")
-    }
-}
-function activeSectionClose1200() {
-    const activeSection = document.querySelector("section.active")
-    if (window.innerWidth < 1200) {
-        activeSection.classList.remove("open")
-    }
-}
 function activeSectionToggle1200() {
     const activeSection = document.querySelector("section.active")
     if (window.innerWidth < 1200) {
         activeSection.classList.toggle("open")
     }
 }
-/* ------=====  style switcher toggle =====------- */
-styleSwitcher.addEventListener("click", () => {
 
+/* ------=====  style switcher toggle btn =====------- */
+const styleSwitcherToggler = document.querySelector(".style-toggler");
+
+styleSwitcherToggler.addEventListener("click", () => {
     if (window.innerWidth < 1200 && aside.classList.contains("open")) {
-        aside.classList.remove("open");
-        navTogglerBtn.classList.remove("open");
-        styleSwitcher.classList.toggle("open")
-        document.querySelector("section.active").classList.toggle("open")
+        asideNavAndBtnToggle()
+        activeSectionToggle1200()
+        removeOpenClass1200()
+        document.querySelector(".style-switcher").classList.toggle("open")
     } else {
-        styleSwitcher.classList.toggle("open")
+        document.querySelector(".style-switcher").classList.toggle("open")
     }
 })
-
-/* ------===== toggle aside =====------- */
+/* ------===== toggle aside btn =====------- */
 navTogglerBtn.addEventListener("click", () => {
     styleSwitcherCloseIfOpen()
     asideNavAndBtnToggle()
     activeSectionToggle1200()
-    // if 600<small screen<1999 & project section |or| about section is set as back-section  => remove it from back //
-    // setting active section && aside closes the project section would be visiable in the back //
-    //  on animation removing to have blank backsection will prevent it  //
-    if (window.innerWidth < 1200
-        && document.querySelector("section.project").classList.contains("back-section")
-        || document.querySelector("section.about").classList.contains("back-section")
-        || document.querySelector("section.port-examples").classList.contains("back-section")) {
-        document.querySelector("section.project").classList.remove("back-section")
-        document.querySelector("section.project").classList.add("open")
-        document.querySelector("section.about").classList.remove("back-section")
-        document.querySelector("section.port-examples").classList.remove("back-section")
-    }
 })
 
 /* ------===== hammer.js (swipes) =====------- */
@@ -153,18 +136,9 @@ const hammer = new Hammer(
 hammer.on('swiperight', function () {
     if (styleSwitcher.classList.contains("open")) {
         styleSwitcher.classList.remove("open")
-    } else if (window.innerWidth < 1200 && document.querySelector("section.project").classList.contains("back-section")
-        || document.querySelector("section.about").classList.contains("back-section")
-        || document.querySelector("section.port-examples").classList.contains("back-section")) {
-        document.querySelector("section.project").classList.remove("back-section")
-        document.querySelector("section.project").classList.add("open")
-        document.querySelector("section.about").classList.remove("back-section")
-        document.querySelector("section.port-examples").classList.remove("back-section")
-        asideBtnOpen1200()
-        activeSectionOpen1200()
     } else {
         asideBtnOpen1200()
-        activeSectionOpen1200()
+        addOpenClass1200()
     }
 });
 
@@ -183,210 +157,90 @@ hammer.on('doubletap', function () {
     document.body.classList.toggle("light")
 });
 
-/* ------===== aside nav bar / show-hide sections =====------- */
-const nav = document.querySelector(".nav"),
-    navList = nav.querySelectorAll("li"),
-    totalNavList = navList.length,
-    allSection = document.querySelectorAll("section:not(section.back-section)"),
-    totalSection = allSection.length,
-    blankSectionBack = document.querySelector("section.blank.back-section")
+/* ------===== show-hide sections =====------- */
+const aLinks = document.querySelectorAll("a.a-link")
+aLinksList = aLinks.length
+const sLinks = document.querySelectorAll("section.s-link")
+sLinksList = sLinks.length;
 
-for (let i = 0; i < totalNavList; i++) {
-    const a = navList[i].querySelector("a");
+for (let i = 0; i < aLinksList; i++) {
+    const a = aLinks[i]
     a.addEventListener("click", function () {
-
-        stopIframe()
-        removeBackSection()
         styleSwitcherCloseIfOpen()
-        blankSectionBack.classList.remove("back-section")
+        //its set as back section for loading only//
+        document.querySelector("section.blank").classList.remove("back-section") 
 
-        if (document.querySelector("a.andras").classList.contains("underline")) {
-            document.querySelector("a.andras").classList.remove("underline")
-        }
-        const andras = document.querySelector("section.andras")
-        if (andras.classList.contains("active")) {
-            blankSectionBack.classList.remove("back-section")
-            andras.classList.add("back-section")
-        }
+        getId = a.getAttribute("href").split("#")[1];
+        getSection = document.getElementById(getId)
+        currentSection = document.querySelector("section.active")
 
-        for (let j = 0; j < totalNavList; j++) {
-            setActiveProjectBack();
-            portfolioCheck()
-            if (navList[j].querySelector("a").classList.contains("active")) {
-                addBackSection(j)
-                // allSection[j].classList.add("back-section");
+        // back-section remove/add //
+        for (let j = 0; j < sLinksList; j++) {
+            const s = sLinks[j]
+            s.classList.remove("back-section")
+        } currentSection.classList.add("back-section")
+
+        // active section remove/add //
+        for (let j = 0; j < sLinksList; j++) {
+            const s = sLinks[j]
+            s.classList.remove("active")
+        } getSection.classList.add("active")
+
+        if (!this.classList.contains("nope")) {
+            // active link remove/add //
+            for (let i = 0; i < aLinksList; i++) {
+                const a = aLinks[i]
+                a.classList.remove("active")
+                a.classList.remove("underline")
             }
-            navList[j].querySelector("a").classList.remove("active");
+        } this.classList.add("active")
+        if (this.getAttribute("href") === "#andras") {
+            this.classList.remove("active")
+            this.classList.add("underline")
         }
-        console.log(this);
-        this.classList.add("active")
-        showSection(this)
-        asideBtnClose1200()
-        activeSectionClose1200()
+
+    startStopLazy()
+    asideBtnClose1200()
+    removeOpenClass1200()
     })
 }
-
-/* ------===== show-hide andras section =====------- */
-document.querySelector(".andras").addEventListener("click", function () {
-    const activeSection = document.querySelector("section.active")
-    const andrasSection = document.querySelector("section.andras")
-    removeBackSection()
-    stopIframe()
-    styleSwitcherCloseIfOpen()
-
-    document.querySelector("a.andras").classList.add("underline")
-
-    if (window.innerWidth < 1200 && aside.classList.contains("open")) {
-        aside.classList.remove("open")
-        navTogglerBtn.classList.remove("open");
-        activeSection.classList.add("back-section")
-        activeSection.classList.remove("active")
-        andrasSection.classList.add("active")
-        document.querySelector("section.active").classList.remove("open")
-        if (document.querySelectorAll("a.active").length != 0) {
-            document.querySelector("a.active").classList.remove("active")
-        }
-    } else {
-        activeSection.classList.add("back-section")
-        activeSection.classList.remove("active")
-        andrasSection.classList.add("active")
-        document.querySelector("section.active").classList.remove("open")
-        if (document.querySelectorAll("a.active").length != 0) {
-            document.querySelector("a.active").classList.remove("active")
-        }
-    }
+/* ------===== nav-active overwrite for about/hire btn =====------- */
+document.querySelector("a.hire-me").addEventListener("click", function () {
+    const ulNav =  document.querySelector("ul.nav");
+          ulNav.lastElementChild.lastElementChild.classList.add("active")
 })
-function removeBackSection() {
-    for (let i = 0; i < totalSection; i++) {
-        allSection[i].classList.remove("back-section");
-    }
-}
-function addBackSection(num) {
-    allSection[num].classList.add("back-section")
-}
-function showSection(element) {
-    for (let i = 0; i < totalSection; i++) {
-        allSection[i].classList.remove("active")
-    }
-    const target = element.getAttribute("href").split("#")[1];
-    document.querySelector("#" + target).classList.add("active")
-}
-function updateNav(element) {
-    for (let i = 0; i < totalNavList; i++) {
-        navList[i].querySelector("a").classList.remove("active");
-        const target = element.getAttribute("href").split("#")[1];
-        if (target === navList[i].querySelector("a").getAttribute("href").split("#")[1]) {
-            navList[i].querySelector("a").classList.add("active");
-        }
-    }
-}
-
-/* ------===== hire-me btn redirect not using nav event listeners above =====------- */
-document.querySelector(".hire-me").addEventListener("click", function () {
-    const sectionIndex = this.getAttribute("data-section-index");
-    console.log(sectionIndex);
-    styleSwitcherCloseIfOpen()
-    asideBtnClose1200()
-    showSection(this);
-    updateNav(this);
-    removeBackSection();
-    addBackSection(sectionIndex);
-    activeSectionClose1200()
-})
-
-/* ------===== project navigation from Nav/project  =====------- */
-/* ------===== clicking project img redirect project page =====------- */
-/* ------===== project collection in backsection (data-secton-index=3) =====------- */
-const projectNav = document.querySelector(".project-nav"),
-    projectList = projectNav.querySelectorAll(".project-img"),
-    totalProjectList = projectList.length;
-
-for (let i = 0; i < totalProjectList; i++) {
-    const a = projectList[i].querySelector("a");
-    a.addEventListener("click", function () {
-        const sectionIndex = this.getAttribute("data-section-index");
-        const sectionId = this.getAttribute("href");
-        sectionIdNumber = sectionId.slice(5, 6)
-
-        styleSwitcherCloseIfOpen()
-        showSection(this);
-        removeBackSection();
-        addBackSection(sectionIndex);
-        asideBtnClose1200()
-        activeSectionClose1200()
-        setLazy()
-    })
-}
-
-/* ------===== get project-example`s data-section-index and send it back =====------- */
-function setActiveProjectBack() {
-    const project = document.querySelector(".project")
-    const projectActive = document.querySelector("section.active")
-
-    if (project.classList.contains("back-section")) {
-        if (projectActive.classList.contains("port-examples")) {
-            const projectActiveIndex = projectActive.getAttribute("data-section-index")
-            removeBackSection();
-            addBackSection(projectActiveIndex);
-        }
-    }
-}
-
-/* ------===== portfolio-project-link redirect to section =====------- */
-document.querySelector(".portfolio-project-link").addEventListener("click", () => {
-    const activeSection = document.querySelector("section.active")
-    stopIframe()
-    styleSwitcherCloseIfOpen()
-    activeSection.classList.add("back-section")
-    activeSection.classList.remove("active")
-    document.querySelector("section.portfolio-project").classList.add("active")
-    asideBtnClose1200()
-    activeSection.classList.add("back-section")
-    activeSectionClose1200()
-    
-})
-
-function portfolioCheck() {
-    const activeSection = document.querySelector("section.active")
-
-    if (document.querySelector("section.portfolio-project").classList.contains("active")) {
-        if (window.innerWidth < 1200 && aside.classList.contains("open")) {
-            document.querySelector("section.blank").classList.add("back-section")
-        }
-        if (activeSection.classList.contains("portfolio-project")) {
-            activeSection.classList.add("back-section")
-        }
-    }
-}
 
 /* ------===== start & stop lazy load youtube iframe =====------- */
-function setLazy() {
-    iFrame1 = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
-    iFrame2 = "<iframe class=youtube, src=https://www.youtube.com/embed/7CruXGDHbgg alt=crud-project> </iframe>"
-    iFrame3 = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
+function startStopLazy() {
+    const activeSection = document.querySelector("section.active")
+    const prevSection = document.querySelector("section.back-section")
 
-    document.getElementById("port-example-iframe-" + sectionIdNumber).innerHTML = "<img src=images/loading.gif alt=loading-gif>"
+    if (activeSection.classList.contains("portfolio-example")) {
+        activeId = activeSection.id
+        iframeId = activeId + "-iframe"
+        setIframeGif()
+        setTimeout(startLazy, 700)
+    } else if (prevSection.classList.contains("portfolio-example")) {
+        setTimeout(setIframeGif, 700)
+    }
+
+    function setIframeGif() {
+        document.getElementById(iframeId).innerHTML = "<img src=images/loading.gif alt=loading-gif>"
+    }
 
     function startLazy() {
-        if (sectionIdNumber === "1") {
-            document.getElementById("port-example-iframe-" + sectionIdNumber).innerHTML = iFrame1
-        } else if (sectionIdNumber === "2") {
-            document.getElementById("port-example-iframe-" + sectionIdNumber).innerHTML = iFrame2
-        } else {
-            document.getElementById("port-example-iframe-" + sectionIdNumber).innerHTML = iFrame3
-        }
-    }
-    setTimeout(startLazy, 700)
-}
+        portfolio = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
+        crud = "<iframe class=youtube, src=https://www.youtube.com/embed/7CruXGDHbgg alt=crud-project> </iframe>"
+        secrets = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=crud-project> </iframe>"
 
-function stopIframe() {
-    if (document.querySelector(".port-examples.active")) {
-        activeIframe = document.querySelector(".port-examples.active").id
-        activeIframeNumber = activeIframe.slice(4, 5);
-        function stop() {
-            document.getElementById("port-example-iframe-" + activeIframeNumber).innerHTML = "<img src=images/loading.gif alt=loading-gif>"
+        switch (iframeId) {
+            case "portfolio-iframe":
+                document.getElementById(iframeId).innerHTML = portfolio
+            case "crud-iframe":
+                document.getElementById(iframeId).innerHTML = crud
+            case "secrets":
+                document.getElementById(iframeId).innerHTML = secrets
         }
-        setTimeout(stop, 700)
     }
 }
 

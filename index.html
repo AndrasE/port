@@ -2,55 +2,48 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Andras</title>
-    <!------===== icon =====------->
-    <link rel="icon" href="images/icon.ico">
-    <!------===== styles =====------->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/skins/color-1.css">
-    <!------===== fonts =====------->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style"
-        href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <!------===== styles switcher =====------->
-    <link rel="stylesheet" href="css/skins/color-1.css" class="alternate-style" title="color-1" disabled>
-    <link rel="stylesheet" href="css/skins/color-2.css" class="alternate-style" title="color-2" disabled>
-    <link rel="stylesheet" href="css/skins/color-3.css" class="alternate-style" title="color-3" disabled>
-    <link rel="stylesheet" href="css/skins/color-4.css" class="alternate-style" title="color-4" disabled>
-    <link rel="stylesheet" href="css/skins/color-5.css" class="alternate-style" title="color-5" disabled>
-    <link rel="stylesheet" href="css/style-switcher.css">
-    <!------===== hammmer.js (swipe) =====------->
-    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andras</title>
+  <!------===== icon =====------->
+  <link rel="icon" href="images/icon.ico">
+  <!------===== styles =====------->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/skins/color-1.css">
+  <!------===== fonts =====------->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <!------===== styles switcher =====------->
+  <link rel="stylesheet" href="css/skins/color-1.css" class="alternate-style" title="color-1" disabled>
+  <link rel="stylesheet" href="css/skins/color-2.css" class="alternate-style" title="color-2" disabled>
+  <link rel="stylesheet" href="css/skins/color-3.css" class="alternate-style" title="color-3" disabled>
+  <link rel="stylesheet" href="css/skins/color-4.css" class="alternate-style" title="color-4" disabled>
+  <link rel="stylesheet" href="css/skins/color-5.css" class="alternate-style" title="color-5" disabled>
+  <link rel="stylesheet" href="css/style-switcher.css">
+  <!------===== hammmer.js (swipe) =====------->
+  <script src="https://hammerjs.github.io/dist/hammer.js"></script>
 </head>
 
 <body>
     <!------===== main container start =====------->
     <div class="main-container" id="gesture-element">
-
+       
         <!------===== aside start =====------->
         <div class="aside">
             <div class="logo">
-                <a href="#andras" class="andras" data-section-index="8"><span>A</span>ndras</a>
+                <a href="#andras" class="andras a-link"><span>A</span>ndras</a>
             </div>
             <div class="nav-toggler">
                 <span></span>
             </div>
             <ul class="nav">
-                <li><a href="#home" class="active nav-li-a-animation-1"> <i class="fa fa-home"></i> Home</a></li>
-                <li><a href="#about" class=" nav-li-a-animation-2"> <i class="fa fa-user"></i> About</a></li>
-                <li><a href="#codings" class=" nav-li-a-animation-3"> <i class="fa-solid fa-code"></i> Coding </a></li>
-                <li><a href="#project" class=" nav-li-a-animation-4 "> <i class="fa fa-briefcase"></i> Projects</a></li>
-                <li><a href="#contact" class=" nav-li-a-animation-5"> <i class="fa fa-comments"></i> Contact</a></li>
-                <li class="hidden"><a href="#port1"> xxxx </a></li>
-                <li class="hidden"><a href="#port2"> xxxx </a></li>
-                <li class="hidden"><a href="#port3"> xxxx </a></li>
-                <li class="hidden"><a href="#port4"> xxxx </a></li>
+                <li><a href="#home" class="active a-link nav-fade-in-1"> <i class="fa fa-home"></i> Home</a></li>
+                <li><a href="#about" class="a-link nav-fade-in-2"> <i class="fa fa-user"></i> About</a></li>
+                <li><a href="#coding" class="a-link nav-fade-in-3"> <i class="fa-solid fa-code"></i> Coding </a></li>
+                <li><a href="#projects" class="a-link nav-fade-in-4 "> <i class="fa fa-briefcase"></i> Projects</a></li>
+                <li><a href="#contact" class="a-link nav-fade-in-5"> <i class="fa fa-comments"></i> Contact</a></li>
             </ul>
         </div>
         <!------===== aside end =====------->
@@ -66,7 +59,7 @@
             <!------===== blank section end =====------->
 
             <!------===== home section start =====------->
-            <section class="home active section" id="home">
+            <section class="home section active s-link" id="home">
                 <div class="container">
                     <div class="row">
                         <div class="home-info padd-15">
@@ -89,7 +82,7 @@
             <!------===== home section end =====------->
 
             <!------===== about section start =====------->
-            <section class="about section" id="about">
+            <section class="about section s-link" id="about">
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
@@ -145,7 +138,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="buttons padd-15">
-                                            <a href="#contact" data-section-index="1" class="btn hire-me">Hire Me</a>
+                                            <a href="#contact" class="btn hire-me a-link">Hire Me</a>
                                         </div>
                                     </div>
                                 </div>
@@ -389,8 +382,8 @@
             </section>
             <!------===== about section end =====------->
 
-            <!------===== codings section start =====------->
-            <section class="coding section" id="codings">
+            <!------===== coding section start =====------->
+            <section class="coding section s-link" id="coding">
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
@@ -426,7 +419,6 @@
                             </a>
                         </div>
                         <!------===== coding item end =====------->
-
                         <!------===== coding item start =====------->
                         <div class="coding-item padd-15">
                             <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank"
@@ -443,7 +435,6 @@
                             </a>
                         </div>
                         <!------===== coding item end =====------->
-
                         <!------===== coding item start =====------->
                         <div class="coding-item padd-15">
                             <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">
@@ -460,7 +451,6 @@
                             </a>
                         </div>
                         <!------===== coding item end =====------->
-
                         <!------===== coding item start =====------->
                         <div class="coding-item padd-15">
                             <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"
@@ -478,7 +468,6 @@
                             </a>
                         </div>
                         <!------===== coding item end =====------->
-
                         <!------===== coding item start =====------->
                         <div class="coding-item padd-15">
                             <a href="https://nodejs.org/en/about/" target="_blank" rel="noopener noreferrer">
@@ -494,7 +483,6 @@
                             </a>
                         </div>
                         <!------===== coding item end =====------->
-
                         <!------===== coding item start =====------->
                         <div class="coding-item padd-15">
                             <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">
@@ -551,7 +539,7 @@
             <!------===== codings section end =====------->
 
             <!------===== project section start =====------->
-            <section class="project section" id="project">
+            <section class="projects section s-link" id="projects">
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
@@ -559,80 +547,65 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="project-heading padd-15">
+                        <div class="projects-heading padd-15">
                             <h3>Few of my last projects and a future plan</h3>
                         </div>
                         <div class="row project-nav padd-15">
                             <!------===== project item start =====------->
-                            <div class="project-item padd-15">
-                                <div class="project-item-inner shadow-dark">
-                                    <div class="project-img">
-                                        <a href="#port1" data-section-index="3">
-                                            <img id="port-example-img-1" src="images/port1.webp" alt="port-example-1">
+                            <div class="projects-item padd-15">
+                                <div class="projects-item-inner shadow-dark">
+                                    <div class="projects-img">
+                                        <a class="a-link nope" href="#portfolio">
+                                            <img src="images/portolio.webp" alt="portfolio">
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <!------===== project item end =====------->
                             <!------===== project item start =====------->
-                            <div class="project-item padd-15">
-                                <div class="project-item-inner shadow-dark">
-                                    <div class="project-img">
-                                        <a href="#port2" data-section-index="3">
-                                            <img id="port-example-img-2" src="images/port2.webp" alt="port-example-2">
+                            <div class="projects-item padd-15">
+                                <div class="projects-item-inner shadow-dark">
+                                    <div class="projects-img">
+                                        <a class="a-link nope" href="#crud">
+                                            <img src="images/crud.webp" alt="crud">
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <!------===== project item end =====------->
-
                             <!-- ----===== project item start =====------->
-                            <div class="project-item padd-15">
-                                <div class="project-item-inner shadow-dark">
-                                    <div class="project-img">
-                                        <a href="#port3" data-section-index="3">
-                                            <img id="port-example-img-3" src="images/port3.webp" alt="port-example-3">
+                            <div class="projects-item padd-15">
+                                <div class="projects-item-inner shadow-dark">
+                                    <div class="projects-img">
+                                        <a class="a-link nope" href="#secrets">
+                                            <img src="images/secrets.webp" alt="secrets">
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <!------===== project item end =====------->
-
                             <!------===== project item start =====------->
-                            <div class="project-item padd-15">
-                                <div class="project-item-inner shadow-dark">
-                                    <div class="project-img">
-                                        <a href="#port4" data-section-index="3">
-                                            <img src="images/port4.webp" alt="port-example-4">
+                            <div class="projects-item padd-15">
+                                <div class="projects-item-inner shadow-dark">
+                                    <div class="projects-img">
+                                        <a class="a-link nope" href="#to-do">
+                                            <img src="images/to-do.webp" alt="to-do">
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <!------===== project item end =====------->
-
                             <!------===== project item start =====------->
-                            <div class="project-item padd-15">
-                                <div class="project-item-inner shadow-dark">
-                                    <div class="project-img">
-                                        <a href="#port5" data-section-index="3">
+                            <div class="projects-item padd-15">
+                                <div class="projects-item-inner shadow-dark">
+                                    <div class="projects-img">
+                                        <a class="a-link nope" href="#port5">
                                             <img src="images/port5.webp" alt="port-example-5">
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <!------===== project item end =====------->
-
-                            <!------===== project item start =====------->
-                            <div class="project-item padd-15">
-                                <div class="project-item-inner shadow-dark">
-                                    <div class="project-img">
-                                        <a href="#port6" data-section-index="3">
-                                            <img src="images/port6.webp" alt="port-example-6">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!------===== project item end =====----- -->
+                            <!------===== project item end =====------->   
                         </div>
                     </div>
                 </div>
@@ -640,7 +613,7 @@
             <!------===== project section end =====------->
 
             <!------===== contact section start =====------->
-            <section class="contact section" id="contact">
+            <section class="contact section s-link" id="contact">
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
@@ -750,7 +723,7 @@
             <!------===== contact section end =====------->
 
             <!------===== project example 1 section start =====------->
-            <section class="port-examples section" id="port1" data-section-index="5">
+            <section class="portfolio-example section s-link" id="portfolio">
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
@@ -758,7 +731,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="port-examples-text padd-15">
+                        <div class="portfolio-example-text padd-15">
                             <h3>Dynamic webpage using vanillaJS and CSS only with Lazy-loading </h3>
                             <p>Let me start with a DISCLAIMER before we dive in. This webpage is not solely built by me. I
                                 was searching for different animated web-designs that offer me valuable assets and functionalities to learn from. 
@@ -774,8 +747,8 @@
                     </div>
                     <div class="row">
                         <!------===== project example item start =====------->
-                        <div class="port-examples-item padd-15">
-                            <div id="port-example-iframe-1" class="port-examples-item-inner shadow-dark">
+                        <div class="portfolio-example-item padd-15">
+                            <div id="portfolio-iframe" class="portfolio-example-item-inner shadow-dark">
                                 <!------===== port-example-iframe-1 will be injected here via js =====------->
                             </div>
                         </div>
@@ -783,15 +756,14 @@
                     <!------===== project example item end =====------->
                     <div class="row">
                         <div class="button-container padd-15">
-                            <a class="btn portfolio-project-link" href="#portfolio-project">Read more</a>
+                            <a class="btn portfolio-project-link a-link nope" href="#portfolio-project">Read more</a>
                         </div>
                     </div>
                 </div>
             </section>
             <!------===== project example 1 section end =====------->
-
             <!------===== project example 2 section start =====------->
-            <section class="port-examples section" id="port2" data-section-index="6">
+            <section class="portfolio-example section s-link" id="crud">
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
@@ -799,7 +771,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="port-examples-text padd-15">
+                        <div class="portfolio-example-text padd-15">
                             <h3>Crud, auth and fire </h3>
                             <p>I wanted to create a simple CRUD (create, read, update, delete) React App with a backend.
                                 Trying multiple options for this approach, I finally considered Firebase as the most feasible
@@ -820,9 +792,9 @@
                     </div>
                     <!------===== project example item start =====------->
                     <div class="row">
-                        <div class="port-examples-item padd-15">
-                            <div class="port-examples-item-inner shadow-dark">
-                                <div id="port-example-iframe-2" class="port-examples-item-inner shadow-dark">
+                        <div class="portfolio-example-item padd-15">
+                            <div class="portfolio-example-item-inner shadow-dark">
+                                <div id="crud-iframe" class="portfolio-example-item-inner shadow-dark">
                                     <!------===== port-example-iframe-2 will be injected here via js =====------->
                                 </div>
                             </div>
@@ -837,9 +809,8 @@
                 </div>
             </section>
             <!------===== project example 2 section end =====------->
-
             <!------===== project example 3 section start =====------->
-            <section class="port-examples section" id="port3" data-section-index="7">
+            <section class="portfolio-example section s-link" id="secrets">
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
@@ -847,7 +818,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="port-examples-text padd-15">
+                        <div class="portfolio-example-text padd-15">
                             <h3> Our secret!</h3>
                             <p>It was a barebone project using MongoDB in the back-end with simple crud operations and EJS.
                                 I added an authentication feature and session cookies to the project. Users only can interact with 
@@ -864,9 +835,9 @@
                     </div>
                     <!------===== project example item start =====------->
                     <div class="row">
-                        <div class="port-examples-item padd-15">
-                            <div class="port-examples-item-inner shadow-dark">
-                                <div id="port-example-iframe-3" class="port-examples-item-inner shadow-dark">
+                        <div class="portfolio-example-item padd-15">
+                            <div class="portfolio-example-item-inner shadow-dark">
+                                <div id="secrets-iframe" class="portfolio-example-item-inner shadow-dark">
                                     <!------===== port-example-iframe-3 will be injected here via js =====------->
                                 </div>
                             </div>
@@ -883,7 +854,7 @@
             <!------===== project example 3 section end =====------->
 
             <!------===== project example 4 section start =====------->
-            <section class="port-examples section" id="port4" data-section-index="8">
+            <section class="portfolio-example section s-link" id="to-do">
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
@@ -891,7 +862,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="port-examples-text padd-15">
+                        <div class="portfolio-example-text padd-15">
                             <h3> Our hgghghjgjghj!</h3>
                             <p>It was a barebone project using MongoDB in the back with simple crud operations.
                                 Using EJS the repetations of code got reduced. Added authentication and session cookies
@@ -916,7 +887,7 @@
             <!------===== project example 4 section end =====------->
 
             <!------===== andras section start =====------->
-            <section class="andras section" id="andras">
+            <section class="andras section s-link" id="andras">
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
@@ -949,7 +920,7 @@
             <!------===== andras section end =====------->
 
             <!------===== portfolio-project section start =====------->
-            <section class="portfolio-project section" id="portfolio-project">
+            <section class="portfolio-project section s-link" id="portfolio-project">
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
