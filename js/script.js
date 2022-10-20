@@ -106,6 +106,21 @@ function activeSectionToggle1200() {
         activeSection.classList.toggle("open")
     }
 }
+/* ------===== check for backsectons in 600<x<1200 width devices =====------- */
+/* ------===== if nav panel wasn`t open before click links in the could =====------- */
+/* ------===== remain visible if reopen a the panel and click nav-link =====------- */
+function backSectionCheck1200() {
+    if (600 < window.innerWidth && window.innerWidth < 1200 && aside.classList.contains("open")) {
+        if (document.querySelector("section.projects").classList.contains("back-section")
+            || document.querySelector("section.about").classList.contains("back-section")
+            || document.querySelector("section.portfolio-example").classList.contains("back-section")) {
+
+            document.querySelector("section.projects").classList.remove("back-section")
+            document.querySelector("section.about").classList.remove("back-section")
+            document.querySelector("section.portfolio-example").classList.remove("back-section")
+        }
+    }
+}
 
 /* ------=====  style switcher toggle btn =====------- */
 const styleSwitcherToggler = document.querySelector(".style-toggler");
@@ -125,6 +140,7 @@ navTogglerBtn.addEventListener("click", () => {
     styleSwitcherCloseIfOpen()
     asideNavAndBtnToggle()
     activeSectionToggle1200()
+    backSectionCheck1200()
 })
 
 /* ------===== hammer.js (swipes) =====------- */
@@ -139,6 +155,7 @@ hammer.on('swiperight', function () {
     } else {
         asideBtnOpen1200()
         addOpenClass1200()
+        backSectionCheck1200()
     }
 });
 
@@ -168,7 +185,7 @@ for (let i = 0; i < aLinksList; i++) {
     a.addEventListener("click", function () {
         styleSwitcherCloseIfOpen()
         //its set as back section for loading only//
-        document.querySelector("section.blank").classList.remove("back-section") 
+        document.querySelector("section.blank").classList.remove("back-section")
 
         getId = a.getAttribute("href").split("#")[1];
         getSection = document.getElementById(getId)
@@ -199,15 +216,15 @@ for (let i = 0; i < aLinksList; i++) {
             this.classList.add("underline")
         }
 
-    startStopLazy()
-    asideBtnClose1200()
-    removeOpenClass1200()
+        startStopLazy()
+        asideBtnClose1200()
+        removeOpenClass1200()
     })
 }
 /* ------===== nav-active overwrite for about/hire btn =====------- */
 document.querySelector("a.hire-me").addEventListener("click", function () {
-    const ulNav =  document.querySelector("ul.nav");
-          ulNav.lastElementChild.lastElementChild.classList.add("active")
+    const ulNav = document.querySelector("ul.nav");
+    ulNav.lastElementChild.lastElementChild.classList.add("active")
 })
 
 /* ------===== start & stop lazy load youtube iframe =====------- */
@@ -255,3 +272,4 @@ window.addEventListener('load', (event) => {
     loadTime = (Date.now() - window.performance.timing.navigationStart) / 1000;
     console.log('All assets are loaded in ' + (loadTime) + "s " + "(CSS, JS)");
 });
+
