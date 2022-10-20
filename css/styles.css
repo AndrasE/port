@@ -1036,22 +1036,22 @@ h3.my-profession {
     color: var(--text-black-700);
 }
 
-/* portfolio-project */
-.portfolio-project .portfolio-project-text h3 {
+/* portfolio-about */
+.portfolio-about .portfolio-about-text h3 {
     font-size: 24px;
     margin-bottom: 15px;
     font-weight: 700;
     color: var(--text-black-900);
 }
 
-.portfolio-project .portfolio-project-text h4 {
+.portfolio-about .portfolio-about-text h4 {
     font-size: 16px;
     line-height: 25px;
     padding-bottom: 8px;
     color: var(--text-black-700);
 }
 
-.portfolio-project .portfolio-project-text p {
+.portfolio-about .portfolio-about-text p {
     font-size: 16px;
     line-height: 25px;
     padding-bottom: 30px;
@@ -1059,7 +1059,7 @@ h3.my-profession {
     color: var(--text-black-700);
 }
 
-.portfolio-project .portfolio-project-text p.example-code {
+.portfolio-about .portfolio-about-text p.example-code {
     font-size: 16px;
     line-height: 25px;
     margin: auto;
@@ -1075,13 +1075,13 @@ h3.my-profession {
     white-space: 2px;
 }
 
-.portfolio-project .portfolio-project-text a {
+.portfolio-about .portfolio-about-text a {
     color: var(--text-black-700);
     text-decoration: underline;
     font-weight: 500;
 }
 
-.portfolio-project .portfolio-project-text a:hover {
+.portfolio-about .portfolio-about-text a:hover {
     text-decoration: none
 }
 

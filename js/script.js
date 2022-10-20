@@ -272,4 +272,3 @@ window.addEventListener('load', (event) => {
     loadTime = (Date.now() - window.performance.timing.navigationStart) / 1000;
     console.log('All assets are loaded in ' + (loadTime) + "s " + "(CSS, JS)");
 });
-
