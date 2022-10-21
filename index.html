@@ -927,20 +927,20 @@
                                 served as a base to the Secrets App above. It uses <a href="https://ejs.co/" target="_blank"
                                 rel="noopener noreferrer">EJS</a> (Embedded JavaScript Templating). EJS let us embed JavaScript
                                 code into HTML. It can come very handy for many different ways. It can reduce the repetition of the
-                                code. Let say you have a website with 2-3 redirect to different parts of the page. You can simply write
+                                code. Let say you have a website with 2-3 redirect to different sections of the page. You can simply write
                                 the header/footer or any other parts of the webpage only once and inject it to yor HTML code like: 
                             </p>
                                 <table>
                                     <tr>
                                         <td>
-                                            <p class="example-code">
+                                            <p style="padding-bottom: 15px; text-align: center;" class="example-code">
                                                 &lt%=header=%&gt<br>
                                                 content <br>
                                                 &lt%=footer=%&gt
                                             </p>
                                         </td>
                                         <td>
-                                            <p class="example-code">
+                                            <p style="padding-bottom: 15px;" class="example-code">
                                                 &lt== &nbsp unchanged <br>
                                                 &lt== &nbsp changing <br>
                                                 &lt== &nbsp unchanged
@@ -949,8 +949,14 @@
                                     </tr>
                                 </table>
                              <p>
-                                It also can be used to allocate the content to the site. In this App`s case its get the data from the 
-                                backend using MongoDB and run a forEach loop to display all the To-Dos line by line. 
+                                It also can be used to allocate the content to the site. In this App`s case its get
+                                 the data from the backend using MongoDB and run a forEach loop to display all the To-Dos 
+                                 line by line. This is enable us to display content that is not hard-coded, something that 
+                                 changing and does all this automatically. You add or delete a To-Do the APP send the information back
+                                 to the back-end, make the changes and as soon as the page refresh, these changes will be visible to you as
+                                 the loop re-run using the updated database. <br>
+                                 This was the first time when I had the feeling that I actually can interact with a user as a backend
+                                 connected to the project. Altough it is a simple App it brough
                             </p>
                         </div>
                     </div>
@@ -1028,8 +1034,7 @@
                                 of you but most of them gets hidden away by the first card. As the new section slides
                                 in, the previous one stayes in the back. Each slides will have qualities such "hidden",
                                 "back-section", "active" as and when required. <br> When I finished the initial project,
-                                I
-                                realized there is an
+                                I realized there is an
                                 issue while loading the page. The last slide that loads will be visible for a second and
                                 kind of ruining the inital animation. Easy fix would be to add and empty black section
                                 (no characthers pictures or
@@ -1339,7 +1344,7 @@
                                 return and
                                 sort out the JS a bit at some point. I shall see you again soon friend! bye
                             </p>
-                            <p class="example-code">
+                            <p style="margin-top: 20px;" class="example-code">
                                 <img src="images/bye.gif" alt="bye">
                             </p>
                         </div>

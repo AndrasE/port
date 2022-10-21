@@ -1049,7 +1049,18 @@ p.example-code br {
     color: var(--text-black-700);
 }
 
-
+/* example-codes */
+p.example-code {
+    margin: auto;
+    max-width: max-content;
+    text-align: center;
+    background-color: var(--bg-black-100);
+    padding: 15px;
+    border: 1px solid var(--bg-black-50);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    white-space: 2px;
+}
 
 /* portfolio-about */
 .portfolio-about .portfolio-about-text h3 {
@@ -1074,10 +1085,10 @@ p.example-code br {
     padding-bottom: 20px;
 }
 
-p.example-code {
+.portfolio-about .portfolio-about-text p.example-code {
     margin: auto;
     max-width: max-content;
-    text-align: center !important;
+    text-align: center;
     background-color: var(--bg-black-100);
     padding: 15px;
     border: 1px solid var(--bg-black-50);
