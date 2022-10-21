@@ -981,6 +981,19 @@ h3.my-profession {
     width: 100%;
     display: flex;
 }
+
+table {
+    margin: auto;
+}
+
+td {
+    padding: 0 4px;
+}
+
+p.example-code br {
+    margin: 0;
+}
+
 .button-container a {
     margin: auto;
 }
@@ -1036,6 +1049,8 @@ h3.my-profession {
     color: var(--text-black-700);
 }
 
+
+
 /* portfolio-about */
 .portfolio-about .portfolio-about-text h3 {
     font-size: 24px;
@@ -1047,31 +1062,27 @@ h3.my-profession {
 .portfolio-about .portfolio-about-text h4 {
     font-size: 16px;
     line-height: 25px;
-    padding-bottom: 8px;
     color: var(--text-black-700);
 }
 
 .portfolio-about .portfolio-about-text p {
     font-size: 16px;
     line-height: 25px;
-    padding-bottom: 30px;
+    padding-bottom: 15px;
     text-align: justify;
     color: var(--text-black-700);
+    padding-bottom: 20px;
 }
 
-.portfolio-about .portfolio-about-text p.example-code {
-    font-size: 16px;
-    line-height: 25px;
+p.example-code {
     margin: auto;
     max-width: max-content;
-    text-align: center;
-    word-break: break-all;
-    color: var(--text-black-700);
+    text-align: center !important;
     background-color: var(--bg-black-100);
     padding: 15px;
     border: 1px solid var(--bg-black-50);
     border-radius: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     white-space: 2px;
 }
 

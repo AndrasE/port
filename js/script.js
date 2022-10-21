@@ -65,15 +65,12 @@ function styleSwitcherCloseIfOpen() {
         styleSwitcher.classList.remove("open")
     }
 }
-function asideNavAndBtnToggle() {
-    aside.classList.toggle("open");
-    navTogglerBtn.classList.toggle("open");
-}
+
 /* ------=====  aside btn section < 1200 =====------- */
 function asideNavAndBtnToggle() {
     if (window.innerWidth < 1200) {
-        aside.classList.add("open");
-        navTogglerBtn.classList.add("open");
+        aside.classList.toggle("open");
+        navTogglerBtn.classList.toggle("open");
     }
 }
 function asideBtnOpen1200() {

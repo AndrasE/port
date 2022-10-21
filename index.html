@@ -923,8 +923,34 @@
                     <div class="row">
                         <div class="portfolio-example-text padd-15">
                             <h3>Basic operations using EJS with MongoDB</h3>
-                            <p>This was a coding-challange part of my studies on Udemy. This application served as a base to
-                                the Secrets app above. 
+                            <p style="padding-bottom: 20px;">This App was a coding-challange, part of my studies on Udemy. After finishing it, it also 
+                                served as a base to the Secrets App above. It uses <a href="https://ejs.co/" target="_blank"
+                                rel="noopener noreferrer">EJS</a> (Embedded JavaScript Templating). EJS let us embed JavaScript
+                                code into HTML. It can come very handy for many different ways. It can reduce the repetition of the
+                                code. Let say you have a website with 2-3 redirect to different parts of the page. You can simply write
+                                the header/footer or any other parts of the webpage only once and inject it to yor HTML code like: 
+                            </p>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <p class="example-code">
+                                                &lt%=header=%&gt<br>
+                                                content <br>
+                                                &lt%=footer=%&gt
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p class="example-code">
+                                                &lt== &nbsp unchanged <br>
+                                                &lt== &nbsp changing <br>
+                                                &lt== &nbsp unchanged
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                             <p>
+                                It also can be used to allocate the content to the site. In this App`s case its get the data from the 
+                                backend using MongoDB and run a forEach loop to display all the To-Dos line by line. 
                             </p>
                         </div>
                     </div>
