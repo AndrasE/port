@@ -252,7 +252,7 @@ function startStopLazy() {
                 document.getElementById(iframeId).innerHTML = portfolio
             case "crud-iframe":
                 document.getElementById(iframeId).innerHTML = crud
-            case "secrets":
+            case "secrets-iframe":
                 document.getElementById(iframeId).innerHTML = secrets
         }
     }
