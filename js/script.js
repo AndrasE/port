@@ -229,7 +229,7 @@ function startStopLazy() {
     const activeSection = document.querySelector("section.active")
     const prevSection = document.querySelector("section.back-section")
 
-    if (activeSection.classList.contains("portfolio-example")) {
+    if (activeSection.classList.contains("portfolio-example") && activeSection.classList.contains("iframed")) {
         activeId = activeSection.id
         iframeId = activeId + "-iframe"
         setIframeGif()
@@ -240,14 +240,15 @@ function startStopLazy() {
 
     function setIframeGif() {
         document.getElementById(iframeId).innerHTML = "<img src=images/loading.gif alt=loading-gif>"
-        document.getElementById("hidden").classList.add("hidden")
+        document.getElementById("iframehide").classList.add("hidden")
+        document.getElementById("phide").classList.remove("hidden")
     }
-
+    
     function startLazy() {
         portfolio = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=portfolio> </iframe>"
         crud = "<iframe class=youtube, src=https://www.youtube.com/embed/7CruXGDHbgg alt=crud> </iframe>"
         secrets = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=secrets> </iframe>"
-
+ 
         switch (iframeId) {
             case "portfolio-iframe":
                 document.getElementById(iframeId).innerHTML = portfolio
@@ -263,7 +264,8 @@ function startStopLazy() {
 document.getElementById("codesandbox").addEventListener("click", ()=> {
     todo = "<iframe class=youtube, src=https://codesandbox.io/embed/to-do-veyju?fontsize=14&hidenavigation=1&theme=dark alt=crud-project></iframe>"
     document.getElementById("todo-iframe").innerHTML = todo
-    document.getElementById("hidden").classList.toggle("hidden")
+    document.getElementById("phide").classList.toggle("hidden")
+    document.getElementById("iframehide").classList.toggle("hidden")
 })
 
 /* ------===== performance check in console =====------- */
