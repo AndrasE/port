@@ -1087,7 +1087,7 @@ p.example-code {
 
 .portfolio-about .portfolio-about-text p.example-code {
     margin: auto;
-    max-width: max-content;
+    max-width: 90%;
     text-align: center;
     background-color: var(--bg-black-100);
     padding: 15px;
@@ -1095,6 +1095,7 @@ p.example-code {
     border-radius: 10px;
     margin-bottom: 20px;
     white-space: 2px;
+    word-break: break-all;
 }
 
 .portfolio-about .portfolio-about-text a {
