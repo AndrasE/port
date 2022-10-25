@@ -107,6 +107,16 @@ br {
     display: none !important;
 }
 
+.opacity0 {
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.opacity100 {
+    opacity: 100;
+    transition: all 0.5s ease-in-out;
+}
+
 .padd-15 {
     padding-left: 15px;
     padding-right: 15px;

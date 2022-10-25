@@ -240,32 +240,72 @@ function startStopLazy() {
 
     function setIframeGif() {
         document.getElementById(iframeId).innerHTML = "<img src=images/loading.gif alt=loading-gif>"
+        document.getElementById("iframehide").classList.add("opacity0")
         document.getElementById("iframehide").classList.add("hidden")
         document.getElementById("phide").classList.remove("hidden")
+        document.getElementById("phide").classList.remove("opacity0")
     }
     
     function startLazy() {
         portfolio = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=portfolio> </iframe>"
         crud = "<iframe class=youtube, src=https://www.youtube.com/embed/7CruXGDHbgg alt=crud> </iframe>"
         secrets = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=secrets> </iframe>"
- 
+        todo = "<iframe class=youtube, src=https://codesandbox.io/embed/to-do-veyju?fontsize=14&hidenavigation=1&theme=dark alt=crud-project></iframe>"
+
         switch (iframeId) {
+
             case "portfolio-iframe":
                 document.getElementById(iframeId).innerHTML = portfolio
             case "crud-iframe":
                 document.getElementById(iframeId).innerHTML = crud
             case "secrets-iframe":
                 document.getElementById(iframeId).innerHTML = secrets
+            case "todo-iframe":    
+            document.getElementById("todo-iframe").innerHTML = todo
         }
     }
 }
 
-/* ------===== start lazy load codesandbox iframe =====------- */
-document.getElementById("codesandbox").addEventListener("click", ()=> {
-    todo = "<iframe class=youtube, src=https://codesandbox.io/embed/to-do-veyju?fontsize=14&hidenavigation=1&theme=dark alt=crud-project></iframe>"
-    document.getElementById("todo-iframe").innerHTML = todo
-    document.getElementById("phide").classList.toggle("hidden")
-    document.getElementById("iframehide").classList.toggle("hidden")
+/* ------===== codesandbox-embed animations =====------- */
+const toDoButton = document.getElementById("codesandbox")
+toDoButton.addEventListener("click", ()=> {
+    
+    if ( document.getElementById("iframehide").classList.contains("hidden")) {
+        setOpacityButtonIn()
+        setOpacityP()
+        setTimeout (setHiddenP, 550)
+        setHiddenIframe() 
+        setTimeout (setOpacityIframe, 600)
+        setTimeout (setOpacityButtonOut, 630)
+    } else {
+        setOpacityIframe()
+        setOpacityButtonIn()
+        setTimeout (setHiddenIframe, 450)
+        setTimeout (setHiddenP, 550)
+        setTimeout (setOpacityP, 600)
+        setTimeout (setOpacityButtonOut, 630)
+    }
+
+    function setOpacityP() {
+        document.getElementById("phide").classList.toggle("opacity0")
+        document.getElementById("phide").classList.toggle("opacity100")
+    }
+    function setHiddenP() {
+        document.getElementById("phide").classList.toggle("hidden")
+    }
+    function setHiddenIframe() {
+        document.getElementById("iframehide").classList.toggle("hidden")
+    }
+    function setOpacityIframe() {
+    document.getElementById("iframehide").classList.toggle("opacity0")
+    document.getElementById("iframehide").classList.toggle("opacity100")
+    }
+    function setOpacityButtonIn() {
+      toDoButton.classList.add("hidden")
+    }
+    function setOpacityButtonOut() {
+        toDoButton.classList.remove("hidden")
+    }
 })
 
 /* ------===== performance check in console =====------- */
