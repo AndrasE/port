@@ -1117,6 +1117,16 @@ p.example-code {
     text-decoration: none
 }
 
+input:hover {
+    border: solid 1px var(--text-black-700) !important;
+    transition: all 0.7s ease-in-out !important;
+}
+
+textarea:hover {
+    border: solid 1px var(--text-black-700) !important;
+    transition: all 0.7s ease-in-out !important;
+}
+
 /* @ media queries @ */
 
 @media (max-width: 1199px) {
