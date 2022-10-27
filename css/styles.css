@@ -1127,6 +1127,11 @@ textarea:hover {
     transition: all 0.7s ease-in-out !important;
 }
 
+
+.portfolio-example .portfolio-example-item {
+    flex: 0 0 66%;
+    max-width: 66%;
+}
 /* @ media queries @ */
 
 @media (max-width: 1199px) {
@@ -1157,8 +1162,9 @@ textarea:hover {
         display: block;
         margin-left: 0;
     }
+    
     .portfolio-example .portfolio-example-item .drum {
-        height: 450px;
+        height: 350px;
     }
 }
 
@@ -1177,11 +1183,6 @@ textarea:hover {
         flex: 0 0 50%;
         max-width: 50%;
     }
-    .portfolio-example .portfolio-example-item {
-        flex: 0 0 80%;
-        max-width: 80%;
-    }
-    
 }
 
 @media (max-width: 767px) {
@@ -1199,10 +1200,6 @@ textarea:hover {
     .portfolio-example .portfolio-example-item {
         flex: 0 0 100%;
         max-width: 100%;
-    }
-
-    .portfolio-example .portfolio-example-item .drum {
-        height: 350px;
     }
 }
 
