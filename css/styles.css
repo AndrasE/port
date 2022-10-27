@@ -1198,7 +1198,7 @@ textarea:hover {
     }
 
     .portfolio-example .portfolio-example-item .drum {
-        height: 300px;
+        height: 350px;
     }
 }
 
@@ -1239,6 +1239,9 @@ textarea:hover {
     }
     .aside .nav li {
         margin-bottom: 35px;
+    }
+    .portfolio-example .portfolio-example-item .drum {
+        height: 250px;
     }
 }
 @media screen and (max-height: 500px) and (orientation:landscape) {
