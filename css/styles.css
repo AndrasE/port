@@ -1196,6 +1196,10 @@ textarea:hover {
         flex: 0 0 100%;
         max-width: 100%;
     }
+
+    .portfolio-example .portfolio-example-item .drum {
+        height: 300px;
+    }
 }
 
 @media (max-width: 600px) {
