@@ -1128,10 +1128,7 @@ textarea:hover {
 }
 
 
-.portfolio-example .portfolio-example-item {
-    flex: 0 0 66%;
-    max-width: 66%;
-}
+
 /* @ media queries @ */
 
 @media (max-width: 1199px) {
@@ -1161,10 +1158,6 @@ textarea:hover {
     .about .about-content .personal-info .info-item p span {
         display: block;
         margin-left: 0;
-    }
-    
-    .portfolio-example .portfolio-example-item .drum {
-        height: 350px;
     }
 }
 
