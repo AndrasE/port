@@ -1245,7 +1245,7 @@ textarea:hover {
         margin-bottom: 35px;
     }
     .portfolio-example .portfolio-example-item .drum {
-        height: 250px;
+        height: 235px;
     }
 }
 @media screen and (max-height: 500px) and (orientation:landscape) {
