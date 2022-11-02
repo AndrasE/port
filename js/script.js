@@ -173,21 +173,23 @@ hammer.on('doubletap', function () {
 
 /* ------===== checking if back button pressed =====------- */
 const navHistory = ["home"]
-const navHistoryPop = ["home"]
+
 
 window.addEventListener('popstate', function() {
     
     const currentUrl = window.location.href
     const currentUrlId =  currentUrl.split("#")[1]
-
-    
-
-
     const lastId = (navHistory[navHistory.length-1]);
 
     if (lastId != currentUrlId) {
-        
-        console.log(currentUrlId);
+        lastSection = document.querySelector("section."+currentUrlId)
+        lastSection.classList.add("active")
+        lastSection.classList.remove("back-section")
+
+        currentSection = document.querySelector("section."+lastId)
+        currentSection.classList.add("back-section")
+        currentSection.classList.remove("active")
+        navHistory.pop()
     }
 })
 
@@ -200,7 +202,7 @@ sLinksList = sLinks.length;
 
 for (let i = 0; i < aLinksList; i++) {
     const a = aLinks[i]
-    a.addEventListener("click", function() {
+    a.addEventListener("click", function () {
         styleSwitcherCloseIfOpen()
         //its set as back section for loading only//
         document.querySelector("section.blank").classList.remove("back-section")
@@ -239,7 +241,6 @@ for (let i = 0; i < aLinksList; i++) {
         removeOpenClass1200()
     })
 }
-
 
 /* ------===== nav-active overwrite for about/hire btn =====------- */
 document.querySelector("a.hire-me").addEventListener("click", function () {
