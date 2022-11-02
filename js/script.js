@@ -177,26 +177,18 @@ const navHistoryPop = ["home"]
 
 window.addEventListener('popstate', function() {
     
-    navHistoryPop.push(getId)
-    console.log(navHistory);
-    console.log(navHistoryPop);
-//     console.log(navHistory.length);
-//     console.log(navHistoryPop.length);
-//    if (navHistory.length != navHistoryPop.length && navHistory.length > 1) {
-//     const currentSectionName = navHistory.at(-1)
-//     const prevSectionName =  navHistory.at(-2)
-//       currentSection =  document.querySelector("section."+currentSectionName)
-//       currentSection.classList.add("back-section")
-//       currentSection.classList.remove("active")
-//       prevSection = document.querySelector("section."+prevSectionName)
-//       prevSection.classList.add("active")
-//       prevSection.classList.remove("back-section")
-//       navHistoryPop.splice(0,2)
-//       navHistory.pop()
-//       console.log("-------------------------")
-//       console.log(navHistory.length);
-//       console.log(navHistoryPop.length);
-//    }
+    const currentUrl = window.location.href
+    const currentUrlId =  currentUrl.split("#")[1]
+
+    
+
+
+    const lastId = (navHistory[navHistory.length-1]);
+
+    if (lastId != currentUrlId) {
+        
+        console.log(currentUrlId);
+    }
 })
 
 
@@ -208,7 +200,7 @@ sLinksList = sLinks.length;
 
 for (let i = 0; i < aLinksList; i++) {
     const a = aLinks[i]
-    a.addEventListener("click", function () {
+    a.addEventListener("click", function() {
         styleSwitcherCloseIfOpen()
         //its set as back section for loading only//
         document.querySelector("section.blank").classList.remove("back-section")
@@ -247,6 +239,7 @@ for (let i = 0; i < aLinksList; i++) {
         removeOpenClass1200()
     })
 }
+
 
 /* ------===== nav-active overwrite for about/hire btn =====------- */
 document.querySelector("a.hire-me").addEventListener("click", function () {
