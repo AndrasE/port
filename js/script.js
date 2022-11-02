@@ -182,27 +182,20 @@ window.addEventListener('popstate', function() {
     console.log(navHistoryPop);
 //     console.log(navHistory.length);
 //     console.log(navHistoryPop.length);
-    
 //    if (navHistory.length != navHistoryPop.length && navHistory.length > 1) {
-    
-    
-    
 //     const currentSectionName = navHistory.at(-1)
 //     const prevSectionName =  navHistory.at(-2)
 //       currentSection =  document.querySelector("section."+currentSectionName)
 //       currentSection.classList.add("back-section")
 //       currentSection.classList.remove("active")
-      
 //       prevSection = document.querySelector("section."+prevSectionName)
 //       prevSection.classList.add("active")
 //       prevSection.classList.remove("back-section")
-
 //       navHistoryPop.splice(0,2)
 //       navHistory.pop()
 //       console.log("-------------------------")
 //       console.log(navHistory.length);
 //       console.log(navHistoryPop.length);
-
 //    }
 })
 
