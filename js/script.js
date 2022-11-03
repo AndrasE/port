@@ -182,7 +182,7 @@ function navHistoryCheck() {
 
 window.addEventListener('popstate', function () {
     document.querySelector("section.blank").classList.remove("back-section")
-    
+
     const currentUrl = window.location.href
     const currentUrlId = currentUrl.split("#")[1]
     const lastId = (navHistory[navHistory.length - 1]);
@@ -205,18 +205,20 @@ window.addEventListener('popstate', function () {
         } lastSection.classList.add("active")
 
         // active link remove/add //
-        const hrefFromId = "#"+ currentUrlId
-        const getLink = document.querySelector("a[href='"+hrefFromId+"']")
-        for (let i = 0; i < aLinksList; i++) {
-            const a = aLinks[i]
-            a.classList.remove("active")
-            a.classList.remove("underline")
-        } getLink.classList.add("active")
+        const hrefFromId = "#" + currentUrlId
+        const getLink = document.querySelector("a[href='" + hrefFromId + "']")
+        if (!getLink.classList.contains("nope")) {
+            for (let i = 0; i < aLinksList; i++) {
+                const a = aLinks[i]
+                a.classList.remove("active")
+                a.classList.remove("underline")
+            } getLink.classList.add("active")
+        }
         if (getLink.getAttribute("href") === "#andras") {
             getLink.classList.remove("active")
             getLink.classList.add("underline")
         }
-        
+
         startStopLazy()
         asideBtnClose1200()
         removeOpenClass1200()
@@ -225,7 +227,6 @@ window.addEventListener('popstate', function () {
         console.log("Backbutton pressed; History: " + navHistory);
     }
 })
-
 
 /* ------===== show-hide sections =====------- */
 const aLinks = document.querySelectorAll("a.a-link")
@@ -254,8 +255,8 @@ for (let i = 0; i < aLinksList; i++) {
             s.classList.remove("active")
         } getSection.classList.add("active")
 
+        // active link remove/add //
         if (!this.classList.contains("nope")) {
-            // active link remove/add //
             for (let i = 0; i < aLinksList; i++) {
                 const a = aLinks[i]
                 a.classList.remove("active")
