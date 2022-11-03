@@ -174,37 +174,56 @@ hammer.on('doubletap', function () {
 /* ------===== checking if back button pressed =====------- */
 const navHistory = []
 
-window.addEventListener('popstate', function() {
+function navHistoryCheck() {
+    if (navHistory.slice(-1).pop() != getId) {
+        navHistory.push(getId)
+    } console.log(navHistory);
+}
+
+window.addEventListener('popstate', function () {
     document.querySelector("section.blank").classList.remove("back-section")
-
+    
     const currentUrl = window.location.href
-    const currentUrlId =  currentUrl.split("#")[1]
-    const lastId = (navHistory[navHistory.length-1]);
+    const currentUrlId = currentUrl.split("#")[1]
+    const lastId = (navHistory[navHistory.length - 1]);
 
-    if (lastId != currentUrlId) {
-        styleSwitcherCloseIfOpen()
+    if (lastId != currentUrlId && navHistory.length > 1) {
 
         lastSection = document.getElementById(currentUrlId)
         currentSection = document.getElementById(lastId)
 
-         // back-section remove/add //
-         for (let j = 0; j < sLinksList; j++) {
+        // back-section remove/add //
+        for (let j = 0; j < sLinksList; j++) {
             const s = sLinks[j]
             s.classList.remove("back-section")
         } currentSection.classList.add("back-section")
+
         // active section remove/add //
         for (let j = 0; j < sLinksList; j++) {
             const s = sLinks[j]
             s.classList.remove("active")
         } lastSection.classList.add("active")
+
+        // active link remove/add //
+        const hrefFromId = "#"+ currentUrlId
+        const getLink = document.querySelector("a[href='"+hrefFromId+"']")
+        for (let i = 0; i < aLinksList; i++) {
+            const a = aLinks[i]
+            a.classList.remove("active")
+            a.classList.remove("underline")
+        } getLink.classList.add("active")
+        if (getLink.getAttribute("href") === "#andras") {
+            getLink.classList.remove("active")
+            getLink.classList.add("underline")
+        }
+        
         startStopLazy()
         asideBtnClose1200()
         removeOpenClass1200()
-        console.log("Backbutton pressed, history: "+navHistory);
+        styleSwitcherCloseIfOpen()
         navHistory.pop()
+        console.log("Backbutton pressed; History: " + navHistory);
     }
-    console.log("Backbutton pressed, history: "+navHistory);
-
 })
 
 
@@ -234,8 +253,6 @@ for (let i = 0; i < aLinksList; i++) {
             const s = sLinks[j]
             s.classList.remove("active")
         } getSection.classList.add("active")
-        console.log(getSection);
-        navHistory.push(getId)
 
         if (!this.classList.contains("nope")) {
             // active link remove/add //
@@ -252,6 +269,7 @@ for (let i = 0; i < aLinksList; i++) {
         startStopLazy()
         asideBtnClose1200()
         removeOpenClass1200()
+        navHistoryCheck()
     })
 }
 
@@ -282,7 +300,7 @@ function startStopLazy() {
         document.getElementById("phide").classList.remove("hidden")
         document.getElementById("phide").classList.remove("opacity0")
     }
-    
+
     function startLazy() {
         portfolio = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=portfolio> </iframe>"
         crud = "<iframe class=youtube, src=https://www.youtube.com/embed/7CruXGDHbgg alt=crud> </iframe>"
@@ -297,30 +315,30 @@ function startStopLazy() {
                 document.getElementById(iframeId).innerHTML = crud
             case "secrets-iframe":
                 document.getElementById(iframeId).innerHTML = secrets
-            case "todo-iframe":    
-            document.getElementById("todo-iframe").innerHTML = todo
+            case "todo-iframe":
+                document.getElementById("todo-iframe").innerHTML = todo
         }
     }
 }
 
 /* ------===== codesandbox-embed animations =====------- */
 const toDoButton = document.getElementById("codesandbox")
-toDoButton.addEventListener("click", ()=> {
-    
-    if ( document.getElementById("iframehide").classList.contains("hidden")) {
+toDoButton.addEventListener("click", () => {
+
+    if (document.getElementById("iframehide").classList.contains("hidden")) {
         setOpacityButtonIn()
         setOpacityP()
-        setTimeout (setHiddenP, 550)
-        setHiddenIframe() 
-        setTimeout (setOpacityIframe, 600)
-        setTimeout (setOpacityButtonOut, 630)
+        setTimeout(setHiddenP, 550)
+        setHiddenIframe()
+        setTimeout(setOpacityIframe, 600)
+        setTimeout(setOpacityButtonOut, 630)
     } else {
         setOpacityIframe()
         setOpacityButtonIn()
-        setTimeout (setHiddenIframe, 450)
-        setTimeout (setHiddenP, 550)
-        setTimeout (setOpacityP, 600)
-        setTimeout (setOpacityButtonOut, 630)
+        setTimeout(setHiddenIframe, 450)
+        setTimeout(setHiddenP, 550)
+        setTimeout(setOpacityP, 600)
+        setTimeout(setOpacityButtonOut, 630)
     }
 
     function setOpacityP() {
@@ -334,11 +352,11 @@ toDoButton.addEventListener("click", ()=> {
         document.getElementById("iframehide").classList.toggle("hidden")
     }
     function setOpacityIframe() {
-    document.getElementById("iframehide").classList.toggle("opacity0")
-    document.getElementById("iframehide").classList.toggle("opacity100")
+        document.getElementById("iframehide").classList.toggle("opacity0")
+        document.getElementById("iframehide").classList.toggle("opacity100")
     }
     function setOpacityButtonIn() {
-      toDoButton.classList.add("hidden")
+        toDoButton.classList.add("hidden")
     }
     function setOpacityButtonOut() {
         toDoButton.classList.remove("hidden")
