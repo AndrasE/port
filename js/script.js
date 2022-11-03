@@ -172,12 +172,12 @@ hammer.on('doubletap', function () {
 });
 
 /* ------===== checking if back button pressed =====------- */
-const navHistory = []
+const navHistory = ["home"]
 
 function navHistoryCheck() {
     if (navHistory.slice(-1).pop() != getId) {
         navHistory.push(getId)
-    } console.log(navHistory);
+    } 
 }
 
 window.addEventListener('popstate', function () {
@@ -187,6 +187,8 @@ window.addEventListener('popstate', function () {
     const currentUrlId = currentUrl.split("#")[1]
     const lastId = (navHistory[navHistory.length - 1]);
 
+    console.log(getId);
+    console.log(currentUrl);
 
     asideBtnClose1200()
     styleSwitcherCloseIfOpen()
