@@ -172,13 +172,16 @@ hammer.on('doubletap', function () {
 });
 
 /* ------===== checking if back button pressed =====------- */
-const navHistory = ["home"]
+const navHistory = ["home","home"]
+const navPopHistory = ["home","home"]
 
 function navHistoryCheck() {
     if (navHistory.slice(-1).pop() != getId) {
         navHistory.push(getId)
     } 
 }
+
+
 
 window.addEventListener('popstate', function () {
     document.querySelector("section.blank").classList.remove("back-section")
@@ -187,10 +190,23 @@ window.addEventListener('popstate', function () {
     
     const currentUrl = window.location.href
     const currentUrlId = currentUrl.split("#")[1]
+    const navDifference = navHistory.length - navPopHistory.length
     const lastId = (navHistory[navHistory.length - 1]);
+    const secondLastId =(navHistory[navHistory.length - 2]);
+    console.log(navDifference)
 
-    if (lastId != currentUrlId && navHistory.length > 1) {
-        lastSection = document.getElementById(currentUrlId)
+    if (navPopHistory.slice(-1).pop() != currentUrlId)  {
+        if (navDifference > -1) {
+            navPopHistory.push(currentUrlId)
+        }
+        
+    }
+    console.log(navHistory);
+    console.log(navPopHistory);
+
+
+    if (navHistory.length != navPopHistory.length && navHistory.length > 3 ) {
+        lastSection = document.getElementById(secondLastId)
         currentSection = document.getElementById(lastId)
 
         // back-section remove/add //
@@ -224,8 +240,12 @@ window.addEventListener('popstate', function () {
         asideBtnClose1200()
         removeOpenClass1200()
         styleSwitcherCloseIfOpen()
+        navPopHistory.splice(navPopHistory.length - 2, 2)
+       
         navHistory.pop()
-        console.log("Backbutton pressed; History: " + navHistory);
+        console.log(navHistory);
+        console.log(navPopHistory);
+        // console.log("Backbutton pressed; History: " + navHistory);
     }
 })
 
