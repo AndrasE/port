@@ -187,6 +187,10 @@ window.addEventListener('popstate', function () {
     const currentUrlId = currentUrl.split("#")[1]
     const lastId = (navHistory[navHistory.length - 1]);
 
+
+    asideBtnClose1200()
+    styleSwitcherCloseIfOpen()
+
     if (lastId != currentUrlId && navHistory.length > 1) {
 
         lastSection = document.getElementById(currentUrlId)
@@ -237,7 +241,6 @@ sLinksList = sLinks.length;
 for (let i = 0; i < aLinksList; i++) {
     const a = aLinks[i]
     a.addEventListener("click", function () {
-        styleSwitcherCloseIfOpen()
         //its set as back section for loading only//
         getId = a.getAttribute("href").split("#")[1];
         getSection = document.getElementById(getId)
