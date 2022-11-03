@@ -182,19 +182,14 @@ function navHistoryCheck() {
 
 window.addEventListener('popstate', function () {
     document.querySelector("section.blank").classList.remove("back-section")
-
+    asideBtnClose1200()
+    styleSwitcherCloseIfOpen()
+    
     const currentUrl = window.location.href
     const currentUrlId = currentUrl.split("#")[1]
     const lastId = (navHistory[navHistory.length - 1]);
 
-    console.log(getId);
-    console.log(currentUrl);
-
-    asideBtnClose1200()
-    styleSwitcherCloseIfOpen()
-
     if (lastId != currentUrlId && navHistory.length > 1) {
-
         lastSection = document.getElementById(currentUrlId)
         currentSection = document.getElementById(lastId)
 
