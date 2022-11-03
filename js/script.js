@@ -172,25 +172,39 @@ hammer.on('doubletap', function () {
 });
 
 /* ------===== checking if back button pressed =====------- */
-const navHistory = ["home"]
-
+const navHistory = []
 
 window.addEventListener('popstate', function() {
-    
+    document.querySelector("section.blank").classList.remove("back-section")
+
     const currentUrl = window.location.href
     const currentUrlId =  currentUrl.split("#")[1]
     const lastId = (navHistory[navHistory.length-1]);
 
     if (lastId != currentUrlId) {
-        lastSection = document.querySelector("section."+currentUrlId)
-        lastSection.classList.add("active")
-        lastSection.classList.remove("back-section")
+        styleSwitcherCloseIfOpen()
 
-        currentSection = document.querySelector("section."+lastId)
-        currentSection.classList.add("back-section")
-        currentSection.classList.remove("active")
+        lastSection = document.getElementById(currentUrlId)
+        currentSection = document.getElementById(lastId)
+
+         // back-section remove/add //
+         for (let j = 0; j < sLinksList; j++) {
+            const s = sLinks[j]
+            s.classList.remove("back-section")
+        } currentSection.classList.add("back-section")
+        // active section remove/add //
+        for (let j = 0; j < sLinksList; j++) {
+            const s = sLinks[j]
+            s.classList.remove("active")
+        } lastSection.classList.add("active")
+        startStopLazy()
+        asideBtnClose1200()
+        removeOpenClass1200()
+        console.log("Backbutton pressed, history: "+navHistory);
         navHistory.pop()
     }
+    console.log("Backbutton pressed, history: "+navHistory);
+
 })
 
 
@@ -205,7 +219,6 @@ for (let i = 0; i < aLinksList; i++) {
     a.addEventListener("click", function () {
         styleSwitcherCloseIfOpen()
         //its set as back section for loading only//
-        document.querySelector("section.blank").classList.remove("back-section")
         getId = a.getAttribute("href").split("#")[1];
         getSection = document.getElementById(getId)
         currentSection = document.querySelector("section.active")
@@ -221,7 +234,7 @@ for (let i = 0; i < aLinksList; i++) {
             const s = sLinks[j]
             s.classList.remove("active")
         } getSection.classList.add("active")
-
+        console.log(getSection);
         navHistory.push(getId)
 
         if (!this.classList.contains("nope")) {
