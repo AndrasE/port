@@ -199,11 +199,9 @@ window.addEventListener('popstate', function () {
         if (navDifference >= 0) {
             navPopHistory.push(currentUrlId)
         }
-        
     }
     console.log(navHistory);
     console.log(navPopHistory);
-
 
     if (navHistory.length != navPopHistory.length && navHistory.length > 1 && navDifference >= 0 ) {
         lastSection = document.getElementById(secondLastId)
