@@ -193,17 +193,25 @@ window.addEventListener('popstate', function () {
     const navDifference = navHistory.length - navPopHistory.length
     const lastId = (navHistory[navHistory.length - 1]);
     const secondLastId =(navHistory[navHistory.length - 2]);
-    console.log(navDifference)
+   
 
     if (navPopHistory.slice(-1).pop() != currentUrlId)  {
         if (navDifference >= 0) {
             navPopHistory.push(currentUrlId)
         }
     }
-    console.log(navHistory);
-    console.log(navPopHistory);
+    // console.log(navHistory);
+    // console.log(navPopHistory);
+    // console.log(navDifference)
+    console.log(navHistory.length);
+    console.log(navPopHistory.length);
 
-    if (navHistory.length != navPopHistory.length && navHistory.length > 2 && navDifference >= 0 ) {
+if (navHistory.length == 2  && navPopHistory.length == 3) {
+    navPopHistory.pop()
+    console.log(navPopHistory.length);
+} else {
+
+    if (navHistory.length != navPopHistory.length && navHistory.length > 2 && navDifference >= 0 && navPopHistory.length > 3) {
         lastSection = document.getElementById(secondLastId)
         currentSection = document.getElementById(lastId)
 
@@ -241,11 +249,11 @@ window.addEventListener('popstate', function () {
         navPopHistory.splice(navPopHistory.length - 2, 2)
        
         navHistory.pop()
-        console.log(navHistory);
-        console.log(navPopHistory);
-        console.log("Backbutton pressed; History: " + navHistory);
+        // console.log(navHistory);
+        // console.log(navPopHistory);
+        // console.log("Backbutton pressed; History: " + navHistory);
     }
-})
+}})
 
 /* ------===== show-hide sections =====------- */
 const aLinks = document.querySelectorAll("a.a-link")
