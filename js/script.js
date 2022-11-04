@@ -172,8 +172,8 @@ hammer.on('doubletap', function () {
 });
 
 /* ------===== checking if back button pressed =====------- */
-const navHistory = ["home"]
-const navPopHistory = ["home"]
+const navHistory = ["home","home"]
+const navPopHistory = ["home","home"]
 
 function navHistoryCheck() {
     if (navHistory.slice(-1).pop() != getId) {
@@ -203,7 +203,7 @@ window.addEventListener('popstate', function () {
     console.log(navHistory);
     console.log(navPopHistory);
 
-    if (navHistory.length != navPopHistory.length && navHistory.length > 1 && navDifference >= 0 ) {
+    if (navHistory.length != navPopHistory.length && navHistory.length > 2 && navDifference >= 0 ) {
         lastSection = document.getElementById(secondLastId)
         currentSection = document.getElementById(lastId)
 
@@ -220,8 +220,8 @@ window.addEventListener('popstate', function () {
         } lastSection.classList.add("active")
 
         // active link remove/add //
-        const hrefFromId = "#" + currentUrlId
-        const getLink = document.querySelector("a[href='" + hrefFromId + "']")
+        const hrefsecondLastId = "#" + secondLastId
+        const getLink = document.querySelector("a[href='" + hrefsecondLastId + "']")
         if (!getLink.classList.contains("nope")) {
             for (let i = 0; i < aLinksList; i++) {
                 const a = aLinks[i]
@@ -243,7 +243,7 @@ window.addEventListener('popstate', function () {
         navHistory.pop()
         console.log(navHistory);
         console.log(navPopHistory);
-        // console.log("Backbutton pressed; History: " + navHistory);
+        console.log("Backbutton pressed; History: " + navHistory);
     }
 })
 
