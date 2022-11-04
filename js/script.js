@@ -172,8 +172,8 @@ hammer.on('doubletap', function () {
 });
 
 /* ------===== checking if back button pressed =====------- */
-const navHistory = ["home","home"]
-const navPopHistory = ["home","home"]
+const navHistory = ["home"]
+const navPopHistory = ["home"]
 
 function navHistoryCheck() {
     if (navHistory.slice(-1).pop() != getId) {
@@ -196,7 +196,7 @@ window.addEventListener('popstate', function () {
     console.log(navDifference)
 
     if (navPopHistory.slice(-1).pop() != currentUrlId)  {
-        if (navDifference > -1) {
+        if (navDifference >= 0) {
             navPopHistory.push(currentUrlId)
         }
         
@@ -205,7 +205,7 @@ window.addEventListener('popstate', function () {
     console.log(navPopHistory);
 
 
-    if (navHistory.length != navPopHistory.length && navHistory.length > 3 ) {
+    if (navHistory.length != navPopHistory.length && navHistory.length > 1 && navDifference >= 0 ) {
         lastSection = document.getElementById(secondLastId)
         currentSection = document.getElementById(lastId)
 
