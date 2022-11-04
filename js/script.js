@@ -171,89 +171,87 @@ hammer.on('doubletap', function () {
     document.body.classList.toggle("light")
 });
 
-/* ------===== checking if back button pressed =====------- */
-const navHistory = ["home","home"]
-const navPopHistory = ["home","home"]
+/* ------===== checking if back/forward button get pressed =====------- */
+const navHistory = ["home", "home"]
+const navPopHistory = ["home", "home"]
 
 function navHistoryCheck() {
     if (navHistory.slice(-1).pop() != getId) {
         navHistory.push(getId)
-    } 
+    }
 }
 
-
-
 window.addEventListener('popstate', function () {
-    document.querySelector("section.blank").classList.remove("back-section")
+
     asideBtnClose1200()
     styleSwitcherCloseIfOpen()
-    
+
     const currentUrl = window.location.href
     const currentUrlId = currentUrl.split("#")[1]
     const navDifference = navHistory.length - navPopHistory.length
     const lastId = (navHistory[navHistory.length - 1]);
-    const secondLastId =(navHistory[navHistory.length - 2]);
-   
+    const secondLastId = (navHistory[navHistory.length - 2]);
 
-    if (navPopHistory.slice(-1).pop() != currentUrlId)  {
+    if (navPopHistory.slice(-1).pop() != currentUrlId) {
         if (navDifference >= 0) {
             navPopHistory.push(currentUrlId)
         }
     }
+
     // console.log(navHistory);
     // console.log(navPopHistory);
     // console.log(navDifference)
     console.log(navHistory.length);
     console.log(navPopHistory.length);
 
-if (navHistory.length == 2  && navPopHistory.length == 3) {
-    navPopHistory.pop()
-    console.log(navPopHistory.length);
-} else {
+    if (navHistory.length == 2 && navPopHistory.length == 3) {
+        navPopHistory.pop()
+        console.log(navPopHistory.length);
+    } else {
 
-    if (navHistory.length != navPopHistory.length && navHistory.length > 2 && navDifference >= 0 && navPopHistory.length > 3) {
-        lastSection = document.getElementById(secondLastId)
-        currentSection = document.getElementById(lastId)
+        if (navHistory.length != navPopHistory.length && navHistory.length > 2 && navDifference >= 0 && navPopHistory.length > 3) {
+            lastSection = document.getElementById(secondLastId)
+            currentSection = document.getElementById(lastId)
 
-        // back-section remove/add //
-        for (let j = 0; j < sLinksList; j++) {
-            const s = sLinks[j]
-            s.classList.remove("back-section")
-        } currentSection.classList.add("back-section")
+            // back-section remove/add //
+            for (let j = 0; j < sLinksList; j++) {
+                const s = sLinks[j]
+                s.classList.remove("back-section")
+            } currentSection.classList.add("back-section")
 
-        // active section remove/add //
-        for (let j = 0; j < sLinksList; j++) {
-            const s = sLinks[j]
-            s.classList.remove("active")
-        } lastSection.classList.add("active")
+            // active section remove/add //
+            for (let j = 0; j < sLinksList; j++) {
+                const s = sLinks[j]
+                s.classList.remove("active")
+            } lastSection.classList.add("active")
 
-        // active link remove/add //
-        const hrefsecondLastId = "#" + secondLastId
-        const getLink = document.querySelector("a[href='" + hrefsecondLastId + "']")
-        if (!getLink.classList.contains("nope")) {
-            for (let i = 0; i < aLinksList; i++) {
-                const a = aLinks[i]
-                a.classList.remove("active")
-                a.classList.remove("underline")
-            } getLink.classList.add("active")
+            // active link remove/add //
+            const hrefsecondLastId = "#" + secondLastId
+            const getLink = document.querySelector("a[href='" + hrefsecondLastId + "']")
+            if (!getLink.classList.contains("nope")) {
+                for (let i = 0; i < aLinksList; i++) {
+                    const a = aLinks[i]
+                    a.classList.remove("active")
+                    a.classList.remove("underline")
+                } getLink.classList.add("active")
+            }
+            if (getLink.getAttribute("href") === "#andras") {
+                getLink.classList.remove("active")
+                getLink.classList.add("underline")
+            }
+
+            startStopLazy()
+            asideBtnClose1200()
+            removeOpenClass1200()
+            styleSwitcherCloseIfOpen()
+            navPopHistory.splice(navPopHistory.length - 2, 2)
+            navHistory.pop()
+            // console.log(navHistory);
+            // console.log(navPopHistory);
+            // console.log("Backbutton pressed; History: " + navHistory);
         }
-        if (getLink.getAttribute("href") === "#andras") {
-            getLink.classList.remove("active")
-            getLink.classList.add("underline")
-        }
-
-        startStopLazy()
-        asideBtnClose1200()
-        removeOpenClass1200()
-        styleSwitcherCloseIfOpen()
-        navPopHistory.splice(navPopHistory.length - 2, 2)
-       
-        navHistory.pop()
-        // console.log(navHistory);
-        // console.log(navPopHistory);
-        // console.log("Backbutton pressed; History: " + navHistory);
     }
-}})
+})
 
 /* ------===== show-hide sections =====------- */
 const aLinks = document.querySelectorAll("a.a-link")
