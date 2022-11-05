@@ -141,29 +141,29 @@ navTogglerBtn.addEventListener("click", () => {
 })
 
 /* ------===== hammer.js (swipes) =====------- */
-const hammer = new Hammer(
-    document.getElementById('gesture-element'),
-    { inputClass: Hammer.TouchMouseInput }
-);
+// const hammer = new Hammer(
+//     document.getElementById('gesture-element'),
+//     { inputClass: Hammer.TouchMouseInput }
+// );
 
-hammer.on('swiperight', function () {
-    if (styleSwitcher.classList.contains("open")) {
-        styleSwitcher.classList.remove("open")
-    } else {
-        asideBtnOpen1200()
-        addOpenClass1200()
-        backSectionCheck1200()
-    }
-});
+// hammer.on('swiperight', function () {
+//     if (styleSwitcher.classList.contains("open")) {
+//         styleSwitcher.classList.remove("open")
+//     } else {
+//         asideBtnOpen1200()
+//         addOpenClass1200()
+//         backSectionCheck1200()
+//     }
+// });
 
-hammer.on('swipeleft', function () {
-    if (aside.classList.contains("open")) {
-        asideBtnClose1200()
-        activeSectionToggle1200()
-    } else {
-        styleSwitcher.classList.add("open")
-    }
-});
+// hammer.on('swipeleft', function () {
+//     if (aside.classList.contains("open")) {
+//         asideBtnClose1200()
+//         activeSectionToggle1200()
+//     } else {
+//         styleSwitcher.classList.add("open")
+//     }
+// });
 
 hammer.on('doubletap', function () {
     dayNight.querySelector("i").classList.toggle("fa-sun");
