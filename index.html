@@ -1137,94 +1137,79 @@
                     <div class="row">
                         <div class="portfolio-about-text padd-15">
                             <h3>Lazyload, swipe and much more</h3>
-                            <p>I absulutely loved the design. Its clean and fresh
+                            <p>I absolutely loved the design as it is clean, fresh
                                 and looks dynamic. I really thought by finishing the code following
                                 the tutorial will pretty much wrap up this project, but I was wrong. Very wrong!
                             </p>
                             <h4>Sections</h4>
                             <p>As you can see on the site there are slides coming right to left for each
-                                link you click on. These are sections, although it looks that they all different
-                                components of the page but they are really not! <br> Just imagine a standard webpage as
+                                link you click on. These are sections, although it looks that they are all different
+                                components of the page, but they are really not! <br> Just imagine a standard webpage as
                                 a roll of paper. As you scroll down you go through different segments of the same paper.
-                                Now imagine this roll to be cut up for a given dimensions(sections) and start piling up
+                                Now imagine this roll to be cut up into a certain number of dimensions (sections) and start piling up
                                 these "card/sections" on top of each other. They all exist the same time, in front
-                                of you but most of them gets hidden away by the first card. As the new section slides
-                                in, the previous one stayes in the back. Each slides will have qualities such "hidden",
-                                "back-section", "active" as and when required. <br> When I finished the initial project,
-                                I realized there is an
+                                of each other, but most of them get hidden away by the first card. As the new section slides
+                                in, the previous one stays in the back. Each slide will have classes such as "hidden",
+                                "back-section" or "active" when required. 
+
+<br> When I finished the initial project, I realized there is an
                                 issue while loading the page. The last slide that loads will be visible for a second and
-                                kind of ruining the inital animation. Easy fix would be to add and empty black section
-                                (no characthers pictures or
-                                anything else) as the last card. When the
-                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction"
-                                    target="_blank" rel="noopener noreferrer">DOM</a> (document object model) gets
+                                kind of ruining the initial animation. An easy fix would be to add an empty black section
+                                (without any characters, pictures or
+                                other elements) as the last card. When the
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction" target="_blank" rel="noopener noreferrer">DOM</a> (document object model) gets
                                 loaded it
                                 will be the last
-                                card on top. Home section is "active" so will slide over it. Looks pretty neat.
-                                The problem with this solution is that as the DOM grows bigger and starts running the
-                                project NOT only locally, it will require more time for the DOM to load in, so the weird
-                                trace of the second flashing up will come back. Even though we are quick, but to pile
-                                the cards
-                                on top of each other as fast that noone will be able to notice anything is more fast
-                                than
-                                we the speed possibly can do. Not to mention that these pack of cards getting bulkier!
-                                <br>Okay the next
+                                card on top. The Home section is "active" so will slide over it - that makes it look pretty neat.
+                                The problem with this solution is that as the DOM (Document Object Model) grows bigger and starts running the project not only locally, it will require more time for the DOM to load in, so for the 
+                                trace of the second flashing-up some of the sections will come back. By the time we load the last sections, which is now set as a blank section won't load fast enough for us anymore. We pack the sections on top of each other, but by the time we reach the last section some of the other cards will get displayed again as we have more content to display and each section will get much bulkier and requires more time to load in.
+                               
+                                <br>Only the next
                                 solution to the problem was to set all not needed sections to be hidden until the DOM
-                                loaded.
-                                That worked again for a while, but every now and then, it seems the issue came back with
+                                loaded. That worked again for a while, but every now and then it seemed the issue came back with
                                 a flash. The reason being is that the DOM loads first (line by line) and styling is
                                 after. You
                                 start putting the cards on top of each other, but you haven`t yet learnt the trick to
                                 hide what you are doing. Its
-                                becouse DOM is partially built by the time the CSS (which contians this trick) is
-                                loaded.. I realised I
-                                could do better.<br> Rather than leave a blank section as the last slide I should make
-                                it
-                                the first
-                                and add it as "back-section" right away. Like this, when the HTML and right after the
-                                CSS starts loading it will eliminate the issue. By the time it finishes the load the
+                                because DOM is partially built by the time the CSS (which contains this trick) is
+                                loaded. I realised I need to find a more feasible solution.<br> Rather than leave a blank section as the last slide, I should make it the first
+                                and add it as "back-section" right away. Like this, when the HTML starts loading followed by the
+                                CSS it will eliminate the issue. By the time it finishes the load the
                                 whole
-                                DOM (put the cards down) the back-section is already set (trick learnt) and the rest of
+                                DOM (put the cards down) the back-section is already set (lesson learnt) and the rest of
                                 the page would not be
-                                visible. Trickery! Altough it works this small/medium sized webpage, it wouldn`t be
-                                recomended to use this
-                                approach to anything significant. Either need to have the webpage component based
-                                (React) or an
-                                intersection observer needs to be set up. But I come back to this later on.
+                                visible. Trickery! Although it works for this small/medium sized webpage, it would not be
+                                recommended to use this
+                                approach to larger sized webpages. It would need to be either set up component-based
+                                (React) or there needs to be an intersection-observer set up. But I will come back to this later on.
                             </p>
                             <h4>Jpeg vs. Webp</h4>
                             <p>Out of interest, I wanted to see how else I can make the page load faster. I have around
                                 5-6 pictures added to the project. By checking out in the network tab in dev mode I saw
-                                that each(Jpeg) takes
+                                that each picture (Jpeg) takes
                                 around 600-700ms to load. Webp images have around 15-30% less data than Jpeg as it
                                 compresses more. But I also
                                 read on Stackoverflow that they are harder to decode, so the gain is not as significant.
-                                This answer was about 4 years ago,
-                                so I wasn't sure if it still stands. I had to make my own testrun for it, just wanted to
-                                know. <br> My original Jpegs weren`t
-                                anything big to start with, but making them as a Webp the size got reduced even further.
+                                This answer was posted on the blog about four years ago,
+                                so I was not sure about its validity today. So in the end I had to make my own testrun for it as I really wanted to overcome this problem. 
+
+<br> My original Jpegs were not that heavy, but in turning them into a Webp the size got reduced even further.
                                 I compared the page load time
-                                using Jpeg vs Webp. What I found is that it means a small improvement in my case. I talk
-                                around 0.0x seconds worth of
-                                improvement. Although I didn't gain anything much, it's clear to see I would have more
-                                and bigger
-                                resolution (larger) images it would
-                                make a difference. I just thought I share my findings after I invested in researching
-                                and test the topic.
+                                using Jpeg vs Webp. The result was a small reduction in loading time of around 0.0x seconds, however an improvement. Although the improvement is small, it would
+                                make a significant difference when using much larger and therefore heavier images. So it is still worth sharing my findings after I invested in researching
+                                and testing the topic.
                             </p>
                             <h4>Component-tree / think before you do!</h4>
                             <p>
                                 I mentioned above the DOM and how these "cards" get loaded on top of each other. Maybe
                                 it looks like there are only 5-6
-                                cards in this pack, but I have much more for show. This is why the problem started to
-                                arise. Here is the component tree if you
-                                would like to see. <a
-                                    href="https://www.dropbox.com/s/9iajqwwsgzomekd/comp-tree2.png?dl=0" target="_blank"
-                                    rel="noopener noreferrer">Component tree</a> You can see we have
-                                well over 10 cards. Each of them gets sets to be "active" or "back-section"
+                                cards in this pack, but I have much more to show. This is why the problem started to
+                                evolve. Here is the component tree if you
+                                would like to see. <a href="https://www.dropbox.com/s/9iajqwwsgzomekd/comp-tree2.png?dl=0" target="_blank" rel="noopener noreferrer">Component tree</a> You can see we have
+                                over 10 cards. Each of them gets classified in "active" or "back-section"
                                 or in some cases to be temporarily "hidden". It wouldn't be a problem at all if I leave
                                 the project simple as it
-                                started. But I didn't find it enough, I wanted it to have multiple layers to it. It
+                                started. But I didn't find it sufficient as I wanted it to have multiple layers to it. It
                                 means you can click on the logo which is not
                                 part of the navigation section but still brings up a section. Same with the
                                 project-section, there are examples and even
@@ -1233,67 +1218,60 @@
                                 what we need to understand is
                                 that each click calls an event-listener. It means you click on something and will
                                 execute a function. The navigation panel is
-                                relatively straight forward. If someone clicks on a link on the navigation panel, set
+                                relatively straight forward: If someone clicks on a link on the navigation panel, it sets
                                 the current card as a background section and
-                                the new card as active. Simple and works as a wonder. Now imagine that you are not part
-                                of this "chosen navigation panelgroup" or
-                                you may just be part of one of the sections. Now the original functions wouldn't know
-                                what should be the back-section
-                                and which is the active. I need to further specify it. If this and this gets clicked do
-                                this and that. But if you are
-                                already there and something else gets clicked if this and that true/false do this or
+                                the new card as active. Simple and works smoothly. 
+
+Now imagine that you are not part of this "chosen navigation panel-group" or
+                                you may just be part of one of the sections. The original functions wouldn't know
+                                what should be the back-section and which is the active. I need to further specify it. If this and this gets clicked, do this and that. But if you are
+                                already there and something else gets clicked if this and that is true/false then do this or
                                 that. What I`m trying to say with
                                 all this salad? It means that I had to cover a whole list of scenarios to make this
-                                happen. I have 5 navigation links
-                                (the easy part), about 4 project examples with 4 more sections to link to them and
-                                around 2-3 buttons to do similar
-                                whichever part of the page. Now getting a bit more complicated you think? Yes and
+                                happen. I have five navigation links
+                                (the easy part), about four project examples with four more sections to link to them and
+                                around two to three buttons to do similar
+                                actions on the page. Now getting a bit more complicated you think? Yes and
                                 no!<br>
+
                                 Now imagine that each of your
                                 clicks not just slides in a new section, but also highlights on the side section of the
                                 page what the current content is. Wait
-                                a minute! How about each click closes the theme-toggle section of the right of the page
+                                a minute! How about each click closes the theme-toggle section on the right of the page
                                 when any of this gets clicked? Let's do
                                 that as well, totally! How about making the web page more responsive, when it's on
                                 mobile let the navigation side overflow the content, but
                                 when it's around tablet size, let the navigation side push the content on the right, it
-                                looks cool afterall! You know what I
-                                want the page to be responsive to swipes! Yess!! We all want that! <br>And here we are
-                                now a
+                                looks cool after all! You know that I
+                                want the page to be responsive to swipes - we all want that! <br>And here we are
+                                now with a
                                 whole lot of arrays of different
-                                outcomes. We have if statements within if statements and functions in functions.
-                                <a href="https://www.dropbox.com/s/4p3yazozwp0g5o4/andras-example.png?dl=0"
-                                    target="_blank" rel="noopener noreferrer">Here is and example.</a>
+                                outcomes. We have if-statements within if-statements and functions in functions.
+                                <a href="https://www.dropbox.com/s/4p3yazozwp0g5o4/andras-example.png?dl=0" target="_blank" rel="noopener noreferrer">Here is an example.</a>
                                 Now we have to cover a lot. What shows on the navigation panel, what will happen on
                                 small/medium/large screens,
                                 what happens if the style toggle is already open, what happens when we swipe the
-                                navigation panel to be open (all screen sizes),
+                                navigation panel to be open (all screen sizes)
                                 but we close it with the button and swipe back.<br> What to learn from this? One thing
                                 for
                                 certain,
-                                plan what you do! If I have had set up the page differently as I started with, knowing
+                                plan what you do! If I have had set up the page differently from the start, knowing
                                 that I want so much more from it,
-                                I could have prepared it from the beginning. By no means I`m not happy with the result,
-                                I am! It does look and feel nice
-                                and all grounds are covered! But if I have know what I know now, I could streamline some
+                                I could have prepared it from the beginning. That doesn't mean I am not happy with the outcome of the page, in fact I am very happy - it does look and feel nice and all grounds are covered! But if I had all these learnings and this fantastic knowledge beforehand, I would have been able streamline some
                                 of the functions and make it more simple
-                                to understand. It`s a learning curve and a valuable lesson for me. I want to return to
+                                to understand. It`s a great learning curve and a valuable lesson for me. I want to return to
                                 this project and rewrite the JS for it. I'm certain
-                                I`ll be able to reduce the code by 30%. <br> UPDATE: I done it and actually could reduce
-                                the sctipt by
-                                more
-                                than 40%. I go in to depth in this on the bottom of this page.
+                                I`ll be able to reduce the code by 30%. 
+
+<br> UPDATE: I have realized this objective and was able to actually reduce the script by more than 40%. Let me go into depth on this at the bottom of this page.
                             </p>
                             <h4>Hammer.js (swipe) </h4>
                             <p style="padding-bottom:15px"> I used Hammer.js before in my Secrets project, so using it
                                 this time
                                 around was pretty much straight forward. The only issue I had is that although it worked
-                                as it should on
-                                desktop, but anytime I tried to use it responsively (mobile/tablet) it didn`t fire the
+                              well desktop, anytime I tried to use it responsively (mobile/tablet) it didn`t fire the
                                 required functions.
-                                Was a bit annoying to find the solution, but eventually I did. It was in the deeper
-                                realm of codes, but seems
-                                like I needed to overwrite something for it`s normal behaviour. I live the code here as
+                        I needed to find the solution to overwrite the touch-input/mouse-input`s initial behaviour. I leave the code here as
                                 it was a bit tricky to find,
                                 might offer a solution for someone who comes across similar issues.
                             </p>
@@ -1306,11 +1284,11 @@
                                 is
                                 the practice of delaying load or initialization of resources or objects until they're
                                 actually
-                                needed to improve performance and save system resources." <br>Just imagine you scrolling
+                                needed to improve performance and save system resources." <br>Just imagine you are scrolling
                                 through
-                                facebook/instagram, imagine that at the initial start of the app it would need to load
+                                Facebook/Instagram and that at the initial start of the app it would need to load
                                 in all
-                                the content for you. Would be quite a janke ride! Furthermore you might just open the
+                                the content for you. Would be quite a long ride! Furthermore you might just open the
                                 site for
                                 a second or two, but it's taking over all of your bandwidth and loading all the content
                                 even if
@@ -1324,12 +1302,12 @@
                                 If you never reach that far on the site, it shall never load. A win-win-win
                                 solution.<br>
                                 The reason I
-                                dive into this subject is because as I mentioned above I wanted to keep this project
+                                dive into this subject is because as I mentioned above I wanted to keep this project as
                                 light-weight as
-                                possible. As soon as I embed a few YouTube videos, it went cra-cra in the network tab.
+                                possible. As soon as I embedded a few YouTube videos, it went all over the place in the network tab.
                                 YouTube/Google
-                                started to bombard the site with their scripts, figuring out what Ads to load and of
-                                course load the
+                                started to bombard the site with their scripts, figuring out which ads to load plus
+                              loading all the
                                 videos in. Remember, all sections are existing at the same time in this project. You
                                 might not look
                                 at the section where the video got embedded, but it will still load up. <br> I could use
@@ -1340,27 +1318,24 @@
                                 up creating my
                                 own one. Here is the work of others:
 
-                            <p class="example-code">
-                                Solutions: &nbsp <a href="https://youtu.be/khdT1e7jEIE" target="_blank"
-                                    rel="noopener noreferrer">Example-1</a> &nbsp
-                                <a href="https://css-tricks.com/lazy-load-embedded-youtube-videos/" target="_blank"
-                                    rel="noopener noreferrer">Example-2</a>
+                            </p><p class="example-code">
+                                Solutions: &nbsp; <a href="https://youtu.be/khdT1e7jEIE" target="_blank" rel="noopener noreferrer">Example-1</a> &nbsp;
+                                <a href="https://css-tricks.com/lazy-load-embedded-youtube-videos/" target="_blank" rel="noopener noreferrer">Example-2</a>
                             </p>
                             <p>
-                                I liked the idea, but if you try it out, you can see that somehow is not really
+                                I liked the idea, but if you try it out, you can see that somehow it is not really
                                 elegant.
                                 Many times the YouTube autoplay won't even work, so you basically need to click twice
                                 for the video to start.
-                                I also didn't like that a custom icon has to be used on top of the pictures.. Anyhow,
-                                here is my take on the subject:<br>
+                                I also didn't like that a custom icon has to be used on top of the pictures. 
+So here is my take on this subject:<br>
                                 Before I dive into this, we need to know what is
-                                <a href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp" target="_blank"
-                                    rel="noopener noreferrer">Iframe</a>.
+                                <a href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp" target="_blank" rel="noopener noreferrer">Iframe</a>.
                                 Iframe is (it is in its name) a frame which lets you embed another HTML page into the
                                 current one. It has its own
-                                properties like style, history and document. It`s not interact with the parent HTML. So
+                                properties like style, history and document. It does not interact with the parent HTML. So
                                 what the guys were doing
-                                on that two example is that they put a image into the iframe with some icon on top as a
+                                on these two examples is putting an image into the iframe with some icon on top which serves as a
                                 play button using srcdoc property.<br>
                                 This lets you pretty much put the whole page as an inline element within the iframe.
                                 Anyways, let's not go too deep.
@@ -1370,98 +1345,86 @@
                                 my main concern was that I
                                 would have to put a lot of lengthy inner styling in my HTML and I really like the clean
                                 look of the code as it was.
-                                I started to develop an idea to move everything to the JS to later be injected into the
+                                I started to develop an idea to move everything to the JS to later being injected into the
                                 iframe when needed. But I
                                 still didn't like that there is a lot of HTML and CSS in my JS. And playing around hit
-                                me the simplest idea.
-                                <br>There is something called <a
-                                    href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp" target="_blank"
-                                    rel="noopener noreferrer">innerHTML</a>.
+                                me with the simplest idea.
+                                <br>There is something called <a href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp" target="_blank" rel="noopener noreferrer">innerHTML</a>.
                                 This can be set. I've done it before! What I did is that I prepped an empty div which
                                 will be injected using this innerHTML.
-                                What happens when the page loads, we have empty divs(containers if you like). But when
-                                you click on the whatever project
-                                it will call a function which will set the innerHTML to the iframe we need. It works as
-                                magic, but as YouTube is not
-                                messing around and right away starts to bombard you with the video and Ads so on, messed
+                                What happens when the page loads, we have empty divs (containers if you like). But when
+                                you click on a certain project
+                                it will call a function which will set the innerHTML to the iframe we need. It works perfectly, but as YouTube is not
+                                messing around and right away starts to bombard you with the video and ads, it messed
                                 up my animation. What I
-                                did was I wrote another function with a loading gif image. When you click on the
+                                did was writing another function with a loading gif image. When you click on the
                                 project, it's setting that image,
                                 but after 0.5s it's resetting the iframe again, now to the actual video. No double click
-                                or wierd icons and my code
-                                remained clean! <br>One thing to know that after you click away I also had to write a
-                                function as you may not on that
-                                section now, but youtube would just continue playing in the backgroubd and steal your
-                                bandwidth. So when
-                                you click away, the iframe
+                                or misleading icons, and furthermore my code
+                                remained clean! <br>I also had to write a
+                                function to stop Youtube continue playing in the background a when
+                                you click away from the section that embeds the video. In this case the iframe
                                 will be set back to the gif I just mentioned. Pretty nice solution, I`m proud of it,
                                 it's my child!
                             </p>
                             <h4>Bits and bobs'</h4>
                             <p>I covered most of the real challenges above, but there were quite a few minor-ish things
                                 I wanted to sort out. I needed to set what happens when the form on the contact section
-                                gets sent off. As this project doesn't have a backend and neither i wanted to have one I
+                                gets sent off. As this project doesn't have a backend and neither I wanted to have one I
                                 found
                                 few free services that can be used. I ended up using
-                                <a href="https://formsubmit.co/" target="_blank"
-                                    rel="noopener noreferrer">formsubmit.co</a>. Easy peasy! <br>I also wanted
+                                <a href="https://formsubmit.co/" target="_blank" rel="noopener noreferrer">formsubmit.co</a>. Easy peasy! <br>I also wanted
                                 to make the styling more appealing. For example if you are in tablet/mobile you cant
                                 open the
                                 navigation section and the theme toggler together and even if one of them is open, if
                                 you click
-                                away to do something else it will be closing them. Originally it would have remaining on
+                                away to do something else it will close them. Originally it would have remained on
                                 the
-                                screen regardless what section you are heading, blocking the content. I done this to
+                                screen regardless what section you are heading to, blocking the content. I have done this to
                                 work by
                                 both clicks and swipes among other things. <br>I also wanted the page to be more
                                 responsive.
                                 Originally it was sort of responsive, but a lot of times the content got squeezed in too
                                 much,
-                                or just the space wasn`t enough to fit all in. On portrait mode was straight forward as
+                                or just the space wasn`t enough to fit all in. On portrait mode it was straight forward as
                                 the
-                                project had a good base, but i also needed to among a few things which later i carried
-                                over
-                                to landscape mode as well. For example open the website on mobile, open the navigation
-                                menu
-                                and now tilt your phone into landscape mode. You will be able to see what I'm talking
+                                project had a good base, but I also needed to convert it into landscape mode as well. For example open the website on mobile, open the navigation menu and now tilt your phone into landscape mode. You will be able to see what I'm talking
                                 about.
-                                <br>I also added an About me section, by using the logo which also animates on click and
+                                <br>I also added an About me section, using the logo which also animates on click and
                                 when
-                                the section is active. I think it looks pretty nice. Changed the style-toggler.
-                                Previously
-                                wasn`t obvious right away when you click the colours that it actually is selected.
+                                the section is active, and I changed the style-toggler here. I think it looks pretty nice. 
+                                Previously it wasn`t obvious right away which particular colour you had selected.
                                 So I went the extra mile to fix this and make it look better. The colours are kind of
-                                see
-                                trough, but when it gets clicked its become solid colour with a border. Oh yes, one
+                                see-trough, but when you click on it turns into solid colour with a border. 
+
+Oh yes, one
                                 more
                                 thing, double tap changes the dark theme to light and back.
                             </p>
                             <h4>Takeaway</h4>
                             <p>
+
+
                                 I`ve learnt a lot during these past few weeks. The project-tutorial was amazing, it
                                 taught me
                                 a lot about how to structure a website properly. I already used most of the technique he
                                 used,
-                                but definitely helped me to reassure the proper use of
-                                <a href="https://www.w3schools.com/cssref/css_selectors.asp" target="_blank"
-                                    rel="noopener noreferrer">css-selectors</a>. Furthermorepreviously I mostly used
+                                but definitely it helped me to reassure the proper use of
+                                <a href="https://www.w3schools.com/cssref/css_selectors.asp" target="_blank" rel="noopener noreferrer">css-selectors</a>. Furthermorepreviously I mostly used
                                 grids or
                                 flexboxes to design and this is the first time using
-                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex" target="_blank"
-                                    rel="noopener noreferrer">flex</a>
-                                property. It alway was the first time that I used
-                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::before" target="_blank"
-                                    rel="noopener noreferrer">before/after</a>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex" target="_blank" rel="noopener noreferrer">flex</a>
+                                property. It was also the first time that I used
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::before" target="_blank" rel="noopener noreferrer">before/after</a>
                                 pseudo elements as part of the design. <br>
                                 I had a lot of practice creating custom functions and adding event
-                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener"
-                                    target="_blank" rel="noopener noreferrer">event-listeners</a>.
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener" target="_blank" rel="noopener noreferrer">event-listeners</a>.
                                 It was really valuable and helped me to work out the logic time and time again. This
                                 also taught me where I did go wrong with the project.
                                 I should have thought about what I really want from this prior to the work I invested.
                                 It would have made my
                                 work so much easier. Don`t get me wrong,
-                                I`m not disappointed by this. I just had ideas on the way I started to execute them bit
+                                I`m not disappointed by this. I just had ideas on the way  started to execute them bit
                                 by bit. <br>
                                 For now I say goodbye to this lovely project. We had some good times together! I plan to
                                 return and
@@ -1471,16 +1434,17 @@
                                 <img src="images/bye.gif" alt="bye">
                             </p>
                             <h4 style="text-decoration: underline;">UPDATE</h4>
-                            <p>Since I wrote what's about, I made a number of changes to the page. And I was right, I
-                                could reduce the amount of lines I coded significantly, but most importantly I made it
+                            <p>Since I wrote What's about, I made a number of changes to the page. And I was right, I
+                                could significantly reduce the amount of lines I coded, but most importantly I made it
                                 far easier to understand. I made everything as nice and tidy as I could. What I wrote in
-                                the Takeaway section is completely right. I wanted to make It happen so bad that I
-                                didn`t stop and think about it. Instead of running several forEach loops and trying to
-                                counter the unwanted side effects that they have nothing to do with each other, make it
-                                straight forward, pretty much all the section-links bind to a section regardless if it
-                                is a navigation element or button or even an image. This way hardly any unwanted
-                                animation mishaps I needed to counter. <br>But apart from this very valuable lesson, I
-                                made several other changes as well. I rewrote my lazy-load function, it all both starts
+                                the Takeaway section is completely right. I wanted to make It happen so badly that I
+                                didn`t stop and think about it. Instead of writing several for each loop  and separate functions and trying to
+                                counter the unwanted side effects each of their own, I simply linked section-links to the corresponding section regardless if it
+                                is a navigation element or button or even an image. TThis way all works within one foreach loop and hardly any unwanted
+                                animation mishaps I needed to counter. 
+
+<br>But apart from this very valuable lesson, I
+                                made several other changes as well. I rewrote my lazy-load function, it both starts
                                 and stops the videos if needed, furthermore I made a codesandbox embed as well with it.
                                 I wrote some animation to make it more sleek. I`m happy with the outcome. I also
                                 embedded a tiny beginner project I had, which I also rewrote so it fits the iframe
