@@ -327,7 +327,7 @@ function startStopLazy() {
     }
 
     function startLazy() { 
-        portfolio = "<iframe class=youtube, src=https://www.youtube.com/embed/d-z0eQOEzkE?start=1365 alt=portfolio> </iframe>"
+        portfolio = "<iframe class=youtube,  src=https://www.youtube.com/embed/LWzz4yKfj4g alt=portfolio> </iframe>"
         crud = "<iframe class=youtube, src=https://www.youtube.com/embed/7CruXGDHbgg alt=crud> </iframe>"
         secrets = "<iframe class=youtube, src=https://www.youtube.com/embed/nc_HHo04-NU alt=secrets> </iframe>"
         todo = "<iframe class=youtube, src=https://codesandbox.io/embed/to-do-veyju?fontsize=14&hidenavigation=1&theme=dark alt=crud-project></iframe>"
