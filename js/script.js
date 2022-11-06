@@ -328,26 +328,24 @@ function startStopLazy() {
 
     function startLazy() { 
         portfolio = "<iframe class=youtube,  src=https://www.youtube.com/embed/LWzz4yKfj4g alt=portfolio> </iframe>"
-        crud = "<iframe class=youtube, src=https://www.youtube.com/embed/LWzz4yKfj4g alt=crud> </iframe>",
+        crud = "<iframe class=youtube, src=https://www.youtube.com/embed/7CruXGDHbgg alt=crud> </iframe>",
         secrets = "<iframe class=youtube, src=https://www.youtube.com/embed/LWzz4yKfj4g alt=secrets> </iframe>",
         todo = "<iframe class=youtube, src=https://codesandbox.io/embed/to-do-veyju?fontsize=14&hidenavigation=1&theme=dark alt=crud-project></iframe>"
 
-
-        
         switch (iframeId) {
 
             case "portfolio-iframe":
                 document.getElementById(iframeId).innerHTML = portfolio
-                console.log(iframeId);
+                break;
             case "crud-iframe":
                 document.getElementById(iframeId).innerHTML = crud
-                console.log(iframeId);
+                break;
             case "secrets-iframe":
                 document.getElementById(iframeId).innerHTML = secrets
-                console.log(iframeId);
+                break;
             case "todo-iframe":
                 document.getElementById("todo-iframe").innerHTML = todo
-                console.log(iframeId);
+                break;
         }
     }
 }
