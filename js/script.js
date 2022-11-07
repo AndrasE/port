@@ -104,8 +104,8 @@ function activeSectionToggle1200() {
     }
 }
 /* ------===== check for backsectons in 600<x<1200 width devices =====------- */
-/* ------===== if nav panel wasn`t open before click links in the could =====------- */
-/* ------===== remain visible if reopen a the panel and click nav-link =====------- */
+/* ------===== if nav panel wasn`t open before clicking links it could =====------- */
+/* ------===== remain visible if reopen aside panel and click nav-link =====------- */
 function backSectionCheck1200() {
     if (600 < window.innerWidth && window.innerWidth < 1200 && aside.classList.contains("open")) {
         if (document.querySelector("section.projects").classList.contains("back-section")
@@ -182,10 +182,6 @@ function navHistoryCheck() {
 }
 
 window.addEventListener('popstate', function () {
-
-    asideBtnClose1200()
-    styleSwitcherCloseIfOpen()
-
     const currentUrl = window.location.href
     const currentUrlId = currentUrl.split("#")[1]
     const navDifference = navHistory.length - navPopHistory.length
@@ -201,7 +197,6 @@ window.addEventListener('popstate', function () {
     if (navHistory.length == 2 && navPopHistory.length == 3) {
         navPopHistory.pop()
     } else {
-
         if (navHistory.length != navPopHistory.length && navHistory.length > 2 && navDifference >= 0 && navPopHistory.length > 3) {
             lastSection = document.getElementById(secondLastId)
             currentSection = document.getElementById(lastId)
@@ -252,8 +247,9 @@ sLinksList = sLinks.length;
 for (let i = 0; i < aLinksList; i++) {
     const a = aLinks[i]
     a.addEventListener("click", function () {
-        //its set as back section for loading only//
+        //its removes blank as back section (for inital loading only)//
         document.querySelector("section.blank").classList.remove("back-section")
+
         getId = a.getAttribute("href").split("#")[1];
         getSection = document.getElementById(getId)
         currentSection = document.querySelector("section.active")
@@ -298,11 +294,10 @@ document.querySelector("a.hire-me").addEventListener("click", function () {
 
 /* ------===== start & stop lazy load youtube iframe =====------- */
 function startStopLazy() {
-   
+
     const activeSection = document.querySelector("section.active")
     const prevSection = document.querySelector("section.back-section")
 
-    
     if (activeSection.classList.contains("portfolio-example") && activeSection.classList.contains("iframed")) {
         activeId = activeSection.id
         iframeId = activeId + "-iframe"
@@ -322,14 +317,13 @@ function startStopLazy() {
         document.getElementById("phide").classList.remove("opacity0")
     }
 
-    function startLazy() { 
-        portfolio = "<iframe class=youtube, src=https://www.youtube.com/embed/PzofI5Zq97w alt=portfolio> </iframe>"
-        crud = "<iframe class=youtube, src=https://www.youtube.com/embed/7CruXGDHbgg alt=crud> </iframe>",
-        secrets = "<iframe class=youtube, src=https://www.youtube.com/embed/LWzz4yKfj4g alt=secrets> </iframe>",
+    function startLazy() {
+        portfolio = "<iframe class=youtube, src=https://www.youtube.com/embed/PzofI5Zq97w allowfullscreen alt=portfolio> </iframe>"
+        crud = "<iframe class=youtube, src=https://www.youtube.com/embed/7CruXGDHbgg allowfullscreen alt=crud> </iframe>"
+        secrets = "<iframe class=youtube, src=https://www.youtube.com/embed/LWzz4yKfj4g allowfullscreen alt=secrets> </iframe>"
         todo = "<iframe class=youtube, src=https://codesandbox.io/embed/to-do-veyju?fontsize=14&hidenavigation=1&theme=dark alt=crud-project></iframe>"
 
         switch (iframeId) {
-
             case "portfolio-iframe":
                 document.getElementById(iframeId).innerHTML = portfolio
                 break;
@@ -343,7 +337,6 @@ function startStopLazy() {
                 document.getElementById("todo-iframe").innerHTML = todo
                 break;
         }
-        
     }
 }
 
