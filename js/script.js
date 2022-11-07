@@ -198,15 +198,8 @@ window.addEventListener('popstate', function () {
         }
     }
 
-    // console.log(navHistory);
-    // console.log(navPopHistory);
-    // console.log(navDifference)
-    console.log(navHistory.length);
-    console.log(navPopHistory.length);
-
     if (navHistory.length == 2 && navPopHistory.length == 3) {
         navPopHistory.pop()
-        console.log(navPopHistory.length);
     } else {
 
         if (navHistory.length != navPopHistory.length && navHistory.length > 2 && navDifference >= 0 && navPopHistory.length > 3) {
@@ -239,16 +232,13 @@ window.addEventListener('popstate', function () {
                 getLink.classList.remove("active")
                 getLink.classList.add("underline")
             }
-
             startStopLazy()
             asideBtnClose1200()
             removeOpenClass1200()
             styleSwitcherCloseIfOpen()
             navPopHistory.splice(navPopHistory.length - 2, 2)
             navHistory.pop()
-            // console.log(navHistory);
-            // console.log(navPopHistory);
-            // console.log("Backbutton pressed; History: " + navHistory);
+            console.log("Backbutton pressed; History: " + navHistory);
         }
     }
 })
@@ -263,6 +253,7 @@ for (let i = 0; i < aLinksList; i++) {
     const a = aLinks[i]
     a.addEventListener("click", function () {
         //its set as back section for loading only//
+        document.querySelector("section.blank").classList.remove("back-section")
         getId = a.getAttribute("href").split("#")[1];
         getSection = document.getElementById(getId)
         currentSection = document.querySelector("section.active")
@@ -291,6 +282,7 @@ for (let i = 0; i < aLinksList; i++) {
             this.classList.remove("active")
             this.classList.add("underline")
         }
+
         startStopLazy()
         asideBtnClose1200()
         removeOpenClass1200()
@@ -306,16 +298,20 @@ document.querySelector("a.hire-me").addEventListener("click", function () {
 
 /* ------===== start & stop lazy load youtube iframe =====------- */
 function startStopLazy() {
+   
     const activeSection = document.querySelector("section.active")
     const prevSection = document.querySelector("section.back-section")
 
+    
     if (activeSection.classList.contains("portfolio-example") && activeSection.classList.contains("iframed")) {
         activeId = activeSection.id
         iframeId = activeId + "-iframe"
         setIframeGif()
         setTimeout(startLazy, 700)
+        console.log("Iframe started");
     } else if (prevSection.classList.contains("portfolio-example")) {
         setTimeout(setIframeGif, 700)
+        console.log("Iframe stopped");
     }
 
     function setIframeGif() {
@@ -327,7 +323,7 @@ function startStopLazy() {
     }
 
     function startLazy() { 
-        portfolio = "<iframe class=youtube,  src=https://www.youtube.com/embed/LWzz4yKfj4g alt=portfolio> </iframe>"
+        portfolio = "<iframe class=youtube, src=https://www.youtube.com/embed/PzofI5Zq97w alt=portfolio> </iframe>"
         crud = "<iframe class=youtube, src=https://www.youtube.com/embed/7CruXGDHbgg alt=crud> </iframe>",
         secrets = "<iframe class=youtube, src=https://www.youtube.com/embed/LWzz4yKfj4g alt=secrets> </iframe>",
         todo = "<iframe class=youtube, src=https://codesandbox.io/embed/to-do-veyju?fontsize=14&hidenavigation=1&theme=dark alt=crud-project></iframe>"
@@ -347,6 +343,7 @@ function startStopLazy() {
                 document.getElementById("todo-iframe").innerHTML = todo
                 break;
         }
+        
     }
 }
 
