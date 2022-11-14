@@ -6,18 +6,18 @@ var typed = new Typed(".typing", {
     loop: true
 })
 
-/* ------===== theme light/dark mode toggle btn =====------- */
+/* ------===== theme light/dark mode toggle btn / prof pic change =====------- */
 const dayNight = document.querySelector(".day-night");
 dayNight.addEventListener("click", () => {
     dayNight.querySelector("i").classList.toggle("fa-sun");
     dayNight.querySelector("i").classList.toggle("fa-moon");
     document.body.classList.toggle("light")
 
-    profPic = document.getElementById("profile-pic").src.slice(-7)
-   if (profPic == "me.webp") {
-    console.log("it is");
-   } else 
-   console.log("nah");
+    profPic = document.getElementById("profile-pic")
+    if (profPic.src.slice(-7) !== "me.webp") {
+        profPic.src = "images/me.webp"
+    } else
+        profPic.src = "images/loading.gif"
 })
 
 /* ------===== theme light/dark toggle on DOM-load =====------- */
@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
         dayNight.querySelector("i").classList.add("fa-moon")
     } else {
         dayNight.querySelector("i").classList.add("fa-sun")
-        
+
     }
 })
 
@@ -176,6 +176,12 @@ hammer.on('doubletap', function () {
     dayNight.querySelector("i").classList.toggle("fa-sun");
     dayNight.querySelector("i").classList.toggle("fa-moon");
     document.body.classList.toggle("light")
+
+    profPic = document.getElementById("profile-pic")
+    if (profPic.src.slice(-7) !== "me.webp") {
+        profPic.src = "images/me.webp"
+    } else
+        profPic.src = "images/loading.gif"
 });
 
 /* ------===== checking if back/forward button get pressed =====------- */
