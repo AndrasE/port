@@ -446,6 +446,11 @@ br {
     max-width: 60%;
 }
 
+.maxflex {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+}
+
 h3.hello {
     font-size: 28px;
     margin: 15px 0;
@@ -472,6 +477,7 @@ h3.my-profession {
     font-size: 20px;
     text-align: justify;
     color: var(--text-black-700);
+    
    
 }
 
@@ -1127,8 +1133,6 @@ textarea:hover {
     transition: all 0.7s ease-in-out !important;
 }
 
-
-
 /* @ media queries @ */
 
 @media (max-width: 1199px) {
@@ -1159,8 +1163,8 @@ textarea:hover {
         display: block;
         margin-left: 0;
     }
+    
 }
-
 @media (max-width: 991px) {
 
     .home .home-info {

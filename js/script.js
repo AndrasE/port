@@ -145,6 +145,13 @@ navTogglerBtn.addEventListener("click", () => {
     asideNavAndBtnToggle()
     activeSectionToggle1200()
     backSectionCheck1200()
+    if (991 < window.innerWidth < 1200 && aside.classList.contains("open")) { 
+        document.querySelector(".home-img").classList.add("hidden")
+        document.querySelector(".home-info").classList.add("maxflex")
+     } else {
+        document.querySelector(".home-img").classList.remove("hidden")
+        document.querySelector(".home-info").classList.remove("maxflex")
+     }
 })
 
 /* ------===== hammer.js (swipes) =====------- */
@@ -160,6 +167,10 @@ hammer.on('swiperight', function () {
         asideBtnOpen1200()
         addOpenClass1200()
         backSectionCheck1200()
+        if (991 < window.innerWidth < 1200 && aside.classList.contains("open")) { 
+           document.querySelector(".home-img").classList.add("hidden")
+           document.querySelector(".home-info").classList.add("maxflex")
+        }
     }
 });
 
@@ -167,6 +178,10 @@ hammer.on('swipeleft', function () {
     if (aside.classList.contains("open")) {
         asideBtnClose1200()
         activeSectionToggle1200()
+        if (991 < window.innerWidth < 1200 && !aside.classList.contains("open")) { 
+            document.querySelector(".home-img").classList.remove("hidden")
+            document.querySelector(".home-info").classList.remove("maxflex")
+         }
     } else {
         styleSwitcher.classList.add("open")
     }
