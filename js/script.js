@@ -12,6 +12,12 @@ dayNight.addEventListener("click", () => {
     dayNight.querySelector("i").classList.toggle("fa-sun");
     dayNight.querySelector("i").classList.toggle("fa-moon");
     document.body.classList.toggle("light")
+
+    profPic = document.getElementById("profile-pic").src.slice(-7)
+   if (profPic == "me.webp") {
+    console.log("it is");
+   } else 
+   console.log("nah");
 })
 
 /* ------===== theme light/dark toggle on DOM-load =====------- */
@@ -20,6 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
         dayNight.querySelector("i").classList.add("fa-moon")
     } else {
         dayNight.querySelector("i").classList.add("fa-sun")
+        
     }
 })
 
