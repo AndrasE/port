@@ -488,6 +488,10 @@ h3.my-profession {
     position: relative;
 }
 
+img {
+    pointer-events: none;
+}
+
 .home .home-img::before {
     content: "";
     position: absolute;

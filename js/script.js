@@ -14,10 +14,10 @@ dayNight.addEventListener("click", () => {
     document.body.classList.toggle("light")
 
     profPic = document.getElementById("profile-pic")
-    if (profPic.src.slice(-6) !== "me.JPG") {
-        profPic.src = "images/me.JPG"
+    if (profPic.src.slice(-7) !== "me.webp") {
+        profPic.src = "images/me.webp"
     } else
-        profPic.src = "images/me2.JPG"
+        profPic.src = "images/me2.webp"
 })
 
 /* ------===== theme light/dark toggle on DOM-load =====------- */
@@ -193,10 +193,10 @@ hammer.on('doubletap', function () {
     document.body.classList.toggle("light")
 
     profPic = document.getElementById("profile-pic")
-    if (profPic.src.slice(-6) !== "me.JPG") {
-        profPic.src = "images/me.JPG"
+    if (profPic.src.slice(-7) !== "me.webp") {
+        profPic.src = "images/me.webp"
     } else
-        profPic.src = "images/me2.JPG"
+        profPic.src = "images/me2.webp"
 });
 
 /* ------===== checking if back/forward button get pressed =====------- */
