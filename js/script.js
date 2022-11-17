@@ -12,17 +12,7 @@ dayNight.addEventListener("click", () => {
     dayNight.querySelector("i").classList.toggle("fa-sun");
     dayNight.querySelector("i").classList.toggle("fa-moon");
     document.body.classList.toggle("light")
-
-    meImg1 = document.getElementById("me-img1")
-    meImg2 = document.getElementById("me-img2")
-
-    if (!meImg1.classList.contains("hidden")) {
-        meImg1.classList.add("hidden")
-        meImg2.classList.remove("hidden")
-    } else {
-        meImg1.classList.remove("hidden")
-        meImg2.classList.add("hidden")
-    }
+    imgAnimation()
 });
 
 /* ------===== theme light/dark toggle on DOM-load =====------- */
@@ -150,14 +140,8 @@ navTogglerBtn.addEventListener("click", () => {
     asideNavAndBtnToggle()
     activeSectionToggle1200()
     backSectionCheck1200()
-    if (991 < window.innerWidth < 1200 && aside.classList.contains("open")) { 
-        document.querySelector(".home-img").classList.add("opacity0")
-        document.querySelector(".home-info").classList.add("maxflex")
-     } else {
-        document.querySelector(".home-img").classList.remove("hidden")
-        document.querySelector(".home-info").classList.remove("maxflex")
-     }
-})
+    imgAnimationTablet()
+});
 
 /* ------===== hammer.js (swipes) =====------- */
 const hammer = new Hammer(
@@ -172,9 +156,10 @@ hammer.on('swiperight', function () {
         asideBtnOpen1200()
         addOpenClass1200()
         backSectionCheck1200()
-        if (991 < window.innerWidth < 1200 && aside.classList.contains("open")) { 
-           document.querySelector(".home-img").classList.add("hidden")
-           document.querySelector(".home-info").classList.add("maxflex")
+        imgAnimationTablet()
+        if (991 < window.innerWidth < 1200 && aside.classList.contains("open")) {
+            document.querySelector(".home-img").classList.add("hidden")
+            document.querySelector(".home-info").classList.add("maxflex")
         }
     }
 });
@@ -183,10 +168,11 @@ hammer.on('swipeleft', function () {
     if (aside.classList.contains("open")) {
         asideBtnClose1200()
         activeSectionToggle1200()
-        if (991 < window.innerWidth < 1200 && !aside.classList.contains("open")) { 
+        imgAnimationTablet()
+        if (991 < window.innerWidth < 1200 && !aside.classList.contains("open")) {
             document.querySelector(".home-img").classList.remove("hidden")
             document.querySelector(".home-info").classList.remove("maxflex")
-         }
+        }
     } else {
         styleSwitcher.classList.add("open")
     }
@@ -199,14 +185,7 @@ hammer.on('doubletap', function () {
 
     meImg1 = document.getElementById("me-img1")
     meImg2 = document.getElementById("me-img2")
-
-    if (!meImg1.classList.contains("hidden")) {
-        meImg1.classList.add("hidden")
-        meImg2.classList.remove("hidden")
-    } else {
-        meImg1.classList.remove("hidden")
-        meImg2.classList.add("hidden")
-    }
+    imgAnimation()
 });
 
 /* ------===== checking if back/forward button get pressed =====------- */
@@ -420,6 +399,77 @@ toDoButton.addEventListener("click", () => {
     }
 })
 
+/* ------===== profile-pic animation =====------- */
+function imgAnimation() {
+    
+    meImg1 = document.getElementById("me-img1")
+    meImg2 = document.getElementById("me-img2")
+
+    meImg1opacity0()
+    meImg2opacity0()
+
+    if (!meImg1.classList.contains("hidden")) {
+        setTimeout(meImg1hidden, 200)
+        setTimeout(meImg2notHidden, 201)
+        setTimeout(meImg2opacity100, 202)
+        setTimeout(removeOpacities, 203)
+    } else {
+        setTimeout(meImg2hidden, 200)
+        setTimeout(meImg1notHidden, 201)
+        setTimeout(meImg1opacity100, 202)
+        setTimeout(removeOpacities, 203)
+    }
+
+    function meImg1opacity0() {
+        meImg1.classList.add("opacity-img-0")
+    }
+    function meImg1opacity100() {
+        meImg1.classList.add("opacity-img-100")
+    }
+    function meImg1hidden() {
+        meImg1.classList.add("hidden")
+    }
+    function meImg1notHidden() {
+        meImg1.classList.remove("hidden")
+        console.log("daaa");
+    }
+    function meImg2opacity0() {
+        meImg2.classList.add("opacity-img-0")
+    }
+    function meImg2opacity100() {
+        meImg2.classList.add("opacity-img-100")
+    }
+    function meImg2hidden() {
+        meImg2.classList.add("hidden")
+    }
+    function meImg2notHidden() {
+        meImg2.classList.remove("hidden")
+    }
+    function removeOpacities() {
+        meImg1.classList.remove("opacity-img-100")
+        meImg2.classList.remove("opacity-img-100")
+        meImg1.classList.remove("opacity-img-0")
+        meImg2.classList.remove("opacity-img-0")
+    }
+}
+
+/* ------===== profile-pic animation for tablet screens 991< x < 1200 =====------- */
+function imgAnimationTablet() {
+
+    if (991 < window.innerWidth < 1200 && aside.classList.contains("open")) {
+        document.querySelector(".home-img").classList.add("hidden")
+        document.querySelector(".home-img").classList.add("opacity-img-0")
+        document.querySelector(".home-info").classList.add("maxflex")
+    } else {
+        document.querySelector(".home-info").classList.remove("maxflex")
+        setTimeout(removeOpacities, 500)
+    }
+    function removeOpacities () {
+    document.querySelector(".home-img").classList.remove("opacity-img-0")
+    document.querySelector(".home-img").classList.remove("hidden")
+    }
+}   
+    
 /* ------===== performance check in console =====------- */
 addEventListener('DOMContentLoaded', (event) => {
     DOMContentLoaded = event.timeStamp / 1000;

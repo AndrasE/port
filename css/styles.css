@@ -106,6 +106,15 @@ br {
 .hidden {
     display: none !important;
 }
+.opacity-img-0 {
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.opacity-img-100 {
+    opacity: 100;
+    transition: all 0.2s ease;
+}
 
 .opacity0 {
     opacity: 0;
@@ -444,6 +453,7 @@ br {
 .home .home-info {
     flex: 0 0 60%;
     max-width: 60%;
+    transition: all 0.5s ease;
 }
 
 .maxflex {
