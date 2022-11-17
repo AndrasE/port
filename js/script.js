@@ -13,12 +13,17 @@ dayNight.addEventListener("click", () => {
     dayNight.querySelector("i").classList.toggle("fa-moon");
     document.body.classList.toggle("light")
 
-    profPic = document.getElementById("profile-pic")
-    if (profPic.src.slice(-7) !== "me.webp") {
-        profPic.src = "images/me.webp"
-    } else
-        profPic.src = "images/me2.webp"
-})
+    meImg1 = document.getElementById("me-img1")
+    meImg2 = document.getElementById("me-img2")
+
+    if (!meImg1.classList.contains("hidden")) {
+        meImg1.classList.add("hidden")
+        meImg2.classList.remove("hidden")
+    } else {
+        meImg1.classList.remove("hidden")
+        meImg2.classList.add("hidden")
+    }
+});
 
 /* ------===== theme light/dark toggle on DOM-load =====------- */
 window.addEventListener('DOMContentLoaded', () => {
@@ -146,7 +151,7 @@ navTogglerBtn.addEventListener("click", () => {
     activeSectionToggle1200()
     backSectionCheck1200()
     if (991 < window.innerWidth < 1200 && aside.classList.contains("open")) { 
-        document.querySelector(".home-img").classList.add("hidden")
+        document.querySelector(".home-img").classList.add("opacity0")
         document.querySelector(".home-info").classList.add("maxflex")
      } else {
         document.querySelector(".home-img").classList.remove("hidden")
@@ -192,11 +197,16 @@ hammer.on('doubletap', function () {
     dayNight.querySelector("i").classList.toggle("fa-moon");
     document.body.classList.toggle("light")
 
-    profPic = document.getElementById("profile-pic")
-    if (profPic.src.slice(-7) !== "me.webp") {
-        profPic.src = "images/me.webp"
-    } else
-        profPic.src = "images/me2.webp"
+    meImg1 = document.getElementById("me-img1")
+    meImg2 = document.getElementById("me-img2")
+
+    if (!meImg1.classList.contains("hidden")) {
+        meImg1.classList.add("hidden")
+        meImg2.classList.remove("hidden")
+    } else {
+        meImg1.classList.remove("hidden")
+        meImg2.classList.add("hidden")
+    }
 });
 
 /* ------===== checking if back/forward button get pressed =====------- */
