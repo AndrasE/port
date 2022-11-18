@@ -166,10 +166,9 @@ hammer.on('swipeleft', function () {
         activeSectionToggle1200()
         imgAnimationTablet()
         imgAnimationTablet()
-} else { styleSwitcher.classList.add("open")
- 
-}
-
+    } else {
+        styleSwitcher.classList.add("open")
+    }
 });
 
 hammer.on('doubletap', function () {
@@ -395,7 +394,7 @@ toDoButton.addEventListener("click", () => {
 
 /* ------===== profile-pic animation =====------- */
 function imgAnimation() {
-    
+
     meImg1 = document.getElementById("me-img1")
     meImg2 = document.getElementById("me-img2")
 
@@ -458,12 +457,12 @@ function imgAnimationTablet() {
         document.querySelector(".home-info").classList.remove("maxflex")
         setTimeout(removeOpacities, 500)
     }
-    function removeOpacities () {
-    document.querySelector(".home-img").classList.remove("opacity-img-0")
-    document.querySelector(".home-img").classList.remove("hidden")
+    function removeOpacities() {
+        document.querySelector(".home-img").classList.remove("opacity-img-0")
+        document.querySelector(".home-img").classList.remove("hidden")
     }
-}   
-    
+}
+
 /* ------===== performance check in console =====------- */
 addEventListener('DOMContentLoaded', (event) => {
     DOMContentLoaded = event.timeStamp / 1000;
