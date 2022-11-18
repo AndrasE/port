@@ -157,7 +157,6 @@ hammer.on('swiperight', function () {
         addOpenClass1200()
         backSectionCheck1200()
         imgAnimationTablet()
-        
     }
 });
 
@@ -167,7 +166,11 @@ hammer.on('swipeleft', function () {
         activeSectionToggle1200()
         imgAnimationTablet()
         imgAnimationTablet()
-}});
+} else { styleSwitcher.classList.add("open")
+ 
+}
+
+});
 
 hammer.on('doubletap', function () {
     dayNight.querySelector("i").classList.toggle("fa-sun");
