@@ -42,6 +42,16 @@ body {
     box-sizing: border-box;
 }
 
+h2  {
+    transition: all 0.7s ease;
+ }
+ h3 {
+    transition: all 0.7s ease;
+ }
+p {
+    transition: all 0.2s ease;
+}
+
 ::before,
 ::after {
     box-sizing: border-box;
@@ -453,12 +463,12 @@ br {
 .home .home-info {
     flex: 0 0 60%;
     max-width: 60%;
-    transition: all 0.4s ease;
 }
 
 .maxflex {
         flex: 0 0 100% !important;
         max-width: 100% !important;
+        transition: all 0.6s ease;
 }
 
 h3.hello {
@@ -487,8 +497,6 @@ h3.my-profession {
     font-size: 20px;
     text-align: justify;
     color: var(--text-black-700);
-    
-   
 }
 
 .home .home-img {
@@ -528,7 +536,6 @@ img {
     height: 400px;
     border-radius: 5px;
 }
-
 
 /* about */
 
@@ -769,7 +776,7 @@ img {
     border-radius: 10px;
     padding: 30px 15px;
     text-align: center;
-    transition: all 0.5s ease;
+    transition: all 0.4s ease;
 }
 
 .coding .coding-item .coding-item-inner .icon {
@@ -820,7 +827,7 @@ img {
     margin-bottom: 10px;
 }
 
-.projects .projects-heading h2 {
+.projects .projects-heading {
     color: var(--text-black-900);
     font-weight: 500;
 }
@@ -831,6 +838,7 @@ img {
     font-weight: 700;
     color: var(--text-black-900);
 }
+
 
 .projects .projects-item {
     flex: 0 0 50%;
@@ -843,7 +851,7 @@ img {
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
-    transition: all 0.7s ease;
+    transition: all 0.9s ease;
 }
 
 .projects .projects-item-inner:hover {
@@ -961,7 +969,7 @@ img {
     padding: 10px 25px;
     font-size: 16px;
     color: var(--text-black-700);
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
 }
 
 .contact .contact-form .form-item .form-control:focus {
