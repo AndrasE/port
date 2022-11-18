@@ -453,7 +453,7 @@ function imgAnimationTablet() {
         document.querySelector(".home-info").classList.add("maxflex")
     } else {
         document.querySelector(".home-info").classList.remove("maxflex")
-        setTimeout(removeOpacities, 400)
+        setTimeout(removeOpacities, 500)
     }
     function removeOpacities () {
     document.querySelector(".home-img").classList.remove("opacity-img-0")

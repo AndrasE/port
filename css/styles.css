@@ -43,10 +43,10 @@ body {
 }
 
 h2  {
-    transition: all 0.7s ease;
+    transition: all 1s ease;
  }
- h3 {
-    transition: all 0.7s ease;
+ h3:not(h3.hello, h3.my-profession) {
+    transition: all 1s ease;
  }
 p {
     transition: all 0.2s ease;
@@ -463,12 +463,13 @@ br {
 .home .home-info {
     flex: 0 0 60%;
     max-width: 60%;
+    transition: all 0.5s ease;
+
 }
 
 .maxflex {
         flex: 0 0 100% !important;
         max-width: 100% !important;
-        transition: all 0.6s ease;
 }
 
 h3.hello {
