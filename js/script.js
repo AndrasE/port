@@ -254,7 +254,7 @@ aLinksList = aLinks.length
 const sLinks = document.querySelectorAll("section.s-link")
 sLinksList = sLinks.length;
 
-styleSwitcherCloseIfOpen() 
+
 
 for (let i = 0; i < aLinksList; i++) {
     const a = aLinks[i]
@@ -290,7 +290,7 @@ for (let i = 0; i < aLinksList; i++) {
             this.classList.remove("active")
             this.classList.add("underline")
         }
-
+        styleSwitcherCloseIfOpen() 
         startStopLazy()
         asideBtnClose1200()
         removeOpenClass1200()
