@@ -254,6 +254,8 @@ aLinksList = aLinks.length
 const sLinks = document.querySelectorAll("section.s-link")
 sLinksList = sLinks.length;
 
+styleSwitcherCloseIfOpen() 
+
 for (let i = 0; i < aLinksList; i++) {
     const a = aLinks[i]
     a.addEventListener("click", function () {
