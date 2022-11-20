@@ -4,7 +4,7 @@
     --bg-black-50: #393939;
     --text-black-900: #ffffff;
     --text-black-700: #e9e9e9;
-    --additional-white: #ffffff;
+    --additional-white: #ffffff
 }
 
 ::-webkit-scrollbar {
@@ -21,8 +21,8 @@
 
 body.light {
     --bg-black-900: #f2f2fc;
-    --bg-black-100: #d6edfb;
-    --bg-black-50: #b3b3b3;
+    --bg-black-100: #fdf9ff;
+    --bg-black-50: #e8dfec;
     --text-black-900: #302e4d;
     --text-black-700: #504e70;
     --additional-white: #151515;

@@ -331,7 +331,7 @@ function startStopLazy() {
 
     function startLazy() {
         portfolio = "<iframe class=youtube, src=https://www.youtube.com/embed/PzofI5Zq97w allowfullscreen alt=portfolio> </iframe>"
-        crud = "<iframe class=youtube, src=https://www.youtube.com/embed/gatLROomtDk allowfullscreen alt=crud> </iframe>"
+        crud = "<iframe class=youtube, src=https://www.youtube.com/embed/xormCHYRooM allowfullscreen alt=crud> </iframe>"
         secrets = "<iframe class=youtube, src=https://www.youtube.com/embed/LWzz4yKfj4g allowfullscreen alt=secrets> </iframe>"
         todo = "<iframe class=youtube, src=https://codesandbox.io/embed/to-do-veyju?fontsize=14&hidenavigation=1&theme=dark alt=crud-project></iframe>"
 
@@ -426,6 +426,7 @@ function imgAnimation() {
     }
     function meImg1notHidden() {
         meImg1.classList.remove("hidden")
+        console.log("daaa");
     }
     function meImg2opacity0() {
         meImg2.classList.add("opacity-img-0")
