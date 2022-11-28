@@ -10,4 +10,12 @@ Dyinamic looking, static website with many interesting quirks.
 Desing created by <a href="https://www.youtube.com/@CrypticalCoder" target="_blank" rel="noopener noreferrer"> CrypticalCoder 💯 </a> on YT
 </h3>
 
-## Hi there 👋,
+## Hi there 👋
+
+This project was part of my self-study. I wanted to learn more about CSS, JS & event-listeners. I found an awesome tutorial on youtube☝, which I followed. Once it the design was completed I took on the project on and rewrite many aspect of it, especially JS. Added new animations, Lazy-embeddings and just restructuried the original code. 
+
+Take care, code safe! 💻
+
+<br>
+
+## Run 🚀
