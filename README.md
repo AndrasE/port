@@ -4,7 +4,9 @@
   </a>
 </p>
 
+<h3 align="center">
 Dyinamic looking, static website with many interesting quirks. 
 Desing made by <a href="https://www.youtube.com/@CrypticalCoder" target="_blank" rel="noopener noreferrer"> CrypticalCoder 💯 </a> on YT
+</h3>
 
-Hi there 👋,
+## Hi there 👋,
