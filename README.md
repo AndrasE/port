@@ -5,6 +5,6 @@
 </p>
 
 Dyinamic looking, static website with many interesting quirks. 
-Desing made by <a href="https://www.youtube.com/@CrypticalCoder" target="_blank" rel="noopener noreferrer"> CrypticalCoder on YT 💯 </a>
+Desing made by <a href="https://www.youtube.com/@CrypticalCoder" target="_blank" rel="noopener noreferrer"> CrypticalCoder 💯 </a> on YT
 
 Hi there 👋,
