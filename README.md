@@ -5,7 +5,7 @@
 </p>
 
 <h3 align="center">
-Dyinamic looking, static website with many interesting quirks. 
+Dyinamic looking static website with many interesting quirks. 
 <br>
 Desing created by <a href="https://www.youtube.com/@CrypticalCoder" target="_blank" rel="noopener noreferrer">CrypticalCoder</a>💯 on YT
 </h3>
