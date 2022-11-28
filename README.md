@@ -12,7 +12,7 @@ Desing created by <a href="https://www.youtube.com/@CrypticalCoder" target="_bla
 
 ## Hi there 👋
 
-This project was part of my self-study. I wanted to learn more about CSS, JS & event-listeners. I found an awesome tutorial on youtube☝, which I followed. Once it the design was completed I took on the project on and rewrite many aspect of it, especially JS. Added new animations, Lazy-embeddings and just restructuried the original code. 
+This project was part of my self-study. I wanted to learn more about CSS, JS & event-listeners. I found an awesome tutorial on youtube☝, which I followed. Once it the design was completed I took on the project on and rewrite many aspect of it, especially the JS. Added new animations, Lazy-embeddings and restructured the project. If you would like to read about it more, go to the website➡check projects there you will find an about this project section and a video about it. I hope it will help with your own creation. 👾
 
 Take care, code safe! 💻
 
