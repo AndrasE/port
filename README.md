@@ -19,7 +19,7 @@ Take care, code safe! 💻
 <br>
 
 ## Run 🚀
-As its only uses HTML,CSS,JS you wont neem much.
+As its only uses HTML, CSS, vanilla-JS you wont need much to do so:
 
 ```sh
 $ git clone https://github.com/AndrasE/port
