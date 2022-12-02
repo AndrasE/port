@@ -5,6 +5,7 @@
   </a>
 </p>
 
+
 <h3 align="center">
 Dyinamic looking static website with many interesting quirks. 
 <br>
