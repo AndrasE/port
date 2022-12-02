@@ -4,6 +4,8 @@
   <img src="https://github.com/AndrasE/raw-readme/blob/main/port-readme-img.png?raw=true">
   </a>
 </p>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/70c45ab0-5ff1-46e3-9efb-918887b92293/deploy-status)](https://app.netlify.com/sites/andrasegyed/deploys)
+
 
 <h3 align="center">
 Dyinamic looking static website with many interesting quirks. 
