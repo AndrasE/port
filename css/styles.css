@@ -1145,12 +1145,18 @@ p.example-code {
 .portfolio-about .portfolio-about-text a:hover {
     text-decoration: none
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--bg-black-100) inset !important;
+    -webkit-text-fill-color: var(--text-black-700) !important;
+}
 
 input:hover {
     border: solid 1px var(--text-black-700) !important;
     transition: all 0.7s ease-in-out !important;
 }
-
 textarea:hover {
     border: solid 1px var(--text-black-700) !important;
     transition: all 0.7s ease-in-out !important;
