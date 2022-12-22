@@ -426,7 +426,6 @@ function imgAnimation() {
     }
     function meImg1notHidden() {
         meImg1.classList.remove("hidden")
-        console.log("daaa");
     }
     function meImg2opacity0() {
         meImg2.classList.add("opacity-img-0")
@@ -464,6 +463,17 @@ function imgAnimationTablet() {
         document.querySelector(".home-img").classList.remove("hidden")
     }
 }
+
+/* ------===== reset form after submission =====------- */
+const formSubmitBtn = document.querySelector(".form-submit-btn") 
+
+function resetForm() {
+    document.getElementById("formSubmitCo").reset()
+}
+
+formSubmitBtn.addEventListener("click", ()=> {
+    setTimeout(resetForm, 200)
+})
 
 /* ------===== performance check in console =====------- */
 addEventListener('DOMContentLoaded', (event) => {
