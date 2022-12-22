@@ -472,7 +472,7 @@ function resetForm() {
 }
 
 formSubmitBtn.addEventListener("click", ()=> {
-    setTimeout(resetForm, 200)
+    setTimeout(resetForm, 100)
 })
 
 /* ------===== performance check in console =====------- */
