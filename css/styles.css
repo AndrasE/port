@@ -698,14 +698,14 @@ img {
     position: absolute;
     height: 100%;
     left: 7px;
-    top: 0;
+    top: -3px;
     background-color: var(--skin-color);
 }
 
 .about .about-content .timeline .circle-dot {
     position: absolute;
     left: 0;
-    top: 0;
+    top: 3px;
     height: 15px;
     width: 15px;
     border-radius: 50%;
