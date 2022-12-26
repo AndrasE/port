@@ -1,9 +1,9 @@
 /* ------===== tying animation typed.js =====------- */
 var typed = new Typed(".typing", {
-    strings: ["Web developer", "Web designer", "And more.."],
-    typeSpeed: 100,
+    strings: ["Web developer"],
+    typeSpeed: 110,
     backSpeed: 60,
-    loop: true
+    loop: false
 })
 
 /* ------===== theme light/dark mode toggle btn / prof pic change =====------- */
