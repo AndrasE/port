@@ -205,6 +205,7 @@ br {
     padding: 12px 35px;
     color: white;
     border: none;
+    cursor: pointer;
     border-radius: 40px;
     display: inline-block;
     white-space: nowrap;
