@@ -748,16 +748,16 @@ img {
     text-decoration: none
 }
 
-/* expertise */
+/* coding */
 
-.expertise .expertise-text h3 {
+.coding .coding-text h3 {
     font-size: 24px;
     margin-bottom: 15px;
     font-weight: 700;
     color: var(--text-black-900);
 }
 
-.expertise .expertise-text p {
+.coding .coding-text p {
     font-size: 16px;
     line-height: 25px;
     padding-bottom: 45px;
@@ -765,13 +765,13 @@ img {
     color: var(--text-black-700);
 }
 
-.expertise .expertise-item {
+.coding .coding-item {
     margin-bottom: 30px;
     flex: 0 0 33.33%;
     max-width: 33.33%;
 }
 
-.expertise .expertise-item .expertise-item-inner {
+.coding .coding-item .coding-item-inner {
     background-color: var(--bg-black-100);
     border: 1px solid var(--bg-black-50);
     border-radius: 10px;
@@ -780,7 +780,7 @@ img {
     transition: all 0.4s ease;
 }
 
-.expertise .expertise-item .expertise-item-inner .icon {
+.coding .coding-item .coding-item-inner .icon {
     height: 60px;
     width: 60px;
     border-radius: 50%;
@@ -789,13 +789,13 @@ img {
     text-align: center;
 }
 
-.expertise .expertise-item .expertise-item-inner .icon .fa-brands {
+.coding .coding-item .coding-item-inner .icon .fa-brands {
     font-size: 40px;
     line-height: 60px;
     color: var(--skin-color);
 }
 
-.expertise .expertise-item .expertise-item-inner h4 {
+.coding .coding-item .coding-item-inner h4 {
     font-size: 18px;
     margin-bottom: 15px;
     color: var(--text-black-900);
@@ -803,14 +803,14 @@ img {
     text-transform: capitalize;
 }
 
-.expertise .expertise-item .expertise-item-inner p {
+.coding .coding-item .coding-item-inner p {
     font-size: 16px;
     color: var(--text-black-700);
     line-height: 25px;
     text-align: justify;
 }
 
-.expertise .expertise-item .expertise-item-inner:hover {
+.coding .coding-item .coding-item-inner:hover {
     transition: all 0.3s ease;
     border: 1px solid var(--additional-white);
 }
@@ -1203,7 +1203,7 @@ textarea:hover {
     .home .home-img {
         display: none;
     }
-    .expertise .expertise-item,
+    .coding .coding-item,
     .project .project-item,
     .contact .contact-info-item {
         flex: 0 0 50%;
@@ -1216,7 +1216,7 @@ textarea:hover {
     .about .about-content .skills,
     .about .about-content .education,
     .about .about-content .experiance,
-    .expertise .expertise-item,
+    .coding .coding-item,
     .project .project-item,
     .contact .contact-info-item,
     .contact .contact-form .col-6 {
