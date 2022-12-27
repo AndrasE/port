@@ -658,10 +658,6 @@ img {
     line-height: 40px;
 }
 
-.about .about-content .personal-info .contact-btn {
-margin-left: 20px;
-}
-
 .about .about-content .education,
 .about .about-content .experiance {
     flex: 0 0 50%;
