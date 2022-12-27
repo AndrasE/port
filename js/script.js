@@ -56,6 +56,26 @@ for (let x = 0; x < colorList; x++) {
     })
 }
 
+/* ---===== modal CV pop-up window functions =====--- */
+const modal = document.querySelector(".modal");
+const trigger = document.querySelector(".trigger");
+const closeButton = document.querySelector(".close-button");
+
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
+
+
 /* ---===== functions for add||remove open||active class for aside, btn, activeSection && <1200 =====--- */
 const aside = document.querySelector(".aside");
 const navTogglerBtn = document.querySelector(".nav-toggler");
