@@ -299,7 +299,7 @@ for (let i = 0; i < aLinksList; i++) {
 }
 
 /* ------===== nav-active overwrite for about/hire btn =====------- */
-document.querySelector("a.hire-me").addEventListener("click", function () {
+document.querySelector("a.contact-me").addEventListener("click", function () {
     const ulNav = document.querySelector("ul.nav");
     ulNav.lastElementChild.lastElementChild.classList.add("active")
 })
