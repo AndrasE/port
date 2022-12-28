@@ -58,6 +58,8 @@ for (let x = 0; x < colorList; x++) {
 
 /* ---===== modal CV pop-up window functions =====--- */
 const modal = document.querySelector(".modal");
+const modalDarkCvImg = document.querySelector("a.modal-cv-dark");
+const modalLightCvImg = document.querySelector("a.modal-cv-light");
 const trigger = document.querySelector(".trigger");
 const closeButton = document.querySelector(".close-button");
 
@@ -66,7 +68,7 @@ function toggleModal() {
 }
 
 function windowOnClick(event) {
-    if (event.target === modal) {
+    if (event.target === modal || event.target === modalDarkCvImg || event.target === modalLightCvImg) {
         toggleModal();
     }
 }
@@ -74,7 +76,6 @@ function windowOnClick(event) {
 trigger.addEventListener("click", toggleModal);
 closeButton.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);
-
 
 /* ---===== functions for add||remove open||active class for aside, btn, activeSection && <1200 =====--- */
 const aside = document.querySelector(".aside");
