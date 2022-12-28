@@ -77,7 +77,7 @@ br {
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
     visibility: hidden;
-    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    transition: visibility 0s linear 0.15s, opacity 0.15s 0s, transform 0.15s;
     z-index: 666;
     -moz-user-select: -moz-none;
     -khtml-user-select: none;
@@ -149,7 +149,7 @@ br {
 .show-modal {
     opacity: 1;
     visibility: visible;
-    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+    transition: visibility 0s linear 0s, opacity 0.15s 0s, transform 0.15s;
 }
 
 .modal .modal-item {
@@ -167,15 +167,14 @@ br {
 }
 
 .modal .modal-item .modal-item-inner {
+    transition: all 0.15s ease;
     border: 1px solid var(--bg-black-50);
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
-    transition: all 0.9s ease;
 }
 
 .modal .modal-item-inner:hover {
-    transition: all 0.25s ease;
     scale: 1.02;
     border: 1px solid var(--additional-white);
 }
@@ -184,8 +183,6 @@ br {
     width: 100%;
     display: block;
 }
-
-
 
 .section {
     background-color: var(--bg-black-900);
