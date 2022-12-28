@@ -1415,6 +1415,9 @@ textarea:hover {
     }
 }
 @media screen and (max-height: 500px) and (orientation:landscape) {
+    .modal .modal-content {
+        width: 35%
+    }
     .aside .logo {
             top: 5%;
     }
