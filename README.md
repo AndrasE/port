@@ -14,7 +14,7 @@ Desing created by <a href="https://www.youtube.com/@CrypticalCoder" target="_bla
 
 ## Hi there 👋
 
-This project was part of my self-study on my own. I wanted to learn more about CSS, JS & event-listeners. I found an awesome tutorial on YouTube ☝ which I followed. Once it the design was completed I took on the project and made it mine. I rewrote many aspect of it, especially the JS. Added new animations, lazy-embeddings, restructured the project and much more. If you would like to read about it more, go to the website ➡ check projects ➡ you will find an about this project section and a video about it and a read more section as well. I hope it will help with your own creation. 👾
+This project was part of my self-study on my own. I wanted to learn more about CSS, JS & event-listeners. I found an awesome tutorial on YouTube ☝ which I followed. Once the design was completed, I took on the project and made it mine. I rewrote many aspects of it, especially the JS. Added new animations, lazy-embeddings, restructured the project and much more. If you would like to read more about it, go to the website ➡ check projects ➡ you will find an About-this-project section and a video about it as well as a "read more" section. I hope it will help with your own creation. 👾
 
 Take care, code safe! 💻
 
