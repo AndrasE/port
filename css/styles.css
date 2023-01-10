@@ -1346,6 +1346,9 @@ textarea:hover {
         flex: 0 0 50%;
         max-width: 50%;
     }
+    .about .about-content .personal-info .buttons .btn {
+        margin-top: 0px;
+    }
 }
 
 @media (max-width: 767px) {
