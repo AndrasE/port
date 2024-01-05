@@ -1132,6 +1132,10 @@ img {
     color: var(--text-black-700);
 }
 
+.portfolio-example .portfolio-example-text li {
+    color: var(--text-black-700);
+}
+
 .portfolio-example .portfolio-example-text a {
     color: var(--text-black-700);
     text-decoration: underline;
