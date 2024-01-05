@@ -1136,6 +1136,18 @@ img {
     color: var(--text-black-700);
 }
 
+.portfolio-example-item-images-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+.portfolio-example-item-images-container img {
+    max-width: 240px;
+    padding: 3px;
+    flex-direction: column;
+}
 .portfolio-example .portfolio-example-text a {
     color: var(--text-black-700);
     text-decoration: underline;
