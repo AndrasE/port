@@ -1434,7 +1434,7 @@ textarea:hover {
         height: 300px; 
     }
     .portfolio-example-item-images-container img {
-        max-width: 95%;
+        max-width: 75%;
     }
         
 }
