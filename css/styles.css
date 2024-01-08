@@ -1148,6 +1148,7 @@ img {
     padding: 3px;
     flex-direction: column;
 }
+
 .portfolio-example .portfolio-example-text a {
     color: var(--text-black-700);
     text-decoration: underline;
@@ -1432,6 +1433,10 @@ textarea:hover {
     .portfolio-example .portfolio-example-item .drum {
         height: 300px; 
     }
+    .portfolio-example-item-images-container img {
+        max-width: 95%;
+    }
+        
 }
 @media screen and (max-height: 500px) and (orientation:landscape) {
     .modal .modal-content {
