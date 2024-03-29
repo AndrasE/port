@@ -44,7 +44,8 @@
                     </div>
                     <div class="modal-item-inner shadow-dark">
                         <div class="modal-img">
-                            <a class="modal-cv-dark" href="images/AndrasE_Cv_Dark.pdf" target="_blank" rel="noopener noreferrer">
+                            <a class="modal-cv-dark" href="images/AndrasE_Cv_Dark.pdf" target="_blank"
+                                rel="noopener noreferrer">
                                 <img src="images/cv_dark_placeholder.webp" alt="cv-dark">
                             </a>
                         </div>
@@ -109,11 +110,14 @@
                         <div class="home-info padd-15">
                             <h3 class="hello">Hello, my name is <span class="name">Andras Egyed</span> </h3>
                             <h3 class="my-profession">I'm a <span class="typing"></span></h3>
-                            <p>Welcome to my website! <br> I spent the past few years voluntarily learning Web development. Here you will find some
-                                information about me and my journey, explaining and showcasing some of the latest projects I was working on.
-                                If you have questions on any of the projects or the training I completed, you can contact me.</p>
+                            <p>Welcome to my website! <br> I spent the past few years voluntarily learning Web
+                                development. Here you will find some
+                                information about me and my journey, explaining and showcasing some of the latest
+                                projects I was working on.
+                                If you have questions on any of the projects or the training I completed, you can
+                                contact me.</p>
                             <a href="#contact" class="btn contact-me a-link">Contact</a>
-                            </div>
+                        </div>
                         <div class="home-img padd-15">
                             <img id="me-img1" src="images/me.webp" alt="profile-pic">
                             <img class=hidden id="me-img2" src="images/me2.webp" alt="profile-pic">
@@ -138,9 +142,11 @@
                                     <h3> I'm Andras Egyed a <span> Web Developer</span></h3>
                                     <p>Throughout the last two years, besides my full-time job, my daily routine
                                         contained a dedicated slot of self-training and practicing web development. Now
-                                        I have the knowledge, project based practice and confidence to initiate my own desired projects. 
-                                        Altough I dont actively looking for work, you can find more details about me here as well my CV.
-<!--                                         desired career change: Setting foot in the field of web development - which
+                                        I have the knowledge, project based practice and confidence to initiate my own
+                                        desired projects.
+                                        Altough I dont actively looking for work, you can find more details about me
+                                        here as well my CV.
+                                        <!--                                         desired career change: Setting foot in the field of web development - which
                                         means for me to accelerate in my self-trained knowledge and practice, gather
                                         valuable work experience in a team of digital experts and collaboratively solve
                                         complex challenges, develop my existing convertible skills and grow my horizon,
@@ -167,7 +173,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="row">
                                         <div class="buttons">
                                             <a class="btn trigger">Download CV</a>
@@ -591,6 +597,17 @@
                             <div class="projects-item padd-15">
                                 <div class="projects-item-inner shadow-dark">
                                     <div class="projects-img">
+                                        <a class="a-link nope" href="#usapp">
+                                            <img src="images/to-do.webp" alt="usapp">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!------===== project item end =====------->
+                            <!------===== project item start =====------->
+                            <div class="projects-item padd-15">
+                                <div class="projects-item-inner shadow-dark">
+                                    <div class="projects-img">
                                         <a class="a-link nope" href="#react-redux-calculator">
                                             <img src="images/react-redux-calculator.webp" alt="react-redux-calculator">
                                         </a>
@@ -642,8 +659,8 @@
                                 </div>
                             </div>
                             <!------===== project item end =====------->
-                              <!------===== project item start =====------->
-                              <div class="projects-item padd-15">
+                            <!------===== project item start =====------->
+                            <div class="projects-item padd-15">
                                 <div class="projects-item-inner shadow-dark">
                                     <div class="projects-img">
                                         <a class="a-link nope" href="#weatherapi">
@@ -791,9 +808,43 @@
                 </div>
             </section>
             <!------===== contact section end =====------->
-            
-             <!------===== project example 1 section start =====------->
-             <section class="portfolio-example section s-link" id="react-redux-calculator">
+            <!------===== project example 1 section start =====------->
+            <section class="portfolio-example section s-link iframed" id="usapp">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2>Us-App</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="portfolio-example-text padd-15">
+                            <h3>React-native chat app</h3>
+                            <p>Iasdasdasd
+                            </p>
+                        </div>
+                    </div>
+                    <!------===== project example item start =====------->
+                    <div class="row">
+                        <div class="portfolio-example-item padd-15">
+                            <div class="portfolio-example-item-inner shadow-dark">
+                                <div id="usapp-iframe" class="portfolio-example-item-inner shadow-dark">
+                                    <!------===== port-example-iframe-2 will be injected here via js =====------->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!------===== project example item end =====------->
+                    <div class="row">
+                        <div class="button-container padd-15">
+                            <a class="btn" href="https://github.com/AndrasE/usapp" target="_blank">Us-App</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!------===== project example 1 section end =====------->
+
+            <!------===== project example 2 section start =====------->
+            <section class="portfolio-example section s-link" id="react-redux-calculator">
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
@@ -802,65 +853,53 @@
                     </div>
                     <div class="row">
                         <div class="portfolio-example-text padd-15">
-                            <h3>React & ReduxRtk Calculator mimicking the Windows calculators dynamic flow and other caveats. </h3>
+                            <h3>React & ReduxRtk Calculator mimicking the Windows calculators dynamic flow and other
+                                caveats. </h3>
                             <p>
                                 After some studying in the realm of
-                                <a
-                                  href="https://youtube.com/playlist?list=PLC3y8-rFHvwheJHvseC3I0HuYI2f46oAK&si=F0V2dM2lwyUVwM1U"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  Redux
+                                <a href="https://youtube.com/playlist?list=PLC3y8-rFHvwheJHvseC3I0HuYI2f46oAK&si=F0V2dM2lwyUVwM1U"
+                                    target="_blank" rel="noopener noreferrer">
+                                    Redux
                                 </a>
                                 and
-                                <a
-                                  href="https://youtube.com/playlist?list=PLC3y8-rFHvwiaOAuTtVXittwybYIorRB3&si=Rir29ExiR0a76yqz"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  ReduxToolKit</a>
-                                  I decided to create my own project. Its using a combination of React useStates and Redux-Rtk for statemanagment. To spice things up I tried to recreate the windows calculators logic including having access to calculation history. I also added theme & sound settings and able to dispatch simple api calls to this projects hero, Chuck Norris.
-                                </p>
-                                <p style="padding-bottom: 5px;">
+                                <a href="https://youtube.com/playlist?list=PLC3y8-rFHvwiaOAuTtVXittwybYIorRB3&si=Rir29ExiR0a76yqz"
+                                    target="_blank" rel="noopener noreferrer">
+                                    ReduxToolKit</a>
+                                I decided to create my own project. Its using a combination of React useStates and
+                                Redux-Rtk for statemanagment. To spice things up I tried to recreate the windows
+                                calculators logic including having access to calculation history. I also added theme &
+                                sound settings and able to dispatch simple api calls to this projects hero, Chuck
+                                Norris.
+                            </p>
+                            <p style="padding-bottom: 5px;">
                                 Packages used:
-                                <li><a
-                                    href="https://www.npmjs.com/package/use-local-storage"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >Use-local-storage</a> for keeping theme and sound settings stored locally. If you reopen the
+                                <li><a href="https://www.npmjs.com/package/use-local-storage" target="_blank"
+                                        rel="noopener noreferrer">Use-local-storage</a> for keeping theme and sound
+                                    settings stored locally. If you reopen the
                                     app on the same device it will load with your last configuration. </li>
-                                    <li><a
-                                    href="https://www.joshwcomeau.com/react/announcing-use-sound-react-hook/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >
-                                    Use-sound</a> to not just see, but hear the calculator. I felt that especially on
+                                <li><a href="https://www.joshwcomeau.com/react/announcing-use-sound-react-hook/"
+                                        target="_blank" rel="noopener noreferrer">
+                                        Use-sound</a> to not just see, but hear the calculator. I felt that especially
+                                    on
                                     mobile, it was a bit strange to not having that as a feedback. </li>
-                                    <li><a
-                                     href="https://www.npmjs.com/package/axios"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >Axios</a> to make simple api requests to
-                                    <a
-                                     href="https://api.chucknorris.io/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >chucknorris.io</a>. How does it related to the calculator you may ask? 
+                                <li><a href="https://www.npmjs.com/package/axios" target="_blank"
+                                        rel="noopener noreferrer">Axios</a> to make simple api requests to
+                                    <a href="https://api.chucknorris.io/" target="_blank"
+                                        rel="noopener noreferrer">chucknorris.io</a>. How does it related to the
+                                    calculator you may ask?
                                     I don`t know, regardless its fun!
-                                    </li>
-                                    <li><a
-                                    href="https://www.npmjs.com/package/react-textfit"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >React-textfit</a> in the displaying the numbers in the calculator screen. It will adjust fonstize 
+                                </li>
+                                <li><a href="https://www.npmjs.com/package/react-textfit" target="_blank"
+                                        rel="noopener noreferrer">React-textfit</a> in the displaying the numbers in the
+                                    calculator screen. It will adjust fonstize
                                     according to the input and the output of the calculation. </li>
-                              </p>
+                            </p>
                         </div>
                     </div>
                     <div class="row">
                         <!------===== project example item start =====------->
                         <div class="portfolio-example-item padd-15">
-                            <div class="portfolio-example-item-images-container" >
+                            <div class="portfolio-example-item-images-container">
                                 <img src="images/calc-example1.png" alt="calc-example1">
                                 <img src="images/calc-example2.png" alt="calc-example2">
                                 <img src="images/calc-example3.png" alt="calc-example3">
@@ -870,14 +909,15 @@
                     <!------===== project example item end =====------->
                     <div class="row">
                         <div class="button-container padd-15">
-                            <a class="btn" href="https://react-rtk-calculator.netlify.app/" target="_blank">Calculator</a>
+                            <a class="btn" href="https://react-rtk-calculator.netlify.app/"
+                                target="_blank">Calculator</a>
                         </div>
                     </div>
                 </div>
             </section>
-            <!------===== project example 1 section end =====------->
+            <!------===== project example 2 section end =====------->
 
-            <!------===== project example 1 section start =====------->
+            <!------===== project example 3 section start =====------->
             <section class="portfolio-example section s-link iframed" id="portfolio">
                 <div class="container">
                     <div class="row">
@@ -920,8 +960,9 @@
                     </div>
                 </div>
             </section>
-            <!------===== project example 1 section end =====------->
-            <!------===== project example 2 section start =====------->
+            <!------===== project example 3 section end =====------->
+
+            <!------===== project example 4 section start =====------->
             <section class="portfolio-example section s-link iframed" id="crud">
                 <div class="container">
                     <div class="row">
@@ -967,8 +1008,8 @@
                     </div>
                 </div>
             </section>
-            <!------===== project example 2 section end =====------->
-            <!------===== project example 3 section start =====------->
+            <!------===== project example 4 section end =====------->
+            <!------===== project example 5 section start =====------->
             <section class="portfolio-example section s-link iframed" id="secrets">
                 <div class="container">
                     <div class="row">
@@ -1015,8 +1056,9 @@
                     </div>
                 </div>
             </section>
-            <!------===== project example 3 section end =====------->
-            <!------===== project example 4 section start =====------->
+            <!------===== project example 5 section end =====------->
+
+            <!------===== project example 6 section start =====------->
             <section class="portfolio-example section s-link iframed" id="todo">
                 <div class="container">
                     <div class="row">
@@ -1063,8 +1105,8 @@
                     </div>
                 </div>
             </section>
-            <!------===== project example 4 section end =====------->
-            <!------===== project example 5 section start =====------->
+            <!------===== project example 6 section end =====------->
+            <!------===== project example 7 section start =====------->
             <section class="portfolio-example section s-link" id="blog">
                 <div class="container">
                     <div class="row">
@@ -1132,8 +1174,8 @@
                     </div>
                 </div>
             </section>
-            <!------===== project example 5 section end =====------->
-            <!------===== project example 6 section start =====------->
+            <!------===== project example 7 section end =====------->
+            <!------===== project example 8 section start =====------->
             <section class="portfolio-example section s-link" id="weatherapi">
                 <div class="container">
                     <div class="row">
@@ -1145,19 +1187,20 @@
                         <div class="portfolio-example-text padd-15">
                             <h3>Openweather Api calls with Bodyparser, Express and Ejs</h3>
                             <p>This project was part of my studies on
-                                <a href="https://www.udemy.com/course/the-complete-web-development-bootcamp" target="_blank"
-                                    rel="noopener noreferrer">Udemy</a>. We were studying <a
+                                <a href="https://www.udemy.com/course/the-complete-web-development-bootcamp"
+                                    target="_blank" rel="noopener noreferrer">Udemy</a>. We were studying <a
                                     href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank"
                                     rel="noopener noreferrer">RESTful Api</a> creating api-calls with the use of
                                 body-parser and get the information
-                                back from <a href="https://openweathermap.org/" target="_blank" rel="noopener noreferrer">Openweathermap.org</a>.
+                                back from <a href="https://openweathermap.org/" target="_blank"
+                                    rel="noopener noreferrer">Openweathermap.org</a>.
                                 I liked the idea, so I added a styling with Bootstrap 5. As I wanted to cover more
                                 possible outcomes (typo etc.) I added Ejs to it.
                                 With a pretty background and some transparencies set it was ready to be deployed as a
                                 tiny stand alone project. I think it looks great!<br>
                                 In the future I'm planning to repeat this project with React and React-native with 5
                                 days forecast. I think it would be very handy to have all these information available
-                             on a click of a button.
+                                on a click of a button.
                             </p>
                         </div>
                     </div>
@@ -1167,8 +1210,8 @@
                         </div>
                     </div>
             </section>
-            <!------===== project example 6 section end =====------->
-            <!------===== project example 7 section start =====------->
+            <!------===== project example 8 section end =====------->
+            <!------===== project example 9 section start =====------->
             <section class="portfolio-example section s-link" id="us">
                 <div class="container">
                     <div class="row">
@@ -1184,8 +1227,9 @@
                                 during the built of CRUD that will help me here. I will need to do a bit of research on
                                 the topic, but I am looking forward to starting to work with it. As a kick off, the
                                 communication will only be available between my girlfriend and me, hence the name US.
-                                Once it will be completed I will share more information about it. You can follow my progress <a href="https://github.com/AndrasE/usapp"
-                                target="_blank" rel="noopener noreferrer">here</a>.</p>
+                                Once it will be completed I will share more information about it. You can follow my
+                                progress <a href="https://github.com/AndrasE/usapp" target="_blank"
+                                    rel="noopener noreferrer">here</a>.</p>
                             <p style="padding-bottom: 15px; margin-bottom: 30px;" class="example-code">T-B-A</p>
                             <p>In the meantime, please feel free to try one of my first apps I made in the beginning of
                                 my coding journey.
@@ -1202,7 +1246,7 @@
                         </div>
                     </div>
             </section>
-            <!------===== project example 7 section end =====------->
+            <!------===== project example 9 section end =====------->
             <!------===== andras section start =====------->
             <section class="andras section s-link" id="andras">
                 <div class="container">
