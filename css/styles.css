@@ -923,11 +923,6 @@ img {
     color: var(--skin-color);
 }
 
-.expertise .expertise-item .expertise-item-inner img {
-    height: 50px;
-    width: 50px;
-}
-
 .expertise .expertise-item .expertise-item-inner h4 {
     font-size: 18px;
     margin-bottom: 15px;
