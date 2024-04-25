@@ -897,26 +897,28 @@
                     <div class="row">
                         <div class="portfolio-example-text padd-15">
                             <h3>React-native chat app</h3>
-                            <p>After investing some time in learning react-native, watching countless hours of
-                                tutorials, I created this fully functional android chat-app using react native CLI. Feel
-                                free to install it and try it out.
-                                Below the video you find the link for the apk-file, which you can install on your
-                                android device (you will need to enable 3rd-party installation). Feel free to hit me up
-                                of you would like to chat, search for user "rohadtsajt" in the app. <br />
-                                As soon as you click the application icon, a splash screen welcomes you. While the
+                            <p>After intensively studying react-native, watching countless hours of tutorials, I created
+                                this fully functional android chat-app using react native CLI. Feel free to install it
+                                and try it out. Below the video you find the link for the apk-file, which you can
+                                install on your android device (you will need to enable 3rd-party installation). You can
+                                also add me as a friend in the app and address any questions directly in a chat (search
+                                for user “egyeand”). <br />
+                                As soon as user clicks on the application icon a splash screen welcomes them. While the
                                 animation of this screen takes place, there are many things happening in the background.
                                 Firstly, check if the user has previously logged in; if so, it will be persistent. If
-                                this is the first time logging in or being logged out previously, we will be redirected
-                                to the login screen. User settings (theme and text size) saved on the device will be
-                                passed on to the application; if they were not set before, it will load with a default
-                                option. If the user is logging in for the first time we capture a few details from the
-                                user (name, email address, profile picture). Using these, create an entry in the
-                                database with the username set to the email address before the @ symbol. This will be
-                                passed onto the app; if the user has previously logged in, it will be present in the
-                                database and we can capture a snapshot of the belonging details and serve it to the app.
-                                The user will also be subscribed to OneSignal services and logged in to their database,
-                                so later on push notifications can be sent to them. Later on the database gets updated
-                                when we adding friends or sending messages. <br />
+                                either this is a first time log-in or the user was logged out before, the user will be
+                                redirected to the login screen. User settings (theme and text size) saved on the device
+                                will be passed on to the application; if they were not set before, it will load with a
+                                default option. Once the user is logging in for the first time, the app captures a few
+                                essential data points (name, mail address, profile picture) which will then be used to
+                                create an entry in the database with the username set to the email address before the
+                                @-symbol. This will be passed onto the app; if the user has previously logged in, it
+                                will be present in the database and we can capture a snapshot of the belonging details
+                                and serve it to the app. Later on the database gets updated when we adding friends or
+                                sending messages. The user will also be subscribed to OneSignal services and logged at
+                                OneSignals database in order to allow push-notifications being sent to them.
+
+                                <br />
                                 If you wish, you can read about this project more in detail on
                                 <a href="https://github.com/AndrasE/usapp" target="_blank" rel="noopener noreferrer">
                                     Github</a>
@@ -1083,7 +1085,7 @@
                                 Trying multiple options for this approach, I finally considered Firebase as the most
                                 feasible service for this. Once I had realized the project essentials, I wanted to
                                 experiment more and added an authentication feature to the project, aiming that only
-                                registered users can interact with the database. For this I used firabse authentication
+                                registered users can interact with the database. For this I used firebse authentication
                                 and also a context-provider & protected routes. When visitor arrives on the landing-site
                                 an object gets created and unless the authentication has taken place it won't let user
                                 go any further and gets redirected to login/register. In Firebase itself, I built the
@@ -1697,7 +1699,6 @@
                                 linked section-links to the corresponding section regardless if it is a navigation
                                 element or button or even an image. TThis way all works within one foreach loop and
                                 hardly any unwanted animation mishaps I needed to counter.
-
                                 <br>But apart from this very valuable lesson, I made several other changes as well. I
                                 rewrote my lazy-load function, it both starts and stops the videos if needed,
                                 furthermore I made a codesandbox embed as well with it. I wrote some animation to make
