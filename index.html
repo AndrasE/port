@@ -33,7 +33,7 @@
     <div class="modal">
         <div class="modal-content">
             <span class="close-button"></span>
-            <div class="row padd-15"> 
+            <div class="row padd-15">
                 <h3>Please choose theme:</h3>
             </div>
             <div class="row padd-15">
@@ -674,6 +674,17 @@
                             <div class="projects-item padd-15">
                                 <div class="projects-item-inner shadow-dark">
                                     <div class="projects-img">
+                                        <a class="a-link nope" href="#frost">
+                                            <img src="images/frost.webp" alt="frost-tatoo">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!------===== project item end =====------->
+                            <!------===== project item start =====------->
+                            <div class="projects-item padd-15">
+                                <div class="projects-item-inner shadow-dark">
+                                    <div class="projects-img">
                                         <a class="a-link nope" href="#usapp">
                                             <img src="images/usapp.webp" alt="usapp">
                                         </a>
@@ -762,8 +773,8 @@
                             <div class="projects-item padd-15">
                                 <div class="projects-item-inner shadow-dark">
                                     <div class="projects-img">
-                                        <a class="a-link nope" href="#frost">
-                                            <img src="images/frost.webp" alt="frost">
+                                        <a class="a-link nope" href="#next">
+                                            <img src="images/next.webp" alt="next">
                                         </a>
                                     </div>
                                 </div>
@@ -886,6 +897,30 @@
             </section>
             <!------===== contact section end =====------->
             <!------===== project example 1 section start =====------->
+            <section class="portfolio-example section s-link" id="frost">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2>Frost-tatoo</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="portfolio-example-text padd-15">
+                            <h3>PWA React App</h3>
+                            <p>asdasd asdas asdasdasd asdasda asdasd
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="button-container padd-15">
+                            <a class="btn" href="https://frost-tattoo.netlify.app/" target="_blank">Frost</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!------===== project example 1 section end =====------->
+            <!------===== project example 2 section start =====------->
             <section class="portfolio-example section s-link iframed" id="usapp">
                 <div class="container">
                     <div class="row">
@@ -896,12 +931,32 @@
                     <div class="row">
                         <div class="portfolio-example-text padd-15">
                             <h3>React Native chat app</h3>
-                            <p>After intensively studying React Native and watching countless hours of tutorials, I created this fully functional Android chat app using React Native Cli. Feel free to install it and try it out! Below the video, you will find the link for the apk-file, which you can install on your Android device (you will need to enable 3rd-party installation). You can also add me as a friend in the app and address any questions directly in a chat (search for user “egyeand”). As soon as the user clicks on the application icon, a splash screen welcomes them. While the animation of this screen takes place, there are many things happening in the background. Firstly, the app checks if the user has previously logged in; if so, it will be persistent. If either this is a first-time log-in or the user was logged out before, the user will be redirected to the login screen. User settings (theme and text size) saved on the device will be passed on to the application; if they were not set before, it will load with a default option. Once the user is logging in for the first time, the app captures a few essential data points (name, mail address, profile picture), which will then be used to create an entry in the database with the username set to the email address before the @ symbol. This will be passed onto the app; if the user has previously logged in, it will be present in the database, and we can capture a snapshot of the belonging details and serve it to the app. Later on, the database gets updated when we add friends or send messages. The user will also be subscribed to OneSignal services and logged into the OneSignals database in order to allow push notifications to be sent to them. 
+                            <p>After intensively studying React Native and watching countless hours of tutorials, I
+                                created this fully functional Android chat app using React Native Cli. Feel free to
+                                install it and try it out! Below the video, you will find the link for the apk-file,
+                                which you can install on your Android device (you will need to enable 3rd-party
+                                installation). You can also add me as a friend in the app and address any questions
+                                directly in a chat (search for user “egyeand”). As soon as the user clicks on the
+                                application icon, a splash screen welcomes them. While the animation of this screen
+                                takes place, there are many things happening in the background. Firstly, the app checks
+                                if the user has previously logged in; if so, it will be persistent. If either this is a
+                                first-time log-in or the user was logged out before, the user will be redirected to the
+                                login screen. User settings (theme and text size) saved on the device will be passed on
+                                to the application; if they were not set before, it will load with a default option.
+                                Once the user is logging in for the first time, the app captures a few essential data
+                                points (name, mail address, profile picture), which will then be used to create an entry
+                                in the database with the username set to the email address before the @ symbol. This
+                                will be passed onto the app; if the user has previously logged in, it will be present in
+                                the database, and we can capture a snapshot of the belonging details and serve it to the
+                                app. Later on, the database gets updated when we add friends or send messages. The user
+                                will also be subscribed to OneSignal services and logged into the OneSignals database in
+                                order to allow push notifications to be sent to them.
                                 <br />
                                 If you wish, you can read about this project more in detail on
                                 <a href="https://github.com/AndrasE/usapp" target="_blank" rel="noopener noreferrer">
                                     Github</a>
-                                    or in the apps about section, which you can also access without installing the application
+                                or in the apps about section, which you can also access without installing the
+                                application
                                 <a href="https://github.com/AndrasE/usapp/blob/main/src/screens/AboutMore.js"
                                     target="_blank" rel="noopener noreferrer">
                                     here</a>.
@@ -927,9 +982,9 @@
                     </div>
                 </div>
             </section>
-            <!------===== project example 1 section end =====------->
+            <!------===== project example 2 section end =====------->
 
-            <!------===== project example 2 section start =====------->
+            <!------===== project example 3 section start =====------->
             <section class="portfolio-example section s-link" id="react-redux-calculator">
                 <div class="container">
                     <div class="row">
@@ -1003,9 +1058,9 @@
                     </div>
                 </div>
             </section>
-            <!------===== project example 2 section end =====------->
+            <!------===== project example 3 section end =====------->
 
-            <!------===== project example 3 section start =====------->
+            <!------===== project example 4 section start =====------->
             <section class="portfolio-example section s-link iframed" id="portfolio">
                 <div class="container">
                     <div class="row">
@@ -1048,9 +1103,9 @@
                     </div>
                 </div>
             </section>
-            <!------===== project example 3 section end =====------->
+            <!------===== project example 4 section end =====------->
 
-            <!------===== project example 4 section start =====------->
+            <!------===== project example 5 section start =====------->
             <section class="portfolio-example section s-link iframed" id="crud">
                 <div class="container">
                     <div class="row">
@@ -1096,8 +1151,8 @@
                     </div>
                 </div>
             </section>
-            <!------===== project example 4 section end =====------->
-            <!------===== project example 5 section start =====------->
+            <!------===== project example 5 section end =====------->
+            <!------===== project example 6 section start =====------->
             <section class="portfolio-example section s-link iframed" id="secrets">
                 <div class="container">
                     <div class="row">
@@ -1144,9 +1199,9 @@
                     </div>
                 </div>
             </section>
-            <!------===== project example 5 section end =====------->
+            <!------===== project example 6 section end =====------->
 
-            <!------===== project example 6 section start =====------->
+            <!------===== project example 7 section start =====------->
             <section class="portfolio-example section s-link iframed" id="todo">
                 <div class="container">
                     <div class="row">
@@ -1193,8 +1248,8 @@
                     </div>
                 </div>
             </section>
-            <!------===== project example 6 section end =====------->
-            <!------===== project example 7 section start =====------->
+            <!------===== project example 7 section end =====------->
+            <!------===== project example 8 section start =====------->
             <section class="portfolio-example section s-link" id="blog">
                 <div class="container">
                     <div class="row">
@@ -1262,8 +1317,8 @@
                     </div>
                 </div>
             </section>
-            <!------===== project example 7 section end =====------->
-            <!------===== project example 8 section start =====------->
+            <!------===== project example 8 section end =====------->
+            <!------===== project example 9 section start =====------->
             <section class="portfolio-example section s-link" id="weatherapi">
                 <div class="container">
                     <div class="row">
@@ -1294,22 +1349,23 @@
                     </div>
                     <div class="row">
                         <div class="button-container padd-15">
-                            <a class="btn" href="https://weatherapicall-f7a0d6ebd9f7.herokuapp.com" target="_blank">WeatherApi</a>
+                            <a class="btn" href="https://weatherapicall-f7a0d6ebd9f7.herokuapp.com"
+                                target="_blank">WeatherApi</a>
                         </div>
                     </div>
             </section>
-            <!------===== project example 8 section end =====------->
-            <!------===== project example 9 section start =====------->
-            <section class="portfolio-example section s-link" id="frost">
+            <!------===== project example 9 section end =====------->
+            <!------===== project example 10 section start =====------->
+            <section class="portfolio-example section s-link" id="next">
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
-                            <h2>Frost-tattoo</h2>
+                            <h2>Next project ideas</h2>
                         </div>
                     </div>
                     <div class="row">
                         <div class="portfolio-example-text padd-15">
-                            <h3>My first paid project using React</h3>
+                            <h3>TypeScript, Hookery, Npm-packadge</h3>
                             <p>M will be creating and designing a React webpage for a tattoo studio. I would like this
                                 to be intuitive and fluid, with some cool animations. There will be a section on the
                                 most recent works and planning to implement an appointment-booking options for potential
@@ -1331,7 +1387,7 @@
                         </div>
                     </div>
             </section>
-            <!------===== project example 9 section end =====------->
+            <!------===== project example 10 section end =====------->
             <!------===== andras section start =====------->
             <section class="andras section s-link" id="andras">
                 <div class="container">
