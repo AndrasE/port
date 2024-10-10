@@ -886,7 +886,18 @@
                     <!------===== contact form start =====------->
                     <div class="row">
                         <div class="contact-form padd-15">
-                            <form target="_blank" action="https://formsubmit.co/egyeand@gmail.com" method="POST"
+                            <form name="contact" netlify>
+                                <p>
+                                    <label>Name <input type="text" name="name" /></label>
+                                </p>
+                                <p>
+                                    <label>Email <input type="email" name="email" /></label>
+                                </p>
+                                <p>
+                                    <button type="submit">Send</button>
+                                </p>
+                            </form>
+                            <!-- <form target="_blank" action="https://formsubmit.co/egyeand@gmail.com" method="POST"
                                 id="formSubmitCo">
                                 <div class="row">
                                     <div class="form-item col-6 padd-15">
@@ -925,7 +936,7 @@
                                         <button type="submit" class="btn form-submit-btn">Submit Form</button>
                                     </div>
                                 </div>
-                            </form>
+                            </form> -->
                         </div>
                     </div>
                     <!------===== contact form end =====------->
