@@ -181,42 +181,43 @@ navTogglerBtn.addEventListener("click", () => {
   imgAnimationTablet();
 });
 
-/* ------===== hammer.js (swipes) =====------- */
-const hammer = new Hammer(document.getElementById("gesture-element"), {
-  inputClass: Hammer.TouchMouseInput,
-});
+//temp disabled for copy paste
+// /* ------===== hammer.js (swipes) =====------- */
+// const hammer = new Hammer(document.getElementById("gesture-element"), {
+//   inputClass: Hammer.TouchMouseInput,
+// });
 
-hammer.on("swiperight", function () {
-  if (styleSwitcher.classList.contains("open")) {
-    styleSwitcher.classList.remove("open");
-  } else {
-    asideBtnOpen1200();
-    addOpenClass1200();
-    backSectionCheck1200();
-    imgAnimationTablet();
-  }
-});
+// hammer.on("swiperight", function () {
+//   if (styleSwitcher.classList.contains("open")) {
+//     styleSwitcher.classList.remove("open");
+//   } else {
+//     asideBtnOpen1200();
+//     addOpenClass1200();
+//     backSectionCheck1200();
+//     imgAnimationTablet();
+//   }
+// });
 
-hammer.on("swipeleft", function () {
-  if (aside.classList.contains("open")) {
-    asideBtnClose1200();
-    activeSectionToggle1200();
-    imgAnimationTablet();
-    imgAnimationTablet();
-  } else {
-    styleSwitcher.classList.add("open");
-  }
-});
+// hammer.on("swipeleft", function () {
+//   if (aside.classList.contains("open")) {
+//     asideBtnClose1200();
+//     activeSectionToggle1200();
+//     imgAnimationTablet();
+//     imgAnimationTablet();
+//   } else {
+//     styleSwitcher.classList.add("open");
+//   }
+// });
 
-hammer.on("doubletap", function () {
-  dayNight.querySelector("i").classList.toggle("fa-sun");
-  dayNight.querySelector("i").classList.toggle("fa-moon");
-  document.body.classList.toggle("light");
+// hammer.on("doubletap", function () {
+//   dayNight.querySelector("i").classList.toggle("fa-sun");
+//   dayNight.querySelector("i").classList.toggle("fa-moon");
+//   document.body.classList.toggle("light");
 
-  meImg1 = document.getElementById("me-img1");
-  meImg2 = document.getElementById("me-img2");
-  imgAnimation();
-});
+//   meImg1 = document.getElementById("me-img1");
+//   meImg2 = document.getElementById("me-img2");
+//   imgAnimation();
+// });
 
 /* ------===== checking if back/forward button get pressed =====------- */
 const navHistory = ["home", "home"];
