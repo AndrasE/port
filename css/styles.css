@@ -79,11 +79,6 @@ br {
   visibility: hidden;
   transition: visibility 0s linear 0.15s, opacity 0.15s 0s, transform 0.15s;
   z-index: 666;
-  -moz-user-select: -moz-none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -o-user-select: none;
-  user-select: none;
 }
 
 .modal .modal-content {
