@@ -27,7 +27,7 @@ via <a href="https://www.youtube.com/@CrypticalCoder" target="_blank" rel="noope
 
 ## Run 🚀
 
-HTML, CSS, vanilla-JS only you will just need to clone it:
+HTML, CSS, vanilla-JS only, you just need to clone it:
 
 ```sh
 $ git clone https://github.com/AndrasE/port
