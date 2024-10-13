@@ -8,7 +8,7 @@
 <h3 align="center">
 Dynamic Webpage with Vanilla JavaScript and CSS 
 <br>
-<a href="https://www.youtube.com/@CrypticalCoder" target="_blank" rel="noopener noreferrer">CrypticalCoder</a>💯 on YT
+via <a href="https://www.youtube.com/@CrypticalCoder" target="_blank" rel="noopener noreferrer">CrypticalCoder</a>💯
 </h3>
 
 ## Hi there 👋
@@ -17,7 +17,7 @@ Dynamic Webpage with Vanilla JavaScript and CSS
 
 <p>I began by meticulously analyzing the tutorial's code, gaining a deep understanding of its structural and design principles. From there, I tailored the project to my specific requirements, incorporating new elements and functionalities. </p>
 
-<p>For a more in-depth breakdown of the project's evolution and features, please refer to the "Read More" on the sites . </p>
+<p>For a more detailed exploration of the project's journey and capabilities, please visit the 'Read More' section at the project page</p>
 
 <p> Key Features: 
 <li>Embeds and Swipe Functionality - The website includes embeds to display external content and swipe functionality for easy navigation between elements.</li> 
