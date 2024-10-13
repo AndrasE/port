@@ -11,7 +11,7 @@ Dynamic Webpage with Vanilla JavaScript and CSS
 via <a href="https://www.youtube.com/@CrypticalCoder" target="_blank" rel="noopener noreferrer">CrypticalCoder</a>💯
 </h3>
 
-## Hi there 👋
+## Hello there 👋
 
 <p>This webpage showcases my proficiency in crafting dynamic web experiences using only vanilla JavaScript and CSS. While inspired by a YouTube <a href=https://youtu.be/zJE-ze4TfXc target="_blank" rel="noopener noreferrer">tutorial</a>. I've extensively customized and enhanced the original design to align with my personal vision.</p>
 
