@@ -959,14 +959,15 @@
                             <p>This was my first professional project, commissioned by a tattoo studio. I invested a lot
                                 of time to ensure it was both visually appealing and highly functional. I was fortunate
                                 to have a client who gave me creative freedom, allowing me to design and build the
-                                project from the ground up while learning new skills along the way. <br /> The app is
-                                styled with styled-components, animated using React-Scroll, Framer-Motion,
-                                React-Swipable and Lottie-React,
-                                and automatically detects the user's browser language and preferred theme, loading with
-                                those settings by default. Users can adjust these preferences, which are saved for
-                                future visits. It`s a PWA-ready (<a
-                                    href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps"
-                                    target="_blank">Progressive Web App</a>), installable on both mobile and desktop for
+                                project from the ground up while learning new skills along the way.
+                                <br />
+                                The app is styled with styled-components, animated using React-Scroll, Framer-Motion,
+                                React-Swipable and Lottie-React, and automatically detects the user's browser language
+                                and preferred theme, loading with those settings by default.
+                                Users can adjust these preferences, which are saved for future visits. It`s a PWA-ready
+                                (<a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps"
+                                    target="_blank">Progressive Web App</a>)
+                                , installable on both mobile and desktop for
                                 Chromium-based browsers. I also developed a custom PWA installation flow that adapts to
                                 the user's browser and operating system, providing installation instructions even if the
                                 browser doesn`t natively support this feature, such as adding the app to the home screen
@@ -974,11 +975,10 @@
                                 The project features a splash screen, hero video, testimonial slider, gallery slider,
                                 and a gallery album. Users can easily send emails to the studio via a form with guided
                                 prompts. The site is fully responsive and has received high scores on Lighthouse for
-                                accessibility, best practices, and SEO. Feel free to check it out!
+                                accessibility, best practices, and SEO.
                             </p>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="button-container padd-15">
                             <a class="btn" href="https://frost-tattoo.netlify.app/" target="_blank">Frost</a>
@@ -1010,8 +1010,7 @@
                                 <br />
                                 User preferences, such as theme and text size, are preserved across sessions. During the
                                 initial login, the app collects essential user information (name, email, profile
-                                picture) to create a new database entry. This data is then utilized to provide a
-                                personalized experience throughout the application.
+                                picture) to create a new database entry where chat-history and friends will be stored.
                                 <br />
                                 The application integrates with OneSignal to enable push notifications, ensuring users
                                 stay updated with real-time messages and events.
@@ -1131,21 +1130,34 @@
                     </div>
                     <div class="row">
                         <div class="portfolio-example-text padd-15">
-                            <h3>Dynamic webpage using only vanillaJS and CSS with Lazy-loading </h3>
-                            <p>Let me start with a DISCLAIMER before we dive in. This webpage is not solely built by me.
-                                I was searching for different animated web-designs that offer me valuable assets and
-                                functionalities to learn from. I found a very fascinating tutorial on YouTube that
-                                sparked my interest and that I considered a good fit for my goal in creating a
-                                functional, smooth but also elegant webpage
-                                (<a href=https://youtu.be/zJE-ze4TfXc target="_blank"
-                                    rel="noopener noreferrer">this</a>).
-                                I wanted to learn more in-depth on how to use divs and classes more efficiently. By
-                                writing the code parallel I understood the structural and design aspects of the site,
-                                which I was so keen to learn. Once I finished, I started tailoring the site more to my
-                                needs and own ideas and added some extra features to it. This also makes one of the
-                                highest share in time I spent on a project. Although the site overall doesn't look very
-                                different to the original one, there are a lot more elements and features I brought to
-                                it. You can find a detailed report in the read more-section below.</p>
+                            <h3>Dynamic Webpage with Vanilla JavaScript and CSS </h3>
+                            <p>This webpage showcases my proficiency in crafting dynamic web experiences using only
+                                vanilla JavaScript and CSS. While inspired by a YouTube <a
+                                    href=https://youtu.be/zJE-ze4TfXc target="_blank"
+                                    rel="noopener noreferrer">tutorial</a>. I've extensively customized and enhanced
+                                the original design to align with my personal vision.
+                                <br />
+                                I began by meticulously analyzing the tutorial's code, gaining a deep understanding of
+                                its
+                                structural and design principles. From there, I tailored the project to my specific
+                                requirements, incorporating new elements and functionalities.
+                                <br />
+                                For a more in-depth breakdown of the project's evolution and features, please refer to
+                                the
+                                "Read More" section below.
+                            </p>
+                            <p style="padding-bottom: 5px;">
+                                Key Features:
+                                <li>Lazy Loading - Optimizes page performance by deferring the loading of non-essential
+                                    elements until they are needed. </li>
+                                <li>Custom Animations - Smooth transitions and effects enhance the overall user
+                                    experience.</li>
+                                <li>
+                                    Enhanced Functionality - Additional features and interactions have been added to
+                                    provide a more engaging experience.
+                                </li>
+                            </p>
+
                         </div>
                     </div>
                     <div class="row">
@@ -1177,20 +1189,26 @@
                     <div class="row">
                         <div class="portfolio-example-text padd-15">
                             <h3>Crud, Auth and Fire </h3>
-                            <p>I wanted to create a simple CRUD (create, read, update, delete) React App with a backend.
-                                Trying multiple options for this approach, I finally considered Firebase as the most
-                                feasible service for this. Once I had realized the project essentials, I wanted to
-                                experiment more and added an authentication feature to the project, aiming that only
-                                registered users can interact with the database. For this I used firebse authentication
-                                and also a context-provider & protected routes. When visitor arrives on the landing-site
-                                an object gets created and unless the authentication has taken place it won't let user
-                                go any further and gets redirected to login/register. In Firebase itself, I built the
-                                set up in a way that only registered users can manipulate the database. You can read
-                                about this project a lot more in details by going to the actual webAPP and click on the
-                                logo and read more. I wanted to keep this project as simple as possible. As an
-                                additional nuance, I am planning to add sessions (cookies) to the app and limiting
-                                content manipulation only to the user for their own content only. Please click the
-                                button below the video to see Crud.
+                            <p>This project demonstrates a simple CRUD (Create, Read, Update, Delete) React application
+                                with a backend powered by Firebase. I chose Firebase for its ease of integration and
+                                robust features, allowing me to focus on the core functionality while leveraging its
+                                capabilities.
+                                <br />
+                                After carefully planning the project's requirements, I implemented the CRUD
+                                functionality using React components and Firebase's Realtime Database. I then integrated
+                                Firebase authentication to secure the application and added protected routes to restrict
+                                access to unauthorized users.
+                            </p>
+                            <p style="padding-bottom: 5px;">
+                                Key Features:
+                                <li>Authentication - Implements user authentication using Firebase authentication,
+                                    ensuring only registered users can interact with the database.</li>
+                                <li>
+                                    Protected Routes - Restricts access to certain routes based on user authentication,
+                                    preventing unauthorized access to sensitive data.
+                                </li>
+                                <li>Context Provider - Utilizes a context provider to manage user authentication state,
+                                    ensuring consistent access across the application.</li>
                             </p>
                         </div>
                     </div>
