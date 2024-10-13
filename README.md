@@ -20,9 +20,10 @@ via <a href="https://www.youtube.com/@CrypticalCoder" target="_blank" rel="noope
 <p>For a more detailed exploration of the project's journey and capabilities, please visit the 'Read More' section at the project page</p>
 
 <p> Key Features: 
-<li>Embeds and Swipe Functionality - The website includes embeds to display external content and swipe functionality for easy navigation between elements.</li> 
 <li>Lazy Loading - Optimizes page performance by deferring the loading of non-essential elements until they are needed. </li> 
-<li>Custom Animations - Smooth transitions and effects enhance the overall user experience.</li> <li> Enhanced Functionality - Additional features and interactions have been added to provide a more engaging experience. </li> 
+<li>Embeds and Swipe Functionality - The website includes embeds to display external content and swipe functionality for easy navigation between elements.</li> 
+<li>Custom Animations - Smooth transitions and effects enhance the overall user experience.</li> 
+<li> Enhanced Functionality - Additional features and interactions have been added to provide a more engaging experience. </li> 
 </p>
 
 ## Run 🚀
