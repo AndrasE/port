@@ -590,6 +590,10 @@ br {
 h3.hello {
   font-size: 28px;
   margin: 15px 0;
+
+  @media screen and (max-width: 500px) {
+    margin-right: 50px;
+  }
 }
 
 h3.hello span {
