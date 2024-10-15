@@ -1,7 +1,8 @@
 <h3 align="center">
   <a href="https://andrasegyed.netlify.app/" target="_blank" rel="noopener noreferrer">
-  <img src="https://github.com/AndrasE/raw-readme/blob/main/port-readme-img.png?raw=true" width="170px">
+  <img src="https://github.com/AndrasE/raw-readme/blob/main/port-readme-img.png?raw=true" width="120px">
   </a>
+  
 Dynamic Portfolio Webpage
 <br>
 via <a href="https://www.youtube.com/@CrypticalCoder" target="_blank" rel="noopener noreferrer">CrypticalCoder</a>💯
