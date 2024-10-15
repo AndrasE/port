@@ -6,7 +6,8 @@
 Dynamic Portfolio Webpage
 <br>
 via <a href="https://www.youtube.com/@CrypticalCoder" target="_blank" rel="noopener noreferrer">CrypticalCoder</a>💯
-</h3> <p>Vanilla JavaScript and CSS </p>
+<p>Vanilla JavaScript and CSS </p>
+</h3> 
 
 ## Hello there 👋
 
