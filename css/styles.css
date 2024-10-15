@@ -48,6 +48,11 @@ h2 {
 h3:not(h3.hello, h3.my-profession) {
   transition: all 1s ease;
 }
+
+h4 {
+  transition: all 1s ease;
+}
+
 p {
   transition: all 0.2s ease;
 }
@@ -65,6 +70,10 @@ br {
   content: " ";
   display: block;
   margin: 8px 0;
+}
+
+strong {
+  font-weight: 600;
 }
 
 /* modal pop-up */
@@ -1119,6 +1128,12 @@ img {
   margin-bottom: 15px;
   font-weight: 700;
   color: var(--text-black-900);
+}
+
+.portfolio-example .portfolio-example-text h3.key-features {
+  font-size: 20px;
+  margin-bottom: 0;
+  font-weight: 700;
 }
 
 .portfolio-example .portfolio-example-text p {
