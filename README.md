@@ -10,7 +10,7 @@ Vanilla JavaScript and CSS
 
 ## Hello there 👋
 
-This webpage showcases my proficiency in crafting dynamic web experiences using only vanilla JavaScript and CSS. While inspired by a YouTube **[tutorial](https://youtu.be/zJE-ze4TfXc)** via **[CrypticalCode](https://www.youtube.com/@CrypticalCoder)**. I've extensively customized and enhanced the original design to align with my personal vision.
+This webpage showcases my proficiency in crafting dynamic web experiences using only vanilla JavaScript and CSS. While inspired by a YouTube **[tutorial](https://youtu.be/zJE-ze4TfXc)** via **[CrypticalCoder](https://www.youtube.com/@CrypticalCoder)**. I've extensively customized and enhanced the original design to align with my personal vision.
 
 I began by meticulously analyzing the tutorial's code, gaining a deep understanding of its structural and design principles. From there, I tailored the project to my specific requirements, incorporating new elements and functionalities.
 
