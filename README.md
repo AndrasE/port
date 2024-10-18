@@ -3,9 +3,7 @@
   <img src="https://github.com/AndrasE/raw-readme/blob/main/port-readme-img.png?raw=true" width="120px">
   </a>
   <br/>
-Dynamic Portfolio Webpage
-<br>
-Vanilla JavaScript and CSS
+Dynamic Portfolio Webpage Vanilla JavaScript and CSS
 </h3> 
 
 ## Hello there 👋
