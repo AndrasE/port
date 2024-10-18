@@ -15,7 +15,7 @@ I began by meticulously analyzing the tutorial's code, gaining a deep understand
 For a more detailed exploration of the project's journey and capabilities, please visit the 'Read More' section at the project page.
 
 <div align="center">
-<img src="https://github.com/AndrasE/raw-readme/blob/3f12481a9b01c5f8168b43dddb24da6dbcdfdfde/portolio.webp" width="320">
+<img src="https://github.com/AndrasE/raw-readme/blob/3f12481a9b01c5f8168b43dddb24da6dbcdfdfde/portolio.webp" width="420">
 </div>
 
 ### Key Features
