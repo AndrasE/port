@@ -20,7 +20,6 @@ For a more detailed exploration of the project's journey and capabilities, pleas
 <img src="https://github.com/AndrasE/raw-readme/blob/6ee4bad9cbd157895e8bae5bdfb0018c95b94041/thumbs/port_3.png" width="220">
 </div>
 
-
 ### Key Features
 
 - **Lazy Loading** - Optimizes page performance by deferring the loading of non-essential elements until they are needed.  
