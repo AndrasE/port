@@ -1,6 +1,6 @@
 <h3 align="center">
   <a href="https://andrasegyed.netlify.app/" target="_blank" rel="noopener noreferrer">
-  <img src="https://github.com/AndrasE/raw-readme/blob/main/port-readme-img.png?raw=true" width="120px">
+  <img src="https://github.com/AndrasE/raw-readme/blob/e0ba0d38fc6f2bb201983bbc4986e59f1ae946f2/logo/port-readme-img.png" width="120px">
   </a>
   <br/>
 Dynamic Portfolio Webpage Vanilla JavaScript and CSS
