@@ -1,115 +1,70 @@
-<!------===== header start =====------->
-
-<!------===== header end=====------->
+<%- include("partials/header") -%>
 
 <body>
-    <!------===== cv modal pop-up start =====------->
+  <!------===== cv modal =====------->
+  <%- include("partials/cvmodal") -%>
 
-    <!------===== modal pop-up end =====------->
+  <!------===== main container end =====------->
+  <div class="main-container" id="gesture-element">
 
-    <!------===== main container start =====------->
-    <div class="main-container" id="gesture-element">
+    <!------===== aside =====------->
+    <%- include("partials/aside") -%>
 
-        <!------===== aside start =====------->
+     <!------===== main content end =====------->
+    <div class="main-content">
 
-        <!------===== aside end =====------->
+      <!------===== blank section =====------->
+      <section class="blank section back-section">
+        <!--== to prevent the on-load slide in animation to show the last section with content in background  ==-->
+      </section>
 
-        <!------===== main content start =====------->
-        <div class="main-content">
+      <!------===== sections =====------->
+      <%- include("sections/andras") -%>
+      <%- include("sections/home") -%>
+      <%- include("sections/about") -%>
+      <%- include("sections/expertise") -%>
+      <%- include("sections/projects") -%>
+      <%- include("sections/contact") -%>
+      <!------===== sections =====------->
 
-            <!------===== blank section start =====------->
-            <section class="blank section back-section">
-                <!-- only exist to prevent the on-load slide in animation to show
-                the last section with content in background  -->
-            </section>
-            <!------===== blank section end =====------->
+      <!------===== projects =====------->
+      <%- include("projects/frost") -%>
+      <%- include("projects/usapp") -%>
+      <%- include("projects/reduxcalculator") -%>
+      <%- include("projects/portfolio") -%>
+      <%- include("projects/portfolioreadmore") -%>
+      <%- include("projects/crud") -%>
+      <%- include("projects/secrets") -%>
+      <%- include("projects/todo") -%>
+      <%- include("projects/weatherapi") -%>
+      <%- include("projects/nextproject") -%>
+      <!------===== projects =====------->
 
-            <!------===== home section start =====------->
+      <!------===== andras section start =====------->
 
-            <!------===== home section end =====------->
+      <!------===== andras section end =====------->
 
-            <!------===== about section start =====------->
+      <!------===== portfolio-about readmore section start =====------->
 
-            <!------===== about section end =====------->
+      <!------===== portfolio-about section end =====------->
 
-            <!------===== expertise section start =====------->
+      <section class="blank section">
+        <!--== prevent the on-load slide in animation to show the last section with content in background ==-->
+      </section>
 
-            <!------===== expertises section end =====------->
-
-            <!------===== project section start =====------->
-
-            <!------===== project section end =====------->
-
-            <!------===== contact section start =====------->
-
-            <!------===== contact section end =====------->
-
-            <!------===== project example 1 section start =====------->
-
-            <!------===== project example 1 section end =====------->
-
-            <!------===== project example 2 section start =====------->
-
-            <!------===== project example 2 section end =====------->
-
-            <!------===== project example 3 section start =====------->
-
-            <!------===== project example 3 section end =====------->
-
-            <!------===== project example 4 section start =====------->
-
-            <!------===== project example 4 section end =====------->
-
-            <!------===== project example 5 section start =====------->
-
-            <!------===== project example 5 section end =====------->
-
-            <!------===== project example 6 section start =====------->
-
-            <!------===== project example 6 section end =====------->
-
-            <!------===== project example 7 section start =====------->
-
-            <!------===== project example 7 section end =====------->
-
-            <!------===== project example 8 section start =====------->
-
-            <!------===== project example 8 section end =====------->
-
-            <!------===== project example 9 section start =====------->
-
-            <!------===== project example 9 section end =====------->
-
-            <!------===== project example 10 section start =====------->
-
-            <!------===== project example 10 section end =====------->
-
-            <!------===== andras section start =====------->
-
-            <!------===== andras section end =====------->
-
-            <!------===== portfolio-about readmore section start =====------->
-
-            <!------===== portfolio-about section end =====------->
-
-            <section class="blank section">
-                <!-- only exist to prevent the on-load slide in animation to show
-                the last section with content in background  -->
-            </section>
-        </div>
-        <!------===== main content end =====------->
     </div>
-    <!------===== main container end =====------->
+    <!------===== main content end =====------->
 
-    <!------===== style switcher start =====------->
+  </div>
+  <!------===== main container end =====------->
 
-    <!------===== style switcher end =====------->
+  <!------===== style switcher =====------->
+  <%- include("partials/styleswitcher") -%>
+  <!------===== style switcher =====------->
 
-    <!------===== js files =====------->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
-        referrerpolicy="no-referrer"></script>
-    <script src="js/script.js"></script>
-    <!-- <script src="js/style-switcher.js"></script> -->
+  <!------===== js files =====------->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
