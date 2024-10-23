@@ -10,8 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@netlify/functions": "^2.8.2",
     "ejs": "^3.1.10",
     "express": "^4.21.1",
-    "serve-favicon": "^2.5.0"
+    "netlify-cli": "^17.37.1",
+    "netlify-lambda": "^2.0.16",
+    "serve-favicon": "^2.5.0",
+    "serverless-http": "^3.2.0"
   }
 }
