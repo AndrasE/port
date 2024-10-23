@@ -2,10 +2,10 @@
   "name": "port",
   "version": "1.0.0",
   "description": "portfolio webpage",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node server.js", 
-    "build": "netlify-lambda build src" 
+    "start": "node app.js",
+    "build": "netlify-lambda build ."
   },
   "author": "",
   "license": "ISC",
