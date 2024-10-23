@@ -1,4 +1,4 @@
-// server.js or api.js
+
 const express = require('express');
 const serverless = require('serverless-http');
 const app = express();
@@ -11,11 +11,12 @@ app.set("views", path.join(__dirname, "views"));
 
 // Serve static files (CSS, JS, etc.)
 app.use(express.static(path.join(__dirname, "public")));
-app.use(favicon(__dirname + '/public/images/favicon.ico'));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 // Define route to render your main page
 app.get("/", (req, res) => {
   res.render("index");
+  
 });
 
 // Catch-all route to handle all other paths (404 page)

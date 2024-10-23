@@ -2,12 +2,12 @@
   functions = "functions"
   publish = "public"
 
-[functions]
-  external_node_modules = ["express"]
+[functions.app]
+  external_node_modules = ["express", "ejs", "serve-favicon"]
   node_bundler = "esbuild"
   included_files = ["views/**", "public/**"]
 
 [[redirects]]
   from = "/(.*)"
-  to = "/.netlify/functions/api/:splat"
   status = 200
+  to = "/.netlify/functions/app/:splat"
