@@ -11,7 +11,7 @@ app.set("views", path.join(__dirname, "views"));
 
 // Serve static files (CSS, JS, etc.)
 app.use(express.static(path.join(__dirname, "public")));
-app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
 // Define route to render your main page
 app.get("/", (req, res) => {
