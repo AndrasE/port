@@ -1,0 +1,70 @@
+<%- include("partials/header") -%>
+
+<body>
+  <!------===== cv modal =====------->
+  <%- include("partials/cvmodal") -%>
+
+  <!------===== main container end =====------->
+  <div class="main-container" id="gesture-element">
+
+    <!------===== aside =====------->
+    <%- include("partials/aside") -%>
+
+     <!------===== main content end =====------->
+    <div class="main-content">
+
+      <!------===== blank section =====------->
+      <section class="blank section back-section">
+        <!--== to prevent the on-load slide in animation to show the last section with content in background  ==-->
+      </section>
+
+      <!------===== sections =====------->
+      <%- include("sections/andras") -%>
+      <%- include("sections/home") -%>
+      <%- include("sections/about") -%>
+      <%- include("sections/expertise") -%>
+      <%- include("sections/projects") -%>
+      <%- include("sections/contact") -%>
+      <!------===== sections =====------->
+
+      <!------===== projects =====------->
+      <%- include("projects/frost") -%>
+      <%- include("projects/usapp") -%>
+      <%- include("projects/reduxcalculator") -%>
+      <%- include("projects/portfolio") -%>
+      <%- include("projects/portfolioreadmore") -%>
+      <%- include("projects/crud") -%>
+      <%- include("projects/secrets") -%>
+      <%- include("projects/todo") -%>
+      <%- include("projects/weatherapi") -%>
+      <%- include("projects/nextproject") -%>
+      <!------===== projects =====------->
+
+      <!------===== andras section start =====------->
+
+      <!------===== andras section end =====------->
+
+      <!------===== portfolio-about readmore section start =====------->
+
+      <!------===== portfolio-about section end =====------->
+
+      <section class="blank section">
+        <!--== prevent the on-load slide in animation to show the last section with content in background ==-->
+      </section>
+
+    </div>
+    <!------===== main content end =====------->
+
+  </div>
+  <!------===== main container end =====------->
+
+  <!------===== style switcher =====------->
+  <%- include("partials/styleswitcher") -%>
+  <!------===== style switcher =====------->
+
+  <!------===== js files =====------->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

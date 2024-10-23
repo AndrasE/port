@@ -1,0 +1,21 @@
+{
+  "name": "port",
+  "version": "1.0.0",
+  "description": "portfolio webpage",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@netlify/functions": "^2.8.2",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "netlify-cli": "^17.37.1",
+    "netlify-lambda": "^2.0.16",
+    "serve-favicon": "^2.5.0",
+    "serverless-http": "^3.2.0"
+  }
+}

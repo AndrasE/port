@@ -1,0 +1,67 @@
+<section class="portfolio-example section s-link" id="blog">
+    <div class="container">
+        <div class="row">
+            <div class="section-title padd-15">
+                <h2>Blog</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="portfolio-example-text padd-15">
+                <h3>Basic operations using Node, Express, Ejs with MongoDB</h3>
+                <p style="padding-bottom: 20px;">This App was a coding-challenge and part of my studies on
+                    Udemy. After finishing it, it also served as a base to the Secrets App above. It uses
+                    <a href="https://ejs.co/" target="_blank" rel="noopener noreferrer">EJS</a> (Embedded
+                    JavaScript Templating).
+                    EJS let us embed JavaScript code into HTML. It can come very handy in many different
+                    ways: Firstly, it can reduce the repetition of the code. For example you have a website
+                    with 2-3 redirects to different sections of the page. You can simply write the
+                    header/footer or any other parts of the webpage only once and inject it to your HTML
+                    code like follows:
+                </p>
+                <table>
+                    <tr>
+                        <td>
+                            <p style="padding-bottom: 15px; text-align: center;" class="example-code">
+                                &lt%=header=%&gt<br>
+                                content <br>
+                                &lt%=footer=%&gt
+                            </p>
+                        </td>
+                        <td>
+                            <p style="padding-bottom: 15px;" class="example-code">
+                                &lt== &nbsp unchanged <br>
+                                &lt== &nbsp changing <br>
+                                &lt== &nbsp unchanged
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                <p>
+                    Secondly, it can be used to allocate the content to the site. In this App's case it
+                    receives the data from the backend using MongoDB and runs a
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach"
+                        target="_blank" rel="noopener noreferrer">forEach</a>
+                    loop to display all the blogs line by line. This enables us to display content that is
+                    not hard-coded in the html. When the backend database gets updated the changes get
+                    displayed automatically. When you add or delete a blog, the APP will send this
+                    information back to the back-end database, make the changes and as soon as the page
+                    refreshes, these changes will be visible to you as the loop re-run using the updated
+                    database.
+                    <br>
+                    This was the first time I actually could truly engage with my own creation, which took
+                    everything to a whole new and very exciting level for me. Furthermore, the database is
+                    located on Amazon's free tier server in West-Virginia. Any changes you make will
+                    actually be sent there and back to you. Even now looking back to this project, it is
+                    fairly amazing.
+                    <br>The app deployed on Cyclic free tier server. Please allow a few seconds for it to
+                    spin up to load the page.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="button-container padd-15">
+                <a class="btn" href="https://andras-blog.cyclic.app/" target="_blank">Blog</a>
+            </div>
+        </div>
+    </div>
+</section>
