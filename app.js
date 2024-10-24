@@ -1,22 +1,24 @@
-
+// app.js or server.js
 const express = require('express');
 const serverless = require('serverless-http');
-const app = express();
 const path = require("path");
 const favicon = require('serve-favicon');
+
+const app = express();
 
 // Set EJS as the template engine
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 // Serve static files (CSS, JS, etc.)
-app.use(express.static(path.join(__dirname, "public")));
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Adjust favicon path to work in serverless environment
+app.use(favicon(path.resolve(__dirname, 'public', 'favicon.ico')));
 
 // Define route to render your main page
 app.get("/", (req, res) => {
   res.render("index");
-  
 });
 
 // Catch-all route to handle all other paths (404 page)
@@ -25,8 +27,9 @@ app.get('*', (req, res) => {
 });
 
 // Define a path for serverless functions
-app.use('/.netlify/functions/api', (req, res) => {
-  res.send('Serverless Function is working!');
+// This is the key path for Netlify to route to your function
+app.use('/.netlify/functions/app', (req, res) => {
+  res.send("Serverless function is active!"); // For testing
 });
 
 // Export serverless handler
