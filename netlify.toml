@@ -7,3 +7,7 @@
   node_bundler = "esbuild"
   included_files = ["views/**", "public/**"]
 
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/app"
+  status = 200

@@ -14,7 +14,7 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Adjust favicon path to work in serverless environment
-app.use(favicon(path.resolve(__dirname, 'public', 'favicon.ico')));
+app.use(express.favicon(__dirname + '/public/images/favicon.ico')); 
 
 // Define route to render your main page
 app.get("/", (req, res) => {
