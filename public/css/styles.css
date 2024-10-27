@@ -998,7 +998,9 @@ img {
 
 .projects .projects-item-inner .projects-img img {
   width: 100%;
+  aspect-ratio: 4 / 3.4;
   display: block;
+  object-fit: cover;
 }
 
 /* contact */
