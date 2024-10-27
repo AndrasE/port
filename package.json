@@ -1,7 +1,7 @@
 {
   "name": "port",
   "version": "1.0.0",
-  "description": "Dynamic Portfolio Webpage Vanilla JavaScript and CSS",
+  "description": "Portfolio Webpage Vanilla JavaScript and CSS",
   "scripts": {
     "build": "node render-ejs.js",   
     "test": "echo \"Error: no test specified\" && exit 1",
