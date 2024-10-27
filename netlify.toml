@@ -1,13 +1,3 @@
 [build]
-  functions = "functions-build"
   publish = "public"
-
-[functions]
-  external_node_modules = ["express", "ejs", "serve-favicon"]
-  node_bundler = "esbuild"
-  included_files = ["views/**", "public/**"]
-
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/app"
-  status = 200
+  command = "node render-ejs.js"  # This runs the script to generate HTML

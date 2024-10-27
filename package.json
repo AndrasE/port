@@ -1,21 +1,23 @@
 {
   "name": "port",
   "version": "1.0.0",
-  "description": "portfolio webpage",
-  "main": "app.js",
+  "description": "Dynamic Portfolio Webpage Vanilla JavaScript and CSS",
   "scripts": {
-    "start": "node app.js",
-    "build": "netlify-lambda build functions"
+    "build": "node render-ejs.js",   
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndrasE/port.git"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@netlify/functions": "^2.8.2",
-    "ejs": "^3.1.10",
-    "express": "^4.21.1",
-    "netlify-cli": "^17.37.1",
-    "netlify-lambda": "^2.0.16",
-    "serve-favicon": "^2.5.0",
-    "serverless-http": "^3.2.0"
+  "bugs": {
+    "url": "https://github.com/AndrasE/port/issues"
+  },
+  "homepage": "https://github.com/AndrasE/port#readme",
+  "devDependencies": {
+    "ejs": "^3.1.10"     
   }
 }
