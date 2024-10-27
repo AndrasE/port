@@ -1,64 +1,63 @@
-<%- include("partials/header") -%>
+<%- include("/partials/header") -%>
 
-  <body>
-    <!------===== cv modal =====------->
-    <%- include("partials/cvmodal") -%>
+<body>
+  <!------===== main container end =====------->
+  <div class="main-container" id="gesture-element">
 
-      <!------===== main container end =====------->
-      <div class="main-container" id="gesture-element">
+    <!------===== aside =====------->
+    <%- include("/partials/aside") -%>
 
-        <!------===== aside =====------->
-        <%- include("partials/aside") -%>
+    <!------===== main content end =====------->
+    <div class="main-content">
 
-          <!------===== main content end =====------->
-          <div class="main-content">
+      <!------===== blank section =====------->
+      <section class="blank section back-section">
+        <!--== to prevent the on-load slide in animation to show the last section with content in background  ==-->
+      </section>
 
-            <!------===== blank section =====------->
-            <section class="blank section back-section">
-              <!--== to prevent the on-load slide in animation to show the last section with content in background  ==-->
-            </section>
+      <!------===== sections =====------->
+      <%- include("/sections/andras") -%>
+      <%- include("/sections/home") -%>
+      <%- include("/sections/about") -%>
+      <%- include("/sections/expertise") -%>
+      <%- include("/sections/projects") -%>
+      <%- include("/sections/contact") -%>
+      <!------===== sections =====------->
 
-            <!------===== sections =====------->
-            <%- include("sections/andras") -%>
-              <%- include("sections/home") -%>
-                <%- include("sections/about") -%>
-                  <%- include("sections/expertise") -%>
-                    <%- include("sections/projects") -%>
-                      <%- include("sections/contact") -%>
-                        <!------===== sections =====------->
+      <!------===== projects =====------->
+      <%- include("/projects/frost") -%>
+      <%- include("/projects/usapp") -%>
+      <%- include("/projects/reduxcalculator") -%>
+      <%- include("/projects/portfolio") -%>
+      <%- include("/projects/portfolioreadmore") -%>
+      <%- include("/projects/crud") -%>
+      <%- include("/projects/secrets") -%>
+      <%- include("/projects/todo") -%>
+      <%- include("/projects/weatherapi") -%>
+      <%- include("/projects/nextproject") -%>
+      <!------===== projects =====------->
 
-                        <!------===== projects =====------->
-                        <%- include("projects/frost") -%>
-                          <%- include("projects/usapp") -%>
-                            <%- include("projects/reduxcalculator") -%>
-                              <%- include("projects/portfolio") -%>
-                                <%- include("projects/portfolioreadmore") -%>
-                                  <%- include("projects/crud") -%>
-                                    <%- include("projects/secrets") -%>
-                                      <%- include("projects/todo") -%>
-                                        <%- include("projects/weatherapi") -%>
-                                          <%- include("projects/nextproject") -%>
-                                            <!------===== projects =====------->
+      <!------===== blank section =====------->
+      <section class="blank section">
+        <!--== prevent the on-load slide in animation to show the last section with content in background ==-->
+      </section>
 
-                                            <!------===== blank section =====------->
-                                            <section class="blank section">
-                                              <!--== prevent the on-load slide in animation to show the last section with content in background ==-->
-                                            </section>
+    </div>
+    <!------===== main content end =====------->
 
-          </div>
-          <!------===== main content end =====------->
+  </div>
+  <!------===== main container end =====------->
 
-      </div>
-      <!------===== main container end =====------->
+  <!------===== cv modal =====------->
+  <%- include("/partials/cvmodal") -%>
 
-      <!------===== style switcher =====------->
-      <%- include("partials/styleswitcher") -%>
-        <!------===== style switcher =====------->
+  <!------===== style switcher =====------->
+  <%- include("/partials/styleswitcher") -%>
+  <!------===== style switcher =====------->
 
-        <!------===== js files =====------->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
-          referrerpolicy="no-referrer"></script>
-        <script src="js/script.js"></script>
-  </body>
+  <!------===== js files =====------->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>
+  <script src="js/script.js"></script>
+</body>
 
-  </html>
+</html>
