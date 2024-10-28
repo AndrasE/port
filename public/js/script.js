@@ -382,16 +382,18 @@ function startStopLazy() {
   }
 
   function startLazy() {
-    usapp =
-      "<iframe class=youtube, src=https://www.youtube.com/embed/w_1VowseA3g?si=nVZnATqO8weXgaZx allowfullscreen alt=usapp> </iframe>";
-    portfolio =
-      "<iframe class=youtube, src=https://www.youtube.com/embed/zkyBc4wrhRI allowfullscreen alt=portfolio> </iframe>";
-    crud =
-      "<iframe class=youtube, src=https://www.youtube.com/embed/Uz_jetkz_i4 allowfullscreen alt=crud> </iframe>";
-    secrets =
-      "<iframe class=youtube, src=https://www.youtube.com/embed/AOAkFx3xz1Y allowfullscreen alt=secrets> </iframe>";
-    todo =
-      "<iframe class=youtube, src=https://codesandbox.io/embed/to-do-veyju?fontsize=14&hidenavigation=1&theme=dark alt=todo></iframe>";
+    const usapp =
+      '<iframe src="https://www.youtube.com/embed/w_1VowseA3g?si=nVZnATqO8weXgaZx" allowfullscreen alt="usapp"></iframe>';
+    const portfolio =
+      '<iframe src="https://www.youtube.com/embed/zkyBc4wrhRI" allowfullscreen alt="portfolio"></iframe>';
+    const crud =
+      '<iframe src="https://www.youtube.com/embed/Uz_jetkz_i4" allowfullscreen alt="crud"></iframe>';
+    const secrets =
+      '<iframe src="https://www.youtube.com/embed/AOAkFx3xz1Y" allowfullscreen alt="secrets"></iframe>';
+    const todo =
+      '<iframe src="https://codesandbox.io/embed/to-do-veyju?fontsize=14&hidenavigation=1&theme=dark" alt="todo"></iframe>';
+    const next =
+      '<iframe class="drum" src="https://andrase.github.io/drum/" alt="drum"></iframe>';
 
     switch (iframeId) {
       case "usapp-iframe":
@@ -407,8 +409,13 @@ function startStopLazy() {
         document.getElementById(iframeId).innerHTML = secrets;
         break;
       case "todo-iframe":
-        document.getElementById("todo-iframe").innerHTML = todo;
+        document.getElementById(iframeId).innerHTML = todo;
         break;
+      case "next-iframe":
+        document.getElementById(iframeId).innerHTML = next;
+        break;
+      default:
+        console.warn("No matching iframe ID found.");
     }
   }
 }
