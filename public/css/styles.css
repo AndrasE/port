@@ -97,7 +97,7 @@ strong {
   transform: translate(-50%, -50%);
   background-color: var(--bg-black-100);
   padding: 3rem 1rem 1rem;
-  width: 700px;
+  width: 500px;
   border: 1px solid var(--bg-black-50);
   border-radius: 0.5rem;
 }
@@ -998,7 +998,7 @@ img {
 
 .projects .projects-item-inner .projects-img img {
   width: 100%;
-  aspect-ratio: 4 / 3.4;
+  aspect-ratio: 4 / 3;
   display: block;
   object-fit: cover;
 }
