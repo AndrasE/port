@@ -19,10 +19,10 @@
                     <br>
                     Just imagine a standard webpage as a roll of paper. As you scroll down you go through
                     different segments of the same paper. Now imagine this roll to be cut up into a certain
-                    number of dimensions (sections) and start piling up these "card/sections" on top of each
+                    number of dimensions (sections) and start piling up these 'card/sections' on top of each
                     other. They all exist the same time, in front of each other, but most of them get hidden
                     away by the first card. As the new section slides in, the previous one stays in the
-                    back. Each slide will have classes such as "hidden", "back-section" or "active" when
+                    back. Each slide will have classes such as 'hidden', 'back-section' or 'active' when
                     required.
                     <br>
                     When I finished the initial project, I realized there is an issue while loading the
@@ -32,7 +32,7 @@
                     <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction"
                         target="_blank" rel="noopener noreferrer">DOM</a>
                     (document object model) gets loaded it will be the last card on top. The Home section is
-                    "active" so will slide over it - that makes it look pretty neat. The problem with this
+                    'active' so will slide over it - that makes it look pretty neat. The problem with this
                     solution is that as the DOM (Document Object Model) grows bigger and starts running the
                     project not only locally, it will require more time for the DOM to load in, so for the
                     trace of the second flashing-up some of the sections will come back. By the time we load
@@ -50,7 +50,7 @@
                     find a more feasible solution.
                     <br>
                     Rather than leave a blank section as the last slide, I should make it the first and add
-                    it as "back-section" right away. Like this, when the HTML starts loading followed by the
+                    it as 'back-section' right away. Like this, when the HTML starts loading followed by the
                     CSS it will eliminate the issue. By the time it finishes the load the whole DOM (put the
                     cards down) the back-section is already set (lesson learnt) and the rest of the page
                     would not be visible. Trickery! Although it works for this small/medium sized webpage,
@@ -76,14 +76,14 @@
                 </p>
                 <h4>Component-tree / think before you do!</h4>
                 <p>
-                    I mentioned above the DOM and how these "cards" get loaded on top of each other. Maybe
+                    I mentioned above the DOM and how these 'cards' get loaded on top of each other. Maybe
                     it looks like there are only 5-6 cards in this pack, but I have much more to show. This
                     is why the problem started to evolve. Here is the component tree if you would like to
                     see.
                     <a href="https://www.dropbox.com/s/9iajqwwsgzomekd/comp-tree2.png?dl=0" target="_blank"
                         rel="noopener noreferrer">Component tree</a>
-                    You can see we have over 10 cards. Each of them gets classified in "active" or
-                    "back-section" or in some cases to be temporarily "hidden". It wouldn't be a problem at
+                    You can see we have over 10 cards. Each of them gets classified in 'active' or
+                    'back-section' or in some cases to be temporarily 'hidden'. It wouldn't be a problem at
                     all if I leave the project simple as it started. But I didn't find it sufficient as I
                     wanted it to have multiple layers to it. It means you can click on the logo which is not
                     part of the navigation section but still brings up a section. Same with the
@@ -94,8 +94,8 @@
                     an event-listener. It means you click on something and will execute a function. The
                     navigation panel is relatively straight forward: If someone clicks on a link on the
                     navigation panel, it sets the current card as a background section and the new card as
-                    active. Simple and works smoothly. Now imagine that you are not part of this "chosen
-                    navigation panel-group" or you may just be part of one of the sections. The original
+                    active. Simple and works smoothly. Now imagine that you are not part of this 'chosen
+                    navigation panel-group' or you may just be part of one of the sections. The original
                     functions wouldn't know what should be the back-section and which is the active. I need
                     to further specify it. If this and this gets clicked, do this and that. But if you are
                     already there and something else gets clicked if this and that is true/false then do
@@ -148,9 +148,9 @@
                     Hammer.TouchMouseInput});
                 </p>
                 <h4>Lazy-loading</h4>
-                <p>Welcome to the realm of Lazy-loading! If you are unfamiliar with the term: "Lazy-loading
+                <p>Welcome to the realm of Lazy-loading! If you are unfamiliar with the term: 'Lazy-loading
                     is the practice of delaying load or initialization of resources or objects until they're
-                    actually needed to improve performance and save system resources."
+                    actually needed to improve performance and save system resources.'
                     <br>
                     Just imagine you are scrolling through Facebook/Instagram and that at the initial start
                     of the app it would need to load in all the content for you. Would be quite a long ride!
@@ -158,8 +158,8 @@
                     of your bandwidth and loading all the content even if you won't need them later on.
                     <br>
                     A solution exists! Many sites use an intersection observer. It's basically passing the
-                    message to the app what section of the site the user is currently "consuming". You can
-                    tell it "if the viewport is less than 500pixels away", start loading in the images,
+                    message to the app what section of the site the user is currently 'consuming'. You can
+                    tell it 'if the viewport is less than 500pixels away', start loading in the images,
                     videos etc. If you never reach that far on the site, it shall never load. A win-win-win
                     solution.
                     <br>
