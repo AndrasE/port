@@ -598,14 +598,14 @@ img {
   text-align: justify;
 }
 .about .about-content .personal-info {
-  flex: 0 0 50%;
-  max-width: 50%;
+  flex: 0 0 100%;
+  max-width: 100%;
   margin-top: 40px;
   padding-left: 30px;
   padding-right: 30px;
 }
 .about .about-content .personal-info .info-item {
-  flex: 0 0 100%;
+  flex: 0 0 50%;
   max-width: 100%;
   letter-spacing: 1.3px;
 }
@@ -625,12 +625,11 @@ img {
 .about .about-content .personal-info .info-item a {
   color: var(--text-black-700);
 }
-.about .about-content .personal-info .buttons {
-  margin-top: 30px;
+.about .about-content .buttons {
+  margin-top: 20px;
+  display: flex;
 }
-.about .about-content .personal-info .buttons .btn {
-  margin-top: 10px;
-}
+
 .about .about-content .skills {
   flex: 0 0 50%;
   max-width: 50%;
