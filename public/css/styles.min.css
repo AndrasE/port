@@ -1274,6 +1274,10 @@ textarea:hover {
   .aside .nav li {
     margin-bottom: 35px;
   }
+  .projects .projects-item {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
   .portfolio-example-item-images-container img {
     max-width: 75%;
   }
