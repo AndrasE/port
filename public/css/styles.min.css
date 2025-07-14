@@ -601,8 +601,6 @@ img {
   flex: 0 0 100%;
   max-width: 100%;
   margin-top: 40px;
-  padding-left: 30px;
-  padding-right: 30px;
 }
 .about .about-content .personal-info .info-item {
   flex: 0 0 50%;
@@ -612,7 +610,7 @@ img {
 .about .about-content .personal-info .info-item p {
   font-weight: 600;
   padding: 10px 0;
-  margin-bottom: 0px;
+  margin-bottom: 15px;
   font-size: 16x;
   color: var(--text-black-900);
   border-bottom: 1px solid var(--bg-black-50);
@@ -626,16 +624,38 @@ img {
   color: var(--text-black-700);
 }
 .about .about-content .buttons {
+  position: relative;
+
   display: flex;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
-  margin-top: 40px;
-  margin-bottom: 20px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  width: 100%;
+}
+
+.info-grid .info-item {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 15px 0;
+  }
+  .info-grid .info-item {
+    margin-bottom: 5px;
+  }
 }
 
 .about .about-content .skills {
   display: flex;
   margin-top: 40px;
+  margin-bottom: 40px;
   padding-left: 15px;
   padding-right: 15px;
   width: 100%;
@@ -700,7 +720,7 @@ img {
 }
 .about .about-content h3.title {
   font-size: 24px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   font-weight: 700;
   color: var(--text-black-900);
 }
@@ -1208,11 +1228,8 @@ textarea:hover {
     display: none;
   }
   .expertise .expertise-item,
+  .project .project-item,
   .contact .contact-info-item {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-  .projects .projects-item {
     flex: 0 0 50%;
     max-width: 50%;
   }
@@ -1278,8 +1295,8 @@ textarea:hover {
     margin-bottom: 35px;
   }
   .projects .projects-item {
-    flex: 0 0 100%;
-    max-width: 100%;
+    flex: 0 0 50%;
+    max-width: 50%;
   }
   .portfolio-example-item-images-container img {
     max-width: 75%;
