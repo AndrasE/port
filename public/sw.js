@@ -46,6 +46,20 @@ self.addEventListener("fetch", (event) => {
         // Serve the cached response if found
         return response;
       }
+
+      // --- ADD THIS CHECK HERE ---
+      const requestUrl = new URL(event.request.url);
+      if (requestUrl.protocol !== "http:" && requestUrl.protocol !== "https:") {
+        // If it's not an http or https request (e.g., chrome-extension://),
+        // just let the browser handle it without caching.
+        console.log(
+          "Service Worker: Skipping caching for non-http/https request:",
+          event.request.url
+        );
+        return fetch(event.request);
+      }
+      // --- END OF ADDITION ---
+
       // If not in cache, fetch from network and cache it for future use
       return fetch(event.request)
         .then((networkResponse) => {
@@ -73,10 +87,13 @@ self.addEventListener("fetch", (event) => {
           );
           // If the request is for the app's root URL and it fails, try to return the cached version
           // This helps the app load offline if the user visits the root URL
+          // Make sure this URL matches your actual deployed URL
           if (event.request.url === "https://andrasapplied.netlify.app/") {
             return caches.match("https://andrasapplied.netlify.app/");
           }
           // For other requests, let the browser handle the error if not in cache
+          // Re-throwing the error can sometimes be beneficial for debugging in development,
+          // but in production, you might want a more graceful fallback or just return new Response("")
           throw error;
         });
     })
