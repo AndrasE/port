@@ -43,7 +43,7 @@
       <script>
         if ('serviceWorker' in navigator) {
           window.addEventListener('load', () => {
-            // This path is correct if your sw.js is in 'public/sw.js' and Netlify publish directory is 'public'.
+            // sw.js is at the root of your served content
             navigator.serviceWorker.register('/sw.js')
               .then(registration => {
                 console.log('⚒️ Service Worker registered with scope:', registration.scope);
@@ -56,7 +56,7 @@
       </script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
         referrerpolicy="no-referrer"></script>
-      <script src="public/js/script.js"></script>
+      <script src="js/script.js"></script>
 </body>
 
 </html>
