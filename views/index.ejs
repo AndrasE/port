@@ -1,80 +1,62 @@
-<%- include("/partials/header") -%>
+<!DOCTYPE html>
+<html lang="en" style="background-color: black">
 
-  <body>
-    <!------===== main container end =====------->
-    <div class="main-container" id="gesture-element">
+<head>
+  <%- include("/partials/header") -%>
+</head>
 
-      <!------===== aside =====------->
-      <%- include("/partials/aside") -%>
+<body>
+  <div class="main-container" id="gesture-element">
 
-        <!------===== main content end =====------->
-        <div class="main-content">
+    <%- include("/partials/aside") -%>
 
-          <!------===== blank section =====------->
-          <section class="blank section back-section">
-            <!--== to prevent the on-load slide in animation to show the last section with content in background  ==-->
-          </section>
-          ,
-          <!------===== sections =====------->
-          <%- include("/sections/andras") -%>
-            <%- include("/sections/home") -%>
-              <%- include("/sections/about") -%>
-                <%- include("/sections/expertise") -%>
-                  <%- include("/sections/projects") -%>
-                    <%- include("/sections/contact") -%>
-                      <!------===== sections =====------->
+      <div class="main-content">
 
-                      <!------===== projects =====------->
-                      <%- include("/projects/applied") -%>
-                        <%- include("/projects/frost") -%>
-                          <%- include("/projects/usapp") -%>
-                            <%- include("/projects/reduxcalculator") -%>
-                              <%- include("/projects/portfolio") -%>
-                                <%- include("/projects/portfolioreadmore") -%>
-                                  <%- include("/projects/crud") -%>
-                                    <%- include("/projects/secrets") -%>
-                                      <%- include("/projects/todo") -%>
-                                        <%- include("/projects/weatherapi") -%>
-                                          <%- include("/projects/nextproject") -%>
-                                            <!------===== projects =====------->
+        <section class="blank section back-section">
+        </section>
+        ,
+        <%- include("/sections/andras") -%>
+          <%- include("/sections/home") -%>
+            <%- include("/sections/about") -%>
+              <%- include("/sections/expertise") -%>
+                <%- include("/sections/projects") -%>
+                  <%- include("/sections/contact") -%>
+                    <%- include("/projects/applied") -%>
+                      <%- include("/projects/frost") -%>
+                        <%- include("/projects/usapp") -%>
+                          <%- include("/projects/reduxcalculator") -%>
+                            <%- include("/projects/portfolio") -%>
+                              <%- include("/projects/portfolioreadmore") -%>
+                                <%- include("/projects/crud") -%>
+                                  <%- include("/projects/secrets") -%>
+                                    <%- include("/projects/todo") -%>
+                                      <%- include("/projects/weatherapi") -%>
+                                        <%- include("/projects/nextproject") -%>
+                                          <section class="blank section">
+                                          </section>
 
-                                            <!------===== blank section =====------->
-                                            <section class="blank section">
-                                              <!--== prevent the on-load slide in animation to show the last section with content in background ==-->
-                                            </section>
+      </div>
+  </div>
+  <%- include("/partials/cvmodal") -%>
 
-        </div>
-        <!------===== main content end =====------->
+    <%- include("/partials/styleswitcher") -%>
+      <script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            // This path is correct if your sw.js is in 'public/sw.js' and Netlify publish directory is 'public'.
+            navigator.serviceWorker.register('/sw.js')
+              .then(registration => {
+                console.log('⚒️ Service Worker registered with scope:', registration.scope);
+              })
+              .catch(error => {
+                console.log('❌ Service Worker registration failed:', error);
+              });
+          });
+        }
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
+        referrerpolicy="no-referrer"></script>
+      <script src="public/js/script.js"></script>
+</body>
 
-    </div>
-    <!------===== main container end =====------->
-
-    <!------===== cv modal =====------->
-    <%- include("/partials/cvmodal") -%>
-
-      <!------===== style switcher =====------->
-      <%- include("/partials/styleswitcher") -%>
-        <!------===== style switcher =====------->
-
-        <!------===== js files =====------->
-        <!-- Register service worker for offline support and caching -->
-
-        <script>
-          if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-              navigator.serviceWorker.register('/sw.js')
-                .then(registration => {
-                  console.log('⚒️ Service Worker registered with scope:', registration.scope);
-                })
-                .catch(error => {
-                  console.log('❌ Service Worker registration failed:', error);
-                });
-            });
-          }
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
-          referrerpolicy="no-referrer"></script>
-        <script src="public/js/script.js"></script>
-  </body>
-
-  </html>
+</html>

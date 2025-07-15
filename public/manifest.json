@@ -2,7 +2,7 @@
     "name": "Andras Egyed - Junior Web Developer",
     "short_name": "Andras",
     "description": "Portfolio of Andras Egyed, a junior web developer skilled in  HTML, CSS, JavaScript, React, React Native, Redux, RTK, Vue, Tailwind, and TypeScript. Explore projects, CV, and resume.",
-    "start_url": "andrasegyed.netlify.app/",
+    "start_url": "/",
     "display": "standalone",
     "background_color": "#393939",
     "theme_color": "#7bf1a8",

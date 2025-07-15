@@ -2,7 +2,6 @@ const CACHE_NAME = "andras-pwa-cache-v1"; // Increment this version for updates!
 const urlsToCache = [
   // List of assets to cache for offline use
   "/", // This is crucial for your start_url
-  "/index.html",
   "/manifest.json",
   "/css/styles.min.css",
   "/js/script.js",
