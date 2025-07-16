@@ -4,8 +4,8 @@
     "description": "Portfolio of Andras Egyed, a junior web developer skilled in HTML, CSS, JavaScript, React, React Native, Redux, RTK, Vue, Tailwind, and TypeScript. Explore projects, CV, and resume.",
     "start_url": "/",                                 
     "display": "standalone",
-    "background_color": "#151515",
-    "theme_color": "#151515",
+    "background_color": "#222222",
+    "theme_color": "#222222",
     "icons": [
       {
         "src": "images/icons/icon-48x48.png",       
