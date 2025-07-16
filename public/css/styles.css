@@ -597,14 +597,12 @@ img {
   color: var(--text-black-700);
   text-align: justify;
 }
-.about .about-content .personal-info {
-  flex: 0 0 100%;
-  max-width: 100%;
-  margin-top: 20px;
-}
 
-.about .about-content .buttons {
+.about .about-content .button {
+  margin-top: 30px;
   display: flex;
+  flex: 100%;
+  max-width: 100%;
   justify-content: flex-end;
   align-items: center;
 }
@@ -617,19 +615,19 @@ img {
   padding-right: 15px;
   width: 100%;
 }
-.skills-grid {
+.about .about-content .skills-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px 30px;
   width: 100%;
 }
 
-.skills-grid .skills-item {
+.about .about-content .skills-grid .skills-item {
   width: 100%;
 }
 
 @media (max-width: 767px) {
-  .skills-grid {
+  .about .about-content .skills-grid {
     grid-template-columns: 1fr;
     gap: 15px 0;
   }
@@ -653,6 +651,7 @@ img {
   width: 100%;
   position: relative;
 }
+
 .about .about-content .skills .skills-grid .skills-item .progress .progress-in {
   position: absolute;
   left: 0;
@@ -661,6 +660,7 @@ img {
   border-radius: 4px;
   background-color: var(--skin-color);
 }
+
 .about .about-content .skills .skills-grid .skills-item .skill-percent {
   position: absolute;
   right: 0;
@@ -677,7 +677,7 @@ img {
 }
 .about .about-content h3.title {
   font-size: 24px;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   font-weight: 700;
   color: var(--text-black-900);
 }
@@ -1123,17 +1123,6 @@ textarea:hover {
   border: solid 1px var(--text-black-700) !important;
   transition: all 0.7s ease-in-out !important;
 }
-.personal-info .row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px 30px;
-  width: 100%;
-}
-
-.info-item {
-  width: 100%;
-}
-
 @media (max-width: 1199px) {
   .section .container {
     padding-top: 70px;
@@ -1159,9 +1148,6 @@ textarea:hover {
   }
   .section.open {
     left: 269px;
-  }
-  .about .about-content .personal-info .buttons .btn {
-    margin-top: 0;
   }
 }
 @media (max-width: 991px) {
@@ -1197,13 +1183,12 @@ textarea:hover {
     flex: 0 0 100%;
     max-width: 100%;
   }
-  .projects .projects-item {
-    flex: 0 0 50%;
-    max-width: 50%;
+  .portfolio-example .portfolio-example-item {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
-  .about .about-content .buttons {
+  .about .about-content .button {
     justify-content: center;
-    margin-top: 15px;
   }
 }
 @media (max-width: 600px) {
@@ -1245,10 +1230,6 @@ textarea:hover {
   }
   .aside .nav li {
     margin-bottom: 35px;
-  }
-  .projects .projects-item {
-    flex: 0 0 100%;
-    max-width: 100%;
   }
   .portfolio-example-item-images-container img {
     max-width: 75%;
