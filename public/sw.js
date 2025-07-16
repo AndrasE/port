@@ -1,11 +1,11 @@
 const CACHE_NAME = "andras-pwa-cache-v1"; // Increment this version for updates!
 const urlsToCache = [
   // List of assets to cache for offline use
-  "/", // This is crucial for your start_url
+  "/",
   "/manifest.json",
   "/css/styles.min.css",
   "/js/script.js",
-  "/sw.js", // Caching the service worker itself
+  "/sw.js",
   "/images/favicon.ico",
   "/images/icons/logo.png",
   "/images/icons/icon-48x48.png",
@@ -15,8 +15,6 @@ const urlsToCache = [
   "/images/icons/icon-192x192.png",
   "/images/icons/icon-384x384.png",
   "/images/icons/icon-512x512.png",
-  // Add an offline page if you want a custom fallback for navigations
-  // '/offline.html'
 ];
 
 // Install Event: Cache all specified assets when the service worker is installed

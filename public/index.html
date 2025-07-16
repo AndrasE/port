@@ -2,6 +2,10 @@
 <html lang="en" style="background-color: black">
 
 <head>
+  <!DOCTYPE html>
+<html lang="en" style="background-color: black">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andras</title>
@@ -10,34 +14,29 @@
     <meta name="description"
         content="Portfolio of Andras Egyed, a junior web developer skilled in HTML, CSS, JavaScript, React, React Native, Redux, RTK, Vue, Tailwind, and TypeScript. Explore projects, CV, and resume.">
 
-    <!------===== icon =====------->
     <link rel="icon" href="images/favicon.ico">
-    <!------===== styles =====------->
-    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/skins/color-3.css">
-    <!------===== fonts =====------->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style"
         href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <!------===== styles switcher =====------->
     <link rel="stylesheet" href="css/skins/color-1.css" class="alternate-style" title="color-1" disabled>
     <link rel="stylesheet" href="css/skins/color-2.css" class="alternate-style" title="color-2" disabled>
     <link rel="stylesheet" href="css/skins/color-3.css" class="alternate-style" title="color-3" disabled>
     <link rel="stylesheet" href="css/skins/color-4.css" class="alternate-style" title="color-4" disabled>
     <link rel="stylesheet" href="css/skins/color-5.css" class="alternate-style" title="color-5" disabled>
     <link rel="stylesheet" href="css/style-switcher.min.css">
-    <!------===== hammmer.js (swipe) =====------->
     <script src="https://hammerjs.github.io/dist/hammer.js"></script>
-</head>
-  <body>
-    <!------===== main container end =====------->
-    <div class="main-container" id="gesture-element">
+</head></head>
 
-      <!------===== aside =====------->
-      <div class="aside">
+<body>
+  <div class="main-container" id="gesture-element">
+
+    <div class="aside">
     <div class="logo">
         <a href="#andras" class="andras a-link"><span>A</span>ndras</a>
     </div>
@@ -53,16 +52,12 @@
         <li><a href="#contact" class="a-link nav-fade-in-5"> <i class="fa fa-comments"></i> Contact</a></li>
     </ul>
 </div>
-        <!------===== main content end =====------->
-        <div class="main-content">
+      <div class="main-content">
 
-          <!------===== blank section =====------->
-          <section class="blank section back-section">
-            <!--== to prevent the on-load slide in animation to show the last section with content in background  ==-->
-          </section>
-          ,
-          <!------===== sections =====------->
-          <section class="andras section s-link" id="andras">
+        <section class="blank section back-section">
+        </section>
+        ,
+        <section class="andras section s-link" id="andras">
     <div class="container">
         <div class="row">
             <div class="section-title padd-15">
@@ -105,7 +100,7 @@
             </div>
         </div>
     </div>
-</section>            <section class="home section active s-link" id="home">
+</section>          <section class="home section active s-link" id="home">
     <div class="container">
         <div class="row">
             <div class="home-info padd-15">
@@ -134,7 +129,7 @@
             </div>
         </div>
     </div>
-</section>              <section class="about section s-link" id="about">
+</section>            <section class="about section s-link" id="about">
     <div class="container">
         <div class="row">
             <div class="section-title padd-15">
@@ -156,23 +151,8 @@
 
                 <div class="row">
                     <div class="personal-info padd-15">
-                        <div class="info-grid">
-                            <div class="info-item">
-                                <p> Location : <span><a
-                                            href="https://www.google.com/maps/place/South+London/@51.4008171,-0.3337303,10z/data=!3m1!4b1!4m5!3m4!1s0x48760164c02f4ed3:0x924732ad507ab3af!8m2!3d51.3888898!4d-0.1403317"
-                                            target="_blank">Blackheath - London</span></a></p>
-                            </div>
-                            <div class="info-item">
-                                <p> LinkedIn : <span><a href="https://www.linkedin.com/in/egyeand"
-                                            target="_blank">linkedin.com/egyeand</span></a></p>
-                            </div>
-                            <div class="info-item">
-                                <p> GitHub : <span><a href="https://github.com/andrase">github.com/andrase</a></span>
-                                </p>
-                            </div>
-                            <div class="info-item buttons padd-15">
-                                <a role="button" class="btn trigger">Download CV</a>
-                            </div>
+                        <div class="info-item buttons ">
+                            <a role="button" class="btn trigger">Download CV</a>
                         </div>
                     </div>
                 </div>
@@ -344,16 +324,18 @@
                                     <div class="timeline-item">
                                         <div class="circle-dot"></div>
                                         <h3 class="timeline-date">
-                                            <i class="fa fa-calendar"></i> 2024 - Present
+                                            <i class="fa fa-calendar"></i> 2024 - 2025
                                         </h3>
                                         <h4 class="timeline-title">Typescript Bootcamp: Beginner To Advanced
                                             (2024 Edition)</h4>
                                         <p class="timeline-text">
-                                            Recently, I started a course on TypeScript, focusing on in-depth
-                                            theory and practical application through projects like building
-                                            a Node REST API using Express, TypeORM, and more.
-                                            <a href="https://www.udemy.com/course/complete-typescript-2-course"
-                                                target="_blank" rel="noopener noreferrer">Typescript Bootcamp</a>
+                                            Recently, I completed a <a
+                                                href="https://www.udemy.com/course/complete-typescript-2-course/"
+                                                target="_blank" rel="noopener noreferrer">Typescript Bootcamp</a> that
+                                            focused on in-depth theory
+                                            and hands-on projects, including building a
+                                            Node.js REST API with Express and TypeORM. I applied this knowledge to build
+                                            my latest project.
                                         </p>
                                     </div>
                                     <div class="timeline-item">
@@ -363,20 +345,19 @@
                                         </h3>
                                         <h4 class="timeline-title">Self-study</h4>
                                         <p class="timeline-text">
-                                            After completing the Udemy Web Development course, I started
-                                            building projects to gain practical experience. My first was a
-                                            React app with a Firebase backend, supporting multiple
-                                            authentication methods, including OTP. I then developed my
-                                            portfolio, honing my CSS, JS, and DOM skills. Expanding my
-                                            knowledge with TypeScript and Redux, I created a React/RTK
-                                            calculator. Earlier this year, I built a React Native real-time
-                                            chat app with authentication, user settings, and push
-                                            notifications. Recently, I completed a React-based website for a
-                                            tattoo artist, styled with styled-components and animated using
-                                            React-Scroll, Framer-Motion, and Lottie-React. The site
-                                            automatically detects the user's browser language and theme
-                                            preferences, loading them by default. It's a PWA-ready App and
-                                            installable on both mobile and desktop.
+                                            After completing the Udemy <a
+                                                href="https://www.udemy.com/course/the-complete-web-development-bootcamp/"
+                                                target="_blank" rel="noopener noreferrer">Web Development Bootcamp</a> ,
+                                            I began building projects to gain
+                                            hands-on experience. I started with a React app using Firebase and
+                                            multi-auth methods, including OTP. Then I built my portfolio, sharpening my
+                                            CSS, JS, and DOM skills. Expanding into TypeScript and Redux, I created a
+                                            React/RTK calculator. Earlier this year, I developed a React Native
+                                            real-time chat app with auth, user settings, and push notifications. Most
+                                            recently, I built a React website for a tattoo artist using
+                                            styled-components, React-Scroll, Framer Motion, and Lottie. It detects
+                                            browser language and theme preferences, is PWA-ready, and installable on
+                                            both mobile and desktop.
                                         </p>
                                     </div>
                                     <div class="timeline-item">
@@ -390,7 +371,8 @@
                                             both front-end and back-end development, covering technologies
                                             like HTML5, CSS3, JavaScript, Node.js, React, MongoDB, and more.
                                             <a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/"
-                                                target="_blank" rel="noopener noreferrer">Web Development Bootcamp</a>
+                                                target="_blank" rel="noopener noreferrer">Web Development
+                                                Bootcamp</a>
                                         </p>
                                     </div>
                                     <div class="timeline-item">
@@ -452,7 +434,7 @@
             </div>
         </div>
     </div>
-</section>                <section class="expertise section s-link" id="expertise">
+</section>              <section class="expertise section s-link" id="expertise">
     <div class="container">
         <div class="row">
             <div class="section-title padd-15">
@@ -729,7 +711,7 @@
         </div>
         <!------===== expertise item end =====------->
     </div>
-</section>                  <section class="projects section s-link" id="projects">
+</section>                <section class="projects section s-link" id="projects">
     <div class="container">
         <div class="row">
             <div class="section-title padd-15">
@@ -874,7 +856,7 @@
             </div>
         </div>
     </div>
-</section>                    <section class="contact section s-link" id="contact">
+</section>                  <section class="contact section s-link" id="contact">
     <div class="container">
         <div class="row">
             <div class="section-title padd-15">
@@ -979,10 +961,7 @@
         </div>
         <!------===== contact form end =====------->
     </div>
-</section>                      <!------===== sections =====------->
-
-                      <!------===== projects =====------->
-                      <section class="portfolio-example section s-link" id="applied">
+</section>                    <section class="portfolio-example section s-link" id="applied">
     <div class="container">
         <div class="row">
             <div class="section-title padd-15">
@@ -1053,7 +1032,7 @@
             </div>
         </div>
     </div>
-</section>                        <section class="portfolio-example section s-link" id="frost">
+</section>                      <section class="portfolio-example section s-link" id="frost">
     <div class="container">
         <div class="row">
             <div class="section-title padd-15">
@@ -1113,7 +1092,7 @@
                     </div>
                 </div>
             </div>
-</section>                          <section class="portfolio-example section s-link iframed" id="usapp">
+</section>                        <section class="portfolio-example section s-link iframed" id="usapp">
     <div class="container">
         <div class="row">
             <div class="section-title padd-15">
@@ -1205,7 +1184,7 @@
             </div>
         </div>
     </div>
-</section>                            <section class="portfolio-example section s-link" id="react-redux-calculator">
+</section>                          <section class="portfolio-example section s-link" id="react-redux-calculator">
     <div class="container">
         <div class="row">
             <div class="section-title padd-15">
@@ -1274,7 +1253,7 @@
             </div>
         </div>
     </div>
-</section>                              <section class="portfolio-example section s-link iframed" id="portfolio">
+</section>                            <section class="portfolio-example section s-link iframed" id="portfolio">
     <div class="container">
         <div class="row">
             <div class="section-title padd-15">
@@ -1339,7 +1318,7 @@
             </div>
         </div>
     </div>
-</section>                                <section class="portfolio-about section s-link" id="portfolio-about">
+</section>                              <section class="portfolio-about section s-link" id="portfolio-about">
     <div class="container">
         <div class="row">
             <div class="section-title padd-15">
@@ -1646,7 +1625,7 @@
             </div>
         </div>
     </div>
-</section>                                  <section class="portfolio-example section s-link iframed" id="crud">
+</section>                                <section class="portfolio-example section s-link iframed" id="crud">
     <div class="container">
         <div class="row">
             <div class="section-title padd-15">
@@ -1704,7 +1683,7 @@
             </div>
         </div>
     </div>
-</section>                                    <section class="portfolio-example section s-link iframed" id="secrets">
+</section>                                  <section class="portfolio-example section s-link iframed" id="secrets">
     <div class="container">
         <div class="row">
             <div class="section-title padd-15">
@@ -1775,7 +1754,7 @@
             </div>
         </div>
     </div>
-</section>                                      <section class="portfolio-example section s-link iframed" id="todo">
+</section>                                    <section class="portfolio-example section s-link iframed" id="todo">
     <div class="container">
         <div class="row">
             <div class="section-title padd-15">
@@ -1819,7 +1798,7 @@
             </div>
         </div>
     </div>
-</section>                                        <section class="portfolio-example section s-link" id="weatherapi">
+</section>                                      <section class="portfolio-example section s-link" id="weatherapi">
     <div class="container">
         <div class="row">
             <div class="section-title padd-15">
@@ -1866,7 +1845,7 @@
                 <a class="btn" href="https://weatherapicall-f7a0d6ebd9f7.herokuapp.com" target="_blank">WeatherApi</a>
             </div>
         </div>
-</section>                                          <section class="portfolio-example section s-link iframed" id="next">
+</section>                                        <section class="portfolio-example section s-link iframed" id="next">
     <div class="container">
         <div class="row">
             <div class="section-title padd-15">
@@ -1908,21 +1887,12 @@
                 </div>
             </div>
         </div>
-</section>                                            <!------===== projects =====------->
+</section>                                          <section class="blank section">
+                                          </section>
 
-                                            <!------===== blank section =====------->
-                                            <section class="blank section">
-                                              <!--== prevent the on-load slide in animation to show the last section with content in background ==-->
-                                            </section>
-
-        </div>
-        <!------===== main content end =====------->
-
-    </div>
-    <!------===== main container end =====------->
-
-    <!------===== cv modal =====------->
-    <div class="modal">
+      </div>
+  </div>
+  <div class="modal">
     <div class="modal-content">
         <span class="close-button"></span>
         <div class="row padd-15">
@@ -1965,8 +1935,7 @@
         </div>
     </div>
 </div>
-      <!------===== style switcher =====------->
-      <div class="style-switcher">
+    <div class="style-switcher">
     <div class="style-toggler s-icon">
         <i class="fas fa-cog fa-spin"></i>
     </div>
@@ -1981,27 +1950,23 @@
         <span class="color-4" onclick="setActiveStyle(`color-4`)"></span>
         <span class="color-5" onclick="setActiveStyle(`color-5`)"></span>
     </div>
-</div>        <!------===== style switcher =====------->
+</div>      <script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            // sw.js is at the root of your served content
+            navigator.serviceWorker.register('/sw.js')
+              .then(registration => {
+                console.log('⚒️ Service Worker registered with scope:', registration.scope);
+              })
+              .catch(error => {
+                console.log('❌ Service Worker registration failed:', error);
+              });
+          });
+        }
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
+        referrerpolicy="no-referrer"></script>
+      <script src="js/script.js"></script>
+</body>
 
-        <!------===== js files =====------->
-        <!-- Register service worker for offline support and caching -->
-
-        <script>
-          if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-              navigator.serviceWorker.register('/sw.js')
-                .then(registration => {
-                  console.log('⚒️ Service Worker registered with scope:', registration.scope);
-                })
-                .catch(error => {
-                  console.log('❌ Service Worker registration failed:', error);
-                });
-            });
-          }
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
-          referrerpolicy="no-referrer"></script>
-        <script src="js/script.js"></script>
-  </body>
-
-  </html>
+</html>

@@ -600,62 +600,19 @@ img {
 .about .about-content .personal-info {
   flex: 0 0 100%;
   max-width: 100%;
-  margin-top: 40px;
+  margin-top: 20px;
 }
-.about .about-content .personal-info .info-item {
-  flex: 0 0 50%;
-  max-width: 100%;
-  letter-spacing: 1.3px;
-}
-.about .about-content .personal-info .info-item p {
-  font-weight: 600;
-  padding: 10px 0;
 
-  font-size: 16x;
-  color: var(--text-black-900);
-  border-bottom: 1px solid var(--bg-black-50);
-}
-.about .about-content .personal-info .info-item p span {
-  font-weight: 400;
-  color: var(--text-black-700);
-  margin-left: 10px;
-}
-.about .about-content .personal-info .info-item a {
-  color: var(--text-black-700);
-}
 .about .about-content .buttons {
-  position: relative;
-
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-}
-
-.info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  width: 100%;
-}
-
-.info-grid .info-item {
-  width: 100%;
-}
-
-@media (max-width: 767px) {
-  .info-grid {
-    grid-template-columns: 1fr;
-    gap: 15px 0;
-  }
-  .info-grid .info-item {
-    margin-bottom: 5px;
-  }
 }
 
 .about .about-content .skills {
   display: flex;
   margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   padding-left: 15px;
   padding-right: 15px;
   width: 100%;
@@ -1177,15 +1134,6 @@ textarea:hover {
   width: 100%;
 }
 
-@media (max-width: 767px) {
-  .personal-info .row {
-    grid-template-columns: 1fr;
-    gap: 15px 0;
-  }
-  .info-item {
-    margin-bottom: 5px;
-  }
-}
 @media (max-width: 1199px) {
   .section .container {
     padding-top: 70px;
@@ -1249,9 +1197,13 @@ textarea:hover {
     flex: 0 0 100%;
     max-width: 100%;
   }
-  .portfolio-example .portfolio-example-item {
-    flex: 0 0 100%;
-    max-width: 100%;
+  .projects .projects-item {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .about .about-content .buttons {
+    justify-content: center;
+    margin-top: 15px;
   }
 }
 @media (max-width: 600px) {
@@ -1295,8 +1247,8 @@ textarea:hover {
     margin-bottom: 35px;
   }
   .projects .projects-item {
-    flex: 0 0 50%;
-    max-width: 50%;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
   .portfolio-example-item-images-container img {
     max-width: 75%;
