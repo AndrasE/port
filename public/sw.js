@@ -1,4 +1,4 @@
-const CACHE_NAME = "andras-pwa-cache-v2"; // Increment this version for updates!
+const CACHE_NAME = "andras-pwa-cache-v3"; // Increment this version for updates!
 const urlsToCache = [
   // List of assets to cache for offline use
   "/",
